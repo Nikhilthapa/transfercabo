@@ -160,45 +160,45 @@ export default async function ActivityDetailPage({ params }: { params: { slug: s
         />
 
         {/* Welcome Section */}
-        <section className="py-16 px-4 bg-white">
+        <section className="py-12 md:py-16 px-4 bg-white">
           <div className="container mx-auto max-w-6xl text-center">
-            <h2 className="text-4xl md:text-5xl font-bold text-black mb-6">
+            <h2 className="text-2xl md:text-4xl lg:text-5xl font-bold text-black mb-4 md:mb-6 px-4">
               {laPazData.welcome}
             </h2>
-            <p className="text-lg text-gray-700 max-w-4xl mx-auto leading-relaxed">
+            <p className="text-base md:text-lg text-gray-700 max-w-4xl mx-auto leading-relaxed px-4">
               {laPazData.welcomeDes}
             </p>
           </div>
         </section>
 
         {/* Key Details Section */}
-        <section className="py-16 px-4 bg-white">
+        <section className="py-12 md:py-16 px-4 bg-white">
           <div className="container mx-auto max-w-6xl">
-            <h2 className="text-3xl md:text-4xl font-bold text-black text-center mb-3">
+            <h2 className="text-2xl md:text-3xl lg:text-4xl font-bold text-black text-center mb-2 md:mb-3 px-4">
               {laPazData.sub1}
             </h2>
-            <p className="text-center text-gray-600 mb-12">
+            <p className="text-center text-gray-600 mb-8 md:mb-12 px-4 text-sm md:text-base">
               {laPazData.sub1Des}
             </p>
             
-            <div className="grid md:grid-cols-3 gap-8">
+            <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-6 md:gap-8">
               {Object.entries(laPazData.icons).map(([key, value]: [string, any]) => (
-                <div key={key} className="p-6 text-center">
-                  <div className="flex justify-center mb-4">
-                    <div className="w-16 h-16 rounded-full bg-blue-100 flex items-center justify-center">
+                <div key={key} className="p-4 md:p-6 text-center">
+                  <div className="flex justify-center mb-3 md:mb-4">
+                    <div className="w-12 h-12 md:w-16 md:h-16 rounded-full bg-blue-100 flex items-center justify-center">
                       <Image
                         src={value.iconsPath || value.iconPath}
                         alt={key}
                         width={40}
                         height={40}
-                        className="object-contain"
+                        className="object-contain w-8 h-8 md:w-10 md:h-10"
                       />
                     </div>
                   </div>
-                  <h3 className="text-xl font-bold text-black mb-3">{key}</h3>
-                  <p className="text-gray-700 mb-1">{value.cost1}</p>
+                  <h3 className="text-lg md:text-xl font-bold text-black mb-2 md:mb-3">{key}</h3>
+                  <p className="text-gray-700 mb-1 text-sm md:text-base">{value.cost1}</p>
                   {value.cost2 && (
-                    <p className="text-gray-700">{value.cost2}</p>
+                    <p className="text-gray-700 text-sm md:text-base">{value.cost2}</p>
                   )}
                 </div>
               ))}
@@ -208,19 +208,19 @@ export default async function ActivityDetailPage({ params }: { params: { slug: s
 
         {/* What to Expect Section */}
         {laPazData.data[0] && (
-          <section className="py-16 px-4 bg-white">
+          <section className="py-12 md:py-16 px-4 bg-white">
             <div className="container mx-auto max-w-6xl">
-              <h2 className="text-3xl md:text-4xl font-bold text-black text-center mb-3">
+              <h2 className="text-2xl md:text-3xl lg:text-4xl font-bold text-black text-center mb-2 md:mb-3 px-4">
                 What to Expect
               </h2>
-              <p className="text-center text-gray-600 mb-12">
+              <p className="text-center text-gray-600 mb-8 md:mb-12 px-4 text-sm md:text-base">
                 Experience culture, coastline, and comfort with a full-day guided La Paz adventure by <span className="font-semibold">Cheap Transfers Cabo</span>.
               </p>
               
-              <div className="grid md:grid-cols-2 gap-12 items-center">
+              <div className="grid md:grid-cols-2 gap-8 md:gap-12 items-center">
                 {/* Image */}
                 {laPazData.data[0].image && (
-                  <div className="relative w-full h-96 rounded-lg overflow-hidden" >
+                  <div className="relative w-full h-64 md:h-96 rounded-lg overflow-hidden" >
                     <Image
                       src={`/${laPazData.data[0].image}`}
                       alt={laPazData.data[0].title || "La Paz Experience"}
@@ -232,19 +232,19 @@ export default async function ActivityDetailPage({ params }: { params: { slug: s
                 
                 {/* Points */}
                 <div>
-                  <h3 className="text-2xl font-bold text-black mb-6">
+                  <h3 className="text-xl md:text-2xl font-bold text-black mb-4 md:mb-6">
                     {laPazData.data[0].title }
                   </h3>
-                  <ul className="space-y-4">
+                  <ul className="space-y-3 md:space-y-4">
                     {laPazData.data[0].points && Object.values(laPazData.data[0].points).map((point: any, index: number) => (
-                     <li key={index} className="text-gray-700">
+                     <li key={index} className="text-gray-700 text-sm md:text-base">
                      <span className="mr-2">•</span>
                      <span>{point}</span>
                    </li>
                     ))}
                   </ul>
                   <button 
-                    className="mt-8 w-full bg-[#0446A1] text-white px-8 py-4 rounded-lg font-semibold text-lg hover:opacity-90 transition"
+                    className="mt-6 md:mt-8 w-full bg-[#0446A1] text-white px-6 md:px-8 py-3 md:py-4 rounded-lg font-semibold text-base md:text-lg hover:opacity-90 transition"
                   >
                     Book This Activity
                   </button>
@@ -255,21 +255,21 @@ export default async function ActivityDetailPage({ params }: { params: { slug: s
         )}
 
         {/* Information Cards Section */}
-        <section className="py-16 px-4 bg-white">
+        <section className="py-12 md:py-16 px-4 bg-white">
           <div className="container mx-auto max-w-6xl">
-            <div className="flex flex-col gap-6">
+            <div className="flex flex-col gap-4 md:gap-6">
               {/* What's Included */}
               {laPazData.data[1] && (
-                <div className="rounded-lg p-6" style={{ backgroundColor: '#fafaf9' }}>
-                  <div className="flex items-start gap-4">
-                    <div className="w-2 h-full bg-[#0446A1] rounded-full flex-shrink-0 min-h-[60px]"></div>
+                <div className="rounded-lg p-4 md:p-6" style={{ backgroundColor: '#fafaf9' }}>
+                  <div className="flex items-start gap-3 md:gap-4">
+                    <div className="w-2 h-full bg-[#0446A1] rounded-full flex-shrink-0 min-h-[40px] md:min-h-[60px]"></div>
                     <div className="flex-1">
-                      <h3 className="text-2xl font-bold text-black mb-4">
+                      <h3 className="text-xl md:text-2xl font-bold text-black mb-3 md:mb-4">
                         {laPazData.data[1].title || "What's Included"}
                       </h3>
-                      <ul className="space-y-2.5">
+                      <ul className="space-y-2 md:space-y-2.5">
                         {Object.values(laPazData.data[1].points).map((point: any, index: number) => (
-                          <li key={index} className="text-gray-700">
+                          <li key={index} className="text-gray-700 text-sm md:text-base">
                             <span className="mr-2">•</span>
                             <span>{point}</span>
                           </li>
@@ -282,16 +282,16 @@ export default async function ActivityDetailPage({ params }: { params: { slug: s
 
               {/* What's Not Included */}
               {laPazData.data[2] && (
-                <div className="rounded-lg p-6" style={{ backgroundColor: '#fafaf9' }}>
-                  <div className="flex items-start gap-4">
-                    <div className="w-2 h-full bg-[#0446A1] rounded-full flex-shrink-0 min-h-[60px]"></div>
+                <div className="rounded-lg p-4 md:p-6" style={{ backgroundColor: '#fafaf9' }}>
+                  <div className="flex items-start gap-3 md:gap-4">
+                    <div className="w-2 h-full bg-[#0446A1] rounded-full flex-shrink-0 min-h-[40px] md:min-h-[60px]"></div>
                     <div className="flex-1">
-                      <h3 className="text-2xl font-bold text-black mb-4">
+                      <h3 className="text-xl md:text-2xl font-bold text-black mb-3 md:mb-4">
                         {laPazData.data[2].title || "What's Not Included"}
                       </h3>
-                      <ul className="space-y-2.5">
+                      <ul className="space-y-2 md:space-y-2.5">
                         {Object.values(laPazData.data[2].points).map((point: any, index: number) => (
-                          <li key={index} className="text-gray-700">
+                          <li key={index} className="text-gray-700 text-sm md:text-base">
                             <span className="mr-2">•</span>
                             <span>{point}</span>
                           </li>
@@ -304,16 +304,16 @@ export default async function ActivityDetailPage({ params }: { params: { slug: s
 
               {/* Our Recommendations */}
               {laPazData.data[3] && (
-                <div className="rounded-lg p-6" style={{ backgroundColor: '#fafaf9' }}>
-                  <div className="flex items-start gap-4">
-                    <div className="w-2 h-full bg-[#0446A1] rounded-full flex-shrink-0 min-h-[60px]"></div>
+                <div className="rounded-lg p-4 md:p-6" style={{ backgroundColor: '#fafaf9' }}>
+                  <div className="flex items-start gap-3 md:gap-4">
+                    <div className="w-2 h-full bg-[#0446A1] rounded-full flex-shrink-0 min-h-[40px] md:min-h-[60px]"></div>
                     <div className="flex-1">
-                      <h3 className="text-2xl font-bold text-black mb-4">
+                      <h3 className="text-xl md:text-2xl font-bold text-black mb-3 md:mb-4">
                         {laPazData.data[3].title || "Our Recommendations"}
                       </h3>
-                      <ul className="space-y-2.5">
+                      <ul className="space-y-2 md:space-y-2.5">
                         {Object.values(laPazData.data[3].points).map((point: any, index: number) => (
-                          <li key={index} className="text-gray-700">
+                          <li key={index} className="text-gray-700 text-sm md:text-base">
                             <span className="mr-2">•</span>
                             <span>{point}</span>
                           </li>
@@ -326,14 +326,14 @@ export default async function ActivityDetailPage({ params }: { params: { slug: s
 
               {/* Considerations */}
               {laPazData.data[4] && (
-                <div className="rounded-lg p-6" style={{ backgroundColor: '#fafaf9' }}>
-                  <div className="flex items-start gap-4">
-                    <div className="w-2 h-full bg-[#0446A1] rounded-full flex-shrink-0 min-h-[60px]"></div>
+                <div className="rounded-lg p-4 md:p-6" style={{ backgroundColor: '#fafaf9' }}>
+                  <div className="flex items-start gap-3 md:gap-4">
+                    <div className="w-2 h-full bg-[#0446A1] rounded-full flex-shrink-0 min-h-[40px] md:min-h-[60px]"></div>
                     <div className="flex-1">
-                      <h3 className="text-2xl font-bold text-black mb-4">
+                      <h3 className="text-xl md:text-2xl font-bold text-black mb-3 md:mb-4">
                         {laPazData.data[4].title || "Considerations"}
                       </h3>
-                      <p className="text-gray-700">
+                      <p className="text-gray-700 text-sm md:text-base">
                         {Object.values(laPazData.data[4].points)}
                       </p>
                     </div>
@@ -345,16 +345,16 @@ export default async function ActivityDetailPage({ params }: { params: { slug: s
         </section>
 
         {/* Call to Action */}
-        <section className="py-16 px-4 bg-white">
+        <section className="py-12 md:py-16 px-4 bg-white">
           <div className="container mx-auto max-w-6xl text-center">
-            <h2 className="text-4xl font-bold text-black mb-4">
+            <h2 className="text-2xl md:text-3xl lg:text-4xl font-bold text-black mb-3 md:mb-4 px-4">
             {laPazData.footerText}
             </h2>
-            <p className="text-lg text-gray-700 mb-8 max-w-2xl mx-auto">
+            <p className="text-base md:text-lg text-gray-700 mb-6 md:mb-8 max-w-2xl mx-auto px-4">
               Secure your booking with Cheap Transfers Cabo and experience culture, beaches, and guided comfort in one day.
             </p>
             <button 
-              className="bg-[#0446A1] text-white px-10 py-4 rounded-lg font-semibold text-lg hover:opacity-90 transition"
+              className="bg-[#0446A1] text-white px-8 md:px-10 py-3 md:py-4 rounded-lg font-semibold text-base md:text-lg hover:opacity-90 transition"
             >
               Book This Activity
             </button>
@@ -376,17 +376,17 @@ export default async function ActivityDetailPage({ params }: { params: { slug: s
   return (
     <div className="bg-white min-h-screen">
       <nav className="relative z-10 bg-white border-b">
-        <div className="container mx-auto px-4 md:px-8 py-4">
-          <Link href="/" className="text-black font-semibold">
+        <div className="container mx-auto px-4 md:px-8 py-3 md:py-4">
+          <Link href="/" className="text-black font-semibold text-sm md:text-base">
             ← Back to Activities
           </Link>
         </div>
       </nav>
       
-      <main className="pt-24 pb-20">
+      <main className="pt-16 md:pt-24 pb-12 md:pb-20">
         <div className="container mx-auto px-4 max-w-6xl">
           {/* Hero Image */}
-          <div className="relative w-full h-96 rounded-2xl overflow-hidden mb-8">
+          <div className="relative w-full h-64 md:h-96 rounded-xl md:rounded-2xl overflow-hidden mb-6 md:mb-8">
             <Image
               src={activity.image}
               alt={activity.name}
@@ -396,15 +396,15 @@ export default async function ActivityDetailPage({ params }: { params: { slug: s
             />
           </div>
 
-          <div className="grid md:grid-cols-3 gap-8">
+          <div className="grid md:grid-cols-3 gap-6 md:gap-8">
             {/* Main Content */}
             <div className="md:col-span-2">
-              <h1 className="text-4xl font-bold text-black mb-4">{activity.name}</h1>
-              <p className="text-gray-700 text-lg mb-6">{activity.fullDescription}</p>
+              <h1 className="text-2xl md:text-3xl lg:text-4xl font-bold text-black mb-3 md:mb-4">{activity.name}</h1>
+              <p className="text-gray-700 text-base md:text-lg mb-4 md:mb-6">{activity.fullDescription}</p>
 
               {/* Highlights */}
-              <div className="bg-gray-50 rounded-xl p-6 mb-8">
-                <h2 className="text-2xl font-semibold text-black mb-4">Tour Highlights</h2>
+              <div className="bg-gray-50 rounded-xl p-4 md:p-6 mb-6 md:mb-8">
+                <h2 className="text-xl md:text-2xl font-semibold text-black mb-3 md:mb-4">Tour Highlights</h2>
                 {/* <ul className="space-y-3">
                   {activity.highlights.map((highlight, index) => (
                     <li key={index} className="flex items-start gap-3">
@@ -420,40 +420,40 @@ export default async function ActivityDetailPage({ params }: { params: { slug: s
 
             {/* Booking Card */}
             <div className="md:col-span-1">
-              <div className="bg-white border-2 border-gray-200 rounded-2xl p-6 sticky top-24">
-                <div className="mb-6">
-                  <div className="text-3xl font-bold text-black mb-4">{activity.price}</div>
+              <div className="bg-white border-2 border-gray-200 rounded-xl md:rounded-2xl p-4 md:p-6 md:sticky md:top-24">
+                <div className="mb-4 md:mb-6">
+                  <div className="text-2xl md:text-3xl font-bold text-black mb-3 md:mb-4">{activity.price}</div>
                   
-                  <div className="space-y-3 text-gray-600">
+                  <div className="space-y-2 md:space-y-3 text-gray-600">
                     <div className="flex items-center gap-2">
-                      <svg className="w-5 h-5" fill="currentColor" viewBox="0 0 20 20">
+                      <svg className="w-4 h-4 md:w-5 md:h-5" fill="currentColor" viewBox="0 0 20 20">
                         <path fillRule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm1-12a1 1 0 10-2 0v4a1 1 0 00.293.707l2.828 2.829a1 1 0 101.415-1.415L11 9.586V6z" clipRule="evenodd" />
                       </svg>
-                      <span>{activity.duration}</span>
+                      <span className="text-sm md:text-base">{activity.duration}</span>
                     </div>
                     <div className="flex items-center gap-2">
-                      <svg className="w-5 h-5" fill="currentColor" viewBox="0 0 20 20">
+                      <svg className="w-4 h-4 md:w-5 md:h-5" fill="currentColor" viewBox="0 0 20 20">
                         <path d="M9 6a3 3 0 11-6 0 3 3 0 016 0zM17 6a3 3 0 11-6 0 3 3 0 016 0zM12.93 17c.046-.327.07-.66.07-1a6.97 6.97 0 00-1.5-4.33A5 5 0 0119 16v1h-6.07zM6 11a5 5 0 015 5v1H1v-1a5 5 0 015-5z" />
                       </svg>
-                      <span>{activity.minPeople}</span>
+                      <span className="text-sm md:text-base">{activity.minPeople}</span>
                     </div>
                   </div>
                 </div>
 
-                <div className="space-y-3">
+                <div className="space-y-2 md:space-y-3">
                   <button 
-                    className="w-full text-white px-6 py-3 rounded-full transition font-semibold hover:opacity-90"
+                    className="w-full text-white px-4 md:px-6 py-2.5 md:py-3 rounded-full transition font-semibold hover:opacity-90 text-sm md:text-base"
                     style={{ backgroundColor: '#0446A1' }}
                   >
                     Book Now
                   </button>
-                  <button className="w-full border-2 border-blue-600 text-blue-600 px-6 py-3 rounded-full hover:bg-blue-600 hover:text-white transition font-semibold">
+                  <button className="w-full border-2 border-blue-600 text-blue-600 px-4 md:px-6 py-2.5 md:py-3 rounded-full hover:bg-blue-600 hover:text-white transition font-semibold text-sm md:text-base">
                     Contact Us
                   </button>
                 </div>
 
-                <div className="mt-6 pt-6 border-t border-gray-200">
-                  <p className="text-sm text-gray-600 text-center">
+                <div className="mt-4 md:mt-6 pt-4 md:pt-6 border-t border-gray-200">
+                  <p className="text-xs md:text-sm text-gray-600 text-center">
                     Questions? Call us at <br />
                     <span className="font-semibold text-black">+52 624 123 4567</span>
                   </p>

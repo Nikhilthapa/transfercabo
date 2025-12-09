@@ -93,41 +93,41 @@ export default function ActivityPage() {
       <Navigation />
       
       {/* Hero Section */}
-      <section className="relative py-20 px-4 bg-gradient-to-br from-blue-50 to-white">
+      <section className="relative py-12 md:py-20 px-4 bg-gradient-to-br from-blue-50 to-white">
         <div className="container mx-auto max-w-7xl">
-          <div className="grid md:grid-cols-2 gap-12 items-center">
+          <div className="grid md:grid-cols-2 gap-8 md:gap-12 items-center">
             {/* Left Content */}
-            <div className="space-y-6">
-              <h1 className="text-5xl md:text-6xl font-bold text-gray-900 leading-tight">
+            <div className="space-y-4 md:space-y-6">
+              <h1 className="text-3xl md:text-5xl lg:text-6xl font-bold text-gray-900 leading-tight">
                 Cabo's Best<br />
                 Adventure Activities
               </h1>
-              <p className="text-xl text-gray-700">
+              <p className="text-base md:text-xl text-gray-700">
                 Thrilling ATV Rides, Razor Adventures, Horseback Tours, And Scenic Experiences Crafted For Every Traveler.
               </p>
               <Link 
                 href="#activities"
-                className="inline-block bg-blue-600 text-white px-8 py-3 rounded-full font-semibold hover:bg-blue-700 transition"
+                className="inline-block bg-blue-600 text-white px-6 md:px-8 py-2.5 md:py-3 rounded-full font-semibold hover:bg-blue-700 transition text-sm md:text-base"
               >
                 Explore All Activities →
               </Link>
             </div>
 
             {/* Right Image Collage */}
-            <div className="grid grid-cols-2 gap-4">
-              <div className="space-y-4">
-                <div className="relative h-48 rounded-2xl overflow-hidden">
+            <div className="grid grid-cols-2 gap-3 md:gap-4">
+              <div className="space-y-3 md:space-y-4">
+                <div className="relative h-32 md:h-48 rounded-xl md:rounded-2xl overflow-hidden">
                   <Image src="/thingstodoincabo/Artwalk.png" alt="Art Walk" fill className="object-cover" />
                 </div>
-                <div className="relative h-64 rounded-2xl overflow-hidden">
+                <div className="relative h-40 md:h-64 rounded-xl md:rounded-2xl overflow-hidden">
                   <Image src="/thingstodoincabo/laPaz.png" alt="La Paz" fill className="object-cover" />
                 </div>
               </div>
-              <div className="space-y-4 pt-8">
-                <div className="relative h-64 rounded-2xl overflow-hidden">
+              <div className="space-y-3 md:space-y-4 pt-6 md:pt-8">
+                <div className="relative h-40 md:h-64 rounded-xl md:rounded-2xl overflow-hidden">
                   <Image src="/thingstodoincabo/Atv.png" alt="ATV Adventure" fill className="object-cover" />
                 </div>
-                <div className="relative h-48 rounded-2xl overflow-hidden">
+                <div className="relative h-32 md:h-48 rounded-xl md:rounded-2xl overflow-hidden">
                   <Image src="/thingstodoincabo/headers/1.png" alt="Adventure" fill className="object-cover" />
                 </div>
               </div>
@@ -137,29 +137,29 @@ export default function ActivityPage() {
       </section>
 
       {/* About Section */}
-      <section className="py-16 px-4 bg-white">
+      <section className="py-12 md:py-16 px-4 bg-white">
         <div className="container mx-auto max-w-6xl text-center">
-          <h2 className="text-4xl font-bold text-gray-900 mb-6">
+          <h2 className="text-2xl md:text-3xl lg:text-4xl font-bold text-gray-900 mb-4 md:mb-6 px-4">
             YOUR ADVENTURE IN CABO STARTS HERE
           </h2>
-          <p className="text-lg text-gray-700 max-w-4xl mx-auto leading-relaxed">
+          <p className="text-base md:text-lg text-gray-700 max-w-4xl mx-auto leading-relaxed px-4">
             Discover the most unforgettable adventures of Los Cabos with <span className="font-semibold">Cheap Transfers Cabo</span>, where every activity is crafted to help you explore Baja's breathtaking landscapes—desert dunes, crystal-blue beaches, dramatic cliffs, and vibrant local culture. From thrilling ATV and Razor rides to peaceful horseback journeys and scenic day tours, we bring you closer to the heart of Cabo with comfort, safety, and a touch of authentic local hospitality.
           </p>
         </div>
       </section>
 
       {/* Activities Grid */}
-      <section id="activities" className="py-20 px-4 bg-gray-50">
+      <section id="activities" className="py-12 md:py-20 px-4 bg-gray-50">
         <div className="container mx-auto max-w-7xl">
-          <h2 className="text-4xl font-bold text-center text-gray-900 mb-12">
+          <h2 className="text-2xl md:text-3xl lg:text-4xl font-bold text-center text-gray-900 mb-4 md:mb-6 px-4">
             Explore Our Cabo Adventures
           </h2>
-          <p className="text-center text-gray-600 mb-12">
+          <p className="text-center text-gray-600 mb-8 md:mb-12 text-sm md:text-base px-4">
             Exciting tours designed to make your Cabo trip unforgettable.
           </p>
 
           {/* Activity Cards Grid */}
-          <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+          <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-6 md:gap-8">
             {activities.map((activity) => (
               <div 
                 key={activity.slug} 
@@ -176,27 +176,27 @@ export default function ActivityPage() {
                 </div>
 
                 {/* Activity Content */}
-                <div className="p-6">
-                  <h3 className="text-2xl font-bold text-gray-900 mb-3">
+                <div className="p-4 md:p-6">
+                  <h3 className="text-xl md:text-2xl font-bold text-gray-900 mb-2 md:mb-3">
                     {activity.name}
                   </h3>
-                  <p className="text-gray-600 text-sm mb-4 line-clamp-3">
+                  <p className="text-gray-600 text-xs md:text-sm mb-3 md:mb-4 line-clamp-3">
                     {activity.description}
                   </p>
 
                   {/* Activity Details */}
-                  <div className="space-y-2 mb-6 text-sm text-gray-600">
+                  <div className="space-y-2 mb-4 md:mb-6 text-xs md:text-sm text-gray-600">
                     <div className="flex items-center justify-between">
-                      <span className="font-bold text-lg text-gray-900">{activity.price}</span>
+                      <span className="font-bold text-base md:text-lg text-gray-900">{activity.price}</span>
                     </div>
                     <div className="flex items-center gap-2">
-                      <svg className="w-4 h-4" fill="currentColor" viewBox="0 0 20 20">
+                      <svg className="w-3 h-3 md:w-4 md:h-4" fill="currentColor" viewBox="0 0 20 20">
                         <path fillRule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm1-12a1 1 0 10-2 0v4a1 1 0 00.293.707l2.828 2.829a1 1 0 101.415-1.415L11 9.586V6z" clipRule="evenodd" />
                       </svg>
                       <span>{activity.duration}</span>
                     </div>
                     <div className="flex items-center gap-2">
-                      <svg className="w-4 h-4" fill="currentColor" viewBox="0 0 20 20">
+                      <svg className="w-3 h-3 md:w-4 md:h-4" fill="currentColor" viewBox="0 0 20 20">
                         <path d="M9 6a3 3 0 11-6 0 3 3 0 016 0zM17 6a3 3 0 11-6 0 3 3 0 016 0zM12.93 17c.046-.327.07-.66.07-1a6.97 6.97 0 00-1.5-4.33A5 5 0 0119 16v1h-6.07zM6 11a5 5 0 015 5v1H1v-1a5 5 0 015-5z" />
                       </svg>
                       <span>{activity.minPeople}</span>
@@ -204,15 +204,15 @@ export default function ActivityPage() {
                   </div>
 
                   {/* Action Buttons */}
-                  <div className="flex gap-3">
+                  <div className="flex gap-2 md:gap-3">
                     <Link 
                       href={`/activity/${activity.slug}`}
-                      className="flex-1 text-center border-2 border-blue-600 text-blue-600 px-4 py-2.5 rounded-full hover:bg-blue-600 hover:text-white transition font-medium"
+                      className="flex-1 text-center border-2 border-blue-600 text-blue-600 px-3 md:px-4 py-2 md:py-2.5 rounded-full hover:bg-blue-600 hover:text-white transition font-medium text-xs md:text-sm"
                     >
                       Info
                     </Link>
                     <button 
-                      className="flex-1 text-white px-4 py-2.5 rounded-full transition font-medium hover:opacity-90"
+                      className="flex-1 text-white px-3 md:px-4 py-2 md:py-2.5 rounded-full transition font-medium hover:opacity-90 text-xs md:text-sm"
                       style={{ backgroundColor: '#0446A1' }}
                     >
                       Book Activities

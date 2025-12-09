@@ -23,7 +23,7 @@ export default function CustomHero({
 }: CustomHeroProps) {
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
   return (
-    <section className="relative min-h-[600px] md:min-h-[700px] overflow-hidden pb-28 md:pb-40">
+    <section className="relative min-h-[400px] md:min-h-[600px] lg:min-h-[700px] overflow-hidden pb-20 md:pb-28 lg:pb-40">
       {/* Background Image Container - placed first so it shows through navigation */}
       <div className="absolute inset-0">
         <div className="relative w-full h-full">
@@ -169,17 +169,18 @@ export default function CustomHero({
                 </Link>
                 
                 {/* Mobile Language Selector */}
-                <div className="flex items-center gap-3 cursor-pointer px-2 py-2 w-fit">
-                  <div className="w-10 h-6 relative">
+                <div className="flex items-center gap-3 px-2 py-2 w-fit">
+                  <div className="relative w-10 h-6 flex-shrink-0">
                     <Image
                       src="/lan/eng.png"
                       alt="English"
                       fill
                       className="object-contain rounded-sm"
+                      sizes="40px"
                     />
                   </div>
-                  <span className="text-black text-sm font-semibold uppercase hover:text-[#0446A1] transition">English</span>
-                  <svg className="w-3.5 h-3.5 text-black hover:text-[#0446A1] transition" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <span className="text-black text-sm font-semibold uppercase">English</span>
+                  <svg className="w-3.5 h-3.5 text-black flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                     <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2.5} d="M19 9l-7 7-7-7" />
                   </svg>
                 </div>
@@ -190,18 +191,18 @@ export default function CustomHero({
       </nav>
 
       {/* Hero Content - Text Overlay on Lower Left */}
-      <div className={`relative z-10 container mx-auto px-4 md:px-8 flex ${textPosition === 'bottom' ? 'items-end pb-16 md:pb-24' : 'items-center pt-6 md:pt-12'} min-h-[500px] md:min-h-[600px]`}>
+      <div className={`relative z-10 container mx-auto px-4 md:px-8 flex ${textPosition === 'bottom' ? 'items-end pb-12 md:pb-16 lg:pb-24' : 'items-center pt-4 md:pt-6 lg:pt-12'} min-h-[400px] md:min-h-[500px] lg:min-h-[600px]`}>
         <div className="max-w-3xl">
-          <h1 className="text-2xl md:text-3xl lg:text-4xl xl:text-5xl font-bold text-white mb-3 md:mb-4 leading-tight whitespace-pre-line">
+          <h1 className="text-xl sm:text-2xl md:text-3xl lg:text-4xl xl:text-5xl font-bold text-white mb-2 md:mb-3 lg:mb-4 leading-tight whitespace-pre-line">
             {title}
           </h1>
-          <p className="text-base md:text-lg lg:text-xl text-white font-medium">
+          <p className="text-sm sm:text-base md:text-lg lg:text-xl text-white font-medium">
             {subtitle}
           </p>
           {buttonLabel && (
-            <div className="mt-6">
+            <div className="mt-4 md:mt-6">
               <button
-                className="px-6 md:px-8 py-3 md:py-3.5 rounded-lg font-semibold text-base md:text-lg hover:opacity-90 transition shadow-md"
+                className="px-5 md:px-6 lg:px-8 py-2.5 md:py-3 lg:py-3.5 rounded-lg font-semibold text-sm md:text-base lg:text-lg hover:opacity-90 transition shadow-md"
                 style={{ backgroundColor: '#0446A1', color: '#fcfcfc' }}
               >
                 {buttonLabel}

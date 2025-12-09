@@ -60,11 +60,11 @@ export default function Activities() {
   ];
 
   return (
-    <section className="py-20 overflow-hidden bg-white">
-      <div className="container mx-auto px-8 mb-12">
+    <section className="py-12 md:py-20 overflow-hidden bg-white">
+      <div className="container mx-auto px-4 md:px-8 mb-8 md:mb-12">
         <div className="text-center">
-          <h2 className="text-5xl font-bold text-black mb-4">The Best Things to do in Cabo</h2>
-          <p className="text-gray-700 text-lg">
+          <h2 className="text-3xl md:text-4xl lg:text-5xl font-bold text-black mb-3 md:mb-4">The Best Things to do in Cabo</h2>
+          <p className="text-gray-700 text-base md:text-lg px-4">
             Enjoy ATV, Razor, horseback, and guided desert activities crafted for unforgettable memories.
           </p>
         </div>
@@ -85,36 +85,36 @@ export default function Activities() {
                       className="object-cover"
                     />
                   </div>
-                  <div className="p-6">
-                    <h3 className="text-2xl font-semibold mb-3 text-black">{activity.name}</h3>
-                    <p className="text-gray-600 text-sm mb-4 line-clamp-3">
+                  <div className="p-4 md:p-6">
+                    <h3 className="text-xl md:text-2xl font-semibold mb-2 md:mb-3 text-black">{activity.name}</h3>
+                    <p className="text-gray-600 text-xs md:text-sm mb-3 md:mb-4 line-clamp-3">
                       {activity.description}
                     </p>
-                    <div className="flex gap-3 text-sm text-gray-600 mb-6 flex-wrap">
+                    <div className="flex gap-2 md:gap-3 text-xs md:text-sm text-gray-600 mb-4 md:mb-6 flex-wrap">
                       <span className="font-semibold text-black">{activity.price}</span>
                       <span className="flex items-center gap-1">
-                        <svg className="w-4 h-4" fill="currentColor" viewBox="0 0 20 20">
+                        <svg className="w-3 h-3 md:w-4 md:h-4" fill="currentColor" viewBox="0 0 20 20">
                           <path fillRule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm1-12a1 1 0 10-2 0v4a1 1 0 00.293.707l2.828 2.829a1 1 0 101.415-1.415L11 9.586V6z" clipRule="evenodd" />
                         </svg>
                         {activity.duration}
                       </span>
                       <span className="flex items-center gap-1">
-                        <svg className="w-4 h-4" fill="currentColor" viewBox="0 0 20 20">
+                        <svg className="w-3 h-3 md:w-4 md:h-4" fill="currentColor" viewBox="0 0 20 20">
                           <path d="M9 6a3 3 0 11-6 0 3 3 0 016 0zM17 6a3 3 0 11-6 0 3 3 0 016 0zM12.93 17c.046-.327.07-.66.07-1a6.97 6.97 0 00-1.5-4.33A5 5 0 0119 16v1h-6.07zM6 11a5 5 0 015 5v1H1v-1a5 5 0 015-5z" />
                         </svg>
                         {activity.minPeople}
                       </span>
                     </div>
-                    <div className="flex gap-3">
+                    <div className="flex gap-2 md:gap-3">
                       <Link 
                         href={`/activity/${activity.slug}`}
-                        className="border-2 border-blue-600 text-blue-600 px-6 py-2.5 rounded-full flex-1 hover:bg-blue-600 hover:text-white transition font-medium text-center"
+                        className="border-2 border-blue-600 text-blue-600 px-4 md:px-6 py-2 md:py-2.5 rounded-full flex-1 hover:bg-blue-600 hover:text-white transition font-medium text-center text-xs md:text-sm"
                       >
                         Info
                       </Link>
                       <Link 
                         href="/activity/reservation"
-                        className="text-white px-6 py-2.5 rounded-full flex-1 transition font-medium hover:opacity-90 text-center"
+                        className="text-white px-4 md:px-6 py-2 md:py-2.5 rounded-full flex-1 transition font-medium hover:opacity-90 text-center text-xs md:text-sm"
                         style={{ backgroundColor: '#0446A1' }}
                       >
                         Book Activities
@@ -136,36 +136,36 @@ export default function Activities() {
                       className="object-cover"
                     />
                   </div>
-                  <div className="p-6">
-                    <h3 className="text-2xl font-semibold mb-3 text-black">{activity.name}</h3>
-                    <p className="text-gray-600 text-sm mb-4 line-clamp-3">
+                  <div className="p-4 md:p-6">
+                    <h3 className="text-xl md:text-2xl font-semibold mb-2 md:mb-3 text-black">{activity.name}</h3>
+                    <p className="text-gray-600 text-xs md:text-sm mb-3 md:mb-4 line-clamp-3">
                       {activity.description}
                     </p>
-                    <div className="flex gap-3 text-sm text-gray-600 mb-6 flex-wrap">
+                    <div className="flex gap-2 md:gap-3 text-xs md:text-sm text-gray-600 mb-4 md:mb-6 flex-wrap">
                       <span className="font-semibold text-black">{activity.price}</span>
                       <span className="flex items-center gap-1">
-                        <svg className="w-4 h-4" fill="currentColor" viewBox="0 0 20 20">
+                        <svg className="w-3 h-3 md:w-4 md:h-4" fill="currentColor" viewBox="0 0 20 20">
                           <path fillRule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm1-12a1 1 0 10-2 0v4a1 1 0 00.293.707l2.828 2.829a1 1 0 101.415-1.415L11 9.586V6z" clipRule="evenodd" />
                         </svg>
                         {activity.duration}
                       </span>
                       <span className="flex items-center gap-1">
-                        <svg className="w-4 h-4" fill="currentColor" viewBox="0 0 20 20">
+                        <svg className="w-3 h-3 md:w-4 md:h-4" fill="currentColor" viewBox="0 0 20 20">
                           <path d="M9 6a3 3 0 11-6 0 3 3 0 016 0zM17 6a3 3 0 11-6 0 3 3 0 016 0zM12.93 17c.046-.327.07-.66.07-1a6.97 6.97 0 00-1.5-4.33A5 5 0 0119 16v1h-6.07zM6 11a5 5 0 015 5v1H1v-1a5 5 0 015-5z" />
                         </svg>
                         {activity.minPeople}
                       </span>
                     </div>
-                    <div className="flex gap-3">
+                    <div className="flex gap-2 md:gap-3">
                       <Link 
                         href={`/activity/${activity.slug}`}
-                        className="border-2 border-blue-600 text-blue-600 px-6 py-2.5 rounded-full flex-1 hover:bg-blue-600 hover:text-white transition font-medium text-center"
+                        className="border-2 border-blue-600 text-blue-600 px-4 md:px-6 py-2 md:py-2.5 rounded-full flex-1 hover:bg-blue-600 hover:text-white transition font-medium text-center text-xs md:text-sm"
                       >
                         Info
                       </Link>
                       <Link 
                         href="/activity/reservation"
-                        className="text-white px-6 py-2.5 rounded-full flex-1 transition font-medium hover:opacity-90 text-center"
+                        className="text-white px-4 md:px-6 py-2 md:py-2.5 rounded-full flex-1 transition font-medium hover:opacity-90 text-center text-xs md:text-sm"
                         style={{ backgroundColor: '#0446A1' }}
                       >
                         Book Activities

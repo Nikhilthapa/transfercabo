@@ -133,17 +133,18 @@ export default function Navigation() {
               </Link>
               
               {/* Mobile Language Selector */}
-              <div className="flex items-center gap-3 cursor-pointer px-2 py-2 w-fit">
-                <div className="w-10 h-6">
+              <div className="flex items-center gap-3 px-2 py-2 w-fit">
+                <div className="relative w-10 h-6 flex-shrink-0">
                   <Image
                     src="/lan/eng.png"
                     alt="English"
                     fill
                     className="object-contain rounded-sm"
+                    sizes="40px"
                   />
                 </div>
-                <span className="text-black text-sm font-semibold uppercase hover:text-[#0446A1] transition">English</span>
-                <svg className="w-3.5 h-3.5 text-black hover:text-[#0446A1] transition" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <span className="text-black text-sm font-semibold uppercase">English</span>
+                <svg className="w-3.5 h-3.5 text-black flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                   <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2.5} d="M19 9l-7 7-7-7" />
                 </svg>
               </div>
