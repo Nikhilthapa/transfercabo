@@ -1,0 +1,51 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  body {
+    @apply antialiased;
+    @apply font-sans;
+    background-color: #ffffff;
+  }
+}
+
+@layer components {
+  .carousel-container {
+    width: 100%;
+    overflow: hidden;
+    position: relative;
+  }
+
+  .carousel-track {
+    display: flex;
+    gap: 2rem;
+    animation: scroll 40s linear infinite;
+    width: fit-content;
+  }
+
+  .carousel-card {
+    flex: 0 0 380px;
+    height: 580px;
+  }
+
+  .carousel-track:hover {
+    animation-play-state: paused;
+  }
+
+  .line-clamp-3 {
+    display: -webkit-box;
+    -webkit-line-clamp: 3;
+    -webkit-box-orient: vertical;
+    overflow: hidden;
+  }
+}
+
+@keyframes scroll {
+  0% {
+    transform: translateX(0);
+  }
+  100% {
+    transform: translateX(-50%);
+  }
+}
