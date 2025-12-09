@@ -121,7 +121,7 @@ const activities = [
 const stugData:any={
   'la-paz':"La Paz",
   'todos-santos':"Todos Santos",
-  'cerritos-beach':"Cerritos Beach",
+  'cerritos':"Cerritos Beach",
   'los-cabos':"Los Cabos",
   'art-walk':"Art Walk",
   'horseback-riding':"Horseback Riding",
