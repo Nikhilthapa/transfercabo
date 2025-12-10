@@ -10,7 +10,7 @@ export default function Activities() {
       price: "$125.00 USD",
       duration: "10 Hours",
       minPeople: "Minimum 4 People",
-      image: "/thingstodoincabo/laPaz.png"
+      image: "/thingstodoincabo/carts/laPaz.png"
     },
     {
       name: "ATV's",
@@ -19,7 +19,7 @@ export default function Activities() {
       price: "$130.00 USD",
       duration: "2 Hours",
       minPeople: "Minimum 1 People",
-      image: "/thingstodoincabo/Atv.png"
+      image: "/thingstodoincabo/carts/Atv.png"
     },
     {
       name: "Art Walk",
@@ -28,7 +28,7 @@ export default function Activities() {
       price: "$85.00 USD",
       duration: "10 Hours",
       minPeople: "Minimum 4 People",
-      image: "/thingstodoincabo/Artwalk.png"
+      image: "/thingstodoincabo/carts/Artwalk.png"
     },
     {
       name: "Horseback Riding",
@@ -37,7 +37,7 @@ export default function Activities() {
       price: "$95.00 USD",
       duration: "3 Hours",
       minPeople: "Minimum 2 People",
-      image: "/thingstodoincabo/laPaz.png"
+      image: "/thingstodoincabo/carts/horseriding.png"
     },
     {
       name: "Snorkeling Tour",
@@ -46,7 +46,7 @@ export default function Activities() {
       price: "$110.00 USD",
       duration: "4 Hours",
       minPeople: "Minimum 2 People",
-      image: "/thingstodoincabo/Atv.png"
+      image: "/thingstodoincabo/carts/hiddentown.png"
     },
     {
       name: "Desert Safari",
@@ -55,7 +55,7 @@ export default function Activities() {
       price: "$145.00 USD",
       duration: "6 Hours",
       minPeople: "Minimum 3 People",
-      image: "/thingstodoincabo/Artwalk.png"
+      image: "/thingstodoincabo/carts/razor.png"
     }
   ];
 
