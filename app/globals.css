@@ -3,10 +3,20 @@
 @tailwind utilities;
 
 @layer base {
+  html {
+    transform: scale(0.9);
+    transform-origin: top left;
+    width: 111.11%; /* Compensate for 0.9 scale (1/0.9 = 1.1111) */
+    height: 111.11%;
+    overflow-x: hidden;
+  }
+
   body {
     @apply antialiased;
     @apply font-sans;
     background-color: #ffffff;
+    margin: 0;
+    padding: 0;
   }
 }
 

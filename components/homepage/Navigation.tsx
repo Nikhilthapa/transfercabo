@@ -3,14 +3,17 @@
 import Link from "next/link";
 import Image from "next/image";
 import { useState } from "react";
+import { activities } from "@/app/activity/page";
 
 export default function Navigation() {
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
+  const [activitiesDropdownOpen, setActivitiesDropdownOpen] = useState(false);
+  const [mobileActivitiesOpen, setMobileActivitiesOpen] = useState(false);
 
   return (
-    <nav className="relative z-10">
-      <div className="container mx-auto px-4 md:px-8 py-4">
-        <div className="flex justify-between items-center">
+    <nav className="relative z-[9999] overflow-visible">
+      <div className="container mx-auto px-4 md:px-8 py-4 overflow-visible">
+        <div className="flex justify-between items-center relative">
           {/* Logo */}
           <Link href="/" className="flex items-center gap-3">
             <div className="flex flex-col uppercase leading-tight">
@@ -37,16 +40,41 @@ export default function Navigation() {
             </Link>
             
             {/* Activities with Dropdown */}
-            <div className="flex items-center gap-1 cursor-pointer group">
-              <Link 
-                href="/activity" 
-                className="text-black font-semibold uppercase text-sm hover:text-[#0446A1] transition"
-              >
-                ACTIVITIES
-              </Link>
-              <svg className="w-3.5 h-3.5 text-black group-hover:text-[#0446A1] transition" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2.5} d="M19 9l-7 7-7-7" />
-              </svg>
+            <div 
+              className="relative group overflow-visible"
+              onMouseEnter={() => setActivitiesDropdownOpen(true)}
+              onMouseLeave={() => setActivitiesDropdownOpen(false)}
+            >
+              <div className="flex items-center gap-1 cursor-pointer">
+                <Link 
+                  href="/activity" 
+                  className="text-black font-semibold uppercase text-sm hover:text-[#0446A1] transition"
+                >
+                  ACTIVITIES
+                </Link>
+                <svg className={`w-3.5 h-3.5 text-black transition hover:text-[#0446A1] ${activitiesDropdownOpen ? 'text-[#0446A1]' : 'group-hover:text-[#0446A1]'}`} fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2.5} d="M19 9l-7 7-7-7" />
+                </svg>
+              </div>
+              
+              {/* Dropdown Menu - includes padding area to maintain hover */}
+              <div className={`absolute top-full left-0 w-56 transition-all duration-200 z-[100] overflow-visible ${activitiesDropdownOpen ? 'opacity-100 visible' : 'opacity-0 invisible'}`}>
+                <div className="pt-2 pb-2">
+                  <div className="bg-white rounded-lg shadow-xl border border-gray-200">
+                    <div className="py-2">
+                      {activities.map((activity) => (
+                        <Link
+                          key={activity.slug}
+                          href={`/activity/${activity.slug}`}
+                          className="block px-4 py-2.5 text-sm text-black hover:bg-[#0446A1] hover:text-white transition cursor-pointer"
+                        >
+                          {activity.name}
+                        </Link>
+                      ))}
+                    </div>
+                  </div>
+                </div>
+              </div>
             </div>
 
             <Link 
@@ -117,13 +145,40 @@ export default function Navigation() {
               >
                 ABOUT
               </Link>
-              <Link 
-                href="/activity" 
-                className="text-black font-semibold uppercase text-sm hover:text-[#0446A1] transition px-2 py-2"
-                onClick={() => setMobileMenuOpen(false)}
+              {/* Mobile Activities accordion */}
+              <button
+                className="flex items-center justify-between text-black font-semibold uppercase text-sm hover:text-[#0446A1] transition px-2 py-2"
+                onClick={() => setMobileActivitiesOpen((prev) => !prev)}
+                aria-expanded={mobileActivitiesOpen}
+                aria-controls="mobile-activities-list"
               >
-                ACTIVITIES
-              </Link>
+                <span>ACTIVITIES</span>
+                <svg
+                  className={`w-4 h-4 transition-transform ${mobileActivitiesOpen ? 'rotate-180 text-[#0446A1]' : ''}`}
+                  fill="none"
+                  stroke="currentColor"
+                  viewBox="0 0 24 24"
+                >
+                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2.5} d="M19 9l-7 7-7-7" />
+                </svg>
+              </button>
+              {mobileActivitiesOpen && (
+                <div id="mobile-activities-list" className="ml-2 pl-2 border-l border-gray-200 space-y-1">
+                  {activities.map((activity) => (
+                    <Link
+                      key={activity.slug}
+                      href={`/activity/${activity.slug}`}
+                      className="block text-black text-sm hover:text-[#0446A1] transition px-2 py-1"
+                      onClick={() => {
+                        setMobileActivitiesOpen(false);
+                        setMobileMenuOpen(false);
+                      }}
+                    >
+                      {activity.name}
+                    </Link>
+                  ))}
+                </div>
+              )}
               <Link 
                 href="/contact" 
                 className="text-black font-semibold uppercase text-sm hover:text-[#0446A1] transition px-2 py-2"

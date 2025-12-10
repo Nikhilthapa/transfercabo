@@ -12,6 +12,7 @@ export default function AboutPage() {
         backgroundImagePath="/aboutus/page/aboutusbackground.jpg"
         title="Experience Comfort And Care With Cheap Transfers Cabo"
         subtitle="Trusted Private Transfers & Unforgettable Cabo Experiences."
+        hideTopBar={true}
       />
       <AboutWelcome />
       <AboutMeetRodrigo />

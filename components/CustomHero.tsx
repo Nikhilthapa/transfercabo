@@ -3,6 +3,7 @@
 import Link from "next/link";
 import Image from "next/image";
 import { useState } from "react";
+import { activities } from "@/app/activity/page";
 
 interface CustomHeroProps {
   backgroundImagePath: string;
@@ -22,18 +23,21 @@ export default function CustomHero({
   textPosition = 'center',
 }: CustomHeroProps) {
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
+  const [activitiesDropdownOpen, setActivitiesDropdownOpen] = useState(false);
+  const [mobileActivitiesOpen, setMobileActivitiesOpen] = useState(false);
   return (
-    <section className="relative min-h-[400px] md:min-h-[600px] lg:min-h-[700px] overflow-hidden pb-20 md:pb-28 lg:pb-40">
+    <section className="relative min-h-[400px] md:min-h-[600px] lg:min-h-[700px] overflow-visible pb-20 md:pb-28 lg:pb-40 border-0 border-none outline-none" style={{ borderBottom: 'none', border: 'none' }}>
       {/* Background Image Container - placed first so it shows through navigation */}
-      <div className="absolute inset-0">
-        <div className="relative w-full h-full">
+      <div className="absolute inset-0 border-0 border-none">
+        <div className="relative w-full h-full border-0 border-none">
           <Image
             src={backgroundImagePath}
             alt="Hero Background"
             fill
-            className="object-cover"
+            className="object-cover border-0 border-none"
             priority
             unoptimized
+            style={{ border: 'none', outline: 'none' }}
           />
           {/* Optional dark overlay for text readability - adjust opacity as needed */}
           <div className="absolute inset-0 bg-black/20" />
@@ -44,8 +48,8 @@ export default function CustomHero({
       {!hideTopBar && <div className="absolute top-0 left-0 right-0 h-1 bg-[#0446A1] z-30" />}
 
       {/* Transparent Navigation Bar */}
-      <nav className="relative z-20 bg-transparent">
-        <div className="container mx-auto px-4 md:px-8 py-4">
+      <nav className="relative z-[9999] bg-transparent overflow-visible">
+        <div className="container mx-auto px-4 md:px-8 py-4 overflow-visible">
           <div className="flex justify-between items-center">
             {/* Logo */}
             <Link href="/" className="flex items-center gap-3">
@@ -73,16 +77,41 @@ export default function CustomHero({
               </Link>
               
               {/* Activities with Dropdown */}
-              <div className="flex items-center gap-1 cursor-pointer group">
-                <Link 
-                  href="/activity" 
-                  className="text-black font-semibold uppercase text-sm hover:text-[#0446A1] transition"
-                >
-                  ACTIVITIES
-                </Link>
-                <svg className="w-3.5 h-3.5 text-black group-hover:text-[#0446A1] transition" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2.5} d="M19 9l-7 7-7-7" />
-                </svg>
+              <div 
+                className="relative group overflow-visible"
+                onMouseEnter={() => setActivitiesDropdownOpen(true)}
+                onMouseLeave={() => setActivitiesDropdownOpen(false)}
+              >
+                <div className="flex items-center gap-1 cursor-pointer">
+                  <Link 
+                    href="/activity" 
+                    className="text-black font-semibold uppercase text-sm hover:text-[#0446A1] transition"
+                  >
+                    ACTIVITIES
+                  </Link>
+                  <svg className={`w-3.5 h-3.5 text-black transition hover:text-[#0446A1] ${activitiesDropdownOpen ? 'text-[#0446A1]' : 'group-hover:text-[#0446A1]'}`} fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2.5} d="M19 9l-7 7-7-7" />
+                  </svg>
+                </div>
+                
+                {/* Dropdown Menu - includes padding area to maintain hover */}
+                <div className={`absolute top-full left-0 w-56 transition-all duration-200 z-[100] overflow-visible ${activitiesDropdownOpen ? 'opacity-100 visible' : 'opacity-0 invisible'}`}>
+                  <div className="pt-2 pb-2">
+                    <div className="bg-white rounded-lg shadow-xl border border-gray-200">
+                      <div className="py-2">
+                        {activities.map((activity) => (
+                          <Link
+                            key={activity.slug}
+                            href={`/activity/${activity.slug}`}
+                            className="block px-4 py-2.5 text-sm text-black hover:bg-[#0446A1] hover:text-white transition cursor-pointer"
+                          >
+                            {activity.name}
+                          </Link>
+                        ))}
+                      </div>
+                    </div>
+                  </div>
+                </div>
               </div>
 
               <Link 
@@ -153,13 +182,40 @@ export default function CustomHero({
                 >
                   ABOUT
                 </Link>
-                <Link 
-                  href="/activity" 
-                  className="text-black font-semibold uppercase text-sm hover:text-[#0446A1] transition px-2 py-2"
-                  onClick={() => setMobileMenuOpen(false)}
+                {/* Mobile Activities accordion */}
+                <button
+                  className="flex items-center justify-between text-black font-semibold uppercase text-sm hover:text-[#0446A1] transition px-2 py-2"
+                  onClick={() => setMobileActivitiesOpen((prev) => !prev)}
+                  aria-expanded={mobileActivitiesOpen}
+                  aria-controls="mobile-activities-list"
                 >
-                  ACTIVITIES
-                </Link>
+                  <span>ACTIVITIES</span>
+                  <svg
+                    className={`w-4 h-4 transition-transform ${mobileActivitiesOpen ? 'rotate-180 text-[#0446A1]' : ''}`}
+                    fill="none"
+                    stroke="currentColor"
+                    viewBox="0 0 24 24"
+                  >
+                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2.5} d="M19 9l-7 7-7-7" />
+                  </svg>
+                </button>
+                {mobileActivitiesOpen && (
+                  <div id="mobile-activities-list" className="ml-2 pl-2 border-l border-gray-200 space-y-1">
+                    {activities.map((activity) => (
+                      <Link
+                        key={activity.slug}
+                        href={`/activity/${activity.slug}`}
+                        className="block text-black text-sm hover:text-[#0446A1] transition px-2 py-1"
+                        onClick={() => {
+                          setMobileActivitiesOpen(false);
+                          setMobileMenuOpen(false);
+                        }}
+                      >
+                        {activity.name}
+                      </Link>
+                    ))}
+                  </div>
+                )}
                 <Link 
                   href="/contact" 
                   className="text-black font-semibold uppercase text-sm hover:text-[#0446A1] transition px-2 py-2"
@@ -215,11 +271,8 @@ export default function CustomHero({
       {/* Top Fade to White */}
       <div className="absolute top-0 left-0 right-0 h-32 md:h-40 bg-gradient-to-b from-white/30 via-white/15 to-transparent pointer-events-none z-[15]" />
 
-      {/* Solid White Strip at Bottom */}
-      <div className="absolute bottom-0 left-0 right-0 h-[60px] md:h-[70px] bg-[#ffffff] pointer-events-none" />
-      
-      {/* Gradient Above White Strip */}
-      <div className="absolute bottom-[60px] md:bottom-[70px] left-0 right-0 h-[40px] md:h-[50px] bg-gradient-to-t from-[#ffffff] via-white/80 to-transparent pointer-events-none" />
+      {/* Smooth gradient transition at bottom - single gradient for seamless blend */}
+      <div className="absolute bottom-0 left-0 right-0 h-[100px] md:h-[120px] bg-gradient-to-t from-[#ffffff] via-[#ffffff] via-[#ffffff]/95 via-[#ffffff]/70 via-[#ffffff]/40 to-transparent pointer-events-none border-0 border-none outline-none" style={{ border: 'none', borderTop: 'none', borderBottom: 'none', outline: 'none', boxShadow: 'none' }} />
     </section>
   );
 }

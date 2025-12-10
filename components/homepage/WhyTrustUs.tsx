@@ -1,3 +1,5 @@
+import Image from "next/image";
+
 export default function WhyTrustUs() {
   return (
     <section className="bg-stone-50 py-12 md:py-20">
@@ -11,8 +13,15 @@ export default function WhyTrustUs() {
 
         <div className="grid sm:grid-cols-2 lg:grid-cols-4 gap-8 md:gap-12">
           <div className="text-center">
-            <div className="w-32 h-32 bg-blue-100 rounded-full mx-auto mb-6 flex items-center justify-center">
-              <span className="text-5xl">🚗</span>
+            <div className="w-32 h-32 rounded-full mx-auto mb-6 flex items-center justify-center" style={{ backgroundColor: '#b0c4df' }}>
+              <div className="relative w-16 h-16">
+                <Image
+                  src="/home/icons/private.png"
+                  alt="Private Transportation"
+                  fill
+                  className="object-contain"
+                />
+              </div>
             </div>
             <h3 className="text-xl font-semibold mb-3">Private Transportation Only</h3>
             <p className="text-gray-700">
@@ -21,8 +30,15 @@ export default function WhyTrustUs() {
           </div>
 
           <div className="text-center">
-            <div className="w-32 h-32 bg-blue-100 rounded-full mx-auto mb-6 flex items-center justify-center">
-              <span className="text-5xl">👨‍✈️</span>
+            <div className="w-32 h-32 rounded-full mx-auto mb-6 flex items-center justify-center" style={{ backgroundColor: '#b0c4df' }}>
+              <div className="relative w-16 h-16">
+                <Image
+                  src="/home/icons/professional.png"
+                  alt="Professional Certified Drivers"
+                  fill
+                  className="object-contain"
+                />
+              </div>
             </div>
             <h3 className="text-xl font-semibold mb-3">Professional Certified Drivers</h3>
             <p className="text-gray-700">
@@ -31,8 +47,15 @@ export default function WhyTrustUs() {
           </div>
 
           <div className="text-center">
-            <div className="w-32 h-32 bg-blue-100 rounded-full mx-auto mb-6 flex items-center justify-center">
-              <span className="text-5xl">✨</span>
+            <div className="w-32 h-32 rounded-full mx-auto mb-6 flex items-center justify-center" style={{ backgroundColor: '#b0c4df' }}>
+              <div className="relative w-16 h-16">
+                <Image
+                  src="/home/icons/vehicle.png"
+                  alt="Well-Maintained Vehicles"
+                  fill
+                  className="object-contain"
+                />
+              </div>
             </div>
             <h3 className="text-xl font-semibold mb-3">Well-Maintained Vehicles</h3>
             <p className="text-gray-700">
@@ -41,8 +64,15 @@ export default function WhyTrustUs() {
           </div>
 
           <div className="text-center">
-            <div className="w-32 h-32 bg-blue-100 rounded-full mx-auto mb-6 flex items-center justify-center">
-              <span className="text-5xl">❤️</span>
+            <div className="w-32 h-32 rounded-full mx-auto mb-6 flex items-center justify-center" style={{ backgroundColor: '#b0c4df' }}>
+              <div className="relative w-16 h-16">
+                <Image
+                  src="/home/icons/familyowned.png"
+                  alt="Family-Owned & Trusted"
+                  fill
+                  className="object-contain"
+                />
+              </div>
             </div>
             <h3 className="text-xl font-semibold mb-3">Family-Owned & Trusted Since 2019</h3>
             <p className="text-gray-700">

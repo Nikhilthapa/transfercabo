@@ -11,6 +11,9 @@ const montserrat = Montserrat({
 export const metadata: Metadata = {
   title: "Cheap Transfers Cabo - Your Journey Starts in Comfort",
   description: "Reliable, Comfortable & Affordable private transportation service in Los Cabos. Airport transfers, hotel rides, and custom tours throughout Southern Baja since 2019.",
+  icons: {
+    icon: "/logo.png",
+  },
 };
 
 export default function RootLayout({

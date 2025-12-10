@@ -128,6 +128,8 @@ const stugData:any={
   'hidden-towns':"Snorkeling Tour",
   'razors':"Desert Safari",
   'atvs':"ATV's",
+  '40-ft':'40 ft sport fishing boat',
+  'My-dream-33-footer':'My dream 33 footer boat'
 }
 
 export async function generateStaticParams() {
