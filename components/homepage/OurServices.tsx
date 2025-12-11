@@ -21,6 +21,8 @@ export default function OurServices() {
                 alt="Airport & Hotel Transfers"
                 fill
                 className="object-cover"
+                quality={85}
+                sizes="(max-width: 640px) 100vw, (max-width: 1024px) 50vw, 33vw"
               />
             </div>
             <div className="p-5 md:p-8">
@@ -42,6 +44,8 @@ export default function OurServices() {
                 alt="Group & Family Transfers"
                 fill
                 className="object-cover"
+                quality={85}
+                sizes="(max-width: 640px) 100vw, (max-width: 1024px) 50vw, 33vw"
               />
             </div>
             <div className="p-5 md:p-8">
@@ -63,6 +67,8 @@ export default function OurServices() {
                 alt="Adventure Activities"
                 fill
                 className="object-cover"
+                quality={85}
+                sizes="(max-width: 640px) 100vw, (max-width: 1024px) 50vw, 33vw"
               />
             </div>
             <div className="p-5 md:p-8">

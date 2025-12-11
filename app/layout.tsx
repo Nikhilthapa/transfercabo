@@ -11,6 +11,14 @@ const montserrat = Montserrat({
 export const metadata: Metadata = {
   title: "Cheap Transfers Cabo - Your Journey Starts in Comfort",
   description: "Reliable, Comfortable & Affordable private transportation service in Los Cabos. Airport transfers, hotel rides, and custom tours throughout Southern Baja since 2019.",
+  keywords: ["Cabo transfers", "Los Cabos transportation", "airport transfers Cabo", "private transportation Cabo", "Cabo tours", "Baja California Sur"],
+  authors: [{ name: "Cheap Transfers Cabo" }],
+  openGraph: {
+    title: "Cheap Transfers Cabo - Your Journey Starts in Comfort",
+    description: "Reliable, Comfortable & Affordable private transportation service in Los Cabos.",
+    type: "website",
+    locale: "en_US",
+  },
   icons: {
     icon: "/logo.png",
   },

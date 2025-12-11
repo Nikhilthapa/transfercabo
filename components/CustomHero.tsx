@@ -36,7 +36,8 @@ export default function CustomHero({
             fill
             className="object-cover border-0 border-none"
             priority
-            unoptimized
+            quality={90}
+            sizes="100vw"
             style={{ border: 'none', outline: 'none' }}
           />
           {/* Optional dark overlay for text readability - adjust opacity as needed */}
@@ -63,6 +64,9 @@ export default function CustomHero({
                   alt="Cheap Transfers Cabo Logo"
                   fill
                   className="object-contain"
+                  quality={90}
+                  sizes="48px"
+                  priority
                 />
               </div>
             </Link>
@@ -137,6 +141,8 @@ export default function CustomHero({
                     width={24}
                     height={24}
                     className="object-cover w-full h-full"
+                    quality={85}
+                    sizes="24px"
                   />
                 </div>
                 <span className="text-black text-sm font-semibold group-hover:text-[#0446A1] transition">English</span>
@@ -233,6 +239,7 @@ export default function CustomHero({
                       fill
                       className="object-contain rounded-sm"
                       sizes="40px"
+                      quality={85}
                     />
                   </div>
                   <span className="text-black text-sm font-semibold uppercase">English</span>
@@ -257,19 +264,21 @@ export default function CustomHero({
           </p>
           {buttonLabel && (
             <div className="mt-4 md:mt-6">
-              <button
-                className="px-5 md:px-6 lg:px-8 py-2.5 md:py-3 lg:py-3.5 rounded-lg font-semibold text-sm md:text-base lg:text-lg hover:opacity-90 transition shadow-md"
-                style={{ backgroundColor: '#0446A1', color: '#fcfcfc' }}
-              >
-                {buttonLabel}
-              </button>
+              <Link href="/activity/reservation">
+                <button
+                  className="px-5 md:px-6 lg:px-8 py-2.5 md:py-3 lg:py-3.5 rounded-lg font-semibold text-sm md:text-base lg:text-lg hover:opacity-90 transition shadow-md"
+                  style={{ backgroundColor: '#0446A1', color: '#fcfcfc' }}
+                >
+                  {buttonLabel}
+                </button>
+              </Link>
             </div>
           )}
         </div>
       </div>
 
       {/* Top Fade to White */}
-      <div className="absolute top-0 left-0 right-0 h-32 md:h-40 bg-gradient-to-b from-white/30 via-white/15 to-transparent pointer-events-none z-[15]" />
+      <div className="absolute top-0 left-0 right-0 h-32 md:h-40 bg-gradient-to-b from-white/70 via-white/25 to-transparent pointer-events-none z-[20]" />
 
       {/* Smooth gradient transition at bottom - single gradient for seamless blend */}
       <div className="absolute bottom-0 left-0 right-0 h-[100px] md:h-[120px] bg-gradient-to-t from-[#ffffff] via-[#ffffff] via-[#ffffff]/95 via-[#ffffff]/70 via-[#ffffff]/40 to-transparent pointer-events-none border-0 border-none outline-none" style={{ border: 'none', borderTop: 'none', borderBottom: 'none', outline: 'none', boxShadow: 'none' }} />

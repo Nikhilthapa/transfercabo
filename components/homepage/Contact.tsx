@@ -61,6 +61,8 @@ export default function Contact() {
                         alt="Phone"
                         fill
                         className="object-contain"
+                        quality={85}
+                        sizes="20px"
                       />
                     </div>
                   </div>
@@ -79,6 +81,8 @@ export default function Contact() {
                         alt="Email"
                         fill
                         className="object-contain"
+                        quality={85}
+                        sizes="20px"
                       />
                     </div>
                   </div>
@@ -97,6 +101,8 @@ export default function Contact() {
                         alt="Location"
                         fill
                         className="object-contain"
+                        quality={85}
+                        sizes="20px"
                       />
                     </div>
                   </div>
@@ -116,6 +122,8 @@ export default function Contact() {
                         alt="Hours"
                         fill
                         className="object-contain"
+                        quality={85}
+                        sizes="20px"
                       />
                     </div>
                   </div>
@@ -142,7 +150,8 @@ export default function Contact() {
                   width={56}
                   height={56}
                   className="object-contain w-12 h-12 md:w-14 md:h-14"
-                  unoptimized
+                  quality={85}
+                  sizes="(max-width: 768px) 48px, 56px"
                 />
               </a>
 
@@ -159,6 +168,8 @@ export default function Contact() {
                     alt="Facebook"
                     fill
                     className="object-contain"
+                    quality={85}
+                    sizes="(max-width: 768px) 48px, 56px"
                   />
                 </div>
               </a>
@@ -176,6 +187,8 @@ export default function Contact() {
                     alt="LinkedIn"
                     fill
                     className="object-contain"
+                    quality={85}
+                    sizes="(max-width: 768px) 48px, 56px"
                   />
                 </div>
               </a>

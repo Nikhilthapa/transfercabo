@@ -53,6 +53,9 @@ export default function Hero() {
           </div>
         </div>
       </div>
+
+      {/* White strip between video and next section */}
+      <div className="absolute -bottom-1 left-0 right-0 h-16 bg-gradient-to-b from-transparent via-white/85 to-white pointer-events-none z-[50]" />
     </section>
   );
 }

@@ -139,9 +139,8 @@ export async function generateStaticParams() {
 }
 
 export default async function ActivityDetailPage({ params }: { params: { slug: string } }) {
-  let  { slug } = await  params;
-  // console.log('this is slug',slug)
-  slug=stugData[slug]
+  let { slug } = await params;
+  slug = stugData[slug];
   // Check if it's La Paz and use special design
   if (slug) {
     if (!activityData || !activityData[slug]) {
@@ -194,6 +193,8 @@ export default async function ActivityDetailPage({ params }: { params: { slug: s
                         width={40}
                         height={40}
                         className="object-contain w-8 h-8 md:w-10 md:h-10"
+                        quality={85}
+                        sizes="(max-width: 768px) 32px, 40px"
                       />
                     </div>
                   </div>
@@ -228,6 +229,8 @@ export default async function ActivityDetailPage({ params }: { params: { slug: s
                       alt={laPazData.data[0].title || "La Paz Experience"}
                       fill
                       className="object-cover"
+                      quality={85}
+                      sizes="(max-width: 768px) 100vw, 50vw"
                     />
                   </div>
                 )}
@@ -245,11 +248,13 @@ export default async function ActivityDetailPage({ params }: { params: { slug: s
                    </li>
                     ))}
                   </ul>
-                  <button 
-                    className="mt-6 md:mt-8 w-full bg-[#0446A1] text-white px-6 md:px-8 py-3 md:py-4 rounded-lg font-semibold text-base md:text-lg hover:opacity-90 transition"
-                  >
-                    Book This Activity
-                  </button>
+                  <Link href="/activity/reservation">
+                    <button 
+                      className="mt-6 md:mt-8 w-full bg-[#0446A1] text-white px-6 md:px-8 py-3 md:py-4 rounded-lg font-semibold text-base md:text-lg hover:opacity-90 transition"
+                    >
+                      Book This Activity
+                    </button>
+                  </Link>
                 </div>
               </div>
             </div>
@@ -355,11 +360,13 @@ export default async function ActivityDetailPage({ params }: { params: { slug: s
             <p className="text-base md:text-lg text-gray-700 mb-6 md:mb-8 max-w-2xl mx-auto px-4">
               Secure your booking with Cheap Transfers Cabo and experience culture, beaches, and guided comfort in one day.
             </p>
-            <button 
-              className="bg-[#0446A1] text-white px-8 md:px-10 py-3 md:py-4 rounded-lg font-semibold text-base md:text-lg hover:opacity-90 transition"
-            >
-              Book This Activity
-            </button>
+            <Link href="/activity/reservation">
+              <button 
+                className="bg-[#0446A1] text-white px-8 md:px-10 py-3 md:py-4 rounded-lg font-semibold text-base md:text-lg hover:opacity-90 transition"
+              >
+                Book This Activity
+              </button>
+            </Link>
           </div>
         </section>
 
@@ -370,7 +377,6 @@ export default async function ActivityDetailPage({ params }: { params: { slug: s
 
   // Default layout for other activities
   const activity = activities.find((a) => a.slug === params.slug);
-  console.log('this is activity',activity)
   if (!activity) {
     notFound();
   }
@@ -395,6 +401,8 @@ export default async function ActivityDetailPage({ params }: { params: { slug: s
               fill
               className="object-cover"
               priority
+              quality={90}
+              sizes="100vw"
             />
           </div>
 

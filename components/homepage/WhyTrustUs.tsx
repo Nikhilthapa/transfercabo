@@ -20,6 +20,8 @@ export default function WhyTrustUs() {
                   alt="Private Transportation"
                   fill
                   className="object-contain"
+                  quality={85}
+                  sizes="64px"
                 />
               </div>
             </div>
@@ -37,6 +39,8 @@ export default function WhyTrustUs() {
                   alt="Professional Certified Drivers"
                   fill
                   className="object-contain"
+                  quality={85}
+                  sizes="64px"
                 />
               </div>
             </div>
@@ -54,6 +58,8 @@ export default function WhyTrustUs() {
                   alt="Well-Maintained Vehicles"
                   fill
                   className="object-contain"
+                  quality={85}
+                  sizes="64px"
                 />
               </div>
             </div>
@@ -71,6 +77,8 @@ export default function WhyTrustUs() {
                   alt="Family-Owned & Trusted"
                   fill
                   className="object-contain"
+                  quality={85}
+                  sizes="64px"
                 />
               </div>
             </div>

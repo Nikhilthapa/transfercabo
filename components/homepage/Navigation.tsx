@@ -26,6 +26,9 @@ export default function Navigation() {
                 alt="Cheap Transfers Cabo Logo"
                 fill
                 className="object-contain"
+                quality={90}
+                sizes="48px"
+                priority
               />
             </div>
           </Link>
@@ -100,6 +103,8 @@ export default function Navigation() {
                   width={24}
                   height={24}
                   className="object-cover w-full h-full"
+                  quality={85}
+                  sizes="24px"
                 />
               </div>
               <span className="text-black text-sm font-semibold group-hover:text-[#0446A1] transition">English</span>
@@ -196,6 +201,7 @@ export default function Navigation() {
                     fill
                     className="object-contain rounded-sm"
                     sizes="40px"
+                    quality={85}
                   />
                 </div>
                 <span className="text-black text-sm font-semibold uppercase">English</span>

@@ -11,7 +11,7 @@ export const activities = [
     price: "$125.00 USD",
     duration: "10 Hours",
     minPeople: "Minimum 4 People",
-    image: "/thingstodoincabo/laPaz.png"
+    image: "/thingstodoincabo/carts/laPaz.png"
   },
   {
     slug: "atvs",
@@ -20,7 +20,7 @@ export const activities = [
     price: "$130.00 USD",
     duration: "2 Hours",
     minPeople: "Minimum 1 People",
-    image: "/thingstodoincabo/Atv.png"
+    image: "/thingstodoincabo/carts/Atv.png"
   },
   {
     slug: "art-walk",
@@ -29,7 +29,7 @@ export const activities = [
     price: "$85.00 USD",
     duration: "10 Hours",
     minPeople: "Minimum 4 People",
-    image: "/thingstodoincabo/Artwalk.png"
+    image: "/thingstodoincabo/carts/Artwalk.png"
   },
   {
     slug: "horseback-riding",
@@ -38,7 +38,7 @@ export const activities = [
     price: "$95.00 USD",
     duration: "2 Hours",
     minPeople: "Minimum 1 People",
-    image: "/thingstodoincabo/laPaz.png"
+    image: "/thingstodoincabo/carts/laPaz.png"
   },
   {
     slug: "razors",
@@ -47,7 +47,7 @@ export const activities = [
     price: "$295.00 USD",
     duration: "2 Hours",
     minPeople: "Minimum 1 People",
-    image: "/thingstodoincabo/Atv.png"
+    image: "/thingstodoincabo/carts/Atv.png"
   },
   {
     slug: "todos-santos",
@@ -107,46 +107,103 @@ export const activities = [
 
 export default function ActivityPage() {
   return (
-    <div className="bg-white min-h-screen">
+    <div className="min-h-screen" style={{ backgroundColor: '#ffffff' }}>
       <Navigation />
       
       {/* Hero Section */}
-      <section className="relative py-12 md:py-20 px-4 bg-gradient-to-br from-blue-50 to-white">
+      <section className="relative py-12 md:py-20 px-4" style={{ backgroundColor: '#ffffff' }}>
         <div className="container mx-auto max-w-7xl">
           <div className="grid md:grid-cols-2 gap-8 md:gap-12 items-center">
             {/* Left Content */}
             <div className="space-y-4 md:space-y-6">
-              <h1 className="text-3xl md:text-5xl lg:text-6xl font-bold text-gray-900 leading-tight">
-                Cabo's Best<br />
-                Adventure Activities
+              <h1 className="text-2xl md:text-4xl lg:text-5xl font-bold leading-tight">
+                <span style={{ color: '#0446a1' }}>Cabo's Best</span>
+                <br />
+                <span className="text-gray-900">Adventure Activities</span>
               </h1>
               <p className="text-base md:text-xl text-gray-700">
                 Thrilling ATV Rides, Razor Adventures, Horseback Tours, And Scenic Experiences Crafted For Every Traveler.
               </p>
               <Link 
                 href="#activities"
-                className="inline-block bg-blue-600 text-white px-6 md:px-8 py-2.5 md:py-3 rounded-full font-semibold hover:bg-blue-700 transition text-sm md:text-base"
+                className="inline-flex items-center gap-2 text-white px-4 md:px-5 py-2 md:py-2.5 rounded-lg font-semibold hover:opacity-90 transition text-sm md:text-base"
+                style={{ backgroundColor: '#0446a1' }}
               >
-                Explore All Activities →
+                Explore All Activities <span className="ml-1">↓</span>
               </Link>
             </div>
 
-            {/* Right Image Collage */}
-            <div className="grid grid-cols-2 gap-3 md:gap-4">
-              <div className="space-y-3 md:space-y-4">
-                <div className="relative h-32 md:h-48 rounded-xl md:rounded-2xl overflow-hidden">
-                  <Image src="/thingstodoincabo/Artwalk.png" alt="Art Walk" fill className="object-cover" />
+            {/* Right Image Collage - 5 Image Layout */}
+            <div className="relative grid grid-cols-3 gap-3 md:gap-4" style={{ gridTemplateColumns: 'minmax(0, 326fr) minmax(0, 186fr) minmax(0, 164fr)' }}>
+              {/* Left Column */}
+              <div className="flex flex-col gap-0.5 md:gap-0.5">
+                {/* 1.png: W:326, H:343 */}
+                <div className="relative w-full rounded-xl md:rounded-2xl overflow-hidden" style={{ aspectRatio: '326/343' }}>
+                  <Image 
+                    src="/thingstodoincabo/headers/1.png" 
+                    alt="Art Walk" 
+                    fill 
+                    className="object-cover" 
+                    quality={90}
+                    sizes="(max-width: 768px) 50vw, 33vw"
+                    priority
+                  />
                 </div>
-                <div className="relative h-40 md:h-64 rounded-xl md:rounded-2xl overflow-hidden">
-                  <Image src="/thingstodoincabo/laPaz.png" alt="La Paz" fill className="object-cover" />
+                {/* 2.png: W:326, H:326 */}
+                <div className="relative w-full rounded-xl md:rounded-2xl overflow-hidden" style={{ aspectRatio: '1/1' }}>
+                  <Image 
+                    src="/thingstodoincabo/headers/2.png" 
+                    alt="Beach Scene" 
+                    fill 
+                    className="object-cover" 
+                    quality={90}
+                    sizes="(max-width: 768px) 50vw, 33vw"
+                    priority
+                  />
                 </div>
               </div>
-              <div className="space-y-3 md:space-y-4 pt-6 md:pt-8">
-                <div className="relative h-40 md:h-64 rounded-xl md:rounded-2xl overflow-hidden">
-                  <Image src="/thingstodoincabo/Atv.png" alt="ATV Adventure" fill className="object-cover" />
+              
+              {/* Middle Column */}
+              <div className="relative flex flex-col">
+                {/* 3.png: W:186, H:333 */}
+                <div className="relative w-full rounded-xl md:rounded-2xl overflow-hidden mb-0 -ml-2 md:-ml-3" style={{ aspectRatio: '186/333', marginTop: '8rem' }}>
+                  <Image 
+                    src="/thingstodoincabo/headers/3.png" 
+                    alt="UTV Adventure" 
+                    fill 
+                    className="object-cover" 
+                    quality={90}
+                    sizes="(max-width: 768px) 30vw, 20vw"
+                    priority
+                  />
                 </div>
-                <div className="relative h-32 md:h-48 rounded-xl md:rounded-2xl overflow-hidden">
-                  <Image src="/thingstodoincabo/headers/1.png" alt="Adventure" fill className="object-cover" />
+                {/* 4.png: W:186, H:186 - Aligned with 2.png at bottom */}
+                <div className="relative w-full rounded-xl md:rounded-2xl overflow-hidden -mt-18 md:-mt-20 -ml-2 md:-ml-3" style={{ aspectRatio: '1/1', marginTop: 'auto' }}>
+                  <Image 
+                    src="/thingstodoincabo/headers/4.png" 
+                    alt="ATV Desert" 
+                    fill 
+                    className="object-cover" 
+                    quality={90}
+                    sizes="(max-width: 768px) 30vw, 20vw"
+                    priority
+                  />
+                </div>
+              </div>
+              
+              {/* Right Column - Single Tall Image */}
+              <div className="relative flex flex-col">
+                {/* 5.png: W:164, H:389 */}
+                <div className="relative w-full rounded-xl md:rounded-2xl overflow-hidden -ml-3 md:-ml-5" style={{ aspectRatio: '164/389', marginTop: 'auto' }}>
+                  <Image 
+                    src="/thingstodoincabo/headers/5.png" 
+                    alt="Sculpture" 
+                    fill 
+                    className="object-cover" 
+                    quality={90}
+                    sizes="(max-width: 768px) 20vw, 15vw"
+                    priority
+                  />
                 </div>
               </div>
             </div>
@@ -155,7 +212,7 @@ export default function ActivityPage() {
       </section>
 
       {/* About Section */}
-      <section className="py-12 md:py-16 px-4 bg-white">
+      <section className="py-12 md:py-16 px-4" style={{ backgroundColor: '#ffffff' }}>
         <div className="container mx-auto max-w-6xl text-center">
           <h2 className="text-2xl md:text-3xl lg:text-4xl font-bold text-gray-900 mb-4 md:mb-6 px-4">
             YOUR ADVENTURE IN CABO STARTS HERE
@@ -167,7 +224,7 @@ export default function ActivityPage() {
       </section>
 
       {/* Activities Grid */}
-      <section id="activities" className="py-12 md:py-20 px-4 bg-gray-50">
+      <section id="activities" className="py-12 md:py-20 px-4" style={{ backgroundColor: '#ffffff' }}>
         <div className="container mx-auto max-w-7xl">
           <h2 className="text-2xl md:text-3xl lg:text-4xl font-bold text-center text-gray-900 mb-4 md:mb-6 px-4">
             Explore Our Cabo Adventures
@@ -190,6 +247,8 @@ export default function ActivityPage() {
                     alt={activity.name}
                     fill
                     className="object-cover"
+                    quality={85}
+                    sizes="(max-width: 640px) 100vw, (max-width: 1024px) 50vw, 33vw"
                   />
                 </div>
 

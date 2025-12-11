@@ -14,6 +14,8 @@ export default function Footer() {
                   alt="Cheap Transfers Cabo Logo"
                   fill
                   className="object-contain"
+                  quality={90}
+                  sizes="(max-width: 768px) 40px, 48px"
                 />
               </div>
               <div className="flex flex-col leading-tight">

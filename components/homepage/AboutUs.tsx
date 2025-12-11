@@ -16,18 +16,22 @@ export default function AboutUs() {
         <div className="grid grid-cols-2 gap-3 md:gap-5">
           <div className="relative h-40 sm:h-60 md:h-80 rounded-2xl md:rounded-3xl overflow-hidden">
             <Image
-              src="/aboutus/image1.png"
+              src="/aboutus/image2.png"
               alt="Cabo Architecture"
               fill
               className="object-cover"
+              quality={85}
+              sizes="(max-width: 640px) 50vw, (max-width: 1024px) 50vw, 25vw"
             />
           </div>
           <div className="relative h-40 sm:h-60 md:h-80 rounded-2xl md:rounded-3xl overflow-hidden">
             <Image
-              src="/aboutus/image2.png"
+              src="/aboutus/image1.png"
               alt="Our Team"
               fill
               className="object-cover"
+              quality={85}
+              sizes="(max-width: 640px) 50vw, (max-width: 1024px) 50vw, 25vw"
             />
           </div>
           <div className="relative h-40 sm:h-60 md:h-80 rounded-2xl md:rounded-3xl overflow-hidden">
@@ -36,6 +40,8 @@ export default function AboutUs() {
               alt="Local Attractions"
               fill
               className="object-cover"
+              quality={85}
+              sizes="(max-width: 640px) 50vw, (max-width: 1024px) 50vw, 25vw"
             />
           </div>
           <div className="relative h-40 sm:h-60 md:h-80 rounded-2xl md:rounded-3xl overflow-hidden">
@@ -44,6 +50,8 @@ export default function AboutUs() {
               alt="Group Tours"
               fill
               className="object-cover"
+              quality={85}
+              sizes="(max-width: 640px) 50vw, (max-width: 1024px) 50vw, 25vw"
             />
           </div>
         </div>
