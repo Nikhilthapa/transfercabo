@@ -39,7 +39,7 @@ export default function Contact() {
               />
               <button 
                 type="button"
-                className="w-full bg-blue-700 hover:bg-blue-800 text-white px-8 py-3 rounded-full font-semibold transition text-sm md:text-base"
+                className="w-full bg-[#0446a1] hover:bg-[#033a8a] text-white px-8 py-3 rounded-full font-semibold transition text-sm md:text-base"
               >
                 Send Message
               </button>
@@ -136,7 +136,7 @@ export default function Contact() {
             </div>
 
             {/* Social Media Icons */}
-            <div className="bg-white p-6 rounded-xl flex gap-6 justify-center items-center shadow-[0_10px_15px_rgba(0,0,0,0.1),0_4px_6px_rgba(0,0,0,0.1)] mt-8">
+            <div className="bg-white p-6 rounded-xl flex gap-4 justify-start items-center shadow-[0_10px_15px_rgba(0,0,0,0.1),0_4px_6px_rgba(0,0,0,0.1)] mt-8">
               {/* Instagram */}
               <a 
                 href="https://www.instagram.com" 
@@ -147,11 +147,11 @@ export default function Contact() {
                 <Image
                   src="/socialmedia/insta.png"
                   alt="Instagram"
-                  width={56}
-                  height={56}
-                  className="object-contain w-12 h-12 md:w-14 md:h-14"
+                  width={40}
+                  height={40}
+                  className="object-contain w-8 h-8 md:w-10 md:h-10"
                   quality={85}
-                  sizes="(max-width: 768px) 48px, 56px"
+                  sizes="(max-width: 768px) 32px, 40px"
                 />
               </a>
 
@@ -162,14 +162,14 @@ export default function Contact() {
                 rel="noopener noreferrer"
                 className="hover:scale-110 transition-transform duration-300"
               >
-                <div className="w-12 h-12 md:w-14 md:h-14 relative">
+                <div className="w-8 h-8 md:w-10 md:h-10 relative">
                   <Image
                     src="/socialmedia/facebook.png"
                     alt="Facebook"
                     fill
                     className="object-contain"
                     quality={85}
-                    sizes="(max-width: 768px) 48px, 56px"
+                    sizes="(max-width: 768px) 32px, 40px"
                   />
                 </div>
               </a>
@@ -181,14 +181,14 @@ export default function Contact() {
                 rel="noopener noreferrer"
                 className="hover:scale-110 transition-transform duration-300"
               >
-                <div className="w-12 h-12 md:w-14 md:h-14 relative">
+                <div className="w-8 h-8 md:w-10 md:h-10 relative">
                   <Image
                     src="/socialmedia/linkedin.png"
                     alt="LinkedIn"
                     fill
                     className="object-contain"
                     quality={85}
-                    sizes="(max-width: 768px) 48px, 56px"
+                    sizes="(max-width: 768px) 32px, 40px"
                   />
                 </div>
               </a>

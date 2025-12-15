@@ -15,32 +15,39 @@ export default function Testimonials() {
       text: "Excellent experience! Clean car, smooth ride, and very professional driver. Stress-free airport transfer. I'll definitely book again."
     },
     {
-      name: "Michael R",
+      name: "Luis García",
       location: "San Diego",
-      image: "/client/sarah.jpg",
+      image: "/client/luis.png",
       rating: 5,
-      text: "Outstanding service from start to finish! The driver was punctual, friendly, and made our family feel safe and comfortable. Highly recommend for anyone visiting Cabo."
+      text: "Amazing private transfer! On-time, comfy, no extra stops. The best way to start a Cabo vacation. Highly recommend Cheap Transfers Cabo!"
     },
     {
-      name: "Sofia M",
+      name: "Sofia Ramírez",
       location: "Mexico City",
-      image: "/client/sarah.jpg",
+      image: "/client/sofia.png",
       rating: 5,
-      text: "Best transportation service in Los Cabos! Very professional, clean vehicles, and reasonable prices. Made our vacation stress-free and enjoyable."
+      text: "Super smooth family transfer! Clean, cool SUV and friendly service. Perfect after a long flight. Great for groups—highly recommended!"
     },
     {
-      name: "James K",
+      name: "Rodrigo Hernández",
       location: "Los Angeles",
-      image: "/client/sarah.jpg",
+      image: "/client/rodrigo.png",
       rating: 5,
-      text: "Amazing experience! The driver was knowledgeable about the area and gave us great recommendations. The vehicle was spotless and the service was top-notch."
+      text: "Best Cabo transfer yet! Professional, friendly drivers and a smooth, direct ride. Great value and comfort with Cheap Transfers Cabo."
     },
     {
-      name: "Isabella P",
+      name: "Daniela Torres",
       location: "Phoenix",
-      image: "/client/sarah.jpg",
+      image: "/client/daniela.png",
       rating: 5,
-      text: "Fantastic service! Booking was easy, communication was excellent, and the ride was comfortable. This is the only transfer service I'll use in Cabo from now on."
+      text: "Seamless service from booking to pickup! Clean, modern vehicle and fast, private ride to our hotel. Will book again for sure!"
+    },
+    {
+      name: "Carlos Martínez",
+      location: "Phoenix",
+      image: "/client/carlos.png",
+      rating: 5,
+      text: "Loved our ATV tour and airport transfer! On-time, comfy, and well organized. Safe, fun, and personal—great choice for transport  and  activities!"
     }
   ];
 
@@ -71,11 +78,11 @@ export default function Testimonials() {
         </p>
       </div>
 
-      <div className="relative max-w-5xl mx-auto px-8 md:px-0">
+      <div className="relative max-w-5xl mx-auto px-4 md:px-8 lg:px-0">
         {/* Previous Button */}
         <button
           onClick={prevTestimonial}
-          className="absolute left-0 md:left-0 top-1/2 -translate-y-1/2 -translate-x-2 md:-translate-x-4 z-10 w-10 h-10 md:w-12 md:h-12 bg-white rounded-full shadow-lg hover:shadow-xl transition-all flex items-center justify-center group hover:scale-110"
+          className="absolute left-0 md:left-0 top-1/2 -translate-y-1/2 translate-x-0 md:-translate-x-4 z-10 w-10 h-10 md:w-12 md:h-12 bg-white rounded-full shadow-lg hover:shadow-xl transition-all flex items-center justify-center group hover:scale-110"
           aria-label="Previous testimonial"
         >
           <svg 
@@ -120,7 +127,7 @@ export default function Testimonials() {
         {/* Next Button */}
         <button
           onClick={nextTestimonial}
-          className="absolute right-0 md:right-0 top-1/2 -translate-y-1/2 translate-x-2 md:translate-x-4 z-10 w-10 h-10 md:w-12 md:h-12 bg-white rounded-full shadow-lg hover:shadow-xl transition-all flex items-center justify-center group hover:scale-110"
+          className="absolute right-0 md:right-0 top-1/2 -translate-y-1/2 translate-x-0 md:translate-x-4 z-10 w-10 h-10 md:w-12 md:h-12 bg-white rounded-full shadow-lg hover:shadow-xl transition-all flex items-center justify-center group hover:scale-110"
           aria-label="Next testimonial"
         >
           <svg 

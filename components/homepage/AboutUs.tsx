@@ -14,7 +14,7 @@ export default function AboutUs() {
       <div className="grid md:grid-cols-2 gap-8 md:gap-16 items-start">
         {/* Images Grid */}
         <div className="grid grid-cols-2 gap-3 md:gap-5">
-          <div className="relative h-40 sm:h-60 md:h-80 rounded-2xl md:rounded-3xl overflow-hidden">
+          <div className="relative h-40 sm:h-60 md:h-[340px] rounded-2xl md:rounded-3xl overflow-hidden md:w-[102%] md:mt-[30px]">
             <Image
               src="/aboutus/image2.png"
               alt="Cabo Architecture"
@@ -24,7 +24,7 @@ export default function AboutUs() {
               sizes="(max-width: 640px) 50vw, (max-width: 1024px) 50vw, 25vw"
             />
           </div>
-          <div className="relative h-40 sm:h-60 md:h-80 rounded-2xl md:rounded-3xl overflow-hidden">
+          <div className="relative h-40 sm:h-60 md:h-[340px] rounded-2xl md:rounded-3xl overflow-hidden md:mt-[30px]">
             <Image
               src="/aboutus/image1.png"
               alt="Our Team"
@@ -34,7 +34,7 @@ export default function AboutUs() {
               sizes="(max-width: 640px) 50vw, (max-width: 1024px) 50vw, 25vw"
             />
           </div>
-          <div className="relative h-40 sm:h-60 md:h-80 rounded-2xl md:rounded-3xl overflow-hidden">
+          <div className="relative h-40 sm:h-60 md:h-[340px] rounded-2xl md:rounded-3xl overflow-hidden md:w-[82%]">
             <Image
               src="/aboutus/image3.png"
               alt="Local Attractions"
@@ -44,7 +44,7 @@ export default function AboutUs() {
               sizes="(max-width: 640px) 50vw, (max-width: 1024px) 50vw, 25vw"
             />
           </div>
-          <div className="relative h-40 sm:h-60 md:h-80 rounded-2xl md:rounded-3xl overflow-hidden">
+          <div className="relative h-40 sm:h-60 md:h-[340px] rounded-2xl md:rounded-3xl overflow-hidden md:w-[120%] md:-ml-[20%]">
             <Image
               src="/aboutus/image4.png"
               alt="Group Tours"
@@ -57,7 +57,7 @@ export default function AboutUs() {
         </div>
 
         {/* Text Content */}
-        <div className="mt-0 md:mt-12">
+        <div className="mt-0 md:mt-44 lg:mt-48">
           <p className="text-base md:text-lg text-gray-700 mb-4 md:mb-6 leading-relaxed">
             Welcome to Cheap Transfers Cabo — your friendly, family-run transportation service in Los Cabos. Since 2019, we've been offering reliable, private airport transfers and personalized city tours throughout Southern Baja.
           </p>
@@ -66,7 +66,7 @@ export default function AboutUs() {
           </p>
           <Link 
             href="/about"
-            className="inline-block text-white px-8 md:px-10 py-3 rounded-lg font-semibold text-base md:text-lg transition-all duration-300 shadow-md hover:shadow-lg hover:opacity-90 w-full sm:w-auto text-center"
+            className="inline-block text-white px-8 md:px-10 py-3 rounded-lg font-montserrat font-semibold text-base md:text-lg transition-all duration-300 shadow-md hover:shadow-lg hover:opacity-90 w-full sm:w-auto text-center"
             style={{ backgroundColor: '#0446A1' }}
           >
             About Us

@@ -26,7 +26,7 @@ export default function AboutMeetRodrigo() {
           {/* Right Column - Image */}
           <div className="relative h-64 md:h-96 lg:h-[500px] rounded-xl md:rounded-2xl overflow-hidden">
             <Image
-              src="/aboutus/page/aboutus1.png"
+              src="/aboutus/page/about1.jpg"
               alt="Rodrigo with van"
               fill
               className="object-cover"

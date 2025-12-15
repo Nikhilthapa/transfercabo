@@ -7,7 +7,7 @@ export default function ContactPage() {
   return (
     <div className="bg-white min-h-screen">
       <CustomHero
-        backgroundImagePath="/contactus.png"
+        backgroundImagePath="/contactus.jpeg"
         title="Contact Us"
         subtitle="We're Always Available to Assist You With Transfers, Tours, And Inquiries."
         textPosition="bottom"

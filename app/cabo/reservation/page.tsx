@@ -48,7 +48,7 @@ export default function ReservationPage() {
             </p>
             <Link
               href="/cabo/reservation"
-              className="inline-block bg-blue-600 hover:bg-blue-700 text-white px-6 md:px-8 lg:px-10 py-2.5 md:py-3 lg:py-4 rounded-md font-semibold text-sm md:text-base lg:text-lg transition shadow-lg"
+              className="inline-block bg-[#0446A1] hover:bg-[#033a8a]  text-white px-6 md:px-8 lg:px-10 py-2.5 md:py-3 lg:py-4 rounded-md font-semibold text-sm md:text-base lg:text-lg transition shadow-lg"
             >
               Book Your Ride Today
             </Link>
@@ -62,7 +62,7 @@ export default function ReservationPage() {
       <section className="bg-white py-10 md:py-12 lg:py-20">
         <div className="container mx-auto px-4 md:px-8">
           <div className="max-w-4xl mx-auto text-center">
-            <h2 className="text-2xl md:text-3xl lg:text-4xl xl:text-5xl font-bold text-black uppercase mb-4 md:mb-6 lg:mb-8 px-4">
+            <h2 className="text-2xl md:text-3xl lg:text-4xl xl:text-5xl font-Montserrat font-semibold text-black uppercase mb-4 md:mb-6 lg:mb-8 px-4">
               BOOK YOUR TRANSFER
             </h2>
             <p className="text-sm md:text-base lg:text-lg text-gray-700 leading-relaxed px-4">
@@ -87,8 +87,8 @@ export default function ReservationPage() {
             </div>
 
             {/* Main Title */}
-            <h1 className="text-2xl md:text-3xl lg:text-4xl xl:text-5xl font-bold text-black text-center mb-6 md:mb-8 lg:mb-12 px-4">
-              RESERVATION REQUEST
+            <h1 className="text-2xl md:text-3xl lg:text-4xl xl:text-5xl font-Montserrat font-semibold text-black text-center mb-6 md:mb-8 lg:mb-12 px-4">
+              RESERVATION REQUEST 
             </h1>
 
             {/* Reservation Form */}
@@ -218,19 +218,6 @@ export default function ReservationPage() {
                         type="date"
                         className="w-full border border-gray-300 rounded-md px-3 md:px-4 py-2.5 md:py-3 focus:outline-none focus:ring-2 focus:ring-blue-500 text-sm md:text-base"
                       />
-                      <svg
-                        className="absolute right-3 top-1/2 transform -translate-y-1/2 w-4 h-4 md:w-5 md:h-5 text-gray-400 pointer-events-none"
-                        fill="none"
-                        stroke="currentColor"
-                        viewBox="0 0 24 24"
-                      >
-                        <path
-                          strokeLinecap="round"
-                          strokeLinejoin="round"
-                          strokeWidth={2}
-                          d="M8 7V3m8 4V3m-9 8h10M5 21h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v12a2 2 0 002 2z"
-                        />
-                      </svg>
                     </div>
                   </div>
 
@@ -302,19 +289,6 @@ export default function ReservationPage() {
                             type="date"
                             className="w-full border border-gray-300 rounded-md px-3 md:px-4 py-2.5 md:py-3 focus:outline-none focus:ring-2 focus:ring-blue-500 text-sm md:text-base"
                           />
-                          <svg
-                            className="absolute right-3 top-1/2 transform -translate-y-1/2 w-4 h-4 md:w-5 md:h-5 text-gray-400 pointer-events-none"
-                            fill="none"
-                            stroke="currentColor"
-                            viewBox="0 0 24 24"
-                          >
-                            <path
-                              strokeLinecap="round"
-                              strokeLinejoin="round"
-                              strokeWidth={2}
-                              d="M8 7V3m8 4V3m-9 8h10M5 21h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v12a2 2 0 002 2z"
-                            />
-                          </svg>
                         </div>
                       </div>
 

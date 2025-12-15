@@ -1,7 +1,7 @@
 export default function IntroText() {
   return (
     <section className="container mx-auto px-4 md:px-8 pt-24 md:pt-36 pb-16 md:pb-20 text-center max-w-5xl">
-      <h3 className="text-2xl md:text-3xl lg:text-4xl font-bold mb-6 md:mb-8 tracking-wide">
+      <h3 className="text-2xl md:text-3xl lg:text-4xl font-montserrat font-semibold mb-6 md:mb-8 tracking-wide">
         LOW COST RIDE WITH HIGH QUALITY SERVICE
       </h3>
       <p className="text-gray-700 text-base md:text-lg leading-relaxed">

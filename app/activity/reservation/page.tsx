@@ -39,9 +39,9 @@ export default function ActivityReservationPage() {
             </p>
             <Link
               href="/activity/reservation"
-              className="inline-block bg-blue-600 hover:bg-blue-700 text-white px-8 md:px-10 py-3 md:py-4 rounded-md font-semibold text-base md:text-lg transition shadow-lg"
+              className="inline-block bg-[#0446A1] hover:bg-[#033a8a]  text-white px-8 md:px-10 py-3 md:py-4 rounded-md font-semibold text-base md:text-lg transition shadow-lg"
             >
-              Book Your Ride Today
+              Book Activities
             </Link>
           </div>
         </div>
@@ -53,7 +53,7 @@ export default function ActivityReservationPage() {
       <section className="bg-white py-12 md:py-20">
         <div className="container mx-auto px-4 md:px-8">
           <div className="max-w-4xl mx-auto text-center">
-            <h2 className="text-3xl md:text-4xl lg:text-5xl font-bold text-black uppercase mb-6 md:mb-8">
+            <h2 className="text-3xl md:text-4xl lg:text-5xl font-Montserrat font-semibold text-black uppercase mb-6 md:mb-8">
               BOOK YOUR ACTIVITIES
             </h2>
             <p className="text-base md:text-lg text-gray-700 leading-relaxed">
@@ -78,7 +78,7 @@ export default function ActivityReservationPage() {
             </div>
 
             {/* Main Title */}
-            <h1 className="text-3xl md:text-4xl lg:text-5xl font-bold text-black text-center mb-8 md:mb-12">
+            <h1 className="text-3xl md:text-4xl lg:text-5xl  font-Montserrat font-semibold text-black text-center mb-8 md:mb-12">
               RESERVATION REQUEST
             </h1>
 
@@ -208,19 +208,6 @@ export default function ActivityReservationPage() {
                       type="date"
                       className="w-full border border-gray-300 rounded-md px-4 py-3 focus:outline-none focus:ring-2 focus:ring-blue-500 text-sm md:text-base"
                     />
-                    <svg
-                      className="absolute right-3 top-1/2 transform -translate-y-1/2 w-5 h-5 text-gray-400 pointer-events-none"
-                      fill="none"
-                      stroke="currentColor"
-                      viewBox="0 0 24 24"
-                    >
-                      <path
-                        strokeLinecap="round"
-                        strokeLinejoin="round"
-                        strokeWidth={2}
-                        d="M8 7V3m8 4V3m-9 8h10M5 21h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v12a2 2 0 002 2z"
-                      />
-                    </svg>
                   </div>
                 </div>
 

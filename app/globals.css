@@ -11,6 +11,16 @@
     overflow-x: hidden;
   }
 
+  /* Disable scaling on small screens to avoid horizontal overflow and tiny UI */
+  @media (max-width: 768px) {
+    html {
+      transform: none;
+      width: 100%;
+      height: auto;
+      overflow-x: hidden;
+    }
+  }
+
   body {
     @apply antialiased;
     @apply font-sans;
@@ -29,14 +39,27 @@
 
   .carousel-track {
     display: flex;
-    gap: 2rem;
+    gap: 1rem;
     animation: scroll 40s linear infinite;
     width: fit-content;
   }
 
+  @media (min-width: 640px) {
+    .carousel-track {
+      gap: 2rem;
+    }
+  }
+
   .carousel-card {
-    flex: 0 0 300px;
+    flex: 0 0 280px;
     height: 480px;
+  }
+
+  @media (min-width: 375px) {
+    .carousel-card {
+      flex: 0 0 300px;
+      height: 480px;
+    }
   }
 
   @media (min-width: 640px) {

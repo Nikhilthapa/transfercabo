@@ -38,7 +38,7 @@ export const activityData:any = {
             "6":"Comfortable round-trip transport in an A/C van with water & beer included",
             "7":"Bilingual certified guide leading throughout the entire experience",
         },
-        "image":"activity/laPaz/laPaz1.png"
+        "image":"activity/laPaz/laPaz1.jpg"
     },{
         "title":"What's Included",
         "points":{
@@ -75,7 +75,7 @@ export const activityData:any = {
     description: "Explore colorful streets, visit historic spots, and unwind on scenic beaches with Cheap Transfers Cabo.",
     welcome: "WELCOME TO THE Todos Santos",
     welcomeDes: "Experience the charm of this magical town with Cheap Transfers Cabo, as we take you through sun-soaked beaches, vibrant streets, historic landmarks, and the creative heart of Baja. From ocean breezes to colorful galleries and unforgettable coastal views, this journey blends relaxation, exploration, and authentic local beauty into one perfect day.",
-    sub1:"Clear and simple details to help you plan your perfect Todos Santos.",
+    sub1:"Key Details for Your Todos Santos",
     sub1Des:"Clear and simple details to help you plan your perfect Todos Santos.",
     backgroundIconsPath:'/activity/icons/backgroundIcons.png',
     footerText:'Ready to Explore Todos Santos?',
@@ -109,7 +109,7 @@ export const activityData:any = {
             "8":"Local Museum Visit (Entrance Included)",
             "9":"Free time for lunch and drinks at Tequila Sunrise (meals/drinks NOT included)",
         },
-        "image":"activity/todossantos/santos1.png"
+        "image":"activity/todossantos/santos1.jpg"
     },{
         "title":"What's Included",
         "points":{
@@ -146,7 +146,7 @@ export const activityData:any = {
     description: "Explore colorful streets, visit historic spots, and unwind on scenic beaches with Cheap Transfers Cabo.",
     welcome: "WELCOME TO THE Todos Santos",
     welcomeDes: "Experience the charm of this magical town with Cheap Transfers Cabo, as we take you through sun-soaked beaches, vibrant streets, historic landmarks, and the creative heart of Baja. From ocean breezes to colorful galleries and unforgettable coastal views, this journey blends relaxation, exploration, and authentic local beauty into one perfect day.",
-    sub1:"Clear and simple details to help you plan your perfect Todos Santos.",
+    sub1:"Key Details for Your Cerritos Beach",
     sub1Des:"Clear and simple details to help you plan your perfect Todos Santos.",
     backgroundIconsPath:'/activity/icons/backgroundIcons.png',
     footerText:'Ready to Explore Todos Santos?',
@@ -180,7 +180,7 @@ export const activityData:any = {
             "8":"Local Museum Visit (Entrance Included)",
             "9":"Free time for lunch and drinks at Tequila Sunrise (meals/drinks NOT included)",
         },
-        "image":"activity/cerritos/cerritos1.png"
+        "image":"activity/cerritos/cerritos1.jpg"
     },{
         "title":"What's Included",
         "points":{
@@ -217,7 +217,7 @@ export const activityData:any = {
     description: "Explore colorful streets, visit historic spots, and unwind on scenic beaches with Cheap Transfers Cabo.",
     welcome: "WELCOME TO THE Todos Santos",
     welcomeDes: "Experience the charm of this magical town with Cheap Transfers Cabo, as we take you through sun-soaked beaches, vibrant streets, historic landmarks, and the creative heart of Baja. From ocean breezes to colorful galleries and unforgettable coastal views, this journey blends relaxation, exploration, and authentic local beauty into one perfect day.",
-    sub1:"Clear and simple details to help you plan your perfect Todos Santos.",
+    sub1:"Key Details for Your Los Cabos",
     sub1Des:"Clear and simple details to help you plan your perfect Todos Santos.",
     backgroundIconsPath:'/activity/icons/backgroundIcons.png',
     footerText:'Ready to Explore Todos Santos?',
@@ -251,7 +251,7 @@ export const activityData:any = {
             "8":"Local Museum Visit (Entrance Included)",
             "9":"Free time for lunch and drinks at Tequila Sunrise (meals/drinks NOT included)",
         },
-        "image":"activity/loscabos/loscabo1.png"
+        "image":"activity/loscabos/loscabo1.jpg"
     },{
         "title":"What's Included",
         "points":{
@@ -288,7 +288,7 @@ export const activityData:any = {
     description: "Explore colorful streets, visit historic spots, and unwind on scenic beaches with Cheap Transfers Cabo.",
     welcome: "WELCOME TO THE Todos Santos",
     welcomeDes: "Experience the charm of this magical town with Cheap Transfers Cabo, as we take you through sun-soaked beaches, vibrant streets, historic landmarks, and the creative heart of Baja. From ocean breezes to colorful galleries and unforgettable coastal views, this journey blends relaxation, exploration, and authentic local beauty into one perfect day.",
-    sub1:"Clear and simple details to help you plan your perfect Todos Santos.",
+    sub1:"Key Details for Your Los Cabos",
     sub1Des:"Clear and simple details to help you plan your perfect Todos Santos.",
     backgroundIconsPath:'/activity/icons/backgroundIcons.png',
     footerText:'Ready to Explore Todos Santos?',
@@ -322,7 +322,7 @@ export const activityData:any = {
             "8":"Local Museum Visit (Entrance Included)",
             "9":"Free time for lunch and drinks at Tequila Sunrise (meals/drinks NOT included)",
         },
-        "image":"activity/artwalk/artwalk1.png"
+        "image":"activity/artwalk/artwalk1.jpg"
     },{
         "title":"What's Included",
         "points":{
@@ -355,11 +355,11 @@ export const activityData:any = {
   },
   'Horseback Riding':{
     title: "Horseback Riding / Beach & Desert Trail",
-    backgroundImage: "/activity/horseriding/horseriding.png",
+    backgroundImage: "/activity/horseriding/horseriding1.jpg",
     description: "Explore colorful streets, visit historic spots, and unwind on scenic beaches with Cheap Transfers Cabo.",
     welcome: "WELCOME TO THE Todos Santos",
     welcomeDes: "Experience the charm of this magical town with Cheap Transfers Cabo, as we take you through sun-soaked beaches, vibrant streets, historic landmarks, and the creative heart of Baja. From ocean breezes to colorful galleries and unforgettable coastal views, this journey blends relaxation, exploration, and authentic local beauty into one perfect day.",
-    sub1:"Clear and simple details to help you plan your perfect Todos Santos.",
+    sub1:"Key Details for Your Horseback Riding",
     sub1Des:"Clear and simple details to help you plan your perfect Todos Santos.",
     backgroundIconsPath:'/activity/icons/backgroundIcons.png',
     footerText:'Ready to Explore Todos Santos?',
@@ -393,7 +393,7 @@ export const activityData:any = {
             "8":"Local Museum Visit (Entrance Included)",
             "9":"Free time for lunch and drinks at Tequila Sunrise (meals/drinks NOT included)",
         },
-        "image":"activity/horseriding/horseriding1.png"
+        "image":"activity/horseriding/horseriding.jpg"
     },{
         "title":"What's Included",
         "points":{
@@ -430,7 +430,7 @@ export const activityData:any = {
     description: "Explore colorful streets, visit historic spots, and unwind on scenic beaches with Cheap Transfers Cabo.",
     welcome: "WELCOME TO THE Todos Santos",
     welcomeDes: "Experience the charm of this magical town with Cheap Transfers Cabo, as we take you through sun-soaked beaches, vibrant streets, historic landmarks, and the creative heart of Baja. From ocean breezes to colorful galleries and unforgettable coastal views, this journey blends relaxation, exploration, and authentic local beauty into one perfect day.",
-    sub1:"Clear and simple details to help you plan your perfect Todos Santos.",
+    sub1:"Key Details for Your Snorkeling Tour",
     sub1Des:"Clear and simple details to help you plan your perfect Todos Santos.",
     backgroundIconsPath:'/activity/icons/backgroundIcons.png',
     footerText:'Ready to Explore Todos Santos?',
@@ -497,11 +497,11 @@ export const activityData:any = {
   },
   'Desert Safari':{
     title: "Razor Desert / & Beach Adventure",
-    backgroundImage: "/activity/desert/razor.png",
+    backgroundImage: "/activity/desert/razor.jpg",
     description: "Explore colorful streets, visit historic spots, and unwind on scenic beaches with Cheap Transfers Cabo.",
     welcome: "WELCOME TO THE Todos Santos",
     welcomeDes: "Experience the charm of this magical town with Cheap Transfers Cabo, as we take you through sun-soaked beaches, vibrant streets, historic landmarks, and the creative heart of Baja. From ocean breezes to colorful galleries and unforgettable coastal views, this journey blends relaxation, exploration, and authentic local beauty into one perfect day.",
-    sub1:"Clear and simple details to help you plan your perfect Todos Santos.",
+    sub1:"Key Details for Your Desert Safari",
     sub1Des:"Clear and simple details to help you plan your perfect Todos Santos.",
     backgroundIconsPath:'/activity/icons/backgroundIcons.png',
     footerText:'Ready to Explore Todos Santos?',
@@ -535,7 +535,7 @@ export const activityData:any = {
             "8":"Local Museum Visit (Entrance Included)",
             "9":"Free time for lunch and drinks at Tequila Sunrise (meals/drinks NOT included)",
         },
-        "image":"activity/todossantos/santos1.png"
+        "image":"activity/desert/razor1.jpg"
     },{
         "title":"What's Included",
         "points":{
@@ -568,11 +568,11 @@ export const activityData:any = {
   },
   "ATV's":{
     title: "ATV’s / Desert & Beach Adventure",
-    backgroundImage: "/activity/atv/atv.png",
+    backgroundImage: "/activity/atv/atv.jpg",
     description: "Explore colorful streets, visit historic spots, and unwind on scenic beaches with Cheap Transfers Cabo.",
     welcome: "WELCOME TO THE Todos Santos",
     welcomeDes: "Experience the charm of this magical town with Cheap Transfers Cabo, as we take you through sun-soaked beaches, vibrant streets, historic landmarks, and the creative heart of Baja. From ocean breezes to colorful galleries and unforgettable coastal views, this journey blends relaxation, exploration, and authentic local beauty into one perfect day.",
-    sub1:"Clear and simple details to help you plan your perfect Todos Santos.",
+    sub1:"Key Details for Your ATV's",
     sub1Des:"Clear and simple details to help you plan your perfect Todos Santos.",
     backgroundIconsPath:'/activity/icons/backgroundIcons.png',
     footerText:'Ready to Explore Todos Santos?',
@@ -643,7 +643,7 @@ export const activityData:any = {
     description: "Explore colorful streets, visit historic spots, and unwind on scenic beaches with Cheap Transfers Cabo.",
     welcome: "WELCOME TO THE Todos Santos",
     welcomeDes: "Experience the charm of this magical town with Cheap Transfers Cabo, as we take you through sun-soaked beaches, vibrant streets, historic landmarks, and the creative heart of Baja. From ocean breezes to colorful galleries and unforgettable coastal views, this journey blends relaxation, exploration, and authentic local beauty into one perfect day.",
-    sub1:"Clear and simple details to help you plan your perfect Todos Santos.",
+    sub1:"Key Details for Your 40 ft sport fishing boat",
     sub1Des:"Clear and simple details to help you plan your perfect Todos Santos.",
     backgroundIconsPath:'/activity/icons/backgroundIcons.png',
     footerText:'Ready to Explore Todos Santos?',
@@ -710,11 +710,11 @@ export const activityData:any = {
   },
   "My dream 33 footer boat":{
     title: "My dream 33 / footer boat",
-    backgroundImage: "/activity/33footer/33footer.jpg",
+    backgroundImage: "/activity/33footer/33footer.jpeg",
     description: "Explore colorful streets, visit historic spots, and unwind on scenic beaches with Cheap Transfers Cabo.",
     welcome: "WELCOME TO THE Todos Santos",
     welcomeDes: "Experience the charm of this magical town with Cheap Transfers Cabo, as we take you through sun-soaked beaches, vibrant streets, historic landmarks, and the creative heart of Baja. From ocean breezes to colorful galleries and unforgettable coastal views, this journey blends relaxation, exploration, and authentic local beauty into one perfect day.",
-    sub1:"Clear and simple details to help you plan your perfect Todos Santos.",
+    sub1:"Key Details for Your My dream 33 footer boat",
     sub1Des:"Clear and simple details to help you plan your perfect Todos Santos.",
     backgroundIconsPath:'/activity/icons/backgroundIcons.png',
     footerText:'Ready to Explore Todos Santos?',

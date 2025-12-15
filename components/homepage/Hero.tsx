@@ -3,7 +3,7 @@ import Link from "next/link";
 
 export default function Hero() {
   return (
-    <section className="relative h-[120vh] overflow-visible">
+    <section className="relative h-[100vh] md:h-[120vh] overflow-visible">
       {/* Video Background */}
       <div className="absolute inset-0">
         <video
@@ -29,12 +29,12 @@ export default function Hero() {
       </div>
 
       {/* Hero Content */}
-      <div className="relative z-10 container mx-auto px-4 md:px-8 flex items-center h-[calc(100vh-100px)] min-h-[400px] md:min-h-[500px]">
+      <div className="relative z-10 container mx-auto px-4 md:px-8 flex items-center h-[calc(100vh-80px)] md:h-[calc(100vh-100px)] min-h-[350px] md:min-h-[500px]">
         <div className="max-w-3xl">
           <h2 className="text-xl sm:text-2xl md:text-4xl lg:text-5xl font-bold text-blue-500 mb-2 md:mb-3 lg:mb-4">
             Cheap Transfers Cabo
           </h2>
-          <h3 className="text-xl sm:text-2xl md:text-4xl lg:text-5xl font-bold text-white mb-3 md:mb-4 lg:mb-8 whitespace-nowrap">
+          <h3 className="text-xl sm:text-2xl md:text-4xl lg:text-5xl font-Montserrat font-bold text-white mb-3 md:mb-4 lg:mb-8 whitespace-nowrap">
             Your Journey Starts In Comfort
           </h3>
           <p className="text-sm sm:text-base md:text-lg lg:text-xl text-white mb-1 md:mb-2 lg:mb-2">
@@ -44,10 +44,14 @@ export default function Hero() {
             Start Your Cabo Getaway With Stress-Free Private Transportation
           </p>
           <div className="flex flex-col sm:flex-row gap-3 md:gap-4 lg:gap-6">
-            <Link href="/cabo/reservation" className="bg-blue-600 text-white px-6 md:px-8 lg:px-10 py-2.5 md:py-3 lg:py-4 rounded-md font-semibold text-sm md:text-base lg:text-lg hover:bg-blue-700 transition shadow-lg text-center">
+            <Link href="/cabo/reservation" className="bg-[#0446a1] hover:bg-[#033a8a] text-white px-6 md:px-8 lg:px-10 py-2.5 md:py-3 lg:py-4 rounded-md font-semibold text-sm md:text-base lg:text-lg transition shadow-lg text-center"
+             style={{ lineHeight: '1.8' }}
+             >
               Book Your Ride Today
             </Link>
-            <Link href="/activity" className="border-2 border-white text-white px-6 md:px-8 lg:px-10 py-2.5 md:py-3 lg:py-4 rounded-md font-semibold text-sm md:text-base lg:text-lg hover:bg-white/10 transition text-center">
+            <Link href="/activity" className="  border-2 border-white text-white px-6 md:px-8 lg:px-10 py-2.5 md:py-3 lg:py-4 rounded-md font-semibold text-sm md:text-base lg:text-lg hover:bg-white/10 transition text-center"
+             style={{ lineHeight: '1.5' }}
+             >
               Explore Activities
             </Link>
           </div>

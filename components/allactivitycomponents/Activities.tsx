@@ -1,64 +1,9 @@
+import { activities } from "@/app/activity/page";
 import Image from "next/image";
 import Link from "next/link";
 
 export default function Activities() {
-  const activities = [
-    {
-      name: "La Paz",
-      slug:'la-paz',
-      description: "Visit the beautiful capital city of Baja California Sur. Explore the malecón, local markets, and pristine beaches.",
-      price: "$125.00 USD",
-      duration: "10 Hours",
-      minPeople: "Minimum 4 People",
-      image: "/thingstodoincabo/carts/laPaz.png"
-    },
-    {
-      name: "ATV's",
-      slug:'atvs',
-      description: "Tackle on Trails of Migriño's Desert, Feel the Rush, Witness the Baja's Nature and the Most Beautiful Views (Cactus and Wildlife), and the Most Beautiful Views of The Pacific Ocean.",
-      price: "$130.00 USD",
-      duration: "2 Hours",
-      minPeople: "Minimum 1 People",
-      image: "/thingstodoincabo/carts/Atv.png"
-    },
-    {
-      name: "Art Walk",
-      slug:'art-walk',
-      description: "Walk around the historic district of San Jose del cabo while enjoying a wonderful atmosphere, full of art main garden and outstanding, Art Walk.",
-      price: "$85.00 USD",
-      duration: "10 Hours",
-      minPeople: "Minimum 4 People",
-      image: "/thingstodoincabo/carts/Artwalk.png"
-    },
-    {
-      name: "Horseback Riding",
-      slug:'horseback-riding',
-      description: "Experience the beauty of Cabo's beaches and desert landscapes on horseback. Perfect for all skill levels with professional guides.",
-      price: "$95.00 USD",
-      duration: "3 Hours",
-      minPeople: "Minimum 2 People",
-      image: "/thingstodoincabo/carts/horseriding.png"
-    },
-    {
-      name: "Snorkeling Tour",
-      slug:'hidden-towns',
-      description: "Discover the underwater world of the Sea of Cortez. See colorful fish, sea lions, and coral reefs in crystal clear waters.",
-      price: "$110.00 USD",
-      duration: "4 Hours",
-      minPeople: "Minimum 2 People",
-      image: "/thingstodoincabo/carts/hiddentown.png"
-    },
-    {
-      name: "Desert Safari",
-      slug:'razors',
-      description: "Explore Cabo's stunning desert terrain in a 4x4 vehicle. Visit hidden beaches, canyons, and traditional Mexican villages.",
-      price: "$145.00 USD",
-      duration: "6 Hours",
-      minPeople: "Minimum 3 People",
-      image: "/thingstodoincabo/carts/razor.png"
-    }
-  ];
-
+  let data=activities
   return (
     <section className="py-12 md:py-20 overflow-hidden bg-white">
       <div className="container mx-auto px-4 md:px-8 mb-8 md:mb-12">
@@ -74,7 +19,7 @@ export default function Activities() {
         <div className="carousel-container">
           <div className="carousel-track">
             {/* First set of activities */}
-            {activities.map((activity, index) => (
+            {data.map((activity, index) => (
               <div key={`first-${index}`} className="carousel-card">
                 <div className="bg-white rounded-2xl shadow-lg overflow-hidden border border-gray-200 h-full">
                   <div className="relative w-full h-60">
@@ -88,21 +33,26 @@ export default function Activities() {
                     />
                   </div>
                   <div className="p-4 md:p-6">
-                    <h3 className="text-xl md:text-2xl font-semibold mb-2 md:mb-3 text-black">{activity.name}</h3>
-                    <p className="text-gray-600 text-xs md:text-sm mb-3 md:mb-4 line-clamp-3">
-                      {activity.description}
+                    <h3 className="text-xl md:text-2xl font-montserrat font-semibold mb-2 md:mb-3 text-black">{activity.name}</h3>
+                    <p className="text-gray-600 text-xs md:text-sm mb-3 md:mb-4">
+                      {activity.description.split('/').map((part, index, array) => (
+                        <span key={index}>
+                          {part.trim()}
+                          {index < array.length - 1 && <br />}
+                        </span>
+                      ))}
                     </p>
                     <div className="flex items-center gap-3 text-xs md:text-sm text-gray-600 mb-4 md:mb-6 flex-wrap md:flex-nowrap">
-                      <span className="font-semibold text-black whitespace-nowrap">{activity.price}</span>
+                      <span className="font-montserrat font-semibold whitespace-nowrap">{activity.price}</span>
                       <span className="text-gray-300">•</span>
-                      <span className="flex items-center gap-1 whitespace-nowrap">
+                      <span className="flex items-center gap-1 whitespace-nowrap font-montserrat font-semibold">
                         <svg className="w-3 h-3 md:w-4 md:h-4" fill="currentColor" viewBox="0 0 20 20">
                           <path fillRule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm1-12a1 1 0 10-2 0v4a1 1 0 00.293.707l2.828 2.829a1 1 0 101.415-1.415L11 9.586V6z" clipRule="evenodd" />
                         </svg>
                         {activity.duration}
                       </span>
                       <span className="text-gray-300">•</span>
-                      <span className="flex items-center gap-1 whitespace-nowrap">
+                      <span className="flex items-center gap-1 whitespace-nowrap font-montserrat font-semibold">
                         <svg className="w-3 h-3 md:w-4 md:h-4" fill="currentColor" viewBox="0 0 20 20">
                           <path d="M9 6a3 3 0 11-6 0 3 3 0 016 0zM17 6a3 3 0 11-6 0 3 3 0 016 0zM12.93 17c.046-.327.07-.66.07-1a6.97 6.97 0 00-1.5-4.33A5 5 0 0119 16v1h-6.07zM6 11a5 5 0 015 5v1H1v-1a5 5 0 015-5z" />
                         </svg>
@@ -112,14 +62,14 @@ export default function Activities() {
                     <div className="flex gap-2 md:gap-3">
                       <Link 
                         href={`/activity/${activity.slug}`}
-                        className="border-2 border-blue-600 text-blue-600 px-4 md:px-6 py-2 md:py-2.5 rounded-full flex-1 hover:bg-blue-600 hover:text-white transition font-medium text-center text-xs md:text-sm"
+                        className="border-2 border-blue-600 text-blue-600 px-4 md:px-6 py-2 md:py-2.5 rounded-full flex-1 hover:bg-blue-600 hover:text-white transition font-medium text-center text-xs md:text-sm flex items-center justify-center"
                       >
                         Info
                       </Link>
                       <Link 
                         href="/activity/reservation"
-                        className="text-white px-4 md:px-6 py-2 md:py-2.5 rounded-full flex-1 transition font-medium hover:opacity-90 text-center text-xs md:text-sm"
-                        style={{ backgroundColor: '#0446A1' }}
+                        className="text-white px-4 md:px-6 py-2 md:py-2.5 rounded-full flex-1 transition font-medium hover:opacity-90 text-center text-xs md:text-sm flex items-center justify-center"
+                        style={{ backgroundColor: '#0446A1', transform: 'translateY(2px)' }}
                       >
                         Book Activities
                       </Link>
@@ -143,21 +93,26 @@ export default function Activities() {
                     />
                   </div>
                   <div className="p-4 md:p-6">
-                    <h3 className="text-xl md:text-2xl font-semibold mb-2 md:mb-3 text-black">{activity.name}</h3>
-                    <p className="text-gray-600 text-xs md:text-sm mb-3 md:mb-4 line-clamp-3">
-                      {activity.description}
+                    <h3 className="text-xl md:text-2xl font-montserrat font-semibold mb-2 md:mb-3 text-black">{activity.name}</h3>
+                    <p className="text-gray-600 text-xs md:text-sm mb-3 md:mb-4">
+                      {activity.description.split('/').map((part, index, array) => (
+                        <span key={index}>
+                          {part.trim()}
+                          {index < array.length - 1 && <br />}
+                        </span>
+                      ))}
                     </p>
                     <div className="flex items-center gap-3 text-xs md:text-sm text-gray-600 mb-4 md:mb-6 flex-wrap md:flex-nowrap">
-                      <span className="font-semibold text-black whitespace-nowrap">{activity.price}</span>
+                      <span className="font-montserrat font-semibold whitespace-nowrap">{activity.price}</span>
                       <span className="text-gray-300">•</span>
-                      <span className="flex items-center gap-1 whitespace-nowrap">
+                      <span className="flex items-center gap-1 whitespace-nowrap font-montserrat font-semibold">
                         <svg className="w-3 h-3 md:w-4 md:h-4" fill="currentColor" viewBox="0 0 20 20">
                           <path fillRule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm1-12a1 1 0 10-2 0v4a1 1 0 00.293.707l2.828 2.829a1 1 0 101.415-1.415L11 9.586V6z" clipRule="evenodd" />
                         </svg>
                         {activity.duration}
                       </span>
                       <span className="text-gray-300">•</span>
-                      <span className="flex items-center gap-1 whitespace-nowrap">
+                      <span className="flex items-center gap-1 whitespace-nowrap font-montserrat font-semibold">
                         <svg className="w-3 h-3 md:w-4 md:h-4" fill="currentColor" viewBox="0 0 20 20">
                           <path d="M9 6a3 3 0 11-6 0 3 3 0 016 0zM17 6a3 3 0 11-6 0 3 3 0 016 0zM12.93 17c.046-.327.07-.66.07-1a6.97 6.97 0 00-1.5-4.33A5 5 0 0119 16v1h-6.07zM6 11a5 5 0 015 5v1H1v-1a5 5 0 015-5z" />
                         </svg>
@@ -167,14 +122,14 @@ export default function Activities() {
                     <div className="flex gap-2 md:gap-3">
                       <Link 
                         href={`/activity/${activity.slug}`}
-                        className="border-2 border-blue-600 text-blue-600 px-4 md:px-6 py-2 md:py-2.5 rounded-full flex-1 hover:bg-blue-600 hover:text-white transition font-medium text-center text-xs md:text-sm"
+                        className="border-2 border-blue-600 text-blue-600 px-4 md:px-6 py-2 md:py-2.5 rounded-full flex-1 hover:bg-blue-600 hover:text-white transition font-medium text-center text-xs md:text-sm flex items-center justify-center"
                       >
                         Info
                       </Link>
                       <Link 
                         href="/activity/reservation"
-                        className="text-white px-4 md:px-6 py-2 md:py-2.5 rounded-full flex-1 transition font-medium hover:opacity-90 text-center text-xs md:text-sm"
-                        style={{ backgroundColor: '#0446A1' }}
+                        className="text-white px-4 md:px-6 py-2 md:py-2.5 rounded-full flex-1 transition font-medium hover:opacity-90 text-center text-xs md:text-sm flex items-center justify-center"
+                        style={{ backgroundColor: '#0446A1', transform: 'translateY(2px)' }}
                       >
                         Book Activities
                       </Link>

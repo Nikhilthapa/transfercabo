@@ -163,7 +163,7 @@ export default async function ActivityDetailPage({ params }: { params: { slug: s
         {/* Welcome Section */}
         <section className="py-12 md:py-16 px-4 bg-white">
           <div className="container mx-auto max-w-6xl text-center">
-            <h2 className="text-2xl md:text-4xl lg:text-5xl font-bold text-black mb-4 md:mb-6 px-4">
+            <h2 className="text-2xl md:text-4xl lg:text-4xl font-montserrat font-semibold text-black mb-4 md:mb-6 px-4">
               {laPazData.welcome}
             </h2>
             <p className="text-base md:text-lg text-gray-700 max-w-4xl mx-auto leading-relaxed px-4">
@@ -250,7 +250,7 @@ export default async function ActivityDetailPage({ params }: { params: { slug: s
                   </ul>
                   <Link href="/activity/reservation">
                     <button 
-                      className="mt-6 md:mt-8 w-full bg-[#0446A1] text-white px-6 md:px-8 py-3 md:py-4 rounded-lg font-semibold text-base md:text-lg hover:opacity-90 transition"
+                      className="mt-6 md:mt-8 w-[35%] mx-auto bg-[#0446A1] text-white px-4 md:px-5 py-2 md:py-2.5 rounded-lg font-semibold text-sm md:text-base hover:opacity-90 transition"
                     >
                       Book This Activity
                     </button>
@@ -362,7 +362,7 @@ export default async function ActivityDetailPage({ params }: { params: { slug: s
             </p>
             <Link href="/activity/reservation">
               <button 
-                className="bg-[#0446A1] text-white px-8 md:px-10 py-3 md:py-4 rounded-lg font-semibold text-base md:text-lg hover:opacity-90 transition"
+                className="w-[35%] mx-auto bg-[#0446A1] text-white px-4 md:px-5 py-2 md:py-2.5 rounded-lg font-semibold text-sm md:text-base hover:opacity-90 transition"
               >
                 Book This Activity
               </button>
