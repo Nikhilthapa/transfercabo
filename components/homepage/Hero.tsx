@@ -50,7 +50,7 @@ export default function Hero() {
               Book Your Ride Today
             </Link>
             <Link href="/activity" className="  border-2 border-white text-white px-6 md:px-8 lg:px-10 py-2.5 md:py-3 lg:py-4 rounded-md font-semibold text-sm md:text-base lg:text-lg hover:bg-white/10 transition text-center"
-             style={{ lineHeight: '1.5' }}
+             style={{ lineHeight: '1.5', paddingTop: 'calc(0.625rem + 8px)' }}
              >
               Explore Activities
             </Link>

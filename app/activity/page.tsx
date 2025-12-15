@@ -126,8 +126,12 @@ export default function ActivityPage() {
               </p>
               <Link 
                 href="#activities"
-                className="inline-flex items-center gap-2 text-white px-4 md:px-5 py-2 md:py-2.5 rounded-lg font-semibold hover:opacity-90 transition text-sm md:text-base"
-                style={{ backgroundColor: '#0446a1' }}
+                className="inline-flex items-center gap-2 text-white font-semibold hover:opacity-90 transition text-sm md:text-base"
+                style={{ 
+                  backgroundColor: '#0446a1',
+                  padding: '18px 28px',
+                  borderRadius: '10px'
+                }}
               >
                 Explore All Activities <span className="ml-1">↓</span>
               </Link>
@@ -217,8 +221,8 @@ export default function ActivityPage() {
           <h2 className="text-2xl md:text-3xl lg:text-4xl font-montserrat font-semibold text-gray-900 mb-4 md:mb-6 px-4">
             YOUR ADVENTURE IN CABO STARTS HERE
           </h2>
-          <p className="text-base md:text-lg text-gray-700 max-w-4xl mx-auto leading-relaxed px-4">
-            Discover the most unforgettable adventures of Los Cabos with <span className="font-montserrat font-bold">Cheap Transfers Cabo</span>, where every activity is crafted to help you explore Baja's breathtaking landscapes—desert dunes, crystal-blue beaches, dramatic cliffs, and vibrant local culture. From thrilling ATV and Razor rides to peaceful horseback journeys and scenic day tours, we bring you closer to the heart of Cabo with comfort, safety, and a touch of authentic local hospitality.
+          <p className="text-base md:text-lg font-montserrat font-mixed text-gray-700 max-w-4xl mx-auto leading-relaxed px-4">
+            Discover the most unforgettable adventures of Los Cabos with <span className="font-montserrat font-semibold">Cheap Transfers Cabo</span>, where every activity is crafted to help you explore Baja's breathtaking landscapes—desert dunes, crystal-blue beaches, dramatic cliffs, and vibrant local culture. From thrilling ATV and Razor rides to peaceful horseback journeys and scenic day tours, we bring you closer to the heart of Cabo with comfort, safety, and a touch of authentic local hospitality.
           </p>
         </div>
       </section>
@@ -226,10 +230,10 @@ export default function ActivityPage() {
       {/* Activities Grid */}
       <section id="activities" className="py-12 md:py-20 px-4" style={{ backgroundColor: '#ffffff' }}>
         <div className="container mx-auto max-w-7xl">
-          <h2 className="text-2xl md:text-3xl lg:text-4xl font-bold text-center text-gray-900 mb-4 md:mb-6 px-4">
+          <h2 className="text-2xl md:text-3xl lg:text-4xl font-montserrat font-bold text-center text-gray-900 mb-4 md:mb-6 px-4">
             Explore Our Cabo Adventures
           </h2>
-          <p className="text-center text-gray-600 mb-8 md:mb-12 text-sm md:text-base px-4">
+          <p className="text-center font-montserrat font-medium text-gray-600 mb-8 md:mb-12 text-sm md:text-base px-4">
             Exciting tours designed to make your Cabo trip unforgettable.
           </p>
 
@@ -254,10 +258,10 @@ export default function ActivityPage() {
 
                 {/* Activity Content */}
                 <div className="p-4 md:p-6">
-                  <h3 className="text-xl md:text-2xl font-bold text-gray-900 mb-2 md:mb-3">
+                  <h3 className="text-xl md:text-2xl font-montserrat font-semibold text-gray-900 mb-2 md:mb-3">
                     {activity.name}
                   </h3>
-                  <p className="text-gray-600 text-xs md:text-sm mb-3 md:mb-4">
+                  <p className="text-gray-600 font-montserrat font-medium text-xs md:text-sm mb-3 md:mb-4">
                     {activity.description.split('/').map((part, index, array) => (
                       <span key={index}>
                         {part.trim()}

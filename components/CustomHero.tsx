@@ -12,6 +12,8 @@ interface CustomHeroProps {
   hideTopBar?: boolean;
   buttonLabel?: string;
   textPosition?: 'center' | 'bottom';
+  titleColor?: string;
+  subtitleColor?: string;
 }
 
 export default function CustomHero({
@@ -21,6 +23,8 @@ export default function CustomHero({
   hideTopBar = false,
   buttonLabel,
   textPosition = 'center',
+  titleColor = '#ffffff',
+  subtitleColor = '#ffffff',
 }: CustomHeroProps) {
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
   const [activitiesDropdownOpen, setActivitiesDropdownOpen] = useState(false);
@@ -256,10 +260,16 @@ export default function CustomHero({
       {/* Hero Content - Text Overlay on Lower Left */}
       <div className={`relative z-10 container mx-auto px-4 md:px-8 flex ${textPosition === 'bottom' ? 'items-end pb-12 md:pb-16 lg:pb-24' : 'items-center pt-4 md:pt-6 lg:pt-12'} min-h-[400px] md:min-h-[500px] lg:min-h-[600px]`}>
         <div className="max-w-3xl">
-          <h1 className="text-xl sm:text-2xl md:text-3xl lg:text-4xl xl:text-5xl font-bold text-white mb-2 md:mb-3 lg:mb-4 leading-tight whitespace-pre-line">
+          <h1
+            className="text-xl sm:text-2xl md:text-3xl lg:text-4xl xl:text-5xl font-bold mb-2 md:mb-3 lg:mb-4 leading-tight whitespace-pre-line"
+            style={{ color: titleColor }}
+          >
             {title}
           </h1>
-          <p className="text-sm sm:text-base md:text-lg lg:text-xl text-white font-medium">
+          <p
+            className="text-sm sm:text-base md:text-lg lg:text-xl font-medium"
+            style={{ color: subtitleColor }}
+          >
             {subtitle}
           </p>
           {buttonLabel && (

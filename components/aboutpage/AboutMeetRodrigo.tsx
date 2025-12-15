@@ -7,24 +7,21 @@ export default function AboutMeetRodrigo() {
         <div className="grid md:grid-cols-2 gap-8 md:gap-12 items-center">
           {/* Left Column - Text */}
           <div>
-            <h2 className="text-2xl md:text-3xl lg:text-4xl font-bold text-black mb-6 md:mb-8">
+            <h2 className="text-2xl md:text-3xl lg:text-4xl font-Montserrat font-bold text-black mb-4 md:mb-6">
               Meet Rodrigo - Your Trusted Guide & Licensed Driver in Los Cabos
             </h2>
-            <div className="space-y-4 md:space-y-6 text-gray-700 text-base md:text-lg leading-relaxed">
+            <div className="space-y-2 md:space-y-0 font-Montserrat font-medium text-[#6f6f6f] text-base md:text-lg leading-relaxed">
               <p>
-                Rodrigo is a certified tour guide and federal licensed driver with years of experience serving visitors to Los Cabos. He combines professional expertise with genuine hospitality, ensuring every ride is safe, comfortable, and tailored to your needs.
+              Rodrigo has been taking such great care of guests for many years as a Certified Tour Guide in different Tourist Attractions in Los Cabos Area.
               </p>
-              <p>
-                Whether you need a reliable airport transfer, a comfortable hotel ride, or a personalized tour of Los Cabos, Rodrigo is committed to making your journey seamless and enjoyable. His deep knowledge of the area, combined with his friendly approach, makes him the perfect companion for your Cabo adventure.
-              </p>
-              <p>
-                With a focus on customer satisfaction and safety, Rodrigo ensures that every passenger arrives at their destination feeling relaxed and ready to enjoy all that Los Cabos has to offer. Trust Rodrigo for your transportation needs and experience the difference that personalized service makes.
-              </p>
+              <p>Now, as a Federal Licensed Driver is adding to his agenda, Airport Transfer in The South most part of the Baja California Peninsula.</p>
+              <p>Grin Faces and Happy Memories is just a small portion of what people have to share and mention.</p>
+              <p>Wait no Longer and Get Rodrigo to do your Round Trip Airport-Hotel-Airport Ride for you!</p>
             </div>
           </div>
 
           {/* Right Column - Image */}
-          <div className="relative h-64 md:h-96 lg:h-[500px] rounded-xl md:rounded-2xl overflow-hidden">
+          <div className="relative w-full max-w-[704px] h-[386px] rounded-xl md:rounded-2xl overflow-hidden mx-auto">
             <Image
               src="/aboutus/page/about1.jpg"
               alt="Rodrigo with van"

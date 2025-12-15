@@ -12,15 +12,17 @@ export default function ContactPage() {
         subtitle="We're Always Available to Assist You With Transfers, Tours, And Inquiries."
         textPosition="bottom"
         hideTopBar={true}
+        titleColor="#fcfcfc"
+        subtitleColor="#f2f1f0"
       />
       
       {/* Welcome Section */}
       <section className="bg-white py-10 md:py-12 lg:py-16">
         <div className="container mx-auto px-4 md:px-8 text-center">
-          <h2 className="text-xl sm:text-2xl md:text-3xl lg:text-4xl font-bold text-black mb-3 md:mb-4 lg:mb-6 px-4">
+          <h2 className="text-xl sm:text-2xl md:text-3xl lg:text-4xl font-Montserrat font-semibold text-black mb-3 md:mb-4 lg:mb-6 px-4">
             WELCOME TO THE CONTACT US
           </h2>
-          <p className="text-gray-700 text-sm md:text-base lg:text-lg max-w-3xl mx-auto px-4">
+          <p className="font-Montserrat font-medium text-[#6f6f6f] text-sm md:text-base lg:text-lg max-w-3xl mx-auto px-4">
             Our team is here to make your travel smooth, safe and effortless — message us anytime.
           </p>
         </div>
@@ -30,10 +32,10 @@ export default function ContactPage() {
       <section className="bg-white py-10 md:py-12 lg:py-16">
         <div className="container mx-auto px-4 md:px-8">
           <div className="text-center mb-6 md:mb-8 lg:mb-12">
-            <h2 className="text-xl sm:text-2xl md:text-3xl lg:text-4xl font-bold text-black mb-2 md:mb-3 lg:mb-4 px-4">
+            <h2 className="text-xl sm:text-2xl md:text-3xl lg:text-4xl font-Montserrat font-bold text-black mb-2 md:mb-3 lg:mb-4 px-4">
               Talk to Our Team
             </h2>
-            <p className="text-gray-700 text-sm md:text-base lg:text-lg max-w-3xl mx-auto px-4">
+            <p className="font-Montserrat font-medium text-[#6f6f6f] text-sm md:text-base lg:text-lg max-w-3xl mx-auto px-4">
               Connect with us through WhatsApp, call, or email — we're ready to help with your transfers and tours.
             </p>
           </div>

@@ -5,8 +5,8 @@ export default function Contact() {
     <section className="container mx-auto px-4 md:px-8 py-12 md:py-20">
       {/* Header Section */}
       <div className="text-center mb-8 pb-8">
-        <h2 className="text-3xl md:text-4xl lg:text-5xl font-bold text-black mb-3 md:mb-4">Get In Touch</h2>
-        <p className="text-gray-700 text-sm md:text-base px-4">
+        <h2 className="text-3xl md:text-4xl lg:text-5xl font-Montserrat font-bold text-black mb-3 md:mb-4">Get In Touch</h2>
+        <p className=" font-Montserrat font-medium text-[#6f6f6f] text-sm md:text-base px-4">
           Contact us anytime for bookings, questions, or custom travel plans across Los Cabos.
         </p>
       </div>

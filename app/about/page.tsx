@@ -13,6 +13,8 @@ export default function AboutPage() {
         title="Experience Comfort And Care With Cheap Transfers Cabo"
         subtitle="Trusted Private Transfers & Unforgettable Cabo Experiences."
         hideTopBar={true}
+        titleColor="#fcfcfc"
+        subtitleColor="#fafaf9"
       />
       <AboutWelcome />
       <AboutMeetRodrigo />

@@ -12,18 +12,23 @@ export const activityData:any = {
     footerText:'Ready to Explore La Paz?',
     icons:{
         "Cost":{
-            cost1:"$125.00 USD p/p",
-            cost2:"Minimum 4 People",
+            cost1:{
+                1:"$125.00 USD p/p",
+                2:"Minimum 4 People",
+            },
             iconsPath:'/activity/icons/dollerIcon.png'
         },
         "Pickup Time":{
-            cost1:"San José del Cabo 7:00 AM, Corridor 7:30 AM",
-            cost2:"Cabo San Lucas 8:00 AM",
+            time1:{
+                1:"San José del Cabo 7:00 AM",
+                2:"Cabo San Lucas 8:00 AM",
+            },
             iconPath:'/activity/icons/timeIcon.png'
         },
         "Tour Duration":{
-            cost1:"10 hrs. (Plus)",
-            cost2:null,
+            duration:{
+                1:"10 hrs. (Plus)"
+            },
             iconPath:'/activity/icons/locationIcon.png'
         }
     },
@@ -81,18 +86,23 @@ export const activityData:any = {
     footerText:'Ready to Explore Todos Santos?',
     icons:{
         "Cost":{
-            cost1:"$95.00 USD p/p",
-            cost2:"Minimum 4 People",
+            cost1:{
+                1:"$125.00 USD p/p",
+                2:"Minimum 4 People",
+            },
             iconsPath:'/activity/icons/dollerIcon.png'
         },
         "Pickup Time":{
-            cost1:"San José del Cabo 7:00 AM, Corridor 7:30 AM",
-            cost2:"Cabo San Lucas 8:00 AM",
+            time1:{
+                1:"San José del Cabo 7:00 AM",
+                2:"Cabo San Lucas 8:00 AM",
+            },
             iconPath:'/activity/icons/timeIcon.png'
         },
         "Tour Duration":{
-            cost1:"7 hrs. (Plus)",
-            cost2:null,
+            duration:{
+                1:"10 hrs. (Plus)"
+            },
             iconPath:'/activity/icons/locationIcon.png'
         }
     },
@@ -152,18 +162,23 @@ export const activityData:any = {
     footerText:'Ready to Explore Todos Santos?',
     icons:{
         "Cost":{
-            cost1:"$95.00 USD p/p",
-            cost2:"Minimum 4 People",
+            cost1:{
+                1:"$125.00 USD p/p",
+                2:"Minimum 4 People",
+            },
             iconsPath:'/activity/icons/dollerIcon.png'
         },
         "Pickup Time":{
-            cost1:"San José del Cabo 7:00 AM, Corridor 7:30 AM",
-            cost2:"Cabo San Lucas 8:00 AM",
+            time1:{
+                1:"San José del Cabo 7:00 AM",
+                2:"Cabo San Lucas 8:00 AM",
+            },
             iconPath:'/activity/icons/timeIcon.png'
         },
         "Tour Duration":{
-            cost1:"7 hrs. (Plus)",
-            cost2:null,
+            duration:{
+                1:"10 hrs. (Plus)"
+            },
             iconPath:'/activity/icons/locationIcon.png'
         }
     },
@@ -215,26 +230,31 @@ export const activityData:any = {
     title: "Explore the Best of / Los Cabos",
     backgroundImage: "/activity/loscabos/loscabo.png",
     description: "Explore colorful streets, visit historic spots, and unwind on scenic beaches with Cheap Transfers Cabo.",
-    welcome: "WELCOME TO THE Todos Santos",
-    welcomeDes: "Experience the charm of this magical town with Cheap Transfers Cabo, as we take you through sun-soaked beaches, vibrant streets, historic landmarks, and the creative heart of Baja. From ocean breezes to colorful galleries and unforgettable coastal views, this journey blends relaxation, exploration, and authentic local beauty into one perfect day.",
-    sub1:"Key Details for Your Los Cabos",
-    sub1Des:"Clear and simple details to help you plan your perfect Todos Santos.",
+    welcome: "WELCOME TO THE Los Cabos EXPERIENCE",
+    welcomeDes: "Welcome to the heart of Baja! Our Los Cabos Tour takes you through the region’s most iconic spots — from breathtaking coastlines and historic areas to vibrant local markets and hidden gems. With 'Cheap Transfers Cabo', enjoy a fully guided, comfortable, and relaxed journey through everything that makes Los Cabos unforgettable.",
+    sub1:"Key Details for Your Los Cabos Adventure",
+    sub1Des:"Clear and simple details to help you plan your perfect Los Cabos trip.",
     backgroundIconsPath:'/activity/icons/backgroundIcons.png',
     footerText:'Ready to Explore Todos Santos?',
     icons:{
         "Cost":{
-            cost1:"$95.00 USD p/p",
-            cost2:"Minimum 4 People",
+            cost1:{
+                1:"$125.00 USD p/p",
+                2:"Minimum 4 People",
+            },
             iconsPath:'/activity/icons/dollerIcon.png'
         },
         "Pickup Time":{
-            cost1:"San José del Cabo 7:00 AM, Corridor 7:30 AM",
-            cost2:"Cabo San Lucas 8:00 AM",
+            time1:{
+                1:"San José del Cabo 7:00 AM",
+                2:"Cabo San Lucas 8:00 AM",
+            },
             iconPath:'/activity/icons/timeIcon.png'
         },
         "Tour Duration":{
-            cost1:"7 hrs. (Plus)",
-            cost2:null,
+            duration:{
+                1:"10 hrs. (Plus)"
+            },
             iconPath:'/activity/icons/locationIcon.png'
         }
     },
@@ -294,18 +314,23 @@ export const activityData:any = {
     footerText:'Ready to Explore Todos Santos?',
     icons:{
         "Cost":{
-            cost1:"$95.00 USD p/p",
-            cost2:"Minimum 4 People",
+            cost1:{
+                1:"$125.00 USD p/p",
+                2:"Minimum 4 People",
+            },
             iconsPath:'/activity/icons/dollerIcon.png'
         },
         "Pickup Time":{
-            cost1:"San José del Cabo 7:00 AM, Corridor 7:30 AM",
-            cost2:"Cabo San Lucas 8:00 AM",
+            time1:{
+                1:"San José del Cabo 7:00 AM",
+                2:"Cabo San Lucas 8:00 AM",
+            },
             iconPath:'/activity/icons/timeIcon.png'
         },
         "Tour Duration":{
-            cost1:"7 hrs. (Plus)",
-            cost2:null,
+            duration:{
+                1:"10 hrs. (Plus)"
+            },
             iconPath:'/activity/icons/locationIcon.png'
         }
     },
@@ -365,18 +390,23 @@ export const activityData:any = {
     footerText:'Ready to Explore Todos Santos?',
     icons:{
         "Cost":{
-            cost1:"$95.00 USD p/p",
-            cost2:"Minimum 4 People",
+            cost1:{
+                1:"$125.00 USD p/p",
+                2:"Minimum 4 People",
+            },
             iconsPath:'/activity/icons/dollerIcon.png'
         },
         "Pickup Time":{
-            cost1:"San José del Cabo 7:00 AM, Corridor 7:30 AM",
-            cost2:"Cabo San Lucas 8:00 AM",
+            time1:{
+                1:"San José del Cabo 7:00 AM",
+                2:"Cabo San Lucas 8:00 AM",
+            },
             iconPath:'/activity/icons/timeIcon.png'
         },
         "Tour Duration":{
-            cost1:"7 hrs. (Plus)",
-            cost2:null,
+            duration:{
+                1:"10 hrs. (Plus)"
+            },
             iconPath:'/activity/icons/locationIcon.png'
         }
     },
@@ -436,18 +466,23 @@ export const activityData:any = {
     footerText:'Ready to Explore Todos Santos?',
     icons:{
         "Cost":{
-            cost1:"$95.00 USD p/p",
-            cost2:"Minimum 4 People",
+            cost1:{
+                1:"$125.00 USD p/p",
+                2:"Minimum 4 People",
+            },
             iconsPath:'/activity/icons/dollerIcon.png'
         },
         "Pickup Time":{
-            cost1:"San José del Cabo 7:00 AM, Corridor 7:30 AM",
-            cost2:"Cabo San Lucas 8:00 AM",
+            time1:{
+                1:"San José del Cabo 7:00 AM",
+                2:"Cabo San Lucas 8:00 AM",
+            },
             iconPath:'/activity/icons/timeIcon.png'
         },
         "Tour Duration":{
-            cost1:"7 hrs. (Plus)",
-            cost2:null,
+            duration:{
+                1:"10 hrs. (Plus)"
+            },
             iconPath:'/activity/icons/locationIcon.png'
         }
     },
@@ -507,18 +542,23 @@ export const activityData:any = {
     footerText:'Ready to Explore Todos Santos?',
     icons:{
         "Cost":{
-            cost1:"$95.00 USD p/p",
-            cost2:"Minimum 4 People",
+            cost1:{
+                1:"$125.00 USD p/p",
+                2:"Minimum 4 People",
+            },
             iconsPath:'/activity/icons/dollerIcon.png'
         },
         "Pickup Time":{
-            cost1:"San José del Cabo 7:00 AM, Corridor 7:30 AM",
-            cost2:"Cabo San Lucas 8:00 AM",
+            time1:{
+                1:"San José del Cabo 7:00 AM",
+                2:"Cabo San Lucas 8:00 AM",
+            },
             iconPath:'/activity/icons/timeIcon.png'
         },
         "Tour Duration":{
-            cost1:"7 hrs. (Plus)",
-            cost2:null,
+            duration:{
+                1:"10 hrs. (Plus)"
+            },
             iconPath:'/activity/icons/locationIcon.png'
         }
     },
@@ -578,18 +618,23 @@ export const activityData:any = {
     footerText:'Ready to Explore Todos Santos?',
     icons:{
         "Cost":{
-            cost1:"$95.00 USD p/p",
-            cost2:"Minimum 4 People",
+            cost1:{
+                1:"$125.00 USD p/p",
+                2:"Minimum 4 People",
+            },
             iconsPath:'/activity/icons/dollerIcon.png'
         },
         "Pickup Time":{
-            cost1:"San José del Cabo 7:00 AM, Corridor 7:30 AM",
-            cost2:"Cabo San Lucas 8:00 AM",
+            time1:{
+                1:"San José del Cabo 7:00 AM",
+                2:"Cabo San Lucas 8:00 AM",
+            },
             iconPath:'/activity/icons/timeIcon.png'
         },
         "Tour Duration":{
-            cost1:"7 hrs. (Plus)",
-            cost2:null,
+            duration:{
+                1:"10 hrs. (Plus)"
+            },
             iconPath:'/activity/icons/locationIcon.png'
         }
     },
@@ -648,19 +693,24 @@ export const activityData:any = {
     backgroundIconsPath:'/activity/icons/backgroundIcons.png',
     footerText:'Ready to Explore Todos Santos?',
     icons:{
-        "Cost":{
-            cost1:"$95.00 USD p/p",
-            cost2:"Minimum 4 People",
-            iconsPath:'/activity/icons/dollerIcon.png'
+        "Cost": {
+            cost1: {
+                1: "3 hrs service: 950.00 USD Extra hr: 180.00 USD",
+            },
+            iconPath: '/activity/icons/dollerIcon.png'
         },
-        "Pickup Time":{
-            cost1:"San José del Cabo 7:00 AM, Corridor 7:30 AM",
-            cost2:"Cabo San Lucas 8:00 AM",
-            iconPath:'/activity/icons/timeIcon.png'
+        "Boat capacity": {
+            time1:{
+                1:"San José del Cabo 7:00 AM",
+                2:"Cabo San Lucas 8:00 AM",
+            },
+            iconPath:'/activity/icons/boat.png'
         },
         "Tour Duration":{
-            cost1:"7 hrs. (Plus)",
-            cost2:null,
+            duration:{
+                1:"3 Hrs",
+                2:"Extra hr: 180.00 usd",
+            },
             iconPath:'/activity/icons/locationIcon.png'
         }
     },
@@ -720,18 +770,23 @@ export const activityData:any = {
     footerText:'Ready to Explore Todos Santos?',
     icons:{
         "Cost":{
-            cost1:"$95.00 USD p/p",
-            cost2:"Minimum 4 People",
+            cost1:{
+                1:"$125.00 USD p/p",
+                2:"Minimum 4 People",
+            },
             iconsPath:'/activity/icons/dollerIcon.png'
         },
         "Pickup Time":{
-            cost1:"San José del Cabo 7:00 AM, Corridor 7:30 AM",
-            cost2:"Cabo San Lucas 8:00 AM",
+            time1:{
+                1:"San José del Cabo 7:00 AM",
+                2:"Cabo San Lucas 8:00 AM",
+            },
             iconPath:'/activity/icons/timeIcon.png'
         },
         "Tour Duration":{
-            cost1:"7 hrs. (Plus)",
-            cost2:null,
+            duration:{
+                1:"10 hrs. (Plus)"
+            },
             iconPath:'/activity/icons/locationIcon.png'
         }
     },

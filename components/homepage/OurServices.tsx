@@ -6,8 +6,8 @@ export default function OurServices() {
     <section className="bg-gray-50 py-12 md:py-20">
       <div className="container mx-auto px-4 md:px-8">
         <div className="text-center mb-10 md:mb-16">
-          <h2 className="text-3xl md:text-4xl lg:text-5xl font-bold text-black mb-3 md:mb-4 px-4">Our Services</h2>
-          <p className="text-gray-600 text-base md:text-lg px-4">
+          <h2 className="text-3xl md:text-4xl lg:text-5xl font-montserrat font-bold text-black mb-3 md:mb-4 px-4">Our Services</h2>
+          <p className="font-montserrat font-medium text-gray-600 text-base md:text-lg px-4">
             Private transfers, guided tours, and adventure experiences made for every kind of traveler.
           </p>
         </div>
@@ -26,8 +26,8 @@ export default function OurServices() {
               />
             </div>
             <div className="p-5 md:p-8">
-              <h3 className="text-xl md:text-2xl font-semibold mb-3 md:mb-4 text-black">Airport & Hotel Transfers</h3>
-              <p className="text-gray-600 mb-4 md:mb-6 leading-relaxed text-sm md:text-base">
+              <h3 className="text-xl md:text-2xl font-montserrat font-semibold mb-3 md:mb-4 text-black">Airport & Hotel Transfers</h3>
+              <p className="font-montserrat font-medium text-gray-600 mb-4 md:mb-6 leading-relaxed text-sm md:text-base">
                 Private, safe & on-time rides between Airport, Hotels, Resorts, Airbnb & Villas.
               </p>
               <Link href="/cabo/reservation" className="border-2 border-blue-600 text-blue-600 px-6 md:px-8 py-2.5 md:py-3 rounded-full font-medium hover:bg-blue-600 hover:text-white transition w-full block text-center text-sm md:text-base">
@@ -49,8 +49,8 @@ export default function OurServices() {
               />
             </div>
             <div className="p-5 md:p-8">
-              <h3 className="text-xl md:text-2xl font-semibold mb-3 md:mb-4 text-black">Group & Family Transfers</h3>
-              <p className="text-gray-600 mb-4 md:mb-6 leading-relaxed text-sm md:text-base">
+              <h3 className="text-xl md:text-2xl font-montserrat font-semibold mb-3 md:mb-4 text-black">Group & Family Transfers</h3>
+              <p className="font-montserrat font-medium text-gray-600 mb-4 md:mb-6 leading-relaxed text-sm md:text-base">
                 Spacious, comfortable vans and SUVs ideal for groups, families, and large travel parties.
               </p>
               <Link href="/cabo/reservation" className="border-2 border-blue-600 text-blue-600 px-6 md:px-8 py-2.5 md:py-3 rounded-full font-medium hover:bg-blue-600 hover:text-white transition w-full block text-center text-sm md:text-base">
@@ -72,8 +72,8 @@ export default function OurServices() {
               />
             </div>
             <div className="p-5 md:p-8">
-              <h3 className="text-xl md:text-2xl font-semibold mb-3 md:mb-4 text-black">Adventure Activities</h3>
-              <p className="text-gray-600 mb-4 md:mb-6 leading-relaxed text-sm md:text-base">
+              <h3 className="text-xl md:text-2xl font-montserrat font-semibold mb-3 md:mb-4 text-black">Adventure Activities</h3>
+              <p className="font-montserrat font-medium text-gray-600 mb-4 md:mb-6 leading-relaxed text-sm md:text-base">
                 Discover Cabo's desert beauty with action-packed ATV, Razor, and horseback riding adventures.
               </p>
               <Link href="/activity/reservation" className="border-2 border-blue-600 text-blue-600 px-6 md:px-8 py-2.5 md:py-3 rounded-full font-medium hover:bg-blue-600 hover:text-white transition w-full block text-center text-sm md:text-base">
