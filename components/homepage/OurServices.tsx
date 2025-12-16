@@ -14,10 +14,10 @@ export default function OurServices() {
 
         <div className="grid sm:grid-cols-2 md:grid-cols-3 gap-6 md:gap-8 max-w-7xl mx-auto">
           {/* Service Card 1 - Airport & Hotel Transfers */}
-          <div className="bg-white rounded-xl md:rounded-2xl shadow-lg overflow-hidden">
+          <div className="rounded-xl md:rounded-2xl shadow-lg overflow-hidden" style={{ backgroundColor: '#ffffff' }}>
             <div className="relative w-full h-48 md:h-[320px]">
               <Image
-                src="/ourservice/group transport.png"
+                src="/ourservice/group transport.jpg"
                 alt="Airport & Hotel Transfers"
                 fill
                 className="object-cover"
@@ -37,10 +37,10 @@ export default function OurServices() {
           </div>
 
           {/* Service Card 2 - Group & Family Transfers */}
-          <div className="bg-white rounded-xl md:rounded-2xl shadow-lg overflow-hidden">
+          <div className="rounded-xl md:rounded-2xl shadow-lg overflow-hidden" style={{ backgroundColor: '#ffffff' }}>
             <div className="relative w-full h-48 md:h-[320px]">
               <Image
-                src="/ourservice/group.png"
+                src="/ourservice/group.jpg"
                 alt="Group & Family Transfers"
                 fill
                 className="object-cover"
@@ -60,10 +60,10 @@ export default function OurServices() {
           </div>
 
           {/* Service Card 3 - Adventure Activities */}
-          <div className="bg-white rounded-xl md:rounded-2xl shadow-lg overflow-hidden sm:col-span-2 md:col-span-1">
+          <div className="rounded-xl md:rounded-2xl shadow-lg overflow-hidden sm:col-span-2 md:col-span-1" style={{ backgroundColor: '#ffffff' }}>
             <div className="relative w-full h-48 md:h-[320px]">
               <Image
-                src="/ourservice/activity.png"
+                src="/ourservice/activity.jpg"
                 alt="Adventure Activities"
                 fill
                 className="object-cover"
