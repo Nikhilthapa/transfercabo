@@ -51,6 +51,17 @@ export default function Footer() {
                 </svg>
               </a>
             </div>
+            <p className="text-white text-xs mt-4 md:mt-5 whitespace-nowrap font-semibold">
+              Design and developed by :- {" "}
+              <a 
+                href="https://sparixglobal.com" 
+                target="_blank" 
+                rel="noopener noreferrer" 
+                className="text-white hover:text-white/80 transition"
+              >
+                Sparix Global Pvt Ltd
+              </a>
+            </p>
           </div>
 
           <div>

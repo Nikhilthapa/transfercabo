@@ -213,15 +213,15 @@ export default async function ActivityDetailPage({ params }: { params: { slug: s
                 return (
                   <div key={key} className="p-4 md:p-6 text-center">
                     <div className="flex justify-center mb-3 md:mb-4">
-                      <div className="w-12 h-12 md:w-16 md:h-16 rounded-xl bg-blue-100 flex items-center justify-center overflow-hidden">
+                      <div className="w-16 h-16 md:w-20 md:h-20 rounded-full flex items-center justify-center overflow-hidden" style={{ backgroundColor: '#b4c8e3' }}>
                         <Image
                           src={value.iconsPath || value.iconPath}
                           alt={key}
                           width={40}
                           height={40}
-                          className="object-contain w-8 h-8 md:w-10 md:h-10"
+                          className="object-contain w-10 h-10 md:w-12 md:h-12"
                           quality={85}
-                          sizes="(max-width: 768px) 32px, 40px"
+                          sizes="(max-width: 768px) 40px, 48px"
                         />
                       </div>
                     </div>
@@ -251,7 +251,7 @@ export default async function ActivityDetailPage({ params }: { params: { slug: s
                 What to Expect
               </h2>
               <p className="text-center font-montserrat font-medium text-gray-600 mb-8 md:mb-12 px-4 text-sm md:text-base">
-                Experience culture, coastline, and comfort with a full-day guided La Paz adventure by <span className="font-montserrat font-bold text-[#0d0d0d]">Cheap Transfers Cabo</span>.
+                Experience culture, coastline, and comfort with a full-day guided {slug} adventure by <span className="font-montserrat font-bold text-[#0d0d0d]">Cheap Transfers Cabo</span>.
               </p>
               
               <div className="grid md:grid-cols-2 gap-8 md:gap-12 items-center">
@@ -276,8 +276,8 @@ export default async function ActivityDetailPage({ params }: { params: { slug: s
                   </h3>
                   <ul className="space-y-3 md:space-y-4">
                     {laPazData.data[0].points && Object.values(laPazData.data[0].points).map((point: any, index: number) => (
-                     <li key={index} className="font-montserrat font-medium text-[#404040] text-sm md:text-base">
-                     <span className="mr-2">•</span>
+                     <li key={index} className="flex items-start font-montserrat font-medium text-[#404040] text-sm md:text-base">
+                     <span className="mr-2 flex-shrink-0">•</span>
                      <span>{point}</span>
                    </li>
                     ))}
@@ -303,15 +303,15 @@ export default async function ActivityDetailPage({ params }: { params: { slug: s
               {laPazData.data[1] && (
                 <div className="rounded-lg p-4 md:p-6" style={{ backgroundColor: '#fafaf9' }}>
                   <div className="flex items-start gap-3 md:gap-4">
-                    <div className="w-2 h-full bg-[#0446A1] rounded-full flex-shrink-0 min-h-[40px] md:min-h-[60px]"></div>
+                    <div className="w-2 h-full rounded-full flex-shrink-0 min-h-[40px] md:min-h-[35px] -ml-5 md:-ml-5" style={{ background: 'linear-gradient(to right, #fafaf9 30%, #0446A1 55%)' }}></div>
                     <div className="flex-1">
                       <h3 className="text-xl md:text-2xl font-montserrat font-medium text-black mb-3 md:mb-4">
                         {laPazData.data[1].title}
                       </h3>
                       <ul className="space-y-2 md:space-y-2.5">
                         {Object.values(laPazData.data[1].points).map((point: any, index: number) => (
-                          <li key={index} className="font-montserrat font-medium text=[#404040] text-sm md:text-base">
-                            <span className="mr-2">•</span>
+                          <li key={index} className="flex items-start font-montserrat font-medium text=[#404040] text-sm md:text-base">
+                            <span className="mr-2 flex-shrink-0">•</span>
                             <span>{point}</span>
                           </li>
                         ))}
@@ -325,15 +325,15 @@ export default async function ActivityDetailPage({ params }: { params: { slug: s
               {laPazData.data[2] && (
                 <div className="rounded-lg p-4 md:p-6" style={{ backgroundColor: '#fafaf9' }}>
                   <div className="flex items-start gap-3 md:gap-4">
-                    <div className="w-2 h-full bg-[#0446A1] rounded-full flex-shrink-0 min-h-[40px] md:min-h-[60px]"></div>
+                    <div className="w-2 h-full rounded-full flex-shrink-0 min-h-[40px] md:min-h-[35px] -ml-5 md:-ml-5" style={{ background: 'linear-gradient(to right, #fafaf9 30%, #0446A1 50%)' }}></div>
                     <div className="flex-1">
                       <h3 className="text-xl md:text-2xl font-montserrat font-medium text-black mb-3 md:mb-4">
                         {laPazData.data[2].title || "What's Not Included"}
                       </h3>
                       <ul className="space-y-2 md:space-y-2.5">
                         {Object.values(laPazData.data[2].points).map((point: any, index: number) => (
-                          <li key={index} className="font-montserrat font-medium text=[#404040] text-sm md:text-base">
-                            <span className="mr-2">•</span>
+                          <li key={index} className="flex items-start font-montserrat font-medium text=[#404040] text-sm md:text-base">
+                            <span className="mr-2 flex-shrink-0">•</span>
                             <span>{point}</span>
                           </li>
                         ))}
@@ -347,15 +347,15 @@ export default async function ActivityDetailPage({ params }: { params: { slug: s
               {laPazData.data[3] && (
                 <div className="rounded-lg p-4 md:p-6" style={{ backgroundColor: '#fafaf9' }}>
                   <div className="flex items-start gap-3 md:gap-4">
-                    <div className="w-2 h-full bg-[#0446A1] rounded-full flex-shrink-0 min-h-[40px] md:min-h-[60px]"></div>
+                    <div className="w-2 h-full rounded-full flex-shrink-0 min-h-[40px] md:min-h-[35px] -ml-5 md:-ml-5" style={{ background: 'linear-gradient(to right, #fafaf9 30%, #0446A1 50%)' }}></div>
                     <div className="flex-1">
                       <h3 className="text-xl md:text-2xl font-montserrat font-medium text-black mb-3 md:mb-4">
                         {laPazData.data[3].title}
                       </h3>
                       <ul className="space-y-2 md:space-y-2.5">
                         {Object.values(laPazData.data[3].points).map((point: any, index: number) => (
-                          <li key={index} className="font-montserrat font-medium text=[#404040] text-sm md:text-base">
-                            <span className="mr-2">•</span>
+                          <li key={index} className="flex items-start font-montserrat font-medium text=[#404040] text-sm md:text-base">
+                            <span className="mr-2 flex-shrink-0">•</span>
                             <span>{point}</span>
                           </li>
                         ))}
@@ -369,7 +369,7 @@ export default async function ActivityDetailPage({ params }: { params: { slug: s
               {laPazData.data[4] && (
                 <div className="rounded-lg p-4 md:p-6" style={{ backgroundColor: '#fafaf9' }}>
                   <div className="flex items-start gap-3 md:gap-4">
-                    <div className="w-2 h-full bg-[#0446A1] rounded-full flex-shrink-0 min-h-[40px] md:min-h-[60px]"></div>
+                    <div className="w-2 h-full rounded-full flex-shrink-0 min-h-[40px] md:min-h-[35px] -ml-5 md:-ml-5" style={{ background: 'linear-gradient(to right, #fafaf9 30%, #0446A1 50%)' }}></div>
                     <div className="flex-1">
                       <h3 className="text-xl md:text-2xl font-montserrat font-medium text-black mb-3 md:mb-4">
                         {laPazData.data[4].title}
