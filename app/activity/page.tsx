@@ -29,7 +29,7 @@ export const activities = [
     price: "$85.00 USD",
     duration: "10 Hours",
     minPeople: "Minimum 4 People",
-    image: "/thingstodoincabo/carts/Artwalk.png"
+    image: "/thingstodoincabo/carts/artwork.jpg"
   },
   {
     slug: "horseback-riding",
@@ -38,7 +38,7 @@ export const activities = [
     price: "$95.00 USD",
     duration: "2 Hours",
     minPeople: "Minimum 1 People",
-    image: "/thingstodoincabo/carts/laPaz.png"
+    image: "/thingstodoincabo/carts/horse-riding.jpg"
   },
   {
     slug: "razors",
@@ -47,7 +47,7 @@ export const activities = [
     price: "$295.00 USD",
     duration: "2 Hours",
     minPeople: "Minimum 1 People",
-    image: "/thingstodoincabo/carts/Atv.png"
+    image: "/thingstodoincabo/carts/razor.jpg"
   },
   {
     slug: "todos-santos",
@@ -74,7 +74,7 @@ export const activities = [
     price: "$85.00 USD",
     duration: "10 Hours",
     minPeople: "Minimum 4 People",
-    image: "/thingstodoincabo/carts/loscabo.png"
+    image: "/thingstodoincabo/carts/loscabo.jpg"
   },
   {
     slug: "hidden-towns",
@@ -83,7 +83,7 @@ export const activities = [
     price: "$95.00 USD",
     duration: "7 Hours",
     minPeople: "Minimum 4 People",
-    image: "/thingstodoincabo/carts/hiddentown.png"
+    image: "/thingstodoincabo/carts/hiddentown.jpg"
   },
   {
     slug: "40-ft",
