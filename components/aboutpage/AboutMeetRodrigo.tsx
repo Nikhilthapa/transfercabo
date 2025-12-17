@@ -2,12 +2,12 @@ import Image from "next/image";
 
 export default function AboutMeetRodrigo() {
   return (
-    <section className="bg-white py-12 md:py-20">
+    <section className="bg-white">
       <div className="container mx-auto px-4 md:px-8">
         <div className="grid md:grid-cols-2 gap-8 md:gap-12 items-center">
           {/* Left Column - Text */}
           <div>
-            <h2 className="text-2xl md:text-3xl lg:text-4xl font-Montserrat font-bold text-black mb-4 md:mb-6">
+            <h2 className="text-2xl md:text-3xl lg:text-4xl font-Montserrat font-bold text-black" style={{ marginBottom: '10px' }}>
               Meet Rodrigo - Your Trusted Guide & Licensed Driver in Los Cabos
             </h2>
             <div className="space-y-2 md:space-y-0 font-Montserrat font-medium text-[#6f6f6f] text-base md:text-lg leading-relaxed">

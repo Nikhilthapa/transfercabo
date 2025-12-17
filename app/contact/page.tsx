@@ -102,8 +102,9 @@ export default function ContactPage() {
 
       {/* Contact Form and Info Section */}
       <Contact />
-      
+      <div style={{ marginTop: '75px' }}>
       <Footer />
+      </div>
     </div>
   );
 }

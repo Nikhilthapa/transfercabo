@@ -16,11 +16,14 @@ export default function AboutPage() {
         titleColor="#fcfcfc"
         subtitleColor="#fafaf9"
       />
-      <AboutWelcome />
-      <AboutMeetRodrigo />
-      <AboutMissionVision />
-      <AboutCallToAction />
+      <div style={{ display: 'flex', flexDirection: 'column', gap: '100px' }}>
+        <AboutWelcome />
+        <AboutMeetRodrigo />
+        <AboutMissionVision />
+        <AboutCallToAction />
       <Footer />
+      </div>
+
     </div>
   );
 }

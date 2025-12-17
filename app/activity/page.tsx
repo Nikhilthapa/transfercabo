@@ -242,7 +242,7 @@ export default function ActivityPage() {
             {activities.map((activity) => (
               <div 
                 key={activity.slug} 
-                className="bg-white rounded-2xl shadow-lg overflow-hidden hover:shadow-xl transition-shadow duration-300"
+                className="bg-white rounded-2xl shadow-lg overflow-hidden hover:shadow-xl transition-shadow duration-300 flex flex-col h-full"
               >
                 {/* Activity Image */}
                 <div className="relative h-64 w-full">
@@ -257,7 +257,7 @@ export default function ActivityPage() {
                 </div>
 
                 {/* Activity Content */}
-                <div className="p-4 md:p-6">
+                <div className="p-4 md:p-6 flex-1 flex flex-col">
                   <h3 className="text-xl md:text-2xl font-montserrat font-semibold text-gray-900 mb-2 md:mb-3">
                     {activity.name}
                   </h3>
@@ -288,7 +288,7 @@ export default function ActivityPage() {
                   </div>
 
                   {/* Action Buttons */}
-                  <div className="flex gap-2 md:gap-3">
+                  <div className="flex gap-2 md:gap-3 mt-auto">
                     <Link 
                       href={`/activity/${activity.slug}`}
                       className="flex-1 text-center border-2 border-blue-600 text-blue-600 px-3 md:px-4 py-2 md:py-2.5 rounded-full hover:bg-blue-600 hover:text-white transition font-medium text-xs md:text-sm flex items-center justify-center"
@@ -298,11 +298,12 @@ export default function ActivityPage() {
                     <Link 
                       href="/activity/reservation"
                       className="flex-1 text-center text-white px-3 md:px-4 py-2 md:py-2.5 rounded-full transition font-medium hover:opacity-90 text-xs md:text-sm flex items-center justify-center"
-                      style={{ backgroundColor: '#0446A1', transform: 'translateY(2px)' }}
+                      style={{ backgroundColor: '#0446A1' }}
                     >
                       Book Activities
                     </Link>
                   </div>
+                  
                 </div>
               </div>
             ))}
