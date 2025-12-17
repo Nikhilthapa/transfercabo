@@ -12,14 +12,16 @@ export default function Home() {
   return (
     <div className="bg-white min-h-screen">
       <Hero />
-      <IntroText />
-      <OurServices />
-      <WhyTrustUs />
-      <AboutUs />
-      <Activities />
-      <Testimonials />
-      <Contact />
-      <Footer />
+      <div style={{ display: 'flex', flexDirection: 'column', gap: '  75px' }}>
+        <IntroText />
+        <OurServices />
+        <WhyTrustUs />
+        <AboutUs />
+        <Activities />
+        <Testimonials />
+        <Contact />
+        <Footer />
+      </div>
     </div>
   );
 }

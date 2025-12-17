@@ -5,10 +5,10 @@ import Link from "next/link";
 export default function Activities() {
   let data=activities
   return (
-    <section className="py-12 md:py-20 overflow-hidden bg-white">
+    <section className="overflow-hidden bg-white">
       <div className="container mx-auto px-4 md:px-8 mb-8 md:mb-12">
         <div className="text-center">
-          <h2 className="text-3xl md:text-4xl lg:text-5xl font-montserrat font-bold text-black mb-3 md:mb-4">The Best Things to do in Cabo</h2>
+          <h2 className="text-3xl md:text-4xl lg:text-5xl font-montserrat font-bold text-black" style={{ marginBottom: '10px' }}>The Best Things to do in Cabo</h2>
           <p className="font-montserrat font-medium text-gray-700 text-base md:text-lg px-4">
             Enjoy ATV, Razor, horseback, and guided desert activities crafted for unforgettable memories.
           </p>
@@ -21,7 +21,7 @@ export default function Activities() {
             {/* First set of activities */}
             {data.map((activity, index) => (
               <div key={`first-${index}`} className="carousel-card">
-                <div className="bg-white rounded-2xl shadow-lg overflow-hidden border border-gray-200 h-full">
+                <div className="bg-white rounded-2xl shadow-lg overflow-hidden border border-gray-200 h-full flex flex-col">
                   <div className="relative w-full h-60">
                     <Image
                       src={activity.image}
@@ -32,8 +32,8 @@ export default function Activities() {
                       sizes="(max-width: 640px) 90vw, (max-width: 1024px) 45vw, 30vw"
                     />
                   </div>
-                  <div className="p-4 md:p-6">
-                    <h3 className="text-xl md:text-2xl font-montserrat font-semibold mb-2 md:mb-3 text-black">{activity.name}</h3>
+                  <div className="p-4 md:p-6 flex-1 flex flex-col">
+                    <h3 className="text-xl md:text-2xl font-montserrat font-semibold text-black" style={{ marginBottom: '10px' }}>{activity.name}</h3>
                     <p className="font-montserrat font-medium text-gray-600 text-xs md:text-sm mb-3 md:mb-4">
                       {activity.description.split('/').map((part, index, array) => (
                         <span key={index}>
@@ -59,7 +59,7 @@ export default function Activities() {
                         {activity.minPeople}
                       </span>
                     </div>
-                    <div className="flex gap-2 md:gap-3">
+                    <div className="flex gap-2 md:gap-3 mt-auto">
                       <Link 
                         href={`/activity/${activity.slug}`}
                         className="border-2 border-blue-600 text-blue-600 px-4 md:px-6 py-2 md:py-2.5 rounded-full flex-1 hover:bg-blue-600 hover:text-white transition font-medium text-center text-xs md:text-sm flex items-center justify-center"
@@ -68,8 +68,8 @@ export default function Activities() {
                       </Link>
                       <Link 
                         href="/activity/reservation"
-                        className="text-white px-4 md:px-6 py-2 md:py-2.5 rounded-full flex-1 transition font-medium hover:opacity-90 text-center text-xs md:text-sm flex items-center justify-center"
-                        style={{ backgroundColor: '#0446A1', transform: 'translateY(2px)' }}
+                        className="text-white px-4 md:px-6 py-2 md:py-2.5 rounded-full flex-1 transition font-medium hover:opacity-90 text-center text-xs md:text-sm flex items-center justify-center border-2 border-transparent"
+                        style={{ backgroundColor: '#0446A1' }}
                       >
                         Book Activities
                       </Link>
@@ -81,7 +81,7 @@ export default function Activities() {
             {/* Duplicate set for seamless loop */}
             {activities.map((activity, index) => (
               <div key={`second-${index}`} className="carousel-card">
-                <div className="bg-white rounded-2xl shadow-lg overflow-hidden border border-gray-200 h-full">
+                <div className="bg-white rounded-2xl shadow-lg overflow-hidden border border-gray-200 h-full flex flex-col">
                   <div className="relative w-full h-60">
                     <Image
                       src={activity.image}
@@ -92,7 +92,7 @@ export default function Activities() {
                       sizes="(max-width: 640px) 90vw, (max-width: 1024px) 45vw, 30vw"
                     />
                   </div>
-                  <div className="p-4 md:p-6">
+                  <div className="p-4 md:p-6 flex-1 flex flex-col">
                     <h3 className="text-xl md:text-2xl font-montserrat font-semibold mb-2 md:mb-3 text-black">{activity.name}</h3>
                     <p className="text-gray-600 text-xs md:text-sm mb-3 md:mb-4">
                       {activity.description.split('/').map((part, index, array) => (
@@ -119,7 +119,7 @@ export default function Activities() {
                         {activity.minPeople}
                       </span>
                     </div>
-                    <div className="flex gap-2 md:gap-3">
+                    <div className="flex gap-2 md:gap-3 mt-auto">
                       <Link 
                         href={`/activity/${activity.slug}`}
                         className="border-2 border-blue-600 text-blue-600 px-4 md:px-6 py-2 md:py-2.5 rounded-full flex-1 hover:bg-blue-600 hover:text-white transition font-medium text-center text-xs md:text-sm flex items-center justify-center"
@@ -128,8 +128,8 @@ export default function Activities() {
                       </Link>
                       <Link 
                         href="/activity/reservation"
-                        className="text-white px-4 md:px-6 py-2 md:py-2.5 rounded-full flex-1 transition font-medium hover:opacity-90 text-center text-xs md:text-sm flex items-center justify-center"
-                        style={{ backgroundColor: '#0446A1', transform: 'translateY(2px)' }}
+                        className="text-white px-4 md:px-6 py-2 md:py-2.5 rounded-full flex-1 transition font-medium hover:opacity-90 text-center text-xs md:text-sm flex items-center justify-center border-2 border-transparent"
+                        style={{ backgroundColor: '#0446A1' }}
                       >
                         Book Activities
                       </Link>

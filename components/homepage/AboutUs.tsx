@@ -3,10 +3,10 @@ import Link from "next/link";
 
 export default function AboutUs() {
   return (
-    <section className="container mx-auto px-4 md:px-8 py-12 md:py-20">
+    <section className="container mx-auto px-4 md:px-8">
       <div className="text-center mb-10 md:mb-16">
-        <h2 className="text-3xl md:text-4xl lg:text-5xl font-montserrat font-bold text-black mb-3 md:mb-4">About Us</h2>
-        <p className="font-montserrat font-medium text-gray-700 text-base md:text-lg px-4">
+        <h2 className="text-3xl md:text-4xl lg:text-5xl font-montserrat font-bold text-black" style={{ marginBottom: '10px' }}>About Us</h2>
+        <p className="font-montserrat font-medium text-gray-700 text-base md:text-lg px-4" style={{ marginBottom: '50px' }}>
           A locally trusted team dedicated to stress-free airport rides and unforgettable Cabo adventures.
         </p>
       </div>
@@ -58,10 +58,10 @@ export default function AboutUs() {
 
         {/* Text Content */}
         <div className="mt-0 md:mt-44 lg:mt-48">
-          <p className="text-base md:text-lg font-montserrat font-medium text-gray-700 mb-4 md:mb-6 leading-relaxed">
+          <p className="text-base md:text-lg font-montserrat font-medium text-gray-700 leading-relaxed" style={{ marginBottom: '10px' }}>
             Welcome to Cheap Transfers Cabo — your friendly, family-run transportation service in Los Cabos. Since 2019, we've been offering reliable, private airport transfers and personalized city tours throughout Southern Baja.
           </p>
-          <p className="text-base md:text-lg font-montserrat font-medium text-gray-700 mb-6 md:mb-8 leading-relaxed">
+          <p className="text-base md:text-lg font-montserrat font-medium text-gray-700 leading-relaxed" style={{ marginBottom: '50px' }}>
             Our Story & Mission Cheap Transfers Cabo began when our family realized how many travelers arrive in Los Cabos hoping for a smooth, stress-free ride — and often finding only crowded shuttles, confusing pickup lines, or shared rides with strangers. We decided there had to be a better way: one where guests ride privately, with trust, comfort, and care.
           </p>
           <Link 
