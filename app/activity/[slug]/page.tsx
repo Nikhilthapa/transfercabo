@@ -183,53 +183,53 @@ export default async function ActivityDetailPage({ params }: { params: { slug: s
         />
 
         {/* Welcome Section */}
-        <section className="py-12 md:py-16 px-4 bg-white">
+        <section className=" px-4 bg-white">
           <div className="container mx-auto max-w-6xl text-center">
-            <h2 className="text-[28px] font-montserrat font-semibold text-black mb-4 md:mb-6 px-4">
+            <h2 className="text-xl sm:text-2xl md:text-3xl lg:text-[28px] font-montserrat font-semibold text-black mb-[15px] px-4">
               {laPazData.welcome}
             </h2>
-            <p className="text-base md:text-lg font-montserrat font-medium text-gray-700 max-w-4xl mx-auto leading-relaxed px-4">
+            <p className="text-sm sm:text-base md:text-lg font-montserrat font-medium text-gray-700 max-w-4xl mx-auto leading-relaxed mb-[100px] px-4">
               {formatWelcomeDescription(laPazData.welcomeDes)}
             </p>
           </div>
         </section>
 
         {/* Key Details Section */}
-        <section className="py-12 md:py-16 px-4 bg-white">
+        <section className=" px-4 bg-white">
           <div className="container mx-auto max-w-6xl">
-            <h2 className="text-[38px] font-montserrat font-bold text-black text-center mb-2 md:mb-3 px-32">
+            <h2 className="text-2xl sm:text-3xl md:text-4xl lg:text-[38px] font-montserrat font-bold text-black text-center mb-[10px] px-4 sm:px-8 md:px-16 lg:px-32">
               {laPazData.sub1}
             </h2>
-            <p className="text-center font-montserrat font-medium text-gray-600 mb-8 md:mb-12 px-4 text-sm md:text-base">
+            <p className="text-center font-montserrat font-medium text-gray-600 mb-[70px] px-4 text-xs sm:text-sm md:text-base">
               {laPazData.sub1Des}
             </p>
             
-            <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-6 md:gap-8">
+            <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-4 sm:gap-5 md:gap-6 lg:gap-8">
               {Object.entries(laPazData.icons).map(([key, value]: [string, any]) => {
                 // Find the nested object (cost1, time1, duration, etc.)
                 const dataKey = Object.keys(value).find(k => k !== 'iconsPath' && k !== 'iconPath' && typeof value[k] === 'object');
                 const dataObject = dataKey ? value[dataKey] : null;
                 
                 return (
-                  <div key={key} className="p-4 md:p-6 text-center">
-                    <div className="flex justify-center mb-3 md:mb-4">
-                      <div className="w-16 h-16 md:w-20 md:h-20 rounded-full flex items-center justify-center overflow-hidden" style={{ backgroundColor: '#b4c8e3' }}>
+                  <div key={key} className="p-3 sm:p-4 md:p-5 lg:p-6 text-center">
+                    <div className="flex justify-center mb-2 sm:mb-3 md:mb-4">
+                      <div className="w-12 h-12 sm:w-14 sm:h-14 md:w-16 md:h-16 lg:w-20 lg:h-20 rounded-full flex items-center justify-center overflow-hidden" style={{ backgroundColor: '#b4c8e3' }}>
                         <Image
                           src={value.iconsPath || value.iconPath}
                           alt={key}
                           width={40}
                           height={40}
-                          className="object-contain w-10 h-10 md:w-12 md:h-12"
+                          className="object-contain w-6 h-6 sm:w-7 sm:h-7 md:w-10 md:h-10 lg:w-12 lg:h-12"
                           quality={85}
-                          sizes="(max-width: 768px) 40px, 48px"
+                          sizes="(max-width: 640px) 24px, (max-width: 768px) 28px, (max-width: 1024px) 40px, 48px"
                         />
                       </div>
                     </div>
-                    <h3 className="text-lg md:text-xl font-bold text-black mb-2 md:mb-3">{key}</h3>
+                    <h3 className="text-base sm:text-lg md:text-xl font-bold text-black mb-2 sm:mb-2.5 md:mb-3">{key}</h3>
                     {dataObject && (
-                      <ul className="space-y-1 md:space-y-2">
+                      <ul className="space-y-1 sm:space-y-1.5 md:space-y-2">
                         {Object.values(dataObject).map((item: any, index: number) => (
-                          <li key={index} className="font-montserrat font-medium text-gray-700 text-sm md:text-base">
+                          <li key={index} className="font-montserrat font-medium text-gray-700 text-xs sm:text-sm md:text-base break-words">
                             <span className="mr-2">•</span>
                             <span>{item}</span>
                           </li>
@@ -245,19 +245,19 @@ export default async function ActivityDetailPage({ params }: { params: { slug: s
 
         {/* What to Expect Section */}
         {laPazData.data[0] && (
-          <section className="py-12 md:py-16 px-4 bg-white">
+          <section className="py-8 sm:py-10 md:py-12 lg:py-16 px-4 bg-white">
             <div className="container mx-auto max-w-6xl">
-              <h2 className="text-2xl md:text-3xl lg:text-4xl font-montserrat font-bold text-black text-center mb-2 md:mb-3 px-4">
+              <h2 className="text-xl sm:text-2xl md:text-3xl lg:text-4xl font-montserrat font-bold text-black text-center mb-[10px] px-4">
                 What to Expect
               </h2>
-              <p className="text-center font-montserrat font-medium text-gray-600 mb-8 md:mb-12 px-4 text-sm md:text-base">
+              <p className="text-center font-montserrat font-medium text-gray-600 mb-[70px] px-4 text-xs sm:text-sm md:text-base">
                 Experience culture, coastline, and comfort with a full-day guided {slug} adventure by <span className="font-montserrat font-bold text-[#0d0d0d]">Cheap Transfers Cabo</span>.
               </p>
               
-              <div className="grid md:grid-cols-2 gap-8 md:gap-12 items-center">
+              <div className="grid md:grid-cols-2 gap-4 sm:gap-6 md:gap-8 lg:gap-12 items-start">
                 {/* Image */}
                 {laPazData.data[0].image && (
-                  <div className="relative w-[500px] h-[500px] rounded-[24px] overflow-hidden ml-8" >
+                  <div className="relative w-full aspect-square rounded-lg sm:rounded-xl md:rounded-2xl lg:rounded-[24px] overflow-hidden" >
                     <Image
                       src={`/${laPazData.data[0].image}`}
                       alt={laPazData.data[0].title}
@@ -270,13 +270,13 @@ export default async function ActivityDetailPage({ params }: { params: { slug: s
                 )}
                 
                 {/* Points */}
-                <div>
-                  <h3 className="text-xl md:text-2xl font-bold text-black mb-4 md:mb-6">
+                <div className="w-full">
+                  <h3 className="text-lg sm:text-xl md:text-2xl font-bold text-black mb-3 sm:mb-4 md:mb-5 lg:mb-6">
                     {laPazData.data[0].title }
                   </h3>
-                  <ul className="space-y-3 md:space-y-4">
+                  <ul className="space-y-2 sm:space-y-3 md:space-y-4">
                     {laPazData.data[0].points && Object.values(laPazData.data[0].points).map((point: any, index: number) => (
-                     <li key={index} className="flex items-start font-montserrat font-medium text-[#404040] text-sm md:text-base">
+                     <li key={index} className="flex items-start font-montserrat font-medium text-[#404040] text-xs sm:text-sm md:text-base break-words">
                      <span className="mr-2 flex-shrink-0">•</span>
                      <span>{point}</span>
                    </li>
@@ -284,7 +284,7 @@ export default async function ActivityDetailPage({ params }: { params: { slug: s
                   </ul>
                   <Link href="/activity/reservation">
                     <button 
-                      className="mt-6 md:mt-8 w-[35%] mx-auto bg-[#0446A1] text-white px-[10px] py-[15px] rounded-lg font-semibold text-sm md:text-base hover:opacity-90 transition"
+                      className="mt-4 sm:mt-5 md:mt-6 lg:mt-8 w-full sm:w-auto sm:min-w-[180px] md:min-w-[200px] md:w-[35%] bg-[#0446A1] text-white px-4 sm:px-6 md:px-[10px] py-3 sm:py-3.5 md:py-[15px] rounded-lg font-semibold text-xs sm:text-sm md:text-base hover:opacity-90 transition"
                     >
                       Book This Activity
                     </button>
@@ -296,21 +296,21 @@ export default async function ActivityDetailPage({ params }: { params: { slug: s
         )}
 
         {/* Information Cards Section */}
-        <section className="py-12 md:py-16 px-4 bg-white">
+        <section className=" px-4 bg-white mb-[100px]">
           <div className="container mx-auto max-w-6xl">
-            <div className="flex flex-col gap-4 md:gap-6">
+            <div className="flex flex-col gap-3 sm:gap-4 md:gap-5 lg:gap-6">
               {/* What's Included */}
               {laPazData.data[1] && (
-                <div className="rounded-lg p-4 md:p-6" style={{ backgroundColor: '#fafaf9' }}>
-                  <div className="flex items-start gap-3 md:gap-4">
-                    <div className="w-2 h-full rounded-full flex-shrink-0 min-h-[40px] md:min-h-[35px] -ml-5 md:-ml-5" style={{ background: 'linear-gradient(to right, #fafaf9 30%, #0446A1 55%)' }}></div>
-                    <div className="flex-1">
-                      <h3 className="text-xl md:text-2xl font-montserrat font-medium text-black mb-3 md:mb-4">
+                <div className="rounded-lg p-3 sm:p-4 md:p-5 lg:p-6 mb-[15px]" style={{ backgroundColor: '#fafaf9' }}>
+                  <div className="flex items-start gap-2 sm:gap-3 md:gap-4">
+                    <div className="w-2 h-full rounded-full flex-shrink-0 min-h-[40px] sm:min-h-[35px] -ml-3 sm:-ml-4 md:-ml-5" style={{ background: 'linear-gradient(to right, #fafaf9 30%, #0446A1 55%)' }}></div>
+                    <div className="flex-1 min-w-0">
+                      <h3 className="text-lg sm:text-xl md:text-2xl font-montserrat font-medium text-black mb-2 sm:mb-3 md:mb-4">
                         {laPazData.data[1].title}
                       </h3>
-                      <ul className="space-y-2 md:space-y-2.5">
+                      <ul className="space-y-1.5 sm:space-y-2 md:space-y-2.5">
                         {Object.values(laPazData.data[1].points).map((point: any, index: number) => (
-                          <li key={index} className="flex items-start font-montserrat font-medium text=[#404040] text-sm md:text-base">
+                          <li key={index} className="flex items-start font-montserrat font-medium text-[#404040] text-xs sm:text-sm md:text-base break-words">
                             <span className="mr-2 flex-shrink-0">•</span>
                             <span>{point}</span>
                           </li>
@@ -323,16 +323,16 @@ export default async function ActivityDetailPage({ params }: { params: { slug: s
 
               {/* What's Not Included */}
               {laPazData.data[2] && (
-                <div className="rounded-lg p-4 md:p-6" style={{ backgroundColor: '#fafaf9' }}>
-                  <div className="flex items-start gap-3 md:gap-4">
-                    <div className="w-2 h-full rounded-full flex-shrink-0 min-h-[40px] md:min-h-[35px] -ml-5 md:-ml-5" style={{ background: 'linear-gradient(to right, #fafaf9 30%, #0446A1 50%)' }}></div>
-                    <div className="flex-1">
-                      <h3 className="text-xl md:text-2xl font-montserrat font-medium text-black mb-3 md:mb-4">
+                <div className="rounded-lg p-3 sm:p-4 md:p-5 lg:p-6 mb-[15px]" style={{ backgroundColor: '#fafaf9' }}>
+                  <div className="flex items-start gap-2 sm:gap-3 md:gap-4">
+                    <div className="w-2 h-full rounded-full flex-shrink-0 min-h-[40px] sm:min-h-[35px] -ml-3 sm:-ml-4 md:-ml-5" style={{ background: 'linear-gradient(to right, #fafaf9 30%, #0446A1 50%)' }}></div>
+                    <div className="flex-1 min-w-0">
+                      <h3 className="text-lg sm:text-xl md:text-2xl font-montserrat font-medium text-black mb-2 sm:mb-3 md:mb-4">
                         {laPazData.data[2].title || "What's Not Included"}
                       </h3>
-                      <ul className="space-y-2 md:space-y-2.5">
+                      <ul className="space-y-1.5 sm:space-y-2 md:space-y-2.5">
                         {Object.values(laPazData.data[2].points).map((point: any, index: number) => (
-                          <li key={index} className="flex items-start font-montserrat font-medium text=[#404040] text-sm md:text-base">
+                          <li key={index} className="flex items-start font-montserrat font-medium text-[#404040] text-xs sm:text-sm md:text-base break-words">
                             <span className="mr-2 flex-shrink-0">•</span>
                             <span>{point}</span>
                           </li>
@@ -345,16 +345,16 @@ export default async function ActivityDetailPage({ params }: { params: { slug: s
 
               {/* Our Recommendations */}
               {laPazData.data[3] && (
-                <div className="rounded-lg p-4 md:p-6" style={{ backgroundColor: '#fafaf9' }}>
-                  <div className="flex items-start gap-3 md:gap-4">
-                    <div className="w-2 h-full rounded-full flex-shrink-0 min-h-[40px] md:min-h-[35px] -ml-5 md:-ml-5" style={{ background: 'linear-gradient(to right, #fafaf9 30%, #0446A1 50%)' }}></div>
-                    <div className="flex-1">
-                      <h3 className="text-xl md:text-2xl font-montserrat font-medium text-black mb-3 md:mb-4">
+                <div className="rounded-lg p-3 sm:p-4 md:p-5 lg:p-6 mb-[15px]" style={{ backgroundColor: '#fafaf9' }}>
+                  <div className="flex items-start gap-2 sm:gap-3 md:gap-4">
+                    <div className="w-2 h-full rounded-full flex-shrink-0 min-h-[40px] sm:min-h-[35px] -ml-3 sm:-ml-4 md:-ml-5" style={{ background: 'linear-gradient(to right, #fafaf9 30%, #0446A1 50%)' }}></div>
+                    <div className="flex-1 min-w-0">
+                      <h3 className="text-lg sm:text-xl md:text-2xl font-montserrat font-medium text-black mb-2 sm:mb-3 md:mb-4">
                         {laPazData.data[3].title}
                       </h3>
-                      <ul className="space-y-2 md:space-y-2.5">
+                      <ul className="space-y-1.5 sm:space-y-2 md:space-y-2.5">
                         {Object.values(laPazData.data[3].points).map((point: any, index: number) => (
-                          <li key={index} className="flex items-start font-montserrat font-medium text=[#404040] text-sm md:text-base">
+                          <li key={index} className="flex items-start font-montserrat font-medium text-[#404040] text-xs sm:text-sm md:text-base break-words">
                             <span className="mr-2 flex-shrink-0">•</span>
                             <span>{point}</span>
                           </li>
@@ -367,14 +367,14 @@ export default async function ActivityDetailPage({ params }: { params: { slug: s
 
               {/* Considerations */}
               {laPazData.data[4] && (
-                <div className="rounded-lg p-4 md:p-6" style={{ backgroundColor: '#fafaf9' }}>
-                  <div className="flex items-start gap-3 md:gap-4">
-                    <div className="w-2 h-full rounded-full flex-shrink-0 min-h-[40px] md:min-h-[35px] -ml-5 md:-ml-5" style={{ background: 'linear-gradient(to right, #fafaf9 30%, #0446A1 50%)' }}></div>
-                    <div className="flex-1">
-                      <h3 className="text-xl md:text-2xl font-montserrat font-medium text-black mb-3 md:mb-4">
+                <div className="rounded-lg p-3 sm:p-4 md:p-5 lg:p-6" style={{ backgroundColor: '#fafaf9' }}>
+                  <div className="flex items-start gap-2 sm:gap-3 md:gap-4">
+                    <div className="w-2 h-full rounded-full flex-shrink-0 min-h-[40px] sm:min-h-[35px] -ml-3 sm:-ml-4 md:-ml-5" style={{ background: 'linear-gradient(to right, #fafaf9 30%, #0446A1 50%)' }}></div>
+                    <div className="flex-1 min-w-0">
+                      <h3 className="text-lg sm:text-xl md:text-2xl font-montserrat font-medium text-black mb-2 sm:mb-3 md:mb-4">
                         {laPazData.data[4].title}
                       </h3>
-                      <p className="font-montserrat font-medium text=[#404040] text-sm md:text-base">
+                      <p className="font-montserrat font-medium text-[#404040] text-xs sm:text-sm md:text-base break-words">
                         {Object.values(laPazData.data[4].points)}
                       </p>
                     </div>
@@ -386,17 +386,17 @@ export default async function ActivityDetailPage({ params }: { params: { slug: s
         </section>
 
         {/* Call to Action */}
-        <section className="py-12 md:py-16 px-4 bg-white">
+        <section className="mb-[100px] px-4 bg-white">
           <div className="container mx-auto max-w-6xl text-center">
-            <h2 className="text-2xl md:text-3xl lg:text-4xl font-montserrat font-bold text-black mb-3 md:mb-4 px-4">
+            <h2 className="text-xl sm:text-2xl md:text-3xl lg:text-4xl font-montserrat font-bold text-black mb-[10px] px-4">
             {laPazData.footerText}
             </h2>
-            <p className="text-base md:text-lg font-montserrat font-medium mb-6 md:mb-8 max-w-8xl mx-auto px-7">
+            <p className="text-sm sm:text-base md:text-lg font-montserrat font-medium mb-[70px] max-w-4xl mx-auto px-4 sm:px-6 md:px-7">
               Secure your booking with Cheap Transfers Cabo and experience culture, beaches, and guided comfort in one day.
             </p>
             <Link href="/activity/reservation">
               <button 
-                className="mt-6 md:mt-8 w-[19%] mx-auto bg-[#0446A1] text-white px-[10px] py-[15px] rounded-lg font-semibold text-sm md:text-base hover:opacity-90 transition"
+                className="w-full sm:w-auto sm:min-w-[180px] md:min-w-[200px] md:w-[19%] bg-[#0446A1] text-white px-4 sm:px-6 md:px-[10px] py-3 sm:py-3.5 md:py-[15px] rounded-lg font-semibold text-xs sm:text-sm md:text-base hover:opacity-90 transition"
               >
                 Book This Activity
               </button>
