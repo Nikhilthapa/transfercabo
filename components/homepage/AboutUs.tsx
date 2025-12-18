@@ -4,9 +4,9 @@ import Link from "next/link";
 export default function AboutUs() {
   return (
     <section className="container mx-auto px-4 md:px-8">
-      <div className="text-center mb-10 md:mb-16">
+      <div className="text-center mb-4 md:mb-6">
         <h2 className="text-3xl md:text-4xl lg:text-5xl font-montserrat font-bold text-black" style={{ marginBottom: '10px' }}>About Us</h2>
-        <p className="font-montserrat font-medium text-gray-700 text-base md:text-lg px-4" style={{ marginBottom: '50px' }}>
+        <p className="font-montserrat font-medium text-gray-700 text-base md:text-lg px-4">
           A locally trusted team dedicated to stress-free airport rides and unforgettable Cabo adventures.
         </p>
       </div>

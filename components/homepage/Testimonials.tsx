@@ -120,8 +120,8 @@ export default function Testimonials() {
             "{currentTestimonial.text}"
           </p>
 
-          <p className="text-center font-bold text-base sm:text-lg md:text-xl text-black mb-1" style={{ marginBottom: '0px' }}>{currentTestimonial.name}</p>
-          <p className="text-center text-gray-500 text-sm sm:text-base md:text-lg mb-4 sm:mb-6 md:mb-8" style={{ marginBottom: '48px' }}>{currentTestimonial.location}</p>
+          <p className="text-center font-bold text-base sm:text-lg md:text-xl text-black">{currentTestimonial.name}</p>
+          <p className="text-center text-gray-500 text-sm sm:text-base md:text-lg">{currentTestimonial.location}</p>
         </div>
 
         {/* Next Button */}
