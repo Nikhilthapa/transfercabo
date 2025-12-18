@@ -75,7 +75,7 @@ export default function ContactPage() {
                 </div>
               </div>
               <h3 className="font-bold text-black text-base md:text-lg mb-1 md:mb-2">Email</h3>
-              <p className="text-black text-sm md:text-base break-all">rodriguez1269@outlook.es</p>
+              <p className="text-black text-sm md:text-base break-all">bookingcheaptransferscabo@gmail.com</p>
             </div>
 
             {/* Location Card */}

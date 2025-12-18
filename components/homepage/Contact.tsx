@@ -6,17 +6,17 @@ export default function Contact() {
     <section className="container mx-auto px-4 md:px-8">
       {/* Header Section */}
       <div className="text-center">
-        <h2 className="text-3xl md:text-4xl lg:text-5xl font-Montserrat font-bold text-black" style={{ marginBottom: '10px' }}>Get In Touch</h2>
-        <p className=" font-Montserrat font-medium text-[#6f6f6f] text-sm md:text-base px-4" style={{ marginBottom: '30px' }}>
+        <h2 className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-Montserrat font-bold text-black mb-2 sm:mb-3">Get In Touch</h2>
+        <p className="font-Montserrat font-medium text-[#6f6f6f] text-xs sm:text-sm md:text-base px-4 mb-6 sm:mb-8">
           Contact us anytime for bookings, questions, or custom travel plans across Los Cabos.
         </p>
       </div>
 
       {/* Main Content Grid */}
-      <div className="grid md:grid-cols-3 md:items-stretch gap-6 md:gap-10">
+      <div className="grid md:grid-cols-3 md:items-stretch gap-4 sm:gap-6 md:gap-10">
           {/* Left Column - Send Message Form */}
-          <div className="bg-white rounded-xl shadow-[0_10px_15px_rgba(0,0,0,0.1),0_4px_6px_rgba(0,0,0,0.1)] p-6 md:p-8 flex flex-col md:col-span-2">
-            <h3 className="text-xl md:text-2xl font-semibold" style={{ marginBottom: '24px' }}>Send Us a Message</h3>
+          <div className="bg-white rounded-xl shadow-[0_10px_15px_rgba(0,0,0,0.1),0_4px_6px_rgba(0,0,0,0.1)] p-4 sm:p-6 md:p-8 flex flex-col md:col-span-2">
+            <h3 className="text-lg sm:text-xl md:text-2xl font-semibold mb-4 sm:mb-5 md:mb-6">Send Us a Message</h3>
             <form className="space-y-4">
               <input
                 type="text"
@@ -48,96 +48,96 @@ export default function Contact() {
           </div>
 
           {/* Right Column - Contact Info & Social Media */}
-          <div className="flex flex-col md:h-full" style={{ gap: '24px' }}>
+          <div className="flex flex-col md:h-full gap-4 sm:gap-5 md:gap-6">
             {/* Contact Information */}
-            <div className="bg-white rounded-xl shadow-[0_10px_15px_rgba(0,0,0,0.1),0_4px_6px_rgba(0,0,0,0.1)] p-6 md:p-8">
-              <h3 className="text-xl md:text-2xl font-semibold" style={{ marginBottom: '24px' }}>Contact Information</h3>
-              <div className="space-y-5">
+            <div className="bg-white rounded-xl shadow-[0_10px_15px_rgba(0,0,0,0.1),0_4px_6px_rgba(0,0,0,0.1)] p-4 sm:p-6 md:p-8">
+              <h3 className="text-lg sm:text-xl md:text-2xl font-semibold mb-4 sm:mb-5 md:mb-6">Contact Information</h3>
+              <div className="space-y-3 sm:space-y-4 md:space-y-5">
                 {/* Phone */}
-                <div className="flex items-start gap-3">
-                  <div className="bg-blue-200 p-2.5 rounded-full flex-shrink-0 mt-0.5">
-                    <div className="w-5 h-5 relative">
+                <div className="flex items-start gap-2 sm:gap-3">
+                  <div className="bg-blue-200 p-2 sm:p-2.5 rounded-full flex-shrink-0 mt-0.5">
+                    <div className="w-4 h-4 sm:w-5 sm:h-5 relative">
                       <Image
                         src="/contact/phone.png"
                         alt="Phone"
                         fill
                         className="object-contain"
                         quality={85}
-                        sizes="20px"
+                        sizes="(max-width: 640px) 16px, 20px"
                       />
                     </div>
                   </div>
-                  <div className="flex-1">
-                    <p className="font-semibold text-black mb-1">Phone</p>
-                    <p className="text-gray-700 text-sm">+52 (624) 182 0525</p>
+                  <div className="flex-1 min-w-0">
+                    <p className="font-semibold text-black mb-1 text-xs sm:text-sm md:text-base">Phone</p>
+                    <p className="text-gray-700 text-xs sm:text-sm break-words">+52 (624) 182 0525</p>
                   </div>
                 </div>
 
                 {/* Email */}
-                <div className="flex items-start gap-3">
-                  <div className="bg-blue-200 p-2.5 rounded-full flex-shrink-0 mt-0.5">
-                    <div className="w-5 h-5 relative">
+                <div className="flex items-start gap-2 sm:gap-3">
+                  <div className="bg-blue-200 p-2 sm:p-2.5 rounded-full flex-shrink-0 mt-0.5">
+                    <div className="w-4 h-4 sm:w-5 sm:h-5 relative">
                       <Image
                         src="/contact/message.png"
                         alt="Email"
                         fill
                         className="object-contain"
                         quality={85}
-                        sizes="20px"
+                        sizes="(max-width: 640px) 16px, 20px"
                       />
                     </div>
                   </div>
-                  <div className="flex-1">
-                    <p className="font-semibold text-black mb-1">Email</p>
-                    <p className="text-gray-700 text-sm">rodriguez1269@outlook.es</p>
+                  <div className="flex-1 min-w-0">
+                    <p className="font-semibold text-black mb-1 text-xs sm:text-sm md:text-base">Email</p>
+                    <p className="text-gray-700 text-xs sm:text-sm break-words break-all">bookingcheaptransferscabo@gmail.com</p>
                   </div>
                 </div>
 
                 {/* Location */}
-                <div className="flex items-start gap-3">
-                  <div className="bg-blue-200 p-2.5 rounded-full flex-shrink-0 mt-0.5">
-                    <div className="w-5 h-5 relative">
+                <div className="flex items-start gap-2 sm:gap-3">
+                  <div className="bg-blue-200 p-2 sm:p-2.5 rounded-full flex-shrink-0 mt-0.5">
+                    <div className="w-4 h-4 sm:w-5 sm:h-5 relative">
                       <Image
                         src="/contact/location.png"
                         alt="Location"
                         fill
                         className="object-contain"
                         quality={85}
-                        sizes="20px"
+                        sizes="(max-width: 640px) 16px, 20px"
                       />
                     </div>
                   </div>
-                  <div className="flex-1">
-                    <p className="font-semibold text-black mb-1">Location</p>
-                    <p className="text-gray-700 text-sm">Cabo San Lucas</p>
-                    <p className="text-gray-700 text-sm">Baja California Sur, Mexico</p>
+                  <div className="flex-1 min-w-0">
+                    <p className="font-semibold text-black mb-1 text-xs sm:text-sm md:text-base">Location</p>
+                    <p className="text-gray-700 text-xs sm:text-sm">Cabo San Lucas</p>
+                    <p className="text-gray-700 text-xs sm:text-sm">Baja California Sur, Mexico</p>
                   </div>
                 </div>
 
                 {/* Hours */}
-                <div className="flex items-start gap-3">
-                  <div className="bg-blue-200 p-2.5 rounded-full flex-shrink-0 mt-0.5">
-                    <div className="w-5 h-5 relative">
+                <div className="flex items-start gap-2 sm:gap-3">
+                  <div className="bg-blue-200 p-2 sm:p-2.5 rounded-full flex-shrink-0 mt-0.5">
+                    <div className="w-4 h-4 sm:w-5 sm:h-5 relative">
                       <Image
                         src="/contact/time.png"
                         alt="Hours"
                         fill
                         className="object-contain"
                         quality={85}
-                        sizes="20px"
+                        sizes="(max-width: 640px) 16px, 20px"
                       />
                     </div>
                   </div>
-                  <div className="flex-1">
-                    <p className="font-semibold text-black mb-1">Hours</p>
-                    <p className="text-gray-700 text-sm">24/7 Service Available</p>
+                  <div className="flex-1 min-w-0">
+                    <p className="font-semibold text-black mb-1 text-xs sm:text-sm md:text-base">Hours</p>
+                    <p className="text-gray-700 text-xs sm:text-sm">24/7 Service Available</p>
                   </div>
                 </div>
               </div>
             </div>
 
             {/* Social Media Icons */}
-            <div className="bg-white rounded-xl flex justify-start items-center shadow-[0_10px_15px_rgba(0,0,0,0.1),0_4px_6px_rgba(0,0,0,0.1)] py-6 md:py-8 md:mt-auto" style={{ paddingLeft: '32px', paddingRight: '32px', gap: '40px' }}>
+            <div className="bg-white rounded-xl flex justify-center sm:justify-start items-center shadow-[0_10px_15px_rgba(0,0,0,0.1),0_4px_6px_rgba(0,0,0,0.1)] py-4 sm:py-5 md:py-6 lg:py-8 md:mt-auto px-4 sm:px-6 md:px-8 gap-3 sm:gap-4 md:gap-6 lg:gap-10">
               {/* Instagram */}
               <a 
                 href="https://www.instagram.com" 
@@ -146,7 +146,7 @@ export default function Contact() {
                 className="hover:scale-110 transition-transform duration-300"
                 aria-label="Instagram"
               >
-                <svg className="w-8 h-8 md:w-10 md:h-10" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <svg className="w-6 h-6 sm:w-7 sm:h-7 md:w-8 md:h-8 lg:w-10 lg:h-10" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
                   <defs>
                     <linearGradient id="instagram-gradient" x1="0%" y1="0%" x2="100%" y2="100%">
                       <stop offset="0%" stopColor="#f09433" />
@@ -168,7 +168,7 @@ export default function Contact() {
                 className="hover:scale-110 transition-transform duration-300"
                 aria-label="Facebook"
               >
-                <svg className="w-8 h-8 md:w-10 md:h-10" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <svg className="w-6 h-6 sm:w-7 sm:h-7 md:w-8 md:h-8 lg:w-10 lg:h-10" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
                   <path d="M24 12.073c0-6.627-5.373-12-12-12s-12 5.373-12 12c0 5.99 4.388 10.954 10.125 11.854v-8.385H7.078v-3.47h3.047V9.43c0-3.007 1.792-4.669 4.533-4.669 1.312 0 2.686.235 2.686.235v2.953H15.83c-1.491 0-1.956.925-1.956 1.874v2.25h3.328l-.532 3.47h-2.796v8.385C19.612 23.027 24 18.062 24 12.073z" fill="#1877F2"/>
                 </svg>
               </a>
@@ -181,7 +181,7 @@ export default function Contact() {
                 className="hover:scale-110 transition-transform duration-300"
                 aria-label="LinkedIn"
               >
-                <svg className="w-8 h-8 md:w-10 md:h-10" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <svg className="w-6 h-6 sm:w-7 sm:h-7 md:w-8 md:h-8 lg:w-10 lg:h-10" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
                   <path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433c-1.144 0-2.063-.926-2.063-2.065 0-1.138.92-2.063 2.063-2.063 1.14 0 2.064.925 2.064 2.063 0 1.139-.925 2.065-2.064 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z" fill="#0A66C2"/>
                 </svg>
               </a>

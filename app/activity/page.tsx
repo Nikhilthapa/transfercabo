@@ -111,7 +111,7 @@ export default function ActivityPage() {
       <Navigation />
       
       {/* Hero Section */}
-      <section className="relative py-12 md:py-20 px-4" style={{ backgroundColor: '#ffffff' }}>
+      <section className="relative px-4 mb-[70px]" style={{ backgroundColor: '#ffffff' }}>
         <div className="container mx-auto max-w-7xl">
           <div className="grid md:grid-cols-2 gap-8 md:gap-12 items-center">
             {/* Left Content */}
@@ -216,9 +216,9 @@ export default function ActivityPage() {
       </section>
 
       {/* About Section */}
-      <section className="py-12 md:py-16 px-4" style={{ backgroundColor: '#ffffff' }}>
+      <section className="px-4 mb-[100px]" style={{ backgroundColor: '#ffffff' }}>
         <div className="container mx-auto max-w-6xl text-center">
-          <h2 className="text-2xl md:text-3xl lg:text-4xl font-montserrat font-semibold text-gray-900 mb-4 md:mb-6 px-4">
+          <h2 className="text-2xl md:text-3xl lg:text-4xl font-montserrat font-semibold text-gray-900 mb-[15px] px-4">
             YOUR ADVENTURE IN CABO STARTS HERE
           </h2>
           <p className="text-base md:text-lg font-montserrat font-mixed text-gray-700 max-w-4xl mx-auto leading-relaxed px-4">
@@ -228,12 +228,12 @@ export default function ActivityPage() {
       </section>
 
       {/* Activities Grid */}
-      <section id="activities" className="py-12 md:py-20 px-4" style={{ backgroundColor: '#ffffff' }}>
+      <section id="activities" className=" px-4" style={{ backgroundColor: '#ffffff' }}>
         <div className="container mx-auto max-w-7xl">
-          <h2 className="text-2xl md:text-3xl lg:text-4xl font-montserrat font-bold text-center text-gray-900 mb-4 md:mb-6 px-4">
+          <h2 className="text-2xl md:text-3xl lg:text-4xl font-montserrat font-bold text-center text-gray-900 mb-[10px] px-4">
             Explore Our Cabo Adventures
           </h2>
-          <p className="text-center font-montserrat font-medium text-gray-600 mb-8 md:mb-12 text-sm md:text-base px-4">
+          <p className="text-center font-montserrat font-medium text-gray-600 mb-[70px] text-sm md:text-base px-4">
             Exciting tours designed to make your Cabo trip unforgettable.
           </p>
 
@@ -311,7 +311,9 @@ export default function ActivityPage() {
         </div>
       </section>
 
+      <div className="mt-[100px]">
       <Footer />
+      </div>
     </div>
   );
 }

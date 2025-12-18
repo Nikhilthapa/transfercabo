@@ -189,7 +189,7 @@ This website is based on the Figma design: [Cheap Cabo Website Redesign](https:/
 ## Contact Information
 
 - **Phone**: +52 (624) 182 0525
-- **Email**: rodriguez1269@outlook.es
+- **Email**: bookingcheaptransferscabo@gmail.com
 - **Location**: Cabo San Lucas, Baja California Sur, Mexico
 - **Hours**: 24/7 Service Available
 
