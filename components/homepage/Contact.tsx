@@ -55,7 +55,7 @@ export default function Contact() {
               <div className="space-y-3 sm:space-y-4 md:space-y-5">
                 {/* Phone */}
                 <div className="flex items-start gap-2 sm:gap-3">
-                  <div className="bg-blue-200 p-2 sm:p-2.5 rounded-full flex-shrink-0 mt-0.5">
+                  <div className="bg-blue-200 p-2 sm:p-2.5 rounded-[16px] flex-shrink-0 mt-0.5">
                     <div className="w-4 h-4 sm:w-5 sm:h-5 relative">
                       <Image
                         src="/contact/phone.png"
@@ -75,7 +75,7 @@ export default function Contact() {
 
                 {/* Email */}
                 <div className="flex items-start gap-2 sm:gap-3">
-                  <div className="bg-blue-200 p-2 sm:p-2.5 rounded-full flex-shrink-0 mt-0.5">
+                  <div className="bg-blue-200 p-2 sm:p-2.5 rounded-[16px] flex-shrink-0 mt-0.5">
                     <div className="w-4 h-4 sm:w-5 sm:h-5 relative">
                       <Image
                         src="/contact/message.png"
@@ -95,7 +95,7 @@ export default function Contact() {
 
                 {/* Location */}
                 <div className="flex items-start gap-2 sm:gap-3">
-                  <div className="bg-blue-200 p-2 sm:p-2.5 rounded-full flex-shrink-0 mt-0.5">
+                  <div className="bg-blue-200 p-2 sm:p-2.5 rounded-[16px] flex-shrink-0 mt-0.5">
                     <div className="w-4 h-4 sm:w-5 sm:h-5 relative">
                       <Image
                         src="/contact/location.png"
@@ -116,7 +116,7 @@ export default function Contact() {
 
                 {/* Hours */}
                 <div className="flex items-start gap-2 sm:gap-3">
-                  <div className="bg-blue-200 p-2 sm:p-2.5 rounded-full flex-shrink-0 mt-0.5">
+                  <div className="bg-blue-200 p-2 sm:p-2.5 rounded-[16px] flex-shrink-0 mt-0.5">
                     <div className="w-4 h-4 sm:w-5 sm:h-5 relative">
                       <Image
                         src="/contact/time.png"

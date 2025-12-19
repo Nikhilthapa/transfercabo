@@ -73,7 +73,7 @@ export default function Testimonials() {
 
       <div className="relative max-w-5xl mx-auto px-8 sm:px-12 md:px-16 lg:px-20">
         {/* Testimonial Card */}
-        <div className="bg-white rounded-xl md:rounded-2xl lg:rounded-3xl shadow-xl relative p-4 sm:p-6 md:p-8 lg:p-12">
+        <div className="bg-[#FCFCFC] rounded-xl md:rounded-2xl lg:rounded-3xl shadow-xl relative p-4 sm:p-6 md:p-8 lg:p-12">
           {/* Previous Button */}
           <button
             onClick={prevTestimonial}
@@ -128,11 +128,11 @@ export default function Testimonials() {
             <button
               key={index}
               onClick={() => goToTestimonial(index)}
-              className={`transition-all ${
+              className={`transition-all rounded-full ${
                 index === currentIndex 
-                  ? 'w-5 sm:w-6 md:w-8 h-2 sm:h-2.5 md:h-3 bg-blue-600' 
-                  : 'w-2 sm:w-2.5 md:w-3 h-2 sm:h-2.5 md:h-3 bg-gray-300 hover:bg-gray-400'
-              } rounded-full`}
+                  ? 'w-5 sm:w-6 md:w-8 h-2 sm:h-2 md:h-2.3 bg-blue-800' 
+                  : 'w-2 sm:w-2 md:w-2.3 h-2 sm:h-2 md:h-2.3 bg-gray-300 hover:bg-gray-400'
+              }`}
               aria-label={`Go to testimonial ${index + 1}`}
             />
           ))}

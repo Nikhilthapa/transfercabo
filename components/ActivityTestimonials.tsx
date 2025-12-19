@@ -106,11 +106,11 @@ export default function ActivityTestimonials({ testimonials }: ActivityTestimoni
             <button
               key={index}
               onClick={() => goToTestimonial(index)}
-              className={`transition-all ${
+              className={`transition-all rounded-full ${
                 index === currentIndex 
-                  ? 'w-5 sm:w-6 md:w-8 h-2 sm:h-2.5 md:h-3 bg-blue-600' 
-                  : 'w-2 sm:w-2.5 md:w-3 h-2 sm:h-2.5 md:h-3 bg-gray-300 hover:bg-gray-400'
-              } rounded-full`}
+                  ? 'w-5 sm:w-6 md:w-8 h-2 sm:h-2 md:h-2.3 bg-blue-800' 
+                  : 'w-2 sm:w-2 md:w-2.3 h-2 sm:h-2 md:h-2.3 bg-gray-300 hover:bg-gray-400'
+              }`}
               aria-label={`Go to testimonial ${index + 1}`}
             />
           ))}

@@ -256,7 +256,7 @@ export default async function ActivityDetailPage({ params }: { params: { slug: s
                 Experience culture, coastline, and comfort with a full-day guided {slug} adventure by <span className="font-montserrat font-bold text-[#0d0d0d]">Cheap Transfers Cabo</span>.
               </p>
               
-              <div className="grid md:grid-cols-2 gap-4 sm:gap-6 md:gap-8 lg:gap-12 items-start">
+              <div className="grid md:grid-cols-2 gap-4 sm:gap-6 md:gap-8 lg:gap-12 items-center">
                 {/* Image */}
                 {laPazData.data[0].image && (
                   <div className="relative w-full aspect-square rounded-lg sm:rounded-xl md:rounded-2xl lg:rounded-[24px] overflow-hidden" >
@@ -272,7 +272,7 @@ export default async function ActivityDetailPage({ params }: { params: { slug: s
                 )}
                 
                 {/* Points */}
-                <div className="w-full">
+                <div className="w-full flex flex-col justify-center">
                   <h3 className="text-lg sm:text-xl md:text-2xl font-bold text-black mb-3 sm:mb-4 md:mb-5 lg:mb-6">
                     {laPazData.data[0].title }
                   </h3>
@@ -298,14 +298,14 @@ export default async function ActivityDetailPage({ params }: { params: { slug: s
         )}
 
         {/* Information Cards Section */}
-        <section className=" px-4 bg-white mb-[100px]">
+        <section className=" px-4 bg-white mb-[70px]">
           <div className="container mx-auto max-w-6xl">
             <div className="flex flex-col gap-3 sm:gap-4 md:gap-5 lg:gap-6">
               {/* What's Included */}
               {laPazData.data[1] && (
                 <div className="rounded-lg p-3 sm:p-4 md:p-5 lg:p-6 mb-[15px]" style={{ backgroundColor: '#fafaf9' }}>
                   <div className="flex items-start gap-2 sm:gap-3 md:gap-4">
-                    <div className="w-2 h-full rounded-full flex-shrink-0 min-h-[40px] sm:min-h-[35px] -ml-3 sm:-ml-4 md:-ml-5" style={{ background: 'linear-gradient(to right, #fafaf9 30%, #0446A1 55%)' }}></div>
+                    <div className="w-3 h-full rounded-full flex-shrink-0 min-h-[40px] sm:min-h-[35px] -ml-3 sm:-ml-4 md:-ml-7" style={{ background: 'linear-gradient(to right, #fafaf9 30%, #0446A1 25%)' }}></div>
                     <div className="flex-1 min-w-0">
                       <h3 className="text-lg sm:text-xl md:text-2xl font-montserrat font-medium text-black mb-2 sm:mb-3 md:mb-4">
                         {laPazData.data[1].title}
@@ -327,7 +327,7 @@ export default async function ActivityDetailPage({ params }: { params: { slug: s
               {laPazData.data[2] && (
                 <div className="rounded-lg p-3 sm:p-4 md:p-5 lg:p-6 mb-[15px]" style={{ backgroundColor: '#fafaf9' }}>
                   <div className="flex items-start gap-2 sm:gap-3 md:gap-4">
-                    <div className="w-2 h-full rounded-full flex-shrink-0 min-h-[40px] sm:min-h-[35px] -ml-3 sm:-ml-4 md:-ml-5" style={{ background: 'linear-gradient(to right, #fafaf9 30%, #0446A1 50%)' }}></div>
+                    <div className="w-3 h-full rounded-full flex-shrink-0 min-h-[40px] sm:min-h-[35px] -ml-3 sm:-ml-4 md:-ml-7" style={{ background: 'linear-gradient(to right, #fafaf9 30%, #0446A1 25%)' }}></div>
                     <div className="flex-1 min-w-0">
                       <h3 className="text-lg sm:text-xl md:text-2xl font-montserrat font-medium text-black mb-2 sm:mb-3 md:mb-4">
                         {laPazData.data[2].title || "What's Not Included"}
@@ -349,7 +349,7 @@ export default async function ActivityDetailPage({ params }: { params: { slug: s
               {laPazData.data[3] && (
                 <div className="rounded-lg p-3 sm:p-4 md:p-5 lg:p-6 mb-[15px]" style={{ backgroundColor: '#fafaf9' }}>
                   <div className="flex items-start gap-2 sm:gap-3 md:gap-4">
-                    <div className="w-2 h-full rounded-full flex-shrink-0 min-h-[40px] sm:min-h-[35px] -ml-3 sm:-ml-4 md:-ml-5" style={{ background: 'linear-gradient(to right, #fafaf9 30%, #0446A1 50%)' }}></div>
+                    <div className="w-3 h-full rounded-full flex-shrink-0 min-h-[40px] sm:min-h-[35px] -ml-3 sm:-ml-4 md:-ml-7" style={{ background: 'linear-gradient(to right, #fafaf9 30%, #0446A1 25%)' }}></div>
                     <div className="flex-1 min-w-0">
                       <h3 className="text-lg sm:text-xl md:text-2xl font-montserrat font-medium text-black mb-2 sm:mb-3 md:mb-4">
                         {laPazData.data[3].title}
@@ -371,7 +371,7 @@ export default async function ActivityDetailPage({ params }: { params: { slug: s
               {laPazData.data[4] && (
                 <div className="rounded-lg p-3 sm:p-4 md:p-5 lg:p-6" style={{ backgroundColor: '#fafaf9' }}>
                   <div className="flex items-start gap-2 sm:gap-3 md:gap-4">
-                    <div className="w-2 h-full rounded-full flex-shrink-0 min-h-[40px] sm:min-h-[35px] -ml-3 sm:-ml-4 md:-ml-5" style={{ background: 'linear-gradient(to right, #fafaf9 30%, #0446A1 50%)' }}></div>
+                    <div className="w-3 h-full rounded-full flex-shrink-0 min-h-[40px] sm:min-h-[35px] -ml-3 sm:-ml-4 md:-ml-7" style={{ background: 'linear-gradient(to right, #fafaf9 30%, #0446A1 25%)' }}></div>
                     <div className="flex-1 min-w-0">
                       <h3 className="text-lg sm:text-xl md:text-2xl font-montserrat font-medium text-black mb-2 sm:mb-3 md:mb-4">
                         {laPazData.data[4].title}
@@ -393,7 +393,7 @@ export default async function ActivityDetailPage({ params }: { params: { slug: s
         )}
 
         {/* Call to Action */}
-        <section className="mb-[100px] px-4 bg-white">
+        <section className="mb-[100px] px-4 bg-white mt-[70px]">
           <div className="container mx-auto max-w-6xl text-center">
             <h2 className="text-xl sm:text-2xl md:text-3xl lg:text-4xl font-montserrat font-bold text-black mb-[10px] px-4">
             {laPazData.footerText}
