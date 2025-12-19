@@ -1,6 +1,6 @@
 'use client';
 
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import Navigation from "@/components/homepage/Navigation";
 import Footer from "@/components/homepage/Footer";
 import Link from "next/link";
@@ -14,6 +14,18 @@ export default function ReservationPage() {
     setSelectedService(value);
     setIsRoundTrip(value.toLowerCase().includes("round trip"));
   };
+
+  useEffect(() => {
+    // Handle scroll to form section when page loads with hash
+    if (window.location.hash === '#reservation-form') {
+      setTimeout(() => {
+        const element = document.getElementById('reservation-form');
+        if (element) {
+          element.scrollIntoView({ behavior: 'smooth', block: 'start' });
+        }
+      }, 100);
+    }
+  }, []);
 
   return (
     <div className="bg-white min-h-screen">
@@ -73,7 +85,7 @@ export default function ReservationPage() {
       </section>
 
       {/* Reservation Form Section */}
-      <section className="py-12 md:py-20 mb-[100px]" style={{ backgroundColor: '#fafaf9' }}>
+      <section id="reservation-form" className="py-12 md:py-20 mb-[100px]" style={{ backgroundColor: '#fafaf9' }}>
         <div className="container mx-auto px-4 md:px-8">
           <div className="max-w-4xl mx-auto">
             {/* Header Notice */}

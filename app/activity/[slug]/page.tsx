@@ -284,7 +284,7 @@ export default async function ActivityDetailPage({ params }: { params: { slug: s
                    </li>
                     ))}
                   </ul>
-                  <Link href="/activity/reservation">
+                  <Link href="/activity/reservation#reservation-form">
                     <button 
                       className="mt-4 sm:mt-5 md:mt-6 lg:mt-8 w-full sm:w-auto sm:min-w-[180px] md:min-w-[200px] md:w-[35%] bg-[#0446A1] text-white px-4 sm:px-6 md:px-[10px] py-3 sm:py-3.5 md:py-[15px] rounded-lg font-semibold text-xs sm:text-sm md:text-base hover:opacity-90 transition"
                     >
@@ -401,7 +401,7 @@ export default async function ActivityDetailPage({ params }: { params: { slug: s
             <p className="text-sm sm:text-base md:text-lg font-montserrat font-medium mb-[50px] max-w-4xl mx-auto px-4 sm:px-6 md:px-7">
               Secure your booking with Cheap Transfers Cabo and experience culture, beaches, and guided comfort in one day.
             </p>
-            <Link href="/activity/reservation">
+            <Link href="/activity/reservation#reservation-form">
               <button 
                 className="w-full sm:w-auto sm:min-w-[180px] md:min-w-[200px] md:w-[19%] bg-[#0446A1] text-white px-4 sm:px-6 md:px-[10px] py-3 sm:py-3.5 md:py-[15px] rounded-lg font-semibold text-xs sm:text-sm md:text-base hover:opacity-90 transition"
               >

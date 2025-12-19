@@ -9,6 +9,7 @@
     width: 111.11%; /* Compensate for 0.9 scale (1/0.9 = 1.1111) */
     height: 111.11%;
     overflow-x: hidden;
+    scroll-behavior: smooth;
   }
 
   /* Disable scaling on small screens to avoid horizontal overflow and tiny UI */
