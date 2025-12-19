@@ -62,7 +62,7 @@ export default function ReservationPage() {
       <section className="bg-white py-10 md:py-12 lg:py-20">
         <div className="container mx-auto px-4 md:px-8">
           <div className="max-w-4xl mx-auto text-center">
-            <h2 className="text-2xl md:text-3xl lg:text-4xl xl:text-5xl font-Montserrat font-semibold text-black uppercase mb-4 md:mb-6 lg:mb-8 px-4">
+            <h2 className="text-2xl md:text-3xl lg:text-4xl xl:text-5xl font-Montserrat font-semibold text-black uppercase mb-[25px] px-4">
               BOOK YOUR TRANSFER
             </h2>
             <p className="text-sm md:text-base lg:text-lg text-gray-700 leading-relaxed px-4">
@@ -73,32 +73,29 @@ export default function ReservationPage() {
       </section>
 
       {/* Reservation Form Section */}
-      <section className="py-12 md:py-20" style={{ backgroundColor: '#fafaf9' }}>
+      <section className="py-12 md:py-20 mb-[100px]" style={{ backgroundColor: '#fafaf9' }}>
         <div className="container mx-auto px-4 md:px-8">
           <div className="max-w-4xl mx-auto">
             {/* Header Notice */}
-            <div className="text-center mb-4">
+            <div className="text-center mb-[20px]">
               <p className="text-blue-500 text-sm md:text-base font-semibold mb-2">
-                Temporary cash Only!!
-              </p>
-              <p className="text-gray-700 text-xs md:text-sm">
-                To be paid to the Driver upon arrival.
+                Temporary cash Only!! <br /> To be paid to the Driver upon arrival.
               </p>
             </div>
 
             {/* Main Title */}
-            <h1 className="text-2xl md:text-3xl lg:text-4xl xl:text-5xl font-Montserrat font-semibold text-black text-center mb-6 md:mb-8 lg:mb-12 px-4">
+            <h1 className="text-2xl md:text-3xl lg:text-4xl xl:text-5xl font-Montserrat font-semibold text-black text-center mb-[59px] px-4">
               RESERVATION REQUEST 
             </h1>
 
             {/* Reservation Form */}
             <div className="bg-white rounded-lg shadow-xl p-4 md:p-6 lg:p-8 xl:p-10">
-              <form className="space-y-4 md:space-y-6 lg:space-y-8">
+              <form className="space-y-4 md:space-y-5 lg:space-y-[30px]">
                 {/* Service and Passengers Row */}
                 <div className="grid md:grid-cols-2 gap-4 md:gap-6">
                   {/* Select Service */}
                   <div>
-                    <label className="block text-xs md:text-sm font-semibold text-gray-700 mb-2">
+                    <label className="block text-xs md:text-sm font-[600] text-gray-700 mb-2">
                       Select Service
                     </label>
                     <select
@@ -116,7 +113,7 @@ export default function ReservationPage() {
 
                   {/* Passengers */}
                   <div>
-                    <label className="block text-xs md:text-sm font-semibold text-gray-700 mb-2">
+                    <label className="block text-xs md:text-sm font-[600] text-gray-700 mb-2">
                       Passengers
                     </label>
                     <select className="w-full border border-gray-300 rounded-md px-3 md:px-4 py-2.5 md:py-3 focus:outline-none focus:ring-2 focus:ring-blue-500 text-sm md:text-base">
@@ -135,7 +132,7 @@ export default function ReservationPage() {
                 <div className="grid md:grid-cols-2 gap-4 md:gap-6">
                   {/* First Name */}
                   <div>
-                    <label className="block text-xs md:text-sm font-semibold text-gray-700 mb-2">
+                    <label className="block text-xs md:text-sm font-[600] text-gray-700 mb-2">
                       First Name
                     </label>
                     <input
@@ -147,7 +144,7 @@ export default function ReservationPage() {
 
                   {/* Last Name */}
                   <div>
-                    <label className="block text-xs md:text-sm font-semibold text-gray-700 mb-2">
+                    <label className="block text-xs md:text-sm font-[600] text-gray-700 mb-2">
                       Last Name
                     </label>
                     <input
@@ -160,7 +157,7 @@ export default function ReservationPage() {
 
                 {/* Email */}
                 <div>
-                  <label className="block text-xs md:text-sm font-semibold text-gray-700 mb-2">
+                  <label className="block text-xs md:text-sm font-[600] text-gray-700 mb-2">
                     Email
                   </label>
                   <input
@@ -173,7 +170,7 @@ export default function ReservationPage() {
                 {/* Phone with Country Code */}
                 <div className="grid md:grid-cols-12 gap-3 md:gap-4">
                   <div className="md:col-span-3">
-                    <label className="block text-xs md:text-sm font-semibold text-gray-700 mb-2">
+                    <label className="block text-xs md:text-sm font-[600] text-gray-700 mb-2">
                       Code
                     </label>
                     <select className="w-full border border-gray-300 rounded-md px-3 md:px-4 py-2.5 md:py-3 focus:outline-none focus:ring-2 focus:ring-blue-500 text-sm md:text-base">
@@ -184,7 +181,7 @@ export default function ReservationPage() {
                     </select>
                   </div>
                   <div className="md:col-span-9">
-                    <label className="block text-xs md:text-sm font-semibold text-gray-700 mb-2">
+                    <label className="block text-xs md:text-sm font-[600] text-gray-700 mb-2">
                       Phone
                     </label>
                     <input
@@ -197,7 +194,7 @@ export default function ReservationPage() {
 
                 {/* Arrival Details */}
                 <div>
-                  <label className="block text-xs md:text-sm font-semibold text-gray-700 mb-2">
+                  <label className="block text-xs md:text-sm font-[600] text-gray-700 mb-2">
                     Hotel Name
                   </label>
                   <input
@@ -210,7 +207,7 @@ export default function ReservationPage() {
                 <div className="grid md:grid-cols-2 gap-4 md:gap-6">
                   {/* Arrival Date */}
                   <div>
-                    <label className="block text-xs md:text-sm font-semibold text-gray-700 mb-2">
+                    <label className="block text-xs md:text-sm font-[600] text-gray-700 mb-2">
                       Arrival Date
                     </label>
                     <div className="relative">
@@ -223,7 +220,7 @@ export default function ReservationPage() {
 
                   {/* Arrival Time */}
                   <div>
-                    <label className="block text-xs md:text-sm font-semibold text-gray-700 mb-2">
+                    <label className="block text-xs md:text-sm font-[600] text-gray-700 mb-2">
                       Arrival Time
                     </label>
                     <input
@@ -235,7 +232,7 @@ export default function ReservationPage() {
 
                 {/* Arrival Airline and Flight Number */}
                 <div>
-                  <label className="block text-xs md:text-sm font-semibold text-gray-700 mb-2">
+                  <label className="block text-xs md:text-sm font-[600] text-gray-700 mb-2">
                     Arrival Airline And Flight Number
                   </label>
                   <input
@@ -247,7 +244,7 @@ export default function ReservationPage() {
 
                 {/* Conditional Departure Section */}
                 {isRoundTrip && (
-                  <div className="space-y-4 md:space-y-6 pt-4 md:pt-6 border-t border-gray-200">
+                  <div className="space-y-4 md:space-y-5 lg:space-y-[30px] pt-4 md:pt-6 border-t border-gray-200">
                     <div className="bg-gray-100 p-3 md:p-4 rounded-md">
                       <p className="text-xs md:text-sm text-gray-700">
                         If You Chose Round Trip Transfer, Please Fill Out The Departure Blanks And Click Send Request When You Are Done.
@@ -256,7 +253,7 @@ export default function ReservationPage() {
 
                     {/* Departure Hotel Name */}
                     <div>
-                      <label className="block text-xs md:text-sm font-semibold text-gray-700 mb-2">
+                      <label className="block text-xs md:text-sm font-[600] text-gray-700 mb-2">
                         Hotel Name
                       </label>
                       <input
@@ -268,7 +265,7 @@ export default function ReservationPage() {
 
                     {/* Departure Airline and Flight Number */}
                     <div>
-                      <label className="block text-xs md:text-sm font-semibold text-gray-700 mb-2">
+                      <label className="block text-xs md:text-sm font-[600] text-gray-700 mb-2">
                         Departure Airline And Flight Number
                       </label>
                       <input
@@ -281,7 +278,7 @@ export default function ReservationPage() {
                     <div className="grid md:grid-cols-2 gap-4 md:gap-6">
                       {/* Departure Date */}
                       <div>
-                        <label className="block text-xs md:text-sm font-semibold text-gray-700 mb-2">
+                        <label className="block text-xs md:text-sm font-[600] text-gray-700 mb-2">
                           Departure Date
                         </label>
                         <div className="relative">
@@ -294,7 +291,7 @@ export default function ReservationPage() {
 
                       {/* Departure Time */}
                       <div>
-                        <label className="block text-xs md:text-sm font-semibold text-gray-700 mb-2">
+                        <label className="block text-xs md:text-sm font-[600] text-gray-700 mb-2">
                           Departure Time
                         </label>
                         <input
@@ -305,6 +302,79 @@ export default function ReservationPage() {
                     </div>
                   </div>
                 )}
+
+                {/* Instruction Section */}
+                <div className="bg-gray-100 border border-gray-300 rounded-md p-4 md:p-5 text-center">
+                  <p className="text-xs md:text-sm text-gray-700">
+                    If You Chose Round Trip Transfer, Please Fill Out The Departure Blanks And<br />
+                    Click Send Request When You Are Done.
+                  </p>
+                </div>
+
+                {/* Round Trip Fields Section */}
+                <div className="space-y-4 md:space-y-5 lg:space-y-[30px]">
+                    {/* Hotel Name */}
+                    <div>
+                      <label className="block text-xs md:text-sm font-[600] text-gray-700 mb-2">
+                        Hotel Name
+                      </label>
+                      <input
+                        type="text"
+                        placeholder="Enter Here"
+                        className="w-full border border-gray-300 rounded-md px-3 md:px-4 py-2.5 md:py-3 focus:outline-none focus:ring-2 focus:ring-blue-500 text-sm md:text-base"
+                      />
+                    </div>
+
+                    {/* Departure Airline and Flight Number */}
+                    <div>
+                      <label className="block text-xs md:text-sm font-[600] text-gray-700 mb-2">
+                        Departure Airline And Flight Number
+                      </label>
+                      <input
+                        type="text"
+                        placeholder="Enter Here"
+                        className="w-full border border-gray-300 rounded-md px-3 md:px-4 py-2.5 md:py-3 focus:outline-none focus:ring-2 focus:ring-blue-500 text-sm md:text-base"
+                      />
+                    </div>
+
+                    <div className="grid md:grid-cols-2 gap-4 md:gap-6">
+                      {/* Departure Date */}
+                      <div>
+                        <label className="block text-xs md:text-sm font-[600] text-gray-700 mb-2">
+                          Departure Date
+                        </label>
+                        <div className="relative">
+                          <input
+                            type="date"
+                            className="w-full border border-gray-300 rounded-md px-3 md:px-4 py-2.5 md:py-3 focus:outline-none focus:ring-2 focus:ring-blue-500 text-sm md:text-base"
+                          />
+                        </div>
+                      </div>
+
+                      {/* Departure Time */}
+                      <div>
+                        <label className="block text-xs md:text-sm font-[600] text-gray-700 mb-2">
+                          Departure Time
+                        </label>
+                        <input
+                          type="time"
+                          className="w-full border border-gray-300 rounded-md px-3 md:px-4 py-2.5 md:py-3 focus:outline-none focus:ring-2 focus:ring-blue-500 text-sm md:text-base"
+                        />
+                      </div>
+                    </div>
+
+                    {/* Add Grocery Stop */}
+                    <div>
+                      <label className="block text-xs md:text-sm font-[600] text-gray-700 mb-2">
+                        Add Grocery Stop 1/2 Hr = 25.00 Usd
+                      </label>
+                      <select className="w-full border border-gray-300 rounded-md px-3 md:px-4 py-2.5 md:py-3 focus:outline-none focus:ring-2 focus:ring-blue-500 text-sm md:text-base">
+                        <option value="">Choose An Option</option>
+                        <option value="yes">Yes</option>
+                        <option value="no">No</option>
+                      </select>
+                    </div>
+                </div>
 
                 {/* Submit Button */}
                 <div className="pt-3 md:pt-4">
