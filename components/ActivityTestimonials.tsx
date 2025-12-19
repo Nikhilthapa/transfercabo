@@ -2,47 +2,25 @@
 
 import { useState } from "react";
 
-export default function Testimonials() {
+export interface Testimonial {
+  name: string;
+  location: string;
+  image: string;
+  rating: number;
+  text: string;
+}
+
+interface ActivityTestimonialsProps {
+  testimonials: Testimonial[];
+}
+
+export default function ActivityTestimonials({ testimonials }: ActivityTestimonialsProps) {
   const [currentIndex, setCurrentIndex] = useState(0);
 
-  const testimonials = [
-    {
-      name: "Ana L",
-      location: "Guadalajara",
-      rating: 5,
-      text: "Excellent experience! Clean car, smooth ride, and very professional driver. Stress-free airport transfer. I'll definitely book again."
-    },
-    {
-      name: "Luis García",
-      location: "San Diego",
-      rating: 5,
-      text: "Amazing private transfer! On-time, comfy, no extra stops. The best way to start a Cabo vacation. Highly recommend Cheap Transfers Cabo!"
-    },
-    {
-      name: "Sofia Ramírez",
-      location: "Mexico City",
-      rating: 5,
-      text: "Super smooth family transfer! Clean, cool SUV and friendly service. Perfect after a long flight. Great for groups—highly recommended!"
-    },
-    {
-      name: "Rodrigo Hernández",
-      location: "Los Angeles",
-      rating: 5,
-      text: "Best Cabo transfer yet! Professional, friendly drivers and a smooth, direct ride. Great value and comfort with Cheap Transfers Cabo."
-    },
-    {
-      name: "Daniela Torres",
-      location: "Phoenix",
-      rating: 5,
-      text: "Seamless service from booking to pickup! Clean, modern vehicle and fast, private ride to our hotel. Will book again for sure!"
-    },
-    {
-      name: "Carlos Martínez",
-      location: "Phoenix",
-      rating: 5,
-      text: "Loved our ATV tour and airport transfer! On-time, comfy, and well organized. Safe, fun, and personal—great choice for transport  and  activities!"
-    }
-  ];
+  // Don't render if no testimonials provided
+  if (!testimonials || testimonials.length === 0) {
+    return null;
+  }
 
   const nextTestimonial = () => {
     setCurrentIndex((prevIndex) => 
@@ -63,7 +41,7 @@ export default function Testimonials() {
   const currentTestimonial = testimonials[currentIndex];
 
   return (
-    <section className="container mx-auto px-4 md:px-8">
+    <section className="container mx-auto px-4 md:px-8 py-8 sm:py-10 md:py-12 lg:py-16">
       <div className="text-center mb-8 md:mb-12 lg:mb-16">
         <h2 className="text-2xl md:text-3xl lg:text-4xl xl:text-5xl font-montserrat font-bold text-black px-2" style={{ marginBottom: '10px' }}>What Our Clients Say</h2>
         <p className="font-montserrat font-medium text-gray-700 text-sm md:text-base lg:text-lg px-4 max-w-3xl mx-auto" style={{ marginBottom: '50px' }}>

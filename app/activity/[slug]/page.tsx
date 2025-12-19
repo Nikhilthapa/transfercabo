@@ -4,6 +4,8 @@ import Footer from "@/components/homepage/Footer";
 import CustomHero from "@/components/CustomHero";
 import { notFound } from "next/navigation";
 import activityData from "@/lib/data";
+import ActivityTestimonials from "@/components/ActivityTestimonials";
+import { activityTestimonials } from "@/lib/testimonials";
 
 const activities = [
   {
@@ -159,8 +161,8 @@ export async function generateStaticParams() {
 }
 
 export default async function ActivityDetailPage({ params }: { params: { slug: string } }) {
-  let { slug } = await params;
-  slug = stugData[slug];
+  let { slug: originalSlug } = await params;
+  const slug = stugData[originalSlug];
   // Check if it's La Paz and use special design
   if (slug) {
     if (!activityData || !activityData[slug]) {
@@ -385,6 +387,11 @@ export default async function ActivityDetailPage({ params }: { params: { slug: s
           </div>
         </section>
 
+        {/* Testimonials Section */}
+        {activityTestimonials[originalSlug] && activityTestimonials[originalSlug].length > 0 && (
+          <ActivityTestimonials testimonials={activityTestimonials[originalSlug]} />
+        )}
+
         {/* Call to Action */}
         <section className="mb-[100px] px-4 bg-white">
           <div className="container mx-auto max-w-6xl text-center">
@@ -410,7 +417,7 @@ export default async function ActivityDetailPage({ params }: { params: { slug: s
   }
 
   // Default layout for other activities
-  const activity = activities.find((a) => a.slug === params.slug);
+  const activity = activities.find((a) => a.slug === originalSlug);
   if (!activity) {
     notFound();
   }
@@ -507,6 +514,11 @@ export default async function ActivityDetailPage({ params }: { params: { slug: s
           </div>
         </div>
       </main>
+
+      {/* Testimonials Section */}
+      {activityTestimonials[originalSlug] && activityTestimonials[originalSlug].length > 0 && (
+        <ActivityTestimonials testimonials={activityTestimonials[originalSlug]} />
+      )}
 
       <Footer />
     </div>
