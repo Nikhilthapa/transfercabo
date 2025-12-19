@@ -30,7 +30,7 @@ export default function CustomHero({
   const [activitiesDropdownOpen, setActivitiesDropdownOpen] = useState(false);
   const [mobileActivitiesOpen, setMobileActivitiesOpen] = useState(false);
   return (
-    <section className="relative min-h-[400px] md:min-h-[600px] lg:min-h-[700px] overflow-visible pb-20 md:pb-28 lg:pb-40 border-0 border-none outline-none" style={{ borderBottom: 'none', border: 'none' }}>
+    <section className="relative h-[80vh] md:h-[100vh] overflow-visible border-0 border-none outline-none" style={{ borderBottom: 'none', border: 'none' }}>
       {/* Background Image Container - placed first so it shows through navigation */}
       <div className="absolute inset-0 border-0 border-none">
         <div className="relative w-full h-full border-0 border-none">
@@ -258,7 +258,7 @@ export default function CustomHero({
       </nav>
 
       {/* Hero Content - Text Overlay on Lower Left */}
-      <div className={`relative z-10 container mx-auto px-4 md:px-8 flex ${textPosition === 'bottom' ? 'items-end pb-12 md:pb-16 lg:pb-24' : 'items-center pt-4 md:pt-6 lg:pt-12'} min-h-[400px] md:min-h-[500px] lg:min-h-[600px]`}>
+      <div className={`relative z-10 container mx-auto px-4 md:px-8 flex ${textPosition === 'bottom' ? 'items-end pb-12 md:pb-16 lg:pb-24' : 'items-center pt-4 md:pt-6 lg:pt-12'} h-[calc(80vh-80px)] md:h-[calc(100vh-100px)] min-h-[350px] md:min-h-[500px]`}>
         <div className="max-w-3xl">
           <h1
             className="text-xl sm:text-2xl md:text-3xl lg:text-4xl xl:text-5xl font-bold mb-2 md:mb-3 lg:mb-4 leading-tight whitespace-pre-line"
@@ -287,11 +287,62 @@ export default function CustomHero({
         </div>
       </div>
 
-      {/* Top Fade to White */}
-      <div className="absolute top-0 left-0 right-0 h-32 md:h-40 bg-gradient-to-b from-white/70 via-white/25 to-transparent pointer-events-none z-[20]" />
+      {/* White gradient shadow at the top */}
+      <div className="absolute top-0 left-0 right-0 h-32 bg-gradient-to-b from-white via-white/50 to-transparent pointer-events-none z-[20]" />
 
-      {/* Smooth gradient transition at bottom - single gradient for seamless blend */}
-      <div className="absolute bottom-0 left-0 right-0 h-[100px] md:h-[120px] bg-gradient-to-t from-[#ffffff] via-[#ffffff] via-[#ffffff]/95 via-[#ffffff]/70 via-[#ffffff]/40 to-transparent pointer-events-none border-0 border-none outline-none" style={{ border: 'none', borderTop: 'none', borderBottom: 'none', outline: 'none', boxShadow: 'none' }} />
+      {/* White gradient shadow at the bottom - smooth transition overlapping image edge */}
+      <div 
+        className="absolute bottom-0 left-0 right-0 pointer-events-none z-[20]"
+        style={{
+          height: '150px',
+          background: `linear-gradient(to top, 
+            rgba(255, 255, 255, 1) 0%,
+            rgba(255, 255, 255, 0.99) 5%,
+            rgba(255, 255, 255, 0.97) 10%,
+            rgba(255, 255, 255, 0.94) 15%,
+            rgba(255, 255, 255, 0.90) 20%,
+            rgba(255, 255, 255, 0.85) 25%,
+            rgba(255, 255, 255, 0.78) 30%,
+            rgba(255, 255, 255, 0.70) 35%,
+            rgba(255, 255, 255, 0.60) 42%,
+            rgba(255, 255, 255, 0.50) 50%,
+            rgba(255, 255, 255, 0.40) 58%,
+            rgba(255, 255, 255, 0.30) 65%,
+            rgba(255, 255, 255, 0.22) 72%,
+            rgba(255, 255, 255, 0.15) 78%,
+            rgba(255, 255, 255, 0.10) 84%,
+            rgba(255, 255, 255, 0.06) 90%,
+            rgba(255, 255, 255, 0.03) 95%,
+            rgba(255, 255, 255, 0.01) 98%,
+            rgba(255, 255, 255, 0) 100%
+          )`
+        }}
+      />
+
+      {/* White strip between image and next section - overlapping image edge to hide line */}
+      <div 
+        className="absolute -bottom-2 left-0 right-0 pointer-events-none z-[20]"
+        style={{
+          height: '120px',
+          background: `linear-gradient(to bottom, 
+            rgba(255, 255, 255, 0) 0%,
+            rgba(255, 255, 255, 0.02) 5%,
+            rgba(255, 255, 255, 0.05) 10%,
+            rgba(255, 255, 255, 0.10) 18%,
+            rgba(255, 255, 255, 0.18) 28%,
+            rgba(255, 255, 255, 0.28) 38%,
+            rgba(255, 255, 255, 0.40) 48%,
+            rgba(255, 255, 255, 0.52) 58%,
+            rgba(255, 255, 255, 0.64) 68%,
+            rgba(255, 255, 255, 0.75) 78%,
+            rgba(255, 255, 255, 0.84) 86%,
+            rgba(255, 255, 255, 0.91) 92%,
+            rgba(255, 255, 255, 0.96) 96%,
+            rgba(255, 255, 255, 0.99) 98%,
+            rgba(255, 255, 255, 1) 100%
+          )`
+        }}
+      />
     </section>
   );
 }
