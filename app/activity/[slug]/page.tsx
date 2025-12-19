@@ -185,7 +185,7 @@ export default async function ActivityDetailPage({ params }: { params: { slug: s
         />
 
         {/* Welcome Section */}
-        <section className=" px-4 bg-white">
+        <section className="mt-[30px] px-4 bg-white">
           <div className="container mx-auto max-w-6xl text-center">
             <h2 className="text-xl sm:text-2xl md:text-3xl lg:text-[28px] font-montserrat font-semibold text-black mb-[15px] px-4">
               {laPazData.welcome}
@@ -307,7 +307,7 @@ export default async function ActivityDetailPage({ params }: { params: { slug: s
                   <div className="flex items-start gap-2 sm:gap-3 md:gap-4">
                     <div className="w-3 h-full rounded-full flex-shrink-0 min-h-[40px] sm:min-h-[35px] -ml-3 sm:-ml-4 md:-ml-7" style={{ background: 'linear-gradient(to right, #fafaf9 30%, #0446A1 25%)' }}></div>
                     <div className="flex-1 min-w-0">
-                      <h3 className="text-lg sm:text-xl md:text-2xl font-montserrat font-medium text-black mb-2 sm:mb-3 md:mb-4">
+                      <h3 className="text-lg sm:text-xl md:text-2xl font-montserrat font-semibold text-black mb-2 sm:mb-3 md:mb-4">
                         {laPazData.data[1].title}
                       </h3>
                       <ul className="space-y-1.5 sm:space-y-2 md:space-y-2.5">
@@ -329,7 +329,7 @@ export default async function ActivityDetailPage({ params }: { params: { slug: s
                   <div className="flex items-start gap-2 sm:gap-3 md:gap-4">
                     <div className="w-3 h-full rounded-full flex-shrink-0 min-h-[40px] sm:min-h-[35px] -ml-3 sm:-ml-4 md:-ml-7" style={{ background: 'linear-gradient(to right, #fafaf9 30%, #0446A1 25%)' }}></div>
                     <div className="flex-1 min-w-0">
-                      <h3 className="text-lg sm:text-xl md:text-2xl font-montserrat font-medium text-black mb-2 sm:mb-3 md:mb-4">
+                      <h3 className="text-lg sm:text-xl md:text-2xl font-montserrat font-semibold text-black mb-2 sm:mb-3 md:mb-4">
                         {laPazData.data[2].title || "What's Not Included"}
                       </h3>
                       <ul className="space-y-1.5 sm:space-y-2 md:space-y-2.5">
@@ -351,7 +351,7 @@ export default async function ActivityDetailPage({ params }: { params: { slug: s
                   <div className="flex items-start gap-2 sm:gap-3 md:gap-4">
                     <div className="w-3 h-full rounded-full flex-shrink-0 min-h-[40px] sm:min-h-[35px] -ml-3 sm:-ml-4 md:-ml-7" style={{ background: 'linear-gradient(to right, #fafaf9 30%, #0446A1 25%)' }}></div>
                     <div className="flex-1 min-w-0">
-                      <h3 className="text-lg sm:text-xl md:text-2xl font-montserrat font-medium text-black mb-2 sm:mb-3 md:mb-4">
+                      <h3 className="text-lg sm:text-xl md:text-2xl font-montserrat font-semibold text-black mb-2 sm:mb-3 md:mb-4">
                         {laPazData.data[3].title}
                       </h3>
                       <ul className="space-y-1.5 sm:space-y-2 md:space-y-2.5">
@@ -373,7 +373,7 @@ export default async function ActivityDetailPage({ params }: { params: { slug: s
                   <div className="flex items-start gap-2 sm:gap-3 md:gap-4">
                     <div className="w-3 h-full rounded-full flex-shrink-0 min-h-[40px] sm:min-h-[35px] -ml-3 sm:-ml-4 md:-ml-7" style={{ background: 'linear-gradient(to right, #fafaf9 30%, #0446A1 25%)' }}></div>
                     <div className="flex-1 min-w-0">
-                      <h3 className="text-lg sm:text-xl md:text-2xl font-montserrat font-medium text-black mb-2 sm:mb-3 md:mb-4">
+                      <h3 className="text-lg sm:text-xl md:text-2xl font-montserrat font-semibold text-black mb-2 sm:mb-3 md:mb-4">
                         {laPazData.data[4].title}
                       </h3>
                       <p className="font-montserrat font-medium text-[#404040] text-xs sm:text-sm md:text-base break-words">
@@ -398,7 +398,7 @@ export default async function ActivityDetailPage({ params }: { params: { slug: s
             <h2 className="text-xl sm:text-2xl md:text-3xl lg:text-4xl font-montserrat font-bold text-black mb-[10px] px-4">
             {laPazData.footerText}
             </h2>
-            <p className="text-sm sm:text-base md:text-lg font-montserrat font-medium mb-[50px] max-w-4xl mx-auto px-4 sm:px-6 md:px-7">
+            <p className="text-sm sm:text-base md:text-lg font-montserrat font-medium mb-[30px] max-w-4xl mx-auto px-4 sm:px-6 md:px-7">
               Secure your booking with Cheap Transfers Cabo and experience culture, beaches, and guided comfort in one day.
             </p>
             <Link href="/activity/reservation#reservation-form">

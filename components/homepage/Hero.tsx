@@ -58,10 +58,10 @@ export default function Hero() {
           <h2 className="text-[#0446A1] text-xl sm:text-2xl md:text-4xl lg:text-5xl font-bold mb-2 md:mb-3 lg:mb-4">
             Cheap Transfers Cabo
           </h2>
-          <h3 className="text-xl sm:text-2xl md:text-4xl lg:text-5xl font-Montserrat font-bold text-white mb-3 md:mb-4 lg:mb-8 whitespace-nowrap">
+          <h3 className="text-xl sm:text-2xl md:text-4xl lg:text-5xl font-Montserrat font-bold text-white mb-[10px] whitespace-nowrap">
             Your Journey Starts In Comfort
           </h3>
-          <p className="text-sm sm:text-base md:text-lg lg:text-xl text-white mb-1 md:mb-2 lg:mb-2">
+          <p className="text-sm sm:text-base md:text-lg lg:text-xl text-white">
             Reliable • Comfortable • Affordable
           </p>
           <p className="text-sm sm:text-base md:text-lg lg:text-xl text-white mb-4 md:mb-6 lg:mb-10">
