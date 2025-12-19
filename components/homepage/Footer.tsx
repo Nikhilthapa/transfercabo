@@ -3,7 +3,7 @@ import Image from "next/image";
 
 export default function Footer() {
   return (
-    <footer className="text-white py-10 md:py-16" style={{ backgroundColor: '#0446A1' }}>
+    <footer className="text-white pt-10 md:pt-16 pb-0" style={{ backgroundColor: '#0446A1' }}>
       <div className="container mx-auto px-4 md:px-8">
         <div className="grid sm:grid-cols-2 lg:grid-cols-4 gap-8 md:gap-12 mb-8 md:mb-12">
           <div className="sm:col-span-2 lg:col-span-1">
@@ -122,8 +122,8 @@ export default function Footer() {
           </div>
         </div>
 
-        <div className="border-t border-white/20 pt-6 md:pt-8">
-          <p className="text-center text-gray-300 text-xs md:text-sm">
+        <div className="border-t border-white/20 flex items-center py-4 md:py-6">
+          <p className="text-left text-gray-300 text-xs md:text-sm">
             Copyright © cheaptransferscabo Solution All Rights Reserved
           </p>
         </div>

@@ -111,7 +111,7 @@ export default function ActivityPage() {
       <Navigation />
       
       {/* Hero Section */}
-      <section className="relative px-4 mb-[70px]" style={{ backgroundColor: '#ffffff' }}>
+      <section className="relative px-4 mb-[70px] mt-[40px]" style={{ backgroundColor: '#ffffff' }}>
         <div className="container mx-auto max-w-7xl">
           <div className="grid md:grid-cols-2 gap-8 md:gap-12 items-center">
             {/* Left Content */}
@@ -221,7 +221,7 @@ export default function ActivityPage() {
           <h2 className="text-2xl md:text-3xl lg:text-4xl font-montserrat font-semibold text-gray-900 mb-[15px] px-4">
             YOUR ADVENTURE IN CABO STARTS HERE
           </h2>
-          <p className="text-base md:text-lg font-montserrat font-mixed text-gray-700 max-w-4xl mx-auto leading-relaxed px-4">
+          <p className="text-base md:text-lg font-montserrat font-mixed text-gray-700 max-w-5xl mx-auto leading-relaxed px-4">
             Discover the most unforgettable adventures of Los Cabos with <span className="font-montserrat font-semibold">Cheap Transfers Cabo</span>, where every activity is crafted to help you explore Baja's breathtaking landscapes—desert dunes, crystal-blue beaches, dramatic cliffs, and vibrant local culture. From thrilling ATV and Razor rides to peaceful horseback journeys and scenic day tours, we bring you closer to the heart of Cabo with comfort, safety, and a touch of authentic local hospitality.
           </p>
         </div>
@@ -270,25 +270,29 @@ export default function ActivityPage() {
                     ))}
                   </p>
 
-                  {/* Activity Details */}
-                  <div className="flex items-center gap-3 md:gap-4 text-[11px] md:text-sm text-gray-700 mb-4 md:mb-6">
-                    <span className="font-montserrat font-semibold whitespace-nowrap">{activity.price}</span>
-                    <div className="flex items-center gap-1.5 whitespace-nowrap">
-                      <svg className="w-3 h-3 md:w-4 md:h-4 shrink-0" fill="currentColor" viewBox="0 0 20 20" aria-hidden="true">
-                        <path fillRule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm1-12a1 1 0 10-2 0v4a1 1 0 00.293.707l2.828 2.829a1 1 0 101.415-1.415L11 9.586V6z" clipRule="evenodd" />
-                      </svg>
-                      <span className="font-montserrat font-semibold">{activity.duration}</span>
+                  {/* Details and Buttons Container */}
+                  <div className="mt-auto flex flex-col">
+                    {/* Activity Details */}
+                    <div className="flex items-center gap-2 text-[11px] md:text-sm text-gray-700 mb-4 md:mb-6 flex-wrap md:flex-nowrap">
+                      <span className="font-montserrat font-semibold whitespace-nowrap">{activity.price}</span>
+                      <span className="text-gray-300">•</span>
+                      <div className="flex items-center gap-1.5 whitespace-nowrap">
+                        <svg className="w-3 h-3 md:w-4 md:h-4 shrink-0" fill="currentColor" viewBox="0 0 20 20" aria-hidden="true">
+                          <path fillRule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm1-12a1 1 0 10-2 0v4a1 1 0 00.293.707l2.828 2.829a1 1 0 101.415-1.415L11 9.586V6z" clipRule="evenodd" />
+                        </svg>
+                        <span className="font-montserrat font-semibold">{activity.duration}</span>
+                      </div>
+                      <span className="text-gray-300">•</span>
+                      <div className="flex items-center gap-1.5 whitespace-nowrap">
+                        <svg className="w-3 h-3 md:w-4 md:h-4 shrink-0" fill="currentColor" viewBox="0 0 20 20" aria-hidden="true">
+                          <path d="M9 6a3 3 0 11-6 0 3 3 0 016 0zM17 6a3 3 0 11-6 0 3 3 0 016 0zM12.93 17c.046-.327.07-.66.07-1a6.97 6.97 0 00-1.5-4.33A5 5 0 0119 16v1h-6.07zM6 11a5 5 0 015 5v1H1v-1a5 5 0 015-5z" />
+                        </svg>
+                        <span className="font-montserrat font-semibold">{activity.minPeople}</span>
+                      </div>
                     </div>
-                    <div className="flex items-center gap-1.5 whitespace-nowrap">
-                      <svg className="w-3 h-3 md:w-4 md:h-4 shrink-0" fill="currentColor" viewBox="0 0 20 20" aria-hidden="true">
-                        <path d="M9 6a3 3 0 11-6 0 3 3 0 016 0zM17 6a3 3 0 11-6 0 3 3 0 016 0zM12.93 17c.046-.327.07-.66.07-1a6.97 6.97 0 00-1.5-4.33A5 5 0 0119 16v1h-6.07zM6 11a5 5 0 015 5v1H1v-1a5 5 0 015-5z" />
-                      </svg>
-                      <span className="font-montserrat font-semibold">{activity.minPeople}</span>
-                    </div>
-                  </div>
 
-                  {/* Action Buttons */}
-                  <div className="flex gap-2 md:gap-3 mt-auto">
+                    {/* Action Buttons */}
+                    <div className="flex gap-2 md:gap-3">
                     <Link 
                       href={`/activity/${activity.slug}`}
                       className="flex-1 text-center border-2 border-blue-600 text-blue-600 px-3 md:px-4 py-2 md:py-2.5 rounded-full hover:bg-blue-600 hover:text-white transition font-medium text-xs md:text-sm flex items-center justify-center"
@@ -302,6 +306,7 @@ export default function ActivityPage() {
                     >
                       Book Activities
                     </Link>
+                  </div>
                   </div>
                   
                 </div>
