@@ -1,9 +1,24 @@
+'use client';
+
+import { useEffect } from "react";
 import Image from "next/image";
 import CustomHero from "@/components/CustomHero";
 import Contact from "@/components/homepage/Contact";
 import Footer from "@/components/homepage/Footer";
 
 export default function ContactPage() {
+  useEffect(() => {
+    // Handle scroll to get-in-touch section when page loads with hash
+    if (window.location.hash === '#get-in-touch') {
+      setTimeout(() => {
+        const element = document.getElementById('get-in-touch');
+        if (element) {
+          element.scrollIntoView({ behavior: 'smooth', block: 'start' });
+        }
+      }, 100);
+    }
+  }, []);
+
   return (
     <div className="bg-white min-h-screen">
       <CustomHero

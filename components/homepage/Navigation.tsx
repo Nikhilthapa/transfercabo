@@ -81,7 +81,7 @@ export default function Navigation() {
             </div>
 
             <Link 
-              href="/contact" 
+              href="/contact#get-in-touch" 
               className="text-black font-semibold uppercase text-sm hover:text-[#0446A1] transition"
             >
               CONTACT
@@ -185,7 +185,7 @@ export default function Navigation() {
                 </div>
               )}
               <Link 
-                href="/contact" 
+                href="/contact#get-in-touch" 
                 className="text-black font-semibold uppercase text-sm hover:text-[#0446A1] transition px-2 py-2"
                 onClick={() => setMobileMenuOpen(false)}
               >

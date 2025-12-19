@@ -51,7 +51,7 @@ export default function ActivityTestimonials({ testimonials }: ActivityTestimoni
 
       <div className="relative max-w-5xl mx-auto px-8 sm:px-12 md:px-16 lg:px-20">
         {/* Testimonial Card */}
-        <div className="bg-white rounded-xl md:rounded-2xl lg:rounded-3xl shadow-xl relative p-4 sm:p-6 md:p-8 lg:p-12">
+        <div className="bg-[#FCFCFC] rounded-xl md:rounded-2xl lg:rounded-3xl shadow-xl relative p-4 sm:p-6 md:p-8 lg:p-12">
           {/* Previous Button */}
           <button
             onClick={prevTestimonial}

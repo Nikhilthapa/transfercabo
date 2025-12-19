@@ -12,7 +12,7 @@ export default function AboutCallToAction() {
             Don't wait any longer book your trusted transportation with Rodrigo and enjoy a perfect blend of professionalism, hospitality, and local expertise. Let Rodrigo take care of your Airport Transfer so you can focus on enjoying your Los Cabos adventure!
           </p>
           <Link
-            href="/contact"
+            href="/contact#get-in-touch"
             className="inline-block bg-[#0446A1] hover:bg-[#033a8a] text-white px-8 md:px-12 py-4 md:py-5 rounded-lg font-semibold text-base md:text-lg transition-all duration-300 shadow-md hover:shadow-lg"
           >
             Contact us

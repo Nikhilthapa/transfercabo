@@ -50,7 +50,7 @@ export default function AboutNavigation() {
             </div>
 
             <Link 
-              href="/contact" 
+              href="/contact#get-in-touch" 
               className="text-[#87CEEB] font-semibold uppercase text-sm hover:text-white transition"
             >
               CONTACT
@@ -125,7 +125,7 @@ export default function AboutNavigation() {
                 ACTIVITIES
               </Link>
               <Link 
-                href="/contact" 
+                href="/contact#get-in-touch" 
                 className="text-white font-semibold uppercase text-sm hover:text-[#87CEEB] transition px-2 py-2"
                 onClick={() => setMobileMenuOpen(false)}
               >

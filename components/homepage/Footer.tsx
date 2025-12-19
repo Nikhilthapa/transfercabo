@@ -70,7 +70,7 @@ export default function Footer() {
               <li><Link href="/" className="hover:text-white transition">Home</Link></li>
               <li><Link href="/activity" className="hover:text-white transition">Explore Cabo</Link></li>
               <li><Link href="/about" className="hover:text-white transition">About Us</Link></li>
-              <li><Link href="/contact" className="hover:text-white transition">Contact Us</Link></li>
+              <li><Link href="/contact#get-in-touch" className="hover:text-white transition">Contact Us</Link></li>
               <li><Link href="/policy" className="hover:text-white transition">Privacy Policy</Link></li>
             </ul>
           </div>
