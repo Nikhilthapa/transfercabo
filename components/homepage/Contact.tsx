@@ -91,7 +91,7 @@ export default function Contact() {
                   </div>
                   <div className="flex-1 min-w-0">
                     <p className="font-semibold text-black mb-1 text-xs sm:text-sm md:text-base">Email</p>
-                    <p className="text-gray-700 text-xs sm:text-sm break-words break-all">bookingcheaptransferscabo@gmail.com</p>
+                    <p className="text-gray-700 text-xs sm:text-sm break-words break-all">bookingcheaptransferscabo <br />@gmail.com</p>
                   </div>
                 </div>
 

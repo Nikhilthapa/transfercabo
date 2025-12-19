@@ -78,7 +78,7 @@ export default function ReservationPage() {
           <div className="max-w-4xl mx-auto">
             {/* Header Notice */}
             <div className="text-center mb-[20px]">
-              <p className="text-blue-500 text-sm md:text-base font-semibold mb-2">
+              <p className="text-[#0446A1]  text-sm md:text-base font-semibold mb-2">
                 Temporary cash Only!! <br /> To be paid to the Driver upon arrival.
               </p>
             </div>
