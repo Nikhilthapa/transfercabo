@@ -15,32 +15,34 @@ export default function Contact() {
       {/* Main Content Grid */}
       <div className="grid md:grid-cols-3 md:items-stretch gap-4 sm:gap-6 md:gap-10">
           {/* Left Column - Send Message Form */}
-          <div className="bg-white rounded-xl shadow-[0_10px_15px_rgba(0,0,0,0.1),0_4px_6px_rgba(0,0,0,0.1)] p-4 sm:p-6 md:p-8 flex flex-col md:col-span-2">
+          <div className="bg-white rounded-xl shadow-[0_10px_15px_rgba(0,0,0,0.1),0_4px_6px_rgba(0,0,0,0.1)] p-4 sm:p-6 md:p-8 flex flex-col md:col-span-2 md:h-full">
             <h3 className="text-lg sm:text-xl md:text-2xl font-semibold mb-4 sm:mb-5 md:mb-6">Send Us a Message</h3>
-            <form className="space-y-4">
-              <input
-                type="text"
-                placeholder="Full Name"
-                className="w-full border border-gray-300 rounded-full px-6 py-3 focus:outline-none focus:ring-2 focus:ring-blue-400 text-sm md:text-base"
-              />
-              <input
-                type="email"
-                placeholder="Email"
-                className="w-full border border-gray-300 rounded-full px-6 py-3 focus:outline-none focus:ring-2 focus:ring-blue-400 text-sm md:text-base"
-              />
-              <input
-                type="tel"
-                placeholder="Contact Number"
-                className="w-full border border-gray-300 rounded-full px-6 py-3 focus:outline-none focus:ring-2 focus:ring-blue-400 text-sm md:text-base"
-              />
-              <textarea
-                placeholder="Tell us about your trip..."
-                rows={4}
-                className="w-full border border-gray-300 rounded-3xl px-6 py-3 focus:outline-none focus:ring-2 focus:ring-blue-400 text-sm md:text-base resize-none"
-              />
+            <form className="flex-1 flex flex-col">
+              <div className="space-y-4">
+                <input
+                  type="text"
+                  placeholder="Full Name"
+                  className="w-full border border-gray-300 rounded-full px-6 py-3 focus:outline-none focus:ring-2 focus:ring-blue-400 text-sm md:text-base"
+                />
+                <input
+                  type="email"
+                  placeholder="Email"
+                  className="w-full border border-gray-300 rounded-full px-6 py-3 focus:outline-none focus:ring-2 focus:ring-blue-400 text-sm md:text-base"
+                />
+                <input
+                  type="tel"
+                  placeholder="Contact Number"
+                  className="w-full border border-gray-300 rounded-full px-6 py-3 focus:outline-none focus:ring-2 focus:ring-blue-400 text-sm md:text-base"
+                />
+                <textarea
+                  placeholder="Tell us about your trip..."
+                  rows={4}
+                  className="w-full border border-gray-300 rounded-3xl px-6 py-3 focus:outline-none focus:ring-2 focus:ring-blue-400 text-sm md:text-base resize-none"
+                />
+              </div>
               <button 
                 type="button"
-                className="w-full bg-[#0446a1] hover:bg-[#033a8a] text-white px-8 py-3 rounded-full font-semibold transition text-sm md:text-base mt-2"
+                className="w-full bg-[#0446a1] hover:bg-[#033a8a] text-white px-8 py-3 rounded-full font-semibold transition text-sm md:text-base mt-auto"
               >
                 Send Message
               </button>
