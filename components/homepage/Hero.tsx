@@ -44,7 +44,7 @@ export default function Hero() {
             Start Your Cabo Getaway With Stress-Free Private Transportation
           </p>
           <div className="flex flex-col sm:flex-row gap-3 md:gap-4 lg:gap-6 items-center sm:items-start">
-            <Link href="/cabo/reservation" className="bg-[#0446a1] hover:bg-[#033a8a] text-white px-6 md:px-8 lg:px-10 py-2.5 md:py-3 lg:py-4 rounded-md font-semibold text-sm md:text-base lg:text-lg transition shadow-lg text-center flex items-center justify-center border-2 border-transparent">
+            <Link href="/cabo/reservation#reservation-form" className="bg-[#0446a1] hover:bg-[#033a8a] text-white px-6 md:px-8 lg:px-10 py-2.5 md:py-3 lg:py-4 rounded-md font-semibold text-sm md:text-base lg:text-lg transition shadow-lg text-center flex items-center justify-center border-2 border-transparent">
               Book Your Ride Today
             </Link>
             <Link href="/activity" className="border-2 border-white text-white px-6 md:px-8 lg:px-10 py-2.5 md:py-3 lg:py-4 rounded-md font-semibold text-sm md:text-base lg:text-lg hover:bg-white/10 transition text-center flex items-center justify-center">

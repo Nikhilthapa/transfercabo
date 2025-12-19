@@ -274,7 +274,7 @@ export default function CustomHero({
           </p>
           {buttonLabel && (
             <div className="mt-4 md:mt-6">
-              <Link href="/activity/reservation">
+              <Link href="/activity/reservation#reservation-form">
                 <button
                   className="px-5 md:px-6 lg:px-8 py-2.5 md:py-3 lg:py-3.5 rounded-lg font-semibold text-sm md:text-base lg:text-lg hover:opacity-90 transition shadow-md"
                   style={{ backgroundColor: '#0446A1', color: '#fcfcfc' }}

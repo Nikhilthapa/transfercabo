@@ -68,7 +68,7 @@ export default function Activities() {
                         Info
                       </Link>
                       <Link 
-                        href="/activity/reservation"
+                        href="/activity/reservation#reservation-form"
                         className="text-white px-4 md:px-6 py-2 md:py-2.5 rounded-full flex-1 transition font-medium hover:opacity-90 text-center text-xs md:text-sm flex items-center justify-center border-2 border-transparent"
                         style={{ backgroundColor: '#0446A1' }}
                       >
@@ -130,7 +130,7 @@ export default function Activities() {
                         Info
                       </Link>
                       <Link 
-                        href="/activity/reservation"
+                        href="/activity/reservation#reservation-form"
                         className="text-white px-4 md:px-6 py-2 md:py-2.5 rounded-full flex-1 transition font-medium hover:opacity-90 text-center text-xs md:text-sm flex items-center justify-center border-2 border-transparent"
                         style={{ backgroundColor: '#0446A1' }}
                       >
