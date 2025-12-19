@@ -21,7 +21,7 @@ export default function ActivityReservationPage() {
   return (
     <div className="bg-white min-h-screen">
       {/* Hero Section with Video Background */}
-      <section className="relative h-[120vh] overflow-hidden">
+      <section className="relative h-[80vh] md:h-[100vh] overflow-hidden">
         {/* Video Background */}
         <div className="absolute inset-0">
           <video
@@ -33,15 +33,43 @@ export default function ActivityReservationPage() {
           >
             <source src="/activitybackground.mp4" type="video/mp4" />
           </video>
-          {/* Dark gradient overlay on the left side for text readability */}
-          <div className="absolute inset-0 bg-gradient-to-r from-black/50 via-black/30 to-transparent" />
+          {/* White gradient shadow at the top */}
+          <div className="absolute top-0 left-0 right-0 h-32 bg-gradient-to-b from-white via-white/50 to-transparent pointer-events-none" />
+          {/* White gradient shadow at the bottom - smooth transition overlapping video edge */}
+          <div 
+            className="absolute bottom-0 left-0 right-0 pointer-events-none"
+            style={{
+              height: '150px',
+              background: `linear-gradient(to top, 
+                rgba(255, 255, 255, 1) 0%,
+                rgba(255, 255, 255, 0.99) 5%,
+                rgba(255, 255, 255, 0.97) 10%,
+                rgba(255, 255, 255, 0.94) 15%,
+                rgba(255, 255, 255, 0.90) 20%,
+                rgba(255, 255, 255, 0.85) 25%,
+                rgba(255, 255, 255, 0.78) 30%,
+                rgba(255, 255, 255, 0.70) 35%,
+                rgba(255, 255, 255, 0.60) 42%,
+                rgba(255, 255, 255, 0.50) 50%,
+                rgba(255, 255, 255, 0.40) 58%,
+                rgba(255, 255, 255, 0.30) 65%,
+                rgba(255, 255, 255, 0.22) 72%,
+                rgba(255, 255, 255, 0.15) 78%,
+                rgba(255, 255, 255, 0.10) 84%,
+                rgba(255, 255, 255, 0.06) 90%,
+                rgba(255, 255, 255, 0.03) 95%,
+                rgba(255, 255, 255, 0.01) 98%,
+                rgba(255, 255, 255, 0) 100%
+              )`
+            }}
+          />
         </div>
 
         {/* Navigation */}
         <Navigation />
 
         {/* Hero Content */}
-        <div className="relative z-10 container mx-auto px-4 md:px-8 flex items-center h-[calc(100vh-100px)] min-h-[500px]">
+        <div className="relative z-10 container mx-auto px-4 md:px-8 flex items-center h-[calc(80vh-80px)] md:h-[calc(100vh-100px)] min-h-[500px]">
           <div className="max-w-3xl">
             <h2 className="text-3xl md:text-5xl lg:text-6xl font-bold text-white mb-3 md:mb-4">
               Make Your Reservation
@@ -57,15 +85,37 @@ export default function ActivityReservationPage() {
             </Link>
           </div>
         </div>
-        {/* White strip between video and next section */}
-        <div className="absolute -bottom-1 left-0 right-0 h-16 bg-gradient-to-b from-transparent via-white/85 to-white pointer-events-none z-[50]" />
+        {/* White strip between video and next section - overlapping video edge to hide line */}
+        <div 
+          className="absolute -bottom-2 left-0 right-0 pointer-events-none z-[50]"
+          style={{
+            height: '120px',
+            background: `linear-gradient(to bottom, 
+              rgba(255, 255, 255, 0) 0%,
+              rgba(255, 255, 255, 0.02) 5%,
+              rgba(255, 255, 255, 0.05) 10%,
+              rgba(255, 255, 255, 0.10) 18%,
+              rgba(255, 255, 255, 0.18) 28%,
+              rgba(255, 255, 255, 0.28) 38%,
+              rgba(255, 255, 255, 0.40) 48%,
+              rgba(255, 255, 255, 0.52) 58%,
+              rgba(255, 255, 255, 0.64) 68%,
+              rgba(255, 255, 255, 0.75) 78%,
+              rgba(255, 255, 255, 0.84) 86%,
+              rgba(255, 255, 255, 0.91) 92%,
+              rgba(255, 255, 255, 0.96) 96%,
+              rgba(255, 255, 255, 0.99) 98%,
+              rgba(255, 255, 255, 1) 100%
+            )`
+          }}
+        />
       </section>
 
       {/* Lower Content Section */}
-      <section className="bg-white mb-[100px] mt-[70px]">
+      <section className="bg-white pt-10 mb-[100px]">
         <div className="container mx-auto px-4 md:px-8">
           <div className="max-w-4xl mx-auto text-center">
-            <h2 className="text-3xl md:text-4xl lg:text-5xl font-Montserrat font-semibold text-black uppercase mb-[25px]">
+            <h2 className="text-2xl md:text-3xl lg:text-3xl font-Montserrat font-semibold text-black uppercase mb-[25px]">
               BOOK YOUR ACTIVITIES
             </h2>
             <p className="text-base md:text-lg text-gray-700 leading-relaxed">

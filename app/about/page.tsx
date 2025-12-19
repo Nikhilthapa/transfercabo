@@ -16,7 +16,9 @@ export default function AboutPage() {
         titleColor="#fcfcfc"
         subtitleColor="#fafaf9"
       />
-      <AboutWelcome />
+      <div className="pt-10">
+        <AboutWelcome />
+      </div>
       <div style={{ display: 'flex', flexDirection: 'column', gap: '100px', marginTop: '70px' }}>
         <AboutMeetRodrigo />
         <AboutMissionVision />

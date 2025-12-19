@@ -17,12 +17,12 @@ export default function ContactPage() {
       />
       
       {/* Welcome Section */}
-      <section className="bg-white">
+      <section className="bg-white pt-10">
         <div className="container mx-auto px-4 md:px-8 text-center">
-          <h2 className="text-xl sm:text-2xl md:text-3xl lg:text-4xl font-Montserrat font-semibold text-black px-4" style={{ marginBottom: '15px' }}>
+          <h2 className="text-2xl md:text-3xl lg:text-3xl font-Montserrat font-semibold text-black px-4" style={{ marginBottom: '15px' }}>
             WELCOME TO THE CONTACT US
           </h2>
-          <p className="font-Montserrat font-medium text-[#6f6f6f] text-sm md:text-base lg:text-lg max-w-3xl mx-auto px-4" style={{ marginBottom: '70px' }}>
+          <p className="font-Montserrat font-medium text-[#6f6f6f] text-base md:text-lg max-w-3xl mx-auto px-4" style={{ marginBottom: '70px' }}>
             Our team is here to make your travel smooth, safe and effortless — message us anytime.
           </p>
         </div>
