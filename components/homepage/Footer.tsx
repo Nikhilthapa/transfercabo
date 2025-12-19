@@ -105,7 +105,7 @@ export default function Footer() {
                 </svg>
                 <div>
                   <p className="font-bold text-white mb-1">Email</p>
-                  <p className="text-white/90 break-all">bookingcheaptransferscabo@gmail.com</p>
+                  <p className="text-white/90 break-all">bookingcheaptransferscabo <br />@gmail.com</p>
                 </div>
               </div>
               <div className="flex items-start gap-2 md:gap-3">

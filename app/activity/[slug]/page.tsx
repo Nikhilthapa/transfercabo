@@ -190,7 +190,7 @@ export default async function ActivityDetailPage({ params }: { params: { slug: s
             <h2 className="text-xl sm:text-2xl md:text-3xl lg:text-[28px] font-montserrat font-semibold text-black mb-[15px] px-4">
               {laPazData.welcome}
             </h2>
-            <p className="text-sm sm:text-base md:text-lg font-montserrat font-medium text-gray-700 max-w-4xl mx-auto leading-relaxed mb-[100px] px-4">
+            <p className="text-sm sm:text-base md:text-lg font-montserrat font-medium text-gray-700 max-w-5xl mx-auto leading-relaxed mb-[100px] px-4">
               {formatWelcomeDescription(laPazData.welcomeDes)}
             </p>
           </div>
@@ -398,7 +398,7 @@ export default async function ActivityDetailPage({ params }: { params: { slug: s
             <h2 className="text-xl sm:text-2xl md:text-3xl lg:text-4xl font-montserrat font-bold text-black mb-[10px] px-4">
             {laPazData.footerText}
             </h2>
-            <p className="text-sm sm:text-base md:text-lg font-montserrat font-medium mb-[70px] max-w-4xl mx-auto px-4 sm:px-6 md:px-7">
+            <p className="text-sm sm:text-base md:text-lg font-montserrat font-medium mb-[50px] max-w-4xl mx-auto px-4 sm:px-6 md:px-7">
               Secure your booking with Cheap Transfers Cabo and experience culture, beaches, and guided comfort in one day.
             </p>
             <Link href="/activity/reservation">
