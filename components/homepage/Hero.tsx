@@ -55,7 +55,7 @@ export default function Hero() {
       {/* Hero Content */}
       <div className="relative z-10 container mx-auto px-4 md:px-8 flex items-center h-[calc(80vh-80px)] md:h-[calc(100vh-100px)] min-h-[350px] md:min-h-[500px]">
         <div className="max-w-3xl">
-          <h2 className="text-xl sm:text-2xl md:text-4xl lg:text-5xl font-bold text-blue-500 mb-2 md:mb-3 lg:mb-4">
+          <h2 className="text-[#0446A1] text-xl sm:text-2xl md:text-4xl lg:text-5xl font-bold mb-2 md:mb-3 lg:mb-4">
             Cheap Transfers Cabo
           </h2>
           <h3 className="text-xl sm:text-2xl md:text-4xl lg:text-5xl font-Montserrat font-bold text-white mb-3 md:mb-4 lg:mb-8 whitespace-nowrap">
