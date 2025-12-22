@@ -419,7 +419,7 @@ export const activityData:any = {
             "3":"Explore beautiful Baja landscapes, desert plants, ocean breezes, and open spaces ideal for photos.",
             "4":"Stop at viewpoints for pictures, enjoy quiet moments, and soak in the natural beauty of the coastline.",
         },
-        "image":"activity/horseriding/horseriding.jpeg"
+        "image":"activity/horseriding/horseriding.jpg"
     },{
         "title":"What's Included",
         "points":{
