@@ -111,7 +111,7 @@ export default function ActivityPage() {
       <Navigation />
       
       {/* Hero Section */}
-      <section className="relative mb-[70px] mt-[40px]" style={{ backgroundColor: '#ffffff' }}>
+      <section className="relative mb-[40px] sm:mb-[50px] md:mb-[60px] lg:mb-[70px] mt-[20px] sm:mt-[30px] md:mt-[40px]" style={{ backgroundColor: '#ffffff' }}>
         <div className="container mx-auto px-4 md:px-8 max-w-7xl">
           <div className="grid md:grid-cols-2 gap-8 md:gap-12 items-center">
             {/* Left Content */}
@@ -216,7 +216,7 @@ export default function ActivityPage() {
       </section>
 
       {/* About Section */}
-      <section className="mb-[100px]" style={{ backgroundColor: '#ffffff' }}>
+      <section className="mb-[50px] sm:mb-[60px] md:mb-[80px] lg:mb-[100px]" style={{ backgroundColor: '#ffffff' }}>
         <div className="container mx-auto px-4 md:px-8 max-w-6xl text-center">
           <h2 className="text-2xl md:text-3xl lg:text-4xl font-montserrat font-semibold text-gray-900 mb-[15px]">
             YOUR ADVENTURE IN CABO STARTS HERE
@@ -316,7 +316,7 @@ export default function ActivityPage() {
         </div>
       </section>
 
-      <div className="mt-[100px]">
+      <div className="mt-[50px] sm:mt-[60px] md:mt-[80px] lg:mt-[100px]">
       <Footer />
       </div>
     </div>
