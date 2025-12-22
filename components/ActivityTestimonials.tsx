@@ -41,10 +41,10 @@ export default function ActivityTestimonials({ testimonials }: ActivityTestimoni
   const currentTestimonial = testimonials[currentIndex];
 
   return (
-    <section className="container mx-auto px-4 md:px-8 py-8 sm:py-10 md:py-12 lg:py-16">
+    <section className="container mx-auto px-4 md:px-8">
       <div className="text-center mb-8 md:mb-12 lg:mb-16">
         <h2 className="text-2xl md:text-3xl lg:text-4xl xl:text-5xl font-montserrat font-bold text-black px-2" style={{ marginBottom: '10px' }}>What Our Clients Say</h2>
-        <p className="font-montserrat font-medium text-gray-700 text-sm md:text-base lg:text-lg px-4 max-w-3xl mx-auto" style={{ marginBottom: '50px' }}>
+        <p className="font-montserrat font-medium text-gray-700 text-sm md:text-base lg:text-lg px-4 max-w-3xl mx-auto" style={{ marginBottom: '10px' }}>
           Genuine reviews from travelers who trusted us with their Cabo journey.
         </p>
       </div>

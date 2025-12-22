@@ -157,7 +157,7 @@ export default function ReservationPage() {
                 <div className="grid md:grid-cols-2 gap-4 md:gap-6">
                   {/* Select Service */}
                   <div>
-                    <label className="block text-xs md:text-sm font-[600] text-gray-700 mb-2">
+                    <label className="block font-montserrat font-semibold mb-2">
                       Select Service
                     </label>
                     <select
@@ -175,7 +175,7 @@ export default function ReservationPage() {
 
                   {/* Passengers */}
                   <div>
-                    <label className="block text-xs md:text-sm font-[600] text-gray-700 mb-2">
+                    <label className="block font-montserrat font-semibold mb-2">
                       Passengers
                     </label>
                     <select className="w-full border border-gray-300 rounded-md px-3 md:px-4 py-2.5 md:py-3 focus:outline-none focus:ring-2 focus:ring-blue-500 text-sm md:text-base">
@@ -194,7 +194,7 @@ export default function ReservationPage() {
                 <div className="grid md:grid-cols-2 gap-4 md:gap-6">
                   {/* First Name */}
                   <div>
-                    <label className="block text-xs md:text-sm font-[600] text-gray-700 mb-2">
+                    <label className="block font-montserrat font-semibold mb-2">
                       First Name
                     </label>
                     <input
@@ -206,7 +206,7 @@ export default function ReservationPage() {
 
                   {/* Last Name */}
                   <div>
-                    <label className="block text-xs md:text-sm font-[600] text-gray-700 mb-2">
+                    <label className="block font-montserrat font-semibold mb-2">
                       Last Name
                     </label>
                     <input
@@ -219,7 +219,7 @@ export default function ReservationPage() {
 
                 {/* Email */}
                 <div>
-                  <label className="block text-xs md:text-sm font-[600] text-gray-700 mb-2">
+                  <label className="block font-montserrat font-semibold mb-2">
                     Email
                   </label>
                   <input
@@ -232,7 +232,7 @@ export default function ReservationPage() {
                 {/* Phone with Country Code */}
                 <div className="grid md:grid-cols-12 gap-3 md:gap-4">
                   <div className="md:col-span-3">
-                    <label className="block text-xs md:text-sm font-[600] text-gray-700 mb-2">
+                    <label className="block font-montserrat font-semibold mb-2">
                       Code
                     </label>
                     <select className="w-full border border-gray-300 rounded-md px-3 md:px-4 py-2.5 md:py-3 focus:outline-none focus:ring-2 focus:ring-blue-500 text-sm md:text-base">
@@ -243,7 +243,7 @@ export default function ReservationPage() {
                     </select>
                   </div>
                   <div className="md:col-span-9">
-                    <label className="block text-xs md:text-sm font-[600] text-gray-700 mb-2">
+                    <label className="block font-montserrat font-semibold mb-2">
                       Phone
                     </label>
                     <input
@@ -256,7 +256,7 @@ export default function ReservationPage() {
 
                 {/* Arrival Details */}
                 <div>
-                  <label className="block text-xs md:text-sm font-[600] text-gray-700 mb-2">
+                  <label className="block font-montserrat font-semibold mb-2">
                     Hotel Name
                   </label>
                   <input
@@ -269,7 +269,7 @@ export default function ReservationPage() {
                 <div className="grid md:grid-cols-2 gap-4 md:gap-6">
                   {/* Arrival Date */}
                   <div>
-                    <label className="block text-xs md:text-sm font-[600] text-gray-700 mb-2">
+                    <label className="block font-montserrat font-semibold mb-2">
                       Arrival Date
                     </label>
                     <div className="relative">
@@ -282,7 +282,7 @@ export default function ReservationPage() {
 
                   {/* Arrival Time */}
                   <div>
-                    <label className="block text-xs md:text-sm font-[600] text-gray-700 mb-2">
+                    <label className="block font-montserrat font-semibold mb-2">
                       Arrival Time
                     </label>
                     <input
@@ -294,7 +294,7 @@ export default function ReservationPage() {
 
                 {/* Arrival Airline and Flight Number */}
                 <div>
-                  <label className="block text-xs md:text-sm font-[600] text-gray-700 mb-2">
+                  <label className="block font-montserrat font-semibold mb-2">
                     Arrival Airline And Flight Number
                   </label>
                   <input
@@ -315,7 +315,7 @@ export default function ReservationPage() {
 
                     {/* Departure Hotel Name */}
                     <div>
-                      <label className="block text-xs md:text-sm font-[600] text-gray-700 mb-2">
+                        <label className="block font-montserrat font-semibold mb-2">
                         Hotel Name
                       </label>
                       <input
@@ -327,7 +327,7 @@ export default function ReservationPage() {
 
                     {/* Departure Airline and Flight Number */}
                     <div>
-                      <label className="block text-xs md:text-sm font-[600] text-gray-700 mb-2">
+                      <label className="block font-montserrat font-semibold mb-2">
                         Departure Airline And Flight Number
                       </label>
                       <input
@@ -340,7 +340,7 @@ export default function ReservationPage() {
                     <div className="grid md:grid-cols-2 gap-4 md:gap-6">
                       {/* Departure Date */}
                       <div>
-                        <label className="block text-xs md:text-sm font-[600] text-gray-700 mb-2">
+                          <label className="block font-montserrat font-semibold mb-2">
                           Departure Date
                         </label>
                         <div className="relative">
@@ -353,7 +353,7 @@ export default function ReservationPage() {
 
                       {/* Departure Time */}
                       <div>
-                        <label className="block text-xs md:text-sm font-[600] text-gray-700 mb-2">
+                        <label className="block font-montserrat font-semibold mb-2">
                           Departure Time
                         </label>
                         <input
@@ -377,7 +377,7 @@ export default function ReservationPage() {
                 <div className="space-y-4 md:space-y-5 lg:space-y-[30px]">
                     {/* Hotel Name */}
                     <div>
-                      <label className="block text-xs md:text-sm font-[600] text-gray-700 mb-2">
+                      <label className="block font-montserrat font-semibold mb-2">
                         Hotel Name
                       </label>
                       <input
@@ -389,7 +389,7 @@ export default function ReservationPage() {
 
                     {/* Departure Airline and Flight Number */}
                     <div>
-                      <label className="block text-xs md:text-sm font-[600] text-gray-700 mb-2">
+                      <label className="block font-montserrat font-semibold mb-2">
                         Departure Airline And Flight Number
                       </label>
                       <input
@@ -402,7 +402,7 @@ export default function ReservationPage() {
                     <div className="grid md:grid-cols-2 gap-4 md:gap-6">
                       {/* Departure Date */}
                       <div>
-                        <label className="block text-xs md:text-sm font-[600] text-gray-700 mb-2">
+                        <label className="block font-montserrat font-semibold mb-2">
                           Departure Date
                         </label>
                         <div className="relative">
@@ -415,7 +415,7 @@ export default function ReservationPage() {
 
                       {/* Departure Time */}
                       <div>
-                        <label className="block text-xs md:text-sm font-[600] text-gray-700 mb-2">
+                        <label className="block font-montserrat font-semibold mb-2">
                           Departure Time
                         </label>
                         <input
@@ -427,7 +427,7 @@ export default function ReservationPage() {
 
                     {/* Add Grocery Stop */}
                     <div>
-                      <label className="block text-xs md:text-sm font-[600] text-gray-700 mb-2">
+                      <label className="block font-montserrat font-semibold mb-2">
                         Add Grocery Stop 1/2 Hr = 25.00 Usd
                       </label>
                       <select className="w-full border border-gray-300 rounded-md px-3 md:px-4 py-2.5 md:py-3 focus:outline-none focus:ring-2 focus:ring-blue-500 text-sm md:text-base">
