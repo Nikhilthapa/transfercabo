@@ -112,10 +112,10 @@ export default function ActivityReservationPage() {
       </section>
 
       {/* Lower Content Section */}
-      <section className="bg-white pt-10 mb-[100px]">
+      <section className="bg-white pt-4 sm:pt-6 md:pt-8 lg:pt-10 mb-[50px] sm:mb-[60px] md:mb-[80px] lg:mb-[100px]">
         <div className="container mx-auto px-4 md:px-8">
           <div className="max-w-4xl mx-auto text-center">
-            <h2 className="text-2xl md:text-3xl lg:text-3xl font-Montserrat font-semibold text-black uppercase mb-[25px]">
+            <h2 className="text-2xl md:text-3xl lg:text-3xl font-Montserrat font-semibold text-black uppercase mb-[15px] sm:mb-[20px] md:mb-[25px]">
               BOOK YOUR ACTIVITIES
             </h2>
             <p className="text-base md:text-lg text-gray-700 leading-relaxed">
@@ -126,11 +126,11 @@ export default function ActivityReservationPage() {
       </section>
 
       {/* Reservation Form Section */}
-      <section id="reservation-form" className="py-[60px] mb-[100px]" style={{ backgroundColor: '#fafaf9' }}>
+      <section id="reservation-form" className="py-[30px] sm:py-[40px] md:py-[50px] lg:py-[60px] mb-[50px] sm:mb-[60px] md:mb-[80px] lg:mb-[100px]" style={{ backgroundColor: '#fafaf9' }}>
         <div className="container mx-auto px-4 md:px-8">
           <div className="max-w-4xl mx-auto">
             {/* Header Notice */}
-            <div className="text-center mb-[20px]">
+            <div className="text-center mb-[15px] sm:mb-[18px] md:mb-[20px]">
               <p className="text-sm md:text-base text-[#0446A1] font-semibold mb-2">
                 Temporary cash Only!! <br />
                 To be paid to the Driver upon arrival.
@@ -138,7 +138,7 @@ export default function ActivityReservationPage() {
             </div>
 
             {/* Main Title */}
-            <h1 className="text-3xl md:text-4xl lg:text-5xl  font-Montserrat font-semibold text-black text-center mb-[59px]">
+            <h1 className="text-3xl md:text-4xl lg:text-5xl  font-Montserrat font-semibold text-black text-center mb-[35px] sm:mb-[45px] md:mb-[55px] lg:mb-[59px]">
               RESERVATION REQUEST
             </h1>
 
@@ -146,7 +146,7 @@ export default function ActivityReservationPage() {
             <div className="bg-white rounded-lg shadow-xl p-6 md:p-8 lg:p-10">
               <form className="space-y-4 md:space-y-5 lg:space-y-[30px]">
                 {/* Tour and Passengers Row */}
-                <div className="grid md:grid-cols-2 gap-6">
+                <div className="grid md:grid-cols-2 gap-4 sm:gap-5 md:gap-6">
                   {/* Select Tour */}
                   <div>
                     <label className="block font-montserrat font-semibold mb-2">
@@ -183,7 +183,7 @@ export default function ActivityReservationPage() {
                 </div>
 
                 {/* Personal Information */}
-                <div className="grid md:grid-cols-2 gap-6">
+                <div className="grid md:grid-cols-2 gap-4 sm:gap-5 md:gap-6">
                   {/* First Name */}
                   <div>
                     <label className="block font-montserrat font-semibold mb-2">
@@ -222,7 +222,7 @@ export default function ActivityReservationPage() {
                 </div>
 
                 {/* Phone with Country Code */}
-                <div className="grid md:grid-cols-12 gap-4">
+                <div className="grid md:grid-cols-12 gap-3 sm:gap-3.5 md:gap-4">
                   <div className="md:col-span-3">
                     <label className="block font-montserrat font-semibold mb-2">
                       Code

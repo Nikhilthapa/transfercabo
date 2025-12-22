@@ -5,10 +5,10 @@ export default function AboutCallToAction() {
     <section className="bg-white">
       <div className="container mx-auto px-4 md:px-8">
         <div className="text-center max-w-4xl mx-auto">
-          <h2 className="text-3xl md:text-4xl lg:text-5xl font-Montserrat font-bold text-black" style={{ marginBottom: '10px' }}>
+          <h2 className="text-3xl md:text-4xl lg:text-5xl font-Montserrat font-bold text-black mb-[8px] sm:mb-[10px]">
             Your Journey Begins With Us
           </h2>
-          <p className="font-Montserrat font-medium text-[#6f6f6f] text-base md:text-lg leading-relaxed" style={{ marginBottom: '50px' }}>
+          <p className="font-Montserrat font-medium text-[#6f6f6f] text-base md:text-lg leading-relaxed mb-[30px] sm:mb-[40px] md:mb-[45px] lg:mb-[50px]">
             Don't wait any longer book your trusted transportation with Rodrigo and enjoy a perfect blend of professionalism, hospitality, and local expertise. Let Rodrigo take care of your Airport Transfer so you can focus on enjoying your Los Cabos adventure!
           </p>
           <Link

@@ -121,10 +121,10 @@ export default function ReservationPage() {
       </section>
 
       {/* Lower Content Section */}
-      <section className="bg-white pt-10 pb-10 md:pb-12 lg:pb-20">
+      <section className="bg-white pt-4 sm:pt-6 md:pt-8 lg:pt-10 pb-6 sm:pb-8 md:pb-12 lg:pb-20">
         <div className="container mx-auto px-4 md:px-8">
           <div className="max-w-4xl mx-auto text-center">
-            <h2 className="text-2xl md:text-3xl lg:text-3xl font-Montserrat font-semibold text-black uppercase mb-[25px] px-4">
+            <h2 className="text-2xl md:text-3xl lg:text-3xl font-Montserrat font-semibold text-black uppercase mb-[15px] sm:mb-[20px] md:mb-[25px] px-4">
               BOOK YOUR TRANSFER
             </h2>
             <p className="text-base md:text-lg text-gray-700 leading-relaxed px-4">
@@ -135,18 +135,18 @@ export default function ReservationPage() {
       </section>
 
       {/* Reservation Form Section */}
-      <section id="reservation-form" className="py-12 md:py-20 mb-[100px]" style={{ backgroundColor: '#fafaf9' }}>
+      <section id="reservation-form" className="py-6 sm:py-8 md:py-12 lg:py-20 mb-[50px] sm:mb-[60px] md:mb-[80px] lg:mb-[100px]" style={{ backgroundColor: '#fafaf9' }}>
         <div className="container mx-auto px-4 md:px-8">
           <div className="max-w-4xl mx-auto">
             {/* Header Notice */}
-            <div className="text-center mb-[20px]">
+            <div className="text-center mb-[15px] sm:mb-[18px] md:mb-[20px]">
               <p className="text-[#0446A1]  text-sm md:text-base font-semibold mb-2">
                 Temporary cash Only!! <br /> To be paid to the Driver upon arrival.
               </p>
             </div>
 
             {/* Main Title */}
-            <h1 className="text-2xl md:text-3xl lg:text-4xl xl:text-5xl font-Montserrat font-semibold text-black text-center mb-[59px] px-4">
+            <h1 className="text-2xl md:text-3xl lg:text-4xl xl:text-5xl font-Montserrat font-semibold text-black text-center mb-[35px] sm:mb-[45px] md:mb-[55px] lg:mb-[59px] px-4">
               RESERVATION REQUEST 
             </h1>
 
@@ -154,7 +154,7 @@ export default function ReservationPage() {
             <div className="bg-white rounded-lg shadow-xl p-4 md:p-6 lg:p-8 xl:p-10">
               <form className="space-y-4 md:space-y-5 lg:space-y-[30px]">
                 {/* Service and Passengers Row */}
-                <div className="grid md:grid-cols-2 gap-4 md:gap-6">
+                <div className="grid md:grid-cols-2 gap-4 sm:gap-5 md:gap-6">
                   {/* Select Service */}
                   <div>
                     <label className="block font-montserrat font-semibold mb-2">
@@ -191,7 +191,7 @@ export default function ReservationPage() {
                 </div>
 
                 {/* Personal Information */}
-                <div className="grid md:grid-cols-2 gap-4 md:gap-6">
+                <div className="grid md:grid-cols-2 gap-4 sm:gap-5 md:gap-6">
                   {/* First Name */}
                   <div>
                     <label className="block font-montserrat font-semibold mb-2">
@@ -230,7 +230,7 @@ export default function ReservationPage() {
                 </div>
 
                 {/* Phone with Country Code */}
-                <div className="grid md:grid-cols-12 gap-3 md:gap-4">
+                <div className="grid md:grid-cols-12 gap-3 sm:gap-3.5 md:gap-4">
                   <div className="md:col-span-3">
                     <label className="block font-montserrat font-semibold mb-2">
                       Code
@@ -266,7 +266,7 @@ export default function ReservationPage() {
                   />
                 </div>
 
-                <div className="grid md:grid-cols-2 gap-4 md:gap-6">
+                <div className="grid md:grid-cols-2 gap-4 sm:gap-5 md:gap-6">
                   {/* Arrival Date */}
                   <div>
                     <label className="block font-montserrat font-semibold mb-2">
@@ -337,7 +337,7 @@ export default function ReservationPage() {
                       />
                     </div>
 
-                    <div className="grid md:grid-cols-2 gap-4 md:gap-6">
+                    <div className="grid md:grid-cols-2 gap-4 sm:gap-5 md:gap-6">
                       {/* Departure Date */}
                       <div>
                           <label className="block font-montserrat font-semibold mb-2">
@@ -399,7 +399,7 @@ export default function ReservationPage() {
                       />
                     </div>
 
-                    <div className="grid md:grid-cols-2 gap-4 md:gap-6">
+                    <div className="grid md:grid-cols-2 gap-4 sm:gap-5 md:gap-6">
                       {/* Departure Date */}
                       <div>
                         <label className="block font-montserrat font-semibold mb-2">

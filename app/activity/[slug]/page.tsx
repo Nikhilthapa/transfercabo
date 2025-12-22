@@ -190,7 +190,7 @@ export default async function ActivityDetailPage({ params }: { params: { slug: s
             <h2 className="text-xl sm:text-2xl md:text-3xl lg:text-[28px] font-montserrat font-semibold text-black mb-[15px] px-4">
               {laPazData.welcome}
             </h2>
-            <p className="text-sm sm:text-base md:text-lg font-montserrat font-medium text-gray-700 max-w-5xl mx-auto leading-relaxed mb-[100px] px-4">
+            <p className="text-sm sm:text-base md:text-lg font-montserrat font-medium text-gray-700 max-w-5xl mx-auto leading-relaxed mb-[60px] md:mb-[80px] lg:mb-[100px] px-4">
               {formatWelcomeDescription(laPazData.welcomeDes)}
             </p>
           </div>
@@ -202,7 +202,7 @@ export default async function ActivityDetailPage({ params }: { params: { slug: s
             <h2 className="text-2xl sm:text-3xl md:text-4xl lg:text-[38px] font-montserrat font-bold text-black text-center mb-[10px] px-4 sm:px-8 md:px-16 lg:px-32">
               {laPazData.sub1}
             </h2>
-            <p className="text-center font-montserrat font-medium text-gray-600 mb-[70px] px-4 text-xs sm:text-sm md:text-base">
+            <p className="text-center font-montserrat font-medium text-gray-600 mb-[30px] px-4 text-xs sm:text-sm md:text-base">
               {laPazData.sub1Des}
             </p>
             

@@ -32,12 +32,12 @@ export default function ContactPage() {
       />
       
       {/* Welcome Section */}
-      <section className="bg-white pt-10">
+      <section className="bg-white pt-4 sm:pt-6 md:pt-8 lg:pt-10">
         <div className="container mx-auto px-4 md:px-8 text-center">
-          <h2 className="text-2xl md:text-3xl lg:text-3xl font-Montserrat font-semibold text-black px-4" style={{ marginBottom: '15px' }}>
+          <h2 className="text-2xl md:text-3xl lg:text-3xl font-Montserrat font-semibold text-black px-4 mb-[12px] sm:mb-[15px]">
             WELCOME TO THE CONTACT US
           </h2>
-          <p className="font-Montserrat font-medium text-[#6f6f6f] text-base md:text-lg max-w-3xl mx-auto px-4" style={{ marginBottom: '70px' }}>
+          <p className="font-Montserrat font-medium text-[#6f6f6f] text-base md:text-lg max-w-3xl mx-auto px-4 mb-[40px] sm:mb-[50px] md:mb-[60px] lg:mb-[70px]">
             Our team is here to make your travel smooth, safe and effortless — message us anytime.
           </p>
         </div>
@@ -56,7 +56,7 @@ export default function ContactPage() {
           </div>
 
           {/* Contact Cards */}
-          <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-6 md:gap-10">
+          <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-4 sm:gap-6 md:gap-8 lg:gap-10">
             {/* Phone/WhatsApp Card */}
             <div className="border border-gray-200 rounded-xl shadow-[0_10px_15px_rgba(0,0,0,0.1),0_4px_6px_rgba(0,0,0,0.1)] p-6 md:p-8 text-center" style={{ backgroundColor: '#FAFAF9' }}>
               <div className="flex justify-center mb-3 md:mb-4">
@@ -115,7 +115,7 @@ export default function ContactPage() {
       </section>
 
       {/* Contact Form and Info Section */}
-      <div style={{paddingTop: '100px', paddingBottom: '100px' }}>
+      <div className="pt-[50px] sm:pt-[60px] md:pt-[80px] lg:pt-[100px] pb-[50px] sm:pb-[60px] md:pb-[80px] lg:pb-[100px]">
         <Contact />
       </div>
       <div>

@@ -305,7 +305,7 @@ export const activityData:any = {
   },
   'Art Walk':{
     title: "Art Walk / San José del Cabo",
-    backgroundImage: "/activity/artwalk/artwalk.jpg",
+    backgroundImage: "/activity/artwalk/Artwalk.jpeg",
     description: "Discover the artistic heart of San José del Cabo with a cultural evening filled with galleries, history, flavors, and local charm.",
     welcome: "WELCOME TO THE ART WALK EXPERIENCE",
     welcomeDes: "Experience the beauty and culture of San José's Historic Art District with 'Cheap Transfers Cabo'. Stroll through vibrant streets, explore stunning galleries, enjoy local tastings, and dive into the rich artistic traditions of Baja California Sur.",
@@ -455,7 +455,7 @@ export const activityData:any = {
   },
   'Snorkeling Tour':{
     title: "Hidden Towns / of Southern Baja",
-    backgroundImage: "/activity/hiddentown/hiddentown.png",
+    backgroundImage: "/activity/hiddentown/hiddertown.jpeg",
     description: "Discover Baja’s untouched villages, peaceful landscapes, and authentic local culture on a quiet, scenic day trip.",
     welcome: "WELCOME TO THE HIDDEN TOWNS EXPERIENCE",
     welcomeDes: "Experience a side of Baja that most travelers never see. Wander through rustic villages, explore traditional lifestyles, enjoy peaceful desert-to-mountain scenery, and dive into the charming simplicity of Southern Baja’s hidden towns — all with the comfort and guidance of Cheap Transfers Cabo.",

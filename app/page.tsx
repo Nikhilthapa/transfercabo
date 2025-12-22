@@ -12,7 +12,7 @@ export default function Home() {
   return (
     <div className="bg-white min-h-screen">
       <Hero />
-      <div style={{ display: 'flex', flexDirection: 'column', gap: '75px' }}>
+      <div className="flex flex-col gap-[40px] sm:gap-[50px] md:gap-[60px] lg:gap-[75px]">
         <IntroText />
         <OurServices />
         <WhyTrustUs />

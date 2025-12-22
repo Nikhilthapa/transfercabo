@@ -16,10 +16,10 @@ export default function AboutPage() {
         titleColor="#fcfcfc"
         subtitleColor="#fafaf9"
       />
-      <div className="pt-10">
+      <div className="pt-4 sm:pt-6 md:pt-8 lg:pt-10">
         <AboutWelcome />
       </div>
-      <div style={{ display: 'flex', flexDirection: 'column', gap: '100px', marginTop: '70px' }}>
+      <div className="flex flex-col gap-[50px] sm:gap-[60px] md:gap-[80px] lg:gap-[100px] mt-[40px] sm:mt-[50px] md:mt-[60px] lg:mt-[70px]">
         <AboutMeetRodrigo />
         <AboutMissionVision />
         <AboutCallToAction />
