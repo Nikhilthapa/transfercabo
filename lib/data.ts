@@ -346,7 +346,7 @@ export const activityData:any = {
             "5":"Free time at Main Square for shopping and photos",
             "6":"Dinner optional at a local Mexican restaurant",
         },
-        "image":"activity/artwalk/artwalk1.jpg"
+        "image":"activity/artwalk/artwalk2.jpeg"
     },{
         "title":"What's Included",
         "points":{
@@ -419,7 +419,7 @@ export const activityData:any = {
             "3":"Explore beautiful Baja landscapes, desert plants, ocean breezes, and open spaces ideal for photos.",
             "4":"Stop at viewpoints for pictures, enjoy quiet moments, and soak in the natural beauty of the coastline.",
         },
-        "image":"activity/horseriding/horseriding.jpg"
+        "image":"activity/horseriding/horseriding.jpeg"
     },{
         "title":"What's Included",
         "points":{
