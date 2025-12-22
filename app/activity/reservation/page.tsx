@@ -149,7 +149,7 @@ export default function ActivityReservationPage() {
                 <div className="grid md:grid-cols-2 gap-6">
                   {/* Select Tour */}
                   <div>
-                    <label className="block text-sm font-[600] text-gray-700 mb-2">
+                    <label className="block font-montserrat font-semibold mb-2">
                       Select Tour
                     </label>
                     <select className="w-full border border-gray-300 rounded-md px-4 py-3 focus:outline-none focus:ring-2 focus:ring-blue-500 text-sm md:text-base">
@@ -167,7 +167,7 @@ export default function ActivityReservationPage() {
 
                   {/* Passengers */}
                   <div>
-                    <label className="block text-sm font-[600] text-gray-700 mb-2">
+                    <label className="block font-montserrat font-semibold mb-2">
                       Passengers
                     </label>
                     <select className="w-full border border-gray-300 rounded-md px-4 py-3 focus:outline-none focus:ring-2 focus:ring-blue-500 text-sm md:text-base">
@@ -186,7 +186,7 @@ export default function ActivityReservationPage() {
                 <div className="grid md:grid-cols-2 gap-6">
                   {/* First Name */}
                   <div>
-                    <label className="block text-sm font-[600] text-gray-700 mb-2">
+                    <label className="block font-montserrat font-semibold mb-2">
                       First Name
                     </label>
                     <input
@@ -198,7 +198,7 @@ export default function ActivityReservationPage() {
 
                   {/* Last Name */}
                   <div>
-                    <label className="block text-sm font-[600] text-gray-700 mb-2">
+                    <label className="block font-montserrat font-semibold mb-2">
                       Last Name
                     </label>
                     <input
@@ -211,7 +211,7 @@ export default function ActivityReservationPage() {
 
                 {/* Email */}
                 <div>
-                  <label className="block text-sm font-[600] text-gray-700 mb-2">
+                  <label className="block font-montserrat font-semibold mb-2">
                     Email
                   </label>
                   <input
@@ -224,7 +224,7 @@ export default function ActivityReservationPage() {
                 {/* Phone with Country Code */}
                 <div className="grid md:grid-cols-12 gap-4">
                   <div className="md:col-span-3">
-                    <label className="block text-sm font-[600] text-gray-700 mb-2">
+                    <label className="block font-montserrat font-semibold mb-2">
                       Code
                     </label>
                     <select className="w-full border border-gray-300 rounded-md px-4 py-3 focus:outline-none focus:ring-2 focus:ring-blue-500 text-sm md:text-base">
@@ -235,7 +235,7 @@ export default function ActivityReservationPage() {
                     </select>
                   </div>
                   <div className="md:col-span-9">
-                    <label className="block text-sm font-[600] text-gray-700 mb-2">
+                    <label className="block font-montserrat font-semibold mb-2">
                       Phone
                     </label>
                     <input
@@ -248,7 +248,7 @@ export default function ActivityReservationPage() {
 
                 {/* Hotel & Room Number */}
                 <div>
-                  <label className="block text-sm font-[600] text-gray-700 mb-2">
+                  <label className="block font-montserrat font-semibold mb-2">
                     Hotel & Room Number
                   </label>
                   <input
@@ -260,7 +260,7 @@ export default function ActivityReservationPage() {
 
                 {/* Activity Date */}
                 <div>
-                  <label className="block text-sm font-[600] text-gray-700 mb-2">
+                  <label className="block font-montserrat font-semibold mb-2">
                     Activity Date
                   </label>
                   <div className="relative">
@@ -273,7 +273,7 @@ export default function ActivityReservationPage() {
 
                 {/* Message */}
                 <div>
-                  <label className="block text-sm font-[600] text-gray-700 mb-2">
+                  <label className="block font-montserrat font-semibold mb-2">
                     Message
                   </label>
                   <textarea
