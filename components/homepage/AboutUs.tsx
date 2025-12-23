@@ -18,7 +18,8 @@ export default function AboutUs() {
       <div className="grid md:grid-cols-2 gap-8 md:gap-16 items-start">
         {/* Images Grid */}
         <div className="grid grid-cols-2 gap-3 md:gap-5">
-          <div className="relative h-40 sm:h-60 md:h-[340px] rounded-2xl md:rounded-3xl overflow-hidden md:w-[102%] md:mt-[30px]">
+          {/* Top-left: image2.png */}
+          <div className="relative h-40 sm:h-60 md:h-[340px] rounded-2xl md:rounded-3xl overflow-hidden w-[102%] mt-[15px] md:mt-[30px]">
             <Image
               src="/aboutus/image2.png"
               alt={t("aboutUs.image1.alt")}
@@ -28,7 +29,8 @@ export default function AboutUs() {
               sizes="(max-width: 640px) 50vw, (max-width: 1024px) 50vw, 25vw"
             />
           </div>
-          <div className="relative h-40 sm:h-60 md:h-[340px] rounded-2xl md:rounded-3xl overflow-hidden md:mt-[30px]">
+          {/* Top-right: image1.png */}
+          <div className="relative h-40 sm:h-60 md:h-[340px] rounded-2xl md:rounded-3xl overflow-hidden mt-[15px] md:mt-[30px]">
             <Image
               src="/aboutus/image1.png"
               alt={t("aboutUs.image2.alt")}
@@ -38,7 +40,8 @@ export default function AboutUs() {
               sizes="(max-width: 640px) 50vw, (max-width: 1024px) 50vw, 25vw"
             />
           </div>
-          <div className="relative h-40 sm:h-60 md:h-[340px] rounded-2xl md:rounded-3xl overflow-hidden md:w-[82%]">
+          {/* Bottom-left: image3.png */}
+          <div className="relative h-40 sm:h-60 md:h-[340px] rounded-2xl md:rounded-3xl overflow-hidden w-[82%]">
             <Image
               src="/aboutus/image3.png"
               alt={t("aboutUs.image3.alt")}
@@ -48,7 +51,8 @@ export default function AboutUs() {
               sizes="(max-width: 640px) 50vw, (max-width: 1024px) 50vw, 25vw"
             />
           </div>
-          <div className="relative h-40 sm:h-60 md:h-[340px] rounded-2xl md:rounded-3xl overflow-hidden md:w-[120%] md:-ml-[20%]">
+          {/* Bottom-right: image4.png */}
+          <div className="relative h-40 sm:h-60 md:h-[340px] rounded-2xl md:rounded-3xl overflow-hidden w-[120%] -ml-[20%]">
             <Image
               src="/aboutus/image4.png"
               alt={t("aboutUs.image4.alt")}
