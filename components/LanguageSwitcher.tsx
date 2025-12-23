@@ -6,26 +6,33 @@ import { useI18n } from "@/lib/i18n";
 import LoadingOverlay from "./LoadingOverlay";
 
 export default function LanguageSwitcher() {
-  const { locale, setLocale, t } = useI18n();
+  const { locale, setLocale, t, isLoading } = useI18n();
   const [open, setOpen] = useState(false);
-  const [isLoading, setIsLoading] = useState(false);
+  const [isChangingLanguage, setIsChangingLanguage] = useState(false);
   const isEnglish = locale === "en";
 
   const handleLanguageChange = (newLocale: "en" | "es-MX") => {
-    setIsLoading(true);
-    setLocale(newLocale);
-    if (typeof window !== "undefined") {
-      // Remove hash from URL to prevent scrolling to anchor on reload
-      const urlWithoutHash = window.location.href.split('#')[0];
-      window.history.replaceState(null, '', urlWithoutHash);
-      window.location.reload();
-    }
+    // Show loading immediately - this will trigger a re-render with loading overlay
+    setIsChangingLanguage(true);
     setOpen(false);
+    
+    // Use requestAnimationFrame to ensure loading overlay renders before any state changes
+    requestAnimationFrame(() => {
+      requestAnimationFrame(() => {
+        setLocale(newLocale);
+        if (typeof window !== "undefined") {
+          // Remove hash from URL to prevent scrolling to anchor on reload
+          const urlWithoutHash = window.location.href.split('#')[0];
+          window.history.replaceState(null, '', urlWithoutHash);
+          window.location.reload();
+        }
+      });
+    });
   };
 
   return (
     <>
-      <LoadingOverlay isLoading={isLoading} />
+      <LoadingOverlay isLoading={isChangingLanguage || isLoading} />
       <div className="relative inline-block text-left">
         <button
           type="button"

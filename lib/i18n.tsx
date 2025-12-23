@@ -17,6 +17,7 @@ type I18nContextValue = {
   locale: Locale;
   setLocale: (locale: Locale) => void;
   t: (key: string) => string;
+  isLoading: boolean;
 };
 
 const I18N_STORAGE_KEY = "preferred-locale";
@@ -46,9 +47,14 @@ export const I18nProvider: React.FC<{ children: React.ReactNode }> = ({
 }) => {
   const [locale, setLocaleState] = useState<Locale>(defaultLocale);
   const [messages, setMessages] = useState<Messages>({});
+  const [isLoading, setIsLoading] = useState<boolean>(true);
+  const [isInitialized, setIsInitialized] = useState<boolean>(false);
 
   useEffect(() => {
-    if (typeof window === "undefined") return;
+    if (typeof window === "undefined") {
+      setIsInitialized(true);
+      return;
+    }
 
     const saved = window.localStorage.getItem(I18N_STORAGE_KEY) as
       | Locale
@@ -58,25 +64,41 @@ export const I18nProvider: React.FC<{ children: React.ReactNode }> = ({
       saved && supportedLocales.includes(saved) ? saved : defaultLocale;
 
     setLocaleState(initialLocale);
-
-    loadMessages(initialLocale).then((msgs) => {
-      messagesByLocale[initialLocale] = msgs;
-      setMessages(msgs);
-    });
+    setIsLoading(true);
+    
+    // Check if messages are already cached
+    if (messagesByLocale[initialLocale] && Object.keys(messagesByLocale[initialLocale]).length > 0) {
+      // Use setTimeout to ensure loading state is visible briefly
+      setTimeout(() => {
+        setMessages(messagesByLocale[initialLocale]);
+        setIsLoading(false);
+        setIsInitialized(true);
+      }, 50);
+    } else {
+      loadMessages(initialLocale).then((msgs) => {
+        messagesByLocale[initialLocale] = msgs;
+        setMessages(msgs);
+        setIsLoading(false);
+        setIsInitialized(true);
+      });
+    }
   }, []);
 
   const setLocale = useCallback((nextLocale: Locale) => {
     if (!supportedLocales.includes(nextLocale)) return;
     setLocaleState(nextLocale);
+    setIsLoading(true);
     if (typeof window !== "undefined") {
       window.localStorage.setItem(I18N_STORAGE_KEY, nextLocale);
     }
     if (messagesByLocale[nextLocale]) {
       setMessages(messagesByLocale[nextLocale]);
+      setIsLoading(false);
     } else {
       loadMessages(nextLocale).then((msgs) => {
         messagesByLocale[nextLocale] = msgs;
         setMessages(msgs);
+        setIsLoading(false);
       });
     }
   }, []);
@@ -94,8 +116,9 @@ export const I18nProvider: React.FC<{ children: React.ReactNode }> = ({
       locale,
       setLocale,
       t,
+      isLoading,
     }),
-    [locale, setLocale, t]
+    [locale, setLocale, t, isLoading]
   );
 
   return (
