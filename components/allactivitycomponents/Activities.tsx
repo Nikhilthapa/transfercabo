@@ -1,16 +1,56 @@
-import { activities } from "@/app/activity/page";
+"use client";
+
+import { activities } from "@/lib/activities";
 import Image from "next/image";
 import Link from "next/link";
+import { useI18n } from "@/lib/i18n";
 
 export default function Activities() {
-  let data=activities
+  const { t } = useI18n();
+  
+  // Helper function to get translation key from slug
+  const getActivityKey = (slug: string) => {
+    const slugMap: { [key: string]: string } = {
+      "la-paz": "laPaz",
+      "atvs": "atvs",
+      "art-walk": "artWalk",
+      "horseback-riding": "horsebackRiding",
+      "razors": "razors",
+      "todos-santos": "todosSantos",
+      "cerritos": "cerritos",
+      "los-cabos": "losCabos",
+      "hidden-towns": "hiddenTowns",
+      "40-ft": "40ft",
+      "My-dream-33-footer": "myDream33Footer",
+    };
+    return slugMap[slug] || slug;
+  };
+
+  // Get localized activities
+  const localizedActivities = activities.map((activity) => {
+    const key = getActivityKey(activity.slug);
+    return {
+      ...activity,
+      name: t(`activity.data.${key}.name`),
+      description: t(`activity.data.${key}.description`),
+      duration: t(`activity.data.${key}.duration`),
+      minPeople: t(`activity.data.${key}.minPeople`),
+    };
+  });
+  
+  const data = localizedActivities;
   return (
     <section className="overflow-hidden bg-white">
       <div className="container mx-auto px-4 md:px-8 mb-8 md:mb-12">
         <div className="text-center">
-          <h2 className="text-3xl md:text-4xl lg:text-5xl font-montserrat font-bold text-black" style={{ marginBottom: '10px' }}>The Best Things to do in Cabo</h2>
+          <h2
+            className="text-3xl md:text-4xl lg:text-5xl font-montserrat font-bold text-black"
+            style={{ marginBottom: "10px" }}
+          >
+            {t("home.activitiesCarousel.title")}
+          </h2>
           <p className="font-montserrat font-medium text-gray-700 text-base md:text-lg px-4">
-            Enjoy ATV, Razor, horseback, and guided desert activities crafted for unforgettable memories.
+            {t("home.activitiesCarousel.subtitle")}
           </p>
         </div>
       </div>
@@ -65,14 +105,14 @@ export default function Activities() {
                         href={`/activity/${activity.slug}`}
                         className="border-2 border-blue-600 text-blue-600 px-4 md:px-6 py-2 md:py-2.5 rounded-full flex-1 hover:bg-blue-600 hover:text-white transition font-medium text-center text-xs md:text-sm flex items-center justify-center"
                       >
-                        Info
+                        {t("activity.list.card.info")}
                       </Link>
                       <Link 
                         href="/activity/reservation#reservation-form"
                         className="text-white px-4 md:px-6 py-2 md:py-2.5 rounded-full flex-1 transition font-medium hover:opacity-90 text-center text-xs md:text-sm flex items-center justify-center border-2 border-transparent"
                         style={{ backgroundColor: '#0446A1' }}
                       >
-                        Book Activities
+                        {t("activity.list.card.book")}
                       </Link>
                       </div>
                     </div>
@@ -81,7 +121,7 @@ export default function Activities() {
               </div>
             ))}
             {/* Duplicate set for seamless loop */}
-            {activities.map((activity, index) => (
+            {localizedActivities.map((activity, index) => (
               <div key={`second-${index}`} className="carousel-card">
                 <div className="bg-white rounded-2xl shadow-lg overflow-hidden border border-gray-200 h-full flex flex-col">
                   <div className="relative w-full h-60">
@@ -127,14 +167,14 @@ export default function Activities() {
                         href={`/activity/${activity.slug}`}
                         className="border-2 border-blue-600 text-blue-600 px-4 md:px-6 py-2 md:py-2.5 rounded-full flex-1 hover:bg-blue-600 hover:text-white transition font-medium text-center text-xs md:text-sm flex items-center justify-center"
                       >
-                        Info
+                        {t("activity.list.card.info")}
                       </Link>
                       <Link 
                         href="/activity/reservation#reservation-form"
                         className="text-white px-4 md:px-6 py-2 md:py-2.5 rounded-full flex-1 transition font-medium hover:opacity-90 text-center text-xs md:text-sm flex items-center justify-center border-2 border-transparent"
                         style={{ backgroundColor: '#0446A1' }}
                       >
-                        Book Activities
+                        {t("activity.list.card.book")}
                       </Link>
                       </div>
                     </div>

@@ -4,15 +4,18 @@ import { useState, useEffect } from "react";
 import Navigation from "@/components/homepage/Navigation";
 import Footer from "@/components/homepage/Footer";
 import Link from "next/link";
+import { useI18n } from "@/lib/i18n";
 
 export default function ReservationPage() {
+  const { t } = useI18n();
   const [selectedService, setSelectedService] = useState("");
   const [isRoundTrip, setIsRoundTrip] = useState(false);
 
   const handleServiceChange = (e: React.ChangeEvent<HTMLSelectElement>) => {
     const value = e.target.value;
     setSelectedService(value);
-    setIsRoundTrip(value.toLowerCase().includes("round trip"));
+    // Check if it's round trip by value, not by translated text
+    setIsRoundTrip(value === "round-trip");
   };
 
   useEffect(() => {
@@ -81,16 +84,16 @@ export default function ReservationPage() {
         <div className="relative z-10 container mx-auto px-4 md:px-8 flex items-center h-[calc(80vh-80px)] md:h-[calc(100vh-100px)] min-h-[400px] md:min-h-[500px]">
           <div className="max-w-3xl">
             <h2 className="text-2xl sm:text-3xl md:text-5xl lg:text-6xl font-bold text-white mb-2 md:mb-3 lg:mb-4">
-              Make Your Reservation
+              {t("caboReservation.hero.title")}
             </h2>
             <p className="text-base sm:text-lg md:text-xl lg:text-2xl text-white mb-4 md:mb-6 lg:mb-10">
-              Experience Stress-Free Travel With Reliable Pickup And Drop-Off Service.
+              {t("caboReservation.hero.description")}
             </p>
             <Link
               href="/cabo/reservation"
               className="inline-block bg-[#0446A1] hover:bg-[#033a8a]  text-white px-6 md:px-8 lg:px-10 py-2.5 md:py-3 lg:py-4 rounded-md font-semibold text-sm md:text-base lg:text-lg transition shadow-lg"
             >
-              Book Your Ride Today
+              {t("caboReservation.hero.button")}
             </Link>
           </div>
         </div>
@@ -125,10 +128,10 @@ export default function ReservationPage() {
         <div className="container mx-auto px-4 md:px-8">
           <div className="max-w-4xl mx-auto text-center">
             <h2 className="text-2xl md:text-3xl lg:text-3xl font-Montserrat font-semibold text-black uppercase mb-[15px] sm:mb-[20px] md:mb-[25px] px-4">
-              BOOK YOUR TRANSFER
+              {t("caboReservation.section.title")}
             </h2>
             <p className="text-base md:text-lg text-gray-700 leading-relaxed px-4">
-              We offer a wide range of airport transfer services to meet the needs of our clients. Whether you are traveling for business or pleasure, we have the perfect solution for you. Our services include round trip airport transfers, private transfers, and group transfers. Contact us today to learn more about our services and book your transfer.
+              {t("caboReservation.section.description")}
             </p>
           </div>
         </div>
@@ -141,13 +144,18 @@ export default function ReservationPage() {
             {/* Header Notice */}
             <div className="text-center mb-[15px] sm:mb-[18px] md:mb-[20px]">
               <p className="text-[#0446A1]  text-sm md:text-base font-semibold mb-2">
-                Temporary cash Only!! <br /> To be paid to the Driver upon arrival.
+                {t("caboReservation.form.notice").split('\n').map((line, i, arr) => (
+                  <span key={i}>
+                    {line}
+                    {i < arr.length - 1 && <br />}
+                  </span>
+                ))}
               </p>
             </div>
 
             {/* Main Title */}
             <h1 className="text-2xl md:text-3xl lg:text-4xl xl:text-5xl font-Montserrat font-semibold text-black text-center mb-[35px] sm:mb-[45px] md:mb-[55px] lg:mb-[59px] px-4">
-              RESERVATION REQUEST 
+              {t("caboReservation.form.title")}
             </h1>
 
             {/* Reservation Form */}
@@ -158,34 +166,34 @@ export default function ReservationPage() {
                   {/* Select Service */}
                   <div>
                     <label className="block font-montserrat font-semibold mb-2">
-                      Select Service
+                      {t("caboReservation.form.selectService")}
                     </label>
                     <select
                       value={selectedService}
                       onChange={handleServiceChange}
                       className="w-full border border-gray-300 rounded-md px-3 md:px-4 py-2.5 md:py-3 focus:outline-none focus:ring-2 focus:ring-blue-500 text-sm md:text-base"
                     >
-                      <option value="">Choose An Option</option>
-                      <option value="one-way">One Way Transfer</option>
-                      <option value="round-trip">Round Trip Transfer</option>
-                      <option value="private">Private Transfer</option>
-                      <option value="group">Group Transfer</option>
+                      <option value="">{t("caboReservation.form.chooseOption")}</option>
+                      <option value="one-way">{t("caboReservation.form.service.oneWay")}</option>
+                      <option value="round-trip">{t("caboReservation.form.service.roundTrip")}</option>
+                      <option value="private">{t("caboReservation.form.service.private")}</option>
+                      <option value="group">{t("caboReservation.form.service.group")}</option>
                     </select>
                   </div>
 
                   {/* Passengers */}
                   <div>
                     <label className="block font-montserrat font-semibold mb-2">
-                      Passengers
+                      {t("reservation.form.passengers")}
                     </label>
                     <select className="w-full border border-gray-300 rounded-md px-3 md:px-4 py-2.5 md:py-3 focus:outline-none focus:ring-2 focus:ring-blue-500 text-sm md:text-base">
-                      <option value="">Select Passengers</option>
-                      <option value="1">1 Passenger</option>
-                      <option value="2">2 Passengers</option>
-                      <option value="3">3 Passengers</option>
-                      <option value="4">4 Passengers</option>
-                      <option value="5">5 Passengers</option>
-                      <option value="6">6+ Passengers</option>
+                      <option value="">{t("reservation.form.selectPassengers")}</option>
+                      <option value="1">1 {t("reservation.form.passengerCount")}</option>
+                      <option value="2">2 {t("reservation.form.passengerCountPlural")}</option>
+                      <option value="3">3 {t("reservation.form.passengerCountPlural")}</option>
+                      <option value="4">4 {t("reservation.form.passengerCountPlural")}</option>
+                      <option value="5">5 {t("reservation.form.passengerCountPlural")}</option>
+                      <option value="6">6+ {t("reservation.form.passengerCountPlural")}</option>
                     </select>
                   </div>
                 </div>
@@ -195,11 +203,11 @@ export default function ReservationPage() {
                   {/* First Name */}
                   <div>
                     <label className="block font-montserrat font-semibold mb-2">
-                      First Name
+                      {t("reservation.form.firstName")}
                     </label>
                     <input
                       type="text"
-                      placeholder="Eg: Jos"
+                      placeholder={t("reservation.form.placeholder.firstName")}
                       className="w-full border border-gray-300 rounded-md px-3 md:px-4 py-2.5 md:py-3 focus:outline-none focus:ring-2 focus:ring-blue-500 text-sm md:text-base"
                     />
                   </div>
@@ -207,11 +215,11 @@ export default function ReservationPage() {
                   {/* Last Name */}
                   <div>
                     <label className="block font-montserrat font-semibold mb-2">
-                      Last Name
+                      {t("reservation.form.lastName")}
                     </label>
                     <input
                       type="text"
-                      placeholder="Eg: Taloir"
+                      placeholder={t("reservation.form.placeholder.lastName")}
                       className="w-full border border-gray-300 rounded-md px-3 md:px-4 py-2.5 md:py-3 focus:outline-none focus:ring-2 focus:ring-blue-500 text-sm md:text-base"
                     />
                   </div>
@@ -220,11 +228,11 @@ export default function ReservationPage() {
                 {/* Email */}
                 <div>
                   <label className="block font-montserrat font-semibold mb-2">
-                    Email
+                    {t("reservation.form.email")}
                   </label>
                   <input
                     type="email"
-                    placeholder="Eg: Name@Gmail.Com"
+                    placeholder={t("reservation.form.placeholder.email")}
                     className="w-full border border-gray-300 rounded-md px-3 md:px-4 py-2.5 md:py-3 focus:outline-none focus:ring-2 focus:ring-blue-500 text-sm md:text-base"
                   />
                 </div>
@@ -233,7 +241,7 @@ export default function ReservationPage() {
                 <div className="grid md:grid-cols-12 gap-3 sm:gap-3.5 md:gap-4">
                   <div className="md:col-span-3">
                     <label className="block font-montserrat font-semibold mb-2">
-                      Code
+                      {t("reservation.form.code")}
                     </label>
                     <select className="w-full border border-gray-300 rounded-md px-3 md:px-4 py-2.5 md:py-3 focus:outline-none focus:ring-2 focus:ring-blue-500 text-sm md:text-base">
                       <option value="+52">+52</option>
@@ -244,11 +252,11 @@ export default function ReservationPage() {
                   </div>
                   <div className="md:col-span-9">
                     <label className="block font-montserrat font-semibold mb-2">
-                      Phone
+                      {t("reservation.form.phone")}
                     </label>
                     <input
                       type="tel"
-                      placeholder="Eg: 9875125"
+                      placeholder={t("reservation.form.placeholder.phone")}
                       className="w-full border border-gray-300 rounded-md px-3 md:px-4 py-2.5 md:py-3 focus:outline-none focus:ring-2 focus:ring-blue-500 text-sm md:text-base"
                     />
                   </div>
@@ -257,11 +265,11 @@ export default function ReservationPage() {
                 {/* Arrival Details */}
                 <div>
                   <label className="block font-montserrat font-semibold mb-2">
-                    Hotel Name
+                    {t("caboReservation.form.hotelName")}
                   </label>
                   <input
                     type="text"
-                    placeholder="Enter Here"
+                    placeholder={t("caboReservation.form.placeholder.enterHere")}
                     className="w-full border border-gray-300 rounded-md px-3 md:px-4 py-2.5 md:py-3 focus:outline-none focus:ring-2 focus:ring-blue-500 text-sm md:text-base"
                   />
                 </div>
@@ -270,7 +278,7 @@ export default function ReservationPage() {
                   {/* Arrival Date */}
                   <div>
                     <label className="block font-montserrat font-semibold mb-2">
-                      Arrival Date
+                      {t("caboReservation.form.arrivalDate")}
                     </label>
                     <div className="relative">
                       <input
@@ -283,7 +291,7 @@ export default function ReservationPage() {
                   {/* Arrival Time */}
                   <div>
                     <label className="block font-montserrat font-semibold mb-2">
-                      Arrival Time
+                      {t("caboReservation.form.arrivalTime")}
                     </label>
                     <input
                       type="time"
@@ -295,11 +303,11 @@ export default function ReservationPage() {
                 {/* Arrival Airline and Flight Number */}
                 <div>
                   <label className="block font-montserrat font-semibold mb-2">
-                    Arrival Airline And Flight Number
+                    {t("caboReservation.form.arrivalAirline")}
                   </label>
                   <input
                     type="text"
-                    placeholder="Enter Here"
+                    placeholder={t("caboReservation.form.placeholder.enterHere")}
                     className="w-full border border-gray-300 rounded-md px-3 md:px-4 py-2.5 md:py-3 focus:outline-none focus:ring-2 focus:ring-blue-500 text-sm md:text-base"
                   />
                 </div>
@@ -309,18 +317,18 @@ export default function ReservationPage() {
                   <div className="space-y-4 md:space-y-5 lg:space-y-[30px] pt-4 md:pt-6 border-t border-gray-200">
                     <div className="bg-gray-100 p-3 md:p-4 rounded-md">
                       <p className="text-xs md:text-sm text-gray-700">
-                        If You Chose Round Trip Transfer, Please Fill Out The Departure Blanks And Click Send Request When You Are Done.
+                        {t("caboReservation.form.roundTripNotice")}
                       </p>
                     </div>
 
                     {/* Departure Hotel Name */}
                     <div>
                         <label className="block font-montserrat font-semibold mb-2">
-                        Hotel Name
+                        {t("caboReservation.form.hotelName")}
                       </label>
                       <input
                         type="text"
-                        placeholder="Enter Here"
+                        placeholder={t("caboReservation.form.placeholder.enterHere")}
                         className="w-full border border-gray-300 rounded-md px-3 md:px-4 py-2.5 md:py-3 focus:outline-none focus:ring-2 focus:ring-blue-500 text-sm md:text-base"
                       />
                     </div>
@@ -328,11 +336,11 @@ export default function ReservationPage() {
                     {/* Departure Airline and Flight Number */}
                     <div>
                       <label className="block font-montserrat font-semibold mb-2">
-                        Departure Airline And Flight Number
+                        {t("caboReservation.form.departureAirline")}
                       </label>
                       <input
                         type="text"
-                        placeholder="Enter Here"
+                        placeholder={t("caboReservation.form.placeholder.enterHere")}
                         className="w-full border border-gray-300 rounded-md px-3 md:px-4 py-2.5 md:py-3 focus:outline-none focus:ring-2 focus:ring-blue-500 text-sm md:text-base"
                       />
                     </div>
@@ -341,7 +349,7 @@ export default function ReservationPage() {
                       {/* Departure Date */}
                       <div>
                           <label className="block font-montserrat font-semibold mb-2">
-                          Departure Date
+                          {t("caboReservation.form.departureDate")}
                         </label>
                         <div className="relative">
                           <input
@@ -354,7 +362,7 @@ export default function ReservationPage() {
                       {/* Departure Time */}
                       <div>
                         <label className="block font-montserrat font-semibold mb-2">
-                          Departure Time
+                          {t("caboReservation.form.departureTime")}
                         </label>
                         <input
                           type="time"
@@ -368,8 +376,17 @@ export default function ReservationPage() {
                 {/* Instruction Section */}
                 <div className="bg-gray-100 border border-gray-300 rounded-md p-4 md:p-5 text-center">
                   <p className="text-xs md:text-sm text-gray-700">
-                    If You Chose Round Trip Transfer, Please Fill Out The Departure Blanks And<br />
-                    Click Send Request When You Are Done.
+                    {t("caboReservation.form.roundTripNotice").split(' And ').map((part, i, arr) => (
+                      <span key={i}>
+                        {part}
+                        {i < arr.length - 1 && (
+                          <>
+                            <br />
+                            {" And "}
+                          </>
+                        )}
+                      </span>
+                    ))}
                   </p>
                 </div>
 
@@ -378,11 +395,11 @@ export default function ReservationPage() {
                     {/* Hotel Name */}
                     <div>
                       <label className="block font-montserrat font-semibold mb-2">
-                        Hotel Name
+                        {t("caboReservation.form.hotelName")}
                       </label>
                       <input
                         type="text"
-                        placeholder="Enter Here"
+                        placeholder={t("caboReservation.form.placeholder.enterHere")}
                         className="w-full border border-gray-300 rounded-md px-3 md:px-4 py-2.5 md:py-3 focus:outline-none focus:ring-2 focus:ring-blue-500 text-sm md:text-base"
                       />
                     </div>
@@ -390,11 +407,11 @@ export default function ReservationPage() {
                     {/* Departure Airline and Flight Number */}
                     <div>
                       <label className="block font-montserrat font-semibold mb-2">
-                        Departure Airline And Flight Number
+                        {t("caboReservation.form.departureAirline")}
                       </label>
                       <input
                         type="text"
-                        placeholder="Enter Here"
+                        placeholder={t("caboReservation.form.placeholder.enterHere")}
                         className="w-full border border-gray-300 rounded-md px-3 md:px-4 py-2.5 md:py-3 focus:outline-none focus:ring-2 focus:ring-blue-500 text-sm md:text-base"
                       />
                     </div>
@@ -403,7 +420,7 @@ export default function ReservationPage() {
                       {/* Departure Date */}
                       <div>
                         <label className="block font-montserrat font-semibold mb-2">
-                          Departure Date
+                          {t("caboReservation.form.departureDate")}
                         </label>
                         <div className="relative">
                           <input
@@ -416,7 +433,7 @@ export default function ReservationPage() {
                       {/* Departure Time */}
                       <div>
                         <label className="block font-montserrat font-semibold mb-2">
-                          Departure Time
+                          {t("caboReservation.form.departureTime")}
                         </label>
                         <input
                           type="time"
@@ -428,12 +445,12 @@ export default function ReservationPage() {
                     {/* Add Grocery Stop */}
                     <div>
                       <label className="block font-montserrat font-semibold mb-2">
-                        Add Grocery Stop 1/2 Hr = 25.00 Usd
+                        {t("caboReservation.form.groceryStop")}
                       </label>
                       <select className="w-full border border-gray-300 rounded-md px-3 md:px-4 py-2.5 md:py-3 focus:outline-none focus:ring-2 focus:ring-blue-500 text-sm md:text-base">
-                        <option value="">Choose An Option</option>
-                        <option value="yes">Yes</option>
-                        <option value="no">No</option>
+                        <option value="">{t("caboReservation.form.chooseOption")}</option>
+                        <option value="yes">{t("caboReservation.form.yes")}</option>
+                        <option value="no">{t("caboReservation.form.no")}</option>
                       </select>
                     </div>
                 </div>
@@ -444,7 +461,7 @@ export default function ReservationPage() {
                     type="submit"
                     className="w-full bg-[#0446A1] hover:bg-[#033a8a] text-white font-semibold py-3 md:py-4 px-4 md:px-6 rounded-md transition duration-200 text-sm md:text-base lg:text-lg shadow-lg"
                   >
-                    Send Request
+                    {t("reservation.form.submit")}
                   </button>
                 </div>
               </form>

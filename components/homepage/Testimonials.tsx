@@ -1,11 +1,21 @@
 'use client';
 
 import { useState } from "react";
+import { useI18n } from "@/lib/i18n";
+
+// Helper function to safely get translation or fallback to original
+function getTranslation(key: string, fallback: string, t: (key: string) => string): string {
+  const translated = t(key);
+  // If translation returns the key itself, it means translation is missing
+  return translated !== key ? translated : fallback;
+}
 
 export default function Testimonials() {
+  const { t } = useI18n();
   const [currentIndex, setCurrentIndex] = useState(0);
 
-  const testimonials = [
+  // Original testimonials data
+  const originalTestimonials = [
     {
       name: "Ana L",
       location: "Guadalajara",
@@ -44,6 +54,12 @@ export default function Testimonials() {
     }
   ];
 
+  // Get localized testimonials
+  const testimonials = originalTestimonials.map((testimonial, index) => ({
+    ...testimonial,
+    text: getTranslation(`testimonials.home.items.${index}.text`, testimonial.text, t)
+  }));
+
   const nextTestimonial = () => {
     setCurrentIndex((prevIndex) => 
       prevIndex === testimonials.length - 1 ? 0 : prevIndex + 1
@@ -65,9 +81,9 @@ export default function Testimonials() {
   return (
     <section className="container mx-auto px-4 md:px-8">
       <div className="text-center mb-8 md:mb-12 lg:mb-16">
-        <h2 className="text-2xl md:text-3xl lg:text-4xl xl:text-5xl font-montserrat font-bold text-black px-2" style={{ marginBottom: '10px' }}>What Our Clients Say</h2>
+        <h2 className="text-2xl md:text-3xl lg:text-4xl xl:text-5xl font-montserrat font-bold text-black px-2" style={{ marginBottom: '10px' }}>{t("testimonials.section.title")}</h2>
         <p className="font-montserrat font-medium text-gray-700 text-sm md:text-base lg:text-lg px-4 max-w-3xl mx-auto" style={{ marginBottom: '50px' }}>
-          Genuine reviews from travelers who trusted us with their Cabo journey.
+          {t("testimonials.section.subtitle")}
         </p>
       </div>
 

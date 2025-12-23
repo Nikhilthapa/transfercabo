@@ -1,12 +1,14 @@
-'use client';
+"use client";
 
 import { useEffect } from "react";
 import Image from "next/image";
 import CustomHero from "@/components/CustomHero";
 import Contact from "@/components/homepage/Contact";
 import Footer from "@/components/homepage/Footer";
+import { useI18n } from "@/lib/i18n";
 
 export default function ContactPage() {
+  const { t } = useI18n();
   useEffect(() => {
     // Handle scroll to get-in-touch section when page loads with hash
     if (window.location.hash === '#get-in-touch') {
@@ -23,8 +25,8 @@ export default function ContactPage() {
     <div className="bg-white min-h-screen">
       <CustomHero
         backgroundImagePath="/contactus.jpeg"
-        title="Contact Us"
-        subtitle="We're Always Available to Assist You With Transfers, Tours, And Inquiries."
+        title={t("contact.hero.title")}
+        subtitle={t("contact.hero.subtitle")}
         textPosition="bottom"
         hideTopBar={true}
         titleColor="#fcfcfc"
@@ -35,10 +37,10 @@ export default function ContactPage() {
       <section className="bg-white pt-4 sm:pt-6 md:pt-8 lg:pt-10">
         <div className="container mx-auto px-4 md:px-8 text-center">
           <h2 className="text-2xl md:text-3xl lg:text-3xl font-Montserrat font-semibold text-black px-4 mb-[12px] sm:mb-[15px]">
-            WELCOME TO THE CONTACT US
+            {t("contact.welcome.title")}
           </h2>
           <p className="font-Montserrat font-medium text-[#6f6f6f] text-base md:text-lg max-w-3xl mx-auto px-4 mb-[40px] sm:mb-[50px] md:mb-[60px] lg:mb-[70px]">
-            Our team is here to make your travel smooth, safe and effortless — message us anytime.
+            {t("contact.welcome.text")}
           </p>
         </div>
       </section>
@@ -48,10 +50,10 @@ export default function ContactPage() {
         <div className="container mx-auto px-4 md:px-8">
           <div className="text-center mb-6 md:mb-8 lg:mb-12">
             <h2 className="text-xl sm:text-2xl md:text-3xl lg:text-4xl font-Montserrat font-bold text-black lg:mb-4 px-4">
-              Talk to Our Team
+              {t("contact.team.title")}
             </h2>
             <p className="font-Montserrat font-medium text-[#6f6f6f] text-sm md:text-base lg:text-lg max-w-3xl mx-auto px-4">
-              Connect with us through WhatsApp, call, or email we're ready to help with your transfers and tours.
+              {t("contact.team.text")}
             </p>
           </div>
 
@@ -71,7 +73,9 @@ export default function ContactPage() {
                   </div>
                 </div>
               </div>
-              <h3 className="font-bold text-black text-base md:text-lg mb-1 md:mb-2">Phone / WhatsApp / Messenger</h3>
+              <h3 className="font-bold text-black text-base md:text-lg mb-1 md:mb-2">
+                {t("contact.cards.phoneTitle")}
+              </h3>
               <p className="text-black text-sm md:text-base">+52 (624) 182 0525</p>
             </div>
 
@@ -89,7 +93,9 @@ export default function ContactPage() {
                   </div>
                 </div>
               </div>
-              <h3 className="font-bold text-black text-base md:text-lg mb-1 md:mb-2">Email</h3>
+              <h3 className="font-bold text-black text-base md:text-lg mb-1 md:mb-2">
+                {t("contact.cards.emailTitle")}
+              </h3>
               <p className="text-black text-sm md:text-base break-all">bookingcheaptransferscabo <br /> @gmail.com</p>
             </div>
 
@@ -107,8 +113,12 @@ export default function ContactPage() {
                   </div>
                 </div>
               </div>
-              <h3 className="font-bold text-black text-base md:text-lg mb-1 md:mb-2">Location</h3>
-              <p className="text-black text-sm md:text-base">Baja California Sur, México</p>
+              <h3 className="font-bold text-black text-base md:text-lg mb-1 md:mb-2">
+                {t("contact.cards.locationTitle")}
+              </h3>
+              <p className="text-black text-sm md:text-base">
+                {t("contact.cards.locationText")}
+              </p>
             </div>
           </div>
         </div>

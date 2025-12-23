@@ -1,13 +1,17 @@
+"use client";
+
 import Image from "next/image";
 import Link from "next/link";
+import { useI18n } from "@/lib/i18n";
 
 export default function AboutUs() {
+  const { t } = useI18n();
   return (
     <section className="container mx-auto px-4 md:px-8">
       <div className="text-center mb-4 md:mb-6">
-        <h2 className="text-3xl md:text-4xl lg:text-5xl font-montserrat font-bold text-black" style={{ marginBottom: '10px' }}>About Us</h2>
+        <h2 className="text-3xl md:text-4xl lg:text-5xl font-montserrat font-bold text-black" style={{ marginBottom: '10px' }}>{t("aboutUs.title")}</h2>
         <p className="font-montserrat font-medium text-gray-700 text-base md:text-lg px-4">
-          A locally trusted team dedicated to stress-free airport rides and unforgettable Cabo adventures.
+          {t("aboutUs.subtitle")}
         </p>
       </div>
 
@@ -17,7 +21,7 @@ export default function AboutUs() {
           <div className="relative h-40 sm:h-60 md:h-[340px] rounded-2xl md:rounded-3xl overflow-hidden md:w-[102%] md:mt-[30px]">
             <Image
               src="/aboutus/image2.png"
-              alt="Cabo Architecture"
+              alt={t("aboutUs.image1.alt")}
               fill
               className="object-cover"
               quality={85}
@@ -27,7 +31,7 @@ export default function AboutUs() {
           <div className="relative h-40 sm:h-60 md:h-[340px] rounded-2xl md:rounded-3xl overflow-hidden md:mt-[30px]">
             <Image
               src="/aboutus/image1.png"
-              alt="Our Team"
+              alt={t("aboutUs.image2.alt")}
               fill
               className="object-cover"
               quality={85}
@@ -37,7 +41,7 @@ export default function AboutUs() {
           <div className="relative h-40 sm:h-60 md:h-[340px] rounded-2xl md:rounded-3xl overflow-hidden md:w-[82%]">
             <Image
               src="/aboutus/image3.png"
-              alt="Local Attractions"
+              alt={t("aboutUs.image3.alt")}
               fill
               className="object-cover"
               quality={85}
@@ -47,7 +51,7 @@ export default function AboutUs() {
           <div className="relative h-40 sm:h-60 md:h-[340px] rounded-2xl md:rounded-3xl overflow-hidden md:w-[120%] md:-ml-[20%]">
             <Image
               src="/aboutus/image4.png"
-              alt="Group Tours"
+              alt={t("aboutUs.image4.alt")}
               fill
               className="object-cover"
               quality={85}
@@ -59,17 +63,17 @@ export default function AboutUs() {
         {/* Text Content */}
         <div className="mt-0 md:mt-44 lg:mt-48">
           <p className="text-base md:text-lg font-montserrat font-medium text-gray-700 leading-relaxed" style={{ marginBottom: '10px' }}>
-            Welcome to Cheap Transfers Cabo — your friendly, family-run transportation service in Los Cabos. Since 2019, we've been offering reliable, private airport transfers and personalized city tours throughout Southern Baja.
+            {t("aboutUs.paragraph1")}
           </p>
           <p className="text-base md:text-lg font-montserrat font-medium text-gray-700 leading-relaxed" style={{ marginBottom: '50px' }}>
-            Our Story & Mission Cheap Transfers Cabo began when our family realized how many travelers arrive in Los Cabos hoping for a smooth, stress-free ride — and often finding only crowded shuttles, confusing pickup lines, or shared rides with strangers. We decided there had to be a better way: one where guests ride privately, with trust, comfort, and care.
+            {t("aboutUs.paragraph2")}
           </p>
           <Link 
             href="/about"
             className="inline-block text-white px-8 md:px-10 py-3 rounded-lg font-montserrat font-semibold text-base md:text-lg transition-all duration-300 shadow-md hover:shadow-lg hover:opacity-90 w-full sm:w-auto text-center"
             style={{ backgroundColor: '#0446A1' }}
           >
-            About Us
+            {t("aboutUs.button")}
           </Link>
         </div>
       </div>
