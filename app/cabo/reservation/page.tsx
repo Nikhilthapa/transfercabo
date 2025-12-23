@@ -10,12 +10,181 @@ export default function ReservationPage() {
   const { t } = useI18n();
   const [selectedService, setSelectedService] = useState("");
   const [isRoundTrip, setIsRoundTrip] = useState(false);
+  
+  // Form state
+  const [formData, setFormData] = useState({
+    service: "",
+    passengers: "",
+    firstName: "",
+    lastName: "",
+    email: "",
+    phoneCode: "+52",
+    phone: "",
+    hotelName: "",
+    arrivalDate: "",
+    arrivalTime: "",
+    arrivalAirline: "",
+    departureHotelName: "",
+    departureDate: "",
+    departureTime: "",
+    departureAirline: "",
+    groceryStop: "",
+  });
+  
+  const [isSubmitting, setIsSubmitting] = useState(false);
+  const [submitStatus, setSubmitStatus] = useState<{
+    type: "success" | "error" | null;
+    message: string;
+  }>({ type: null, message: "" });
 
   const handleServiceChange = (e: React.ChangeEvent<HTMLSelectElement>) => {
     const value = e.target.value;
     setSelectedService(value);
+    setFormData(prev => ({ ...prev, service: value }));
     // Check if it's round trip by value, not by translated text
     setIsRoundTrip(value === "round-trip");
+  };
+
+  const handleInputChange = (
+    e: React.ChangeEvent<HTMLInputElement | HTMLSelectElement | HTMLTextAreaElement>
+  ) => {
+    const { name, value } = e.target;
+    setFormData(prev => ({ ...prev, [name]: value }));
+  };
+
+  const validateForm = (): boolean => {
+    if (!formData.service) {
+      setSubmitStatus({ type: "error", message: "Please select a service" });
+      return false;
+    }
+    if (!formData.passengers) {
+      setSubmitStatus({ type: "error", message: "Please select number of passengers" });
+      return false;
+    }
+    if (!formData.firstName.trim()) {
+      setSubmitStatus({ type: "error", message: "First name is required" });
+      return false;
+    }
+    if (!formData.lastName.trim()) {
+      setSubmitStatus({ type: "error", message: "Last name is required" });
+      return false;
+    }
+    if (!formData.email.trim()) {
+      setSubmitStatus({ type: "error", message: "Email is required" });
+      return false;
+    }
+    if (!/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(formData.email)) {
+      setSubmitStatus({ type: "error", message: "Please enter a valid email address" });
+      return false;
+    }
+    if (!formData.phone.trim()) {
+      setSubmitStatus({ type: "error", message: "Phone number is required" });
+      return false;
+    }
+    if (!formData.hotelName.trim()) {
+      setSubmitStatus({ type: "error", message: "Hotel name is required" });
+      return false;
+    }
+    if (!formData.arrivalDate) {
+      setSubmitStatus({ type: "error", message: "Arrival date is required" });
+      return false;
+    }
+    if (!formData.arrivalTime) {
+      setSubmitStatus({ type: "error", message: "Arrival time is required" });
+      return false;
+    }
+    if (!formData.arrivalAirline.trim()) {
+      setSubmitStatus({ type: "error", message: "Arrival airline information is required" });
+      return false;
+    }
+    
+    // Validate round trip fields if applicable
+    if (isRoundTrip) {
+      if (!formData.departureHotelName.trim()) {
+        setSubmitStatus({ type: "error", message: "Departure hotel name is required for round trip" });
+        return false;
+      }
+      if (!formData.departureDate) {
+        setSubmitStatus({ type: "error", message: "Departure date is required for round trip" });
+        return false;
+      }
+      if (!formData.departureTime) {
+        setSubmitStatus({ type: "error", message: "Departure time is required for round trip" });
+        return false;
+      }
+      if (!formData.departureAirline.trim()) {
+        setSubmitStatus({ type: "error", message: "Departure airline information is required for round trip" });
+        return false;
+      }
+    }
+    
+    return true;
+  };
+
+  const handleSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
+    e.preventDefault();
+    setSubmitStatus({ type: null, message: "" });
+
+    if (!validateForm()) {
+      return;
+    }
+
+    setIsSubmitting(true);
+
+    try {
+      const response = await fetch("/api/send-email", {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+        },
+        body: JSON.stringify({
+          formType: "cabo-reservation",
+          ...formData,
+        }),
+      });
+
+      const result = await response.json();
+
+      if (response.ok) {
+        setSubmitStatus({
+          type: "success",
+          message: result.message || "Reservation request submitted successfully! We will contact you soon.",
+        });
+        // Reset form
+        setFormData({
+          service: "",
+          passengers: "",
+          firstName: "",
+          lastName: "",
+          email: "",
+          phoneCode: "+52",
+          phone: "",
+          hotelName: "",
+          arrivalDate: "",
+          arrivalTime: "",
+          arrivalAirline: "",
+          departureHotelName: "",
+          departureDate: "",
+          departureTime: "",
+          departureAirline: "",
+          groceryStop: "",
+        });
+        setSelectedService("");
+        setIsRoundTrip(false);
+      } else {
+        setSubmitStatus({
+          type: "error",
+          message: result.error || "Failed to submit reservation. Please try again.",
+        });
+      }
+    } catch (error) {
+      setSubmitStatus({
+        type: "error",
+        message: "An error occurred. Please try again later.",
+      });
+    } finally {
+      setIsSubmitting(false);
+    }
   };
 
   useEffect(() => {
@@ -160,18 +329,33 @@ export default function ReservationPage() {
 
             {/* Reservation Form */}
             <div className="bg-white rounded-lg shadow-xl p-4 md:p-6 lg:p-8 xl:p-10">
-              <form className="space-y-4 md:space-y-5 lg:space-y-[30px]">
+              {/* Success/Error Messages */}
+              {submitStatus.type && (
+                <div
+                  className={`mb-4 md:mb-6 p-4 rounded-md ${
+                    submitStatus.type === "success"
+                      ? "bg-green-50 text-green-800 border border-green-200"
+                      : "bg-red-50 text-red-800 border border-red-200"
+                  }`}
+                >
+                  <p className="font-semibold">{submitStatus.message}</p>
+                </div>
+              )}
+              
+              <form onSubmit={handleSubmit} className="space-y-4 md:space-y-5 lg:space-y-[30px]">
                 {/* Service and Passengers Row */}
                 <div className="grid md:grid-cols-2 gap-4 sm:gap-5 md:gap-6">
                   {/* Select Service */}
                   <div>
                     <label className="block font-montserrat font-semibold mb-2">
-                      {t("caboReservation.form.selectService")}
+                      {t("caboReservation.form.selectService")} <span className="text-red-500">*</span>
                     </label>
                     <select
-                      value={selectedService}
+                      name="service"
+                      value={formData.service}
                       onChange={handleServiceChange}
                       className="w-full border border-gray-300 rounded-md px-3 md:px-4 py-2.5 md:py-3 focus:outline-none focus:ring-2 focus:ring-blue-500 text-sm md:text-base"
+                      required
                     >
                       <option value="">{t("caboReservation.form.chooseOption")}</option>
                       <option value="one-way">{t("caboReservation.form.service.oneWay")}</option>
@@ -184,9 +368,15 @@ export default function ReservationPage() {
                   {/* Passengers */}
                   <div>
                     <label className="block font-montserrat font-semibold mb-2">
-                      {t("reservation.form.passengers")}
+                      {t("reservation.form.passengers")} <span className="text-red-500">*</span>
                     </label>
-                    <select className="w-full border border-gray-300 rounded-md px-3 md:px-4 py-2.5 md:py-3 focus:outline-none focus:ring-2 focus:ring-blue-500 text-sm md:text-base">
+                    <select
+                      name="passengers"
+                      value={formData.passengers}
+                      onChange={handleInputChange}
+                      className="w-full border border-gray-300 rounded-md px-3 md:px-4 py-2.5 md:py-3 focus:outline-none focus:ring-2 focus:ring-blue-500 text-sm md:text-base"
+                      required
+                    >
                       <option value="">{t("reservation.form.selectPassengers")}</option>
                       <option value="1">1 {t("reservation.form.passengerCount")}</option>
                       <option value="2">2 {t("reservation.form.passengerCountPlural")}</option>
@@ -203,24 +393,32 @@ export default function ReservationPage() {
                   {/* First Name */}
                   <div>
                     <label className="block font-montserrat font-semibold mb-2">
-                      {t("reservation.form.firstName")}
+                      {t("reservation.form.firstName")} <span className="text-red-500">*</span>
                     </label>
                     <input
                       type="text"
+                      name="firstName"
+                      value={formData.firstName}
+                      onChange={handleInputChange}
                       placeholder={t("reservation.form.placeholder.firstName")}
                       className="w-full border border-gray-300 rounded-md px-3 md:px-4 py-2.5 md:py-3 focus:outline-none focus:ring-2 focus:ring-blue-500 text-sm md:text-base"
+                      required
                     />
                   </div>
 
                   {/* Last Name */}
                   <div>
                     <label className="block font-montserrat font-semibold mb-2">
-                      {t("reservation.form.lastName")}
+                      {t("reservation.form.lastName")} <span className="text-red-500">*</span>
                     </label>
                     <input
                       type="text"
+                      name="lastName"
+                      value={formData.lastName}
+                      onChange={handleInputChange}
                       placeholder={t("reservation.form.placeholder.lastName")}
                       className="w-full border border-gray-300 rounded-md px-3 md:px-4 py-2.5 md:py-3 focus:outline-none focus:ring-2 focus:ring-blue-500 text-sm md:text-base"
+                      required
                     />
                   </div>
                 </div>
@@ -228,12 +426,16 @@ export default function ReservationPage() {
                 {/* Email */}
                 <div>
                   <label className="block font-montserrat font-semibold mb-2">
-                    {t("reservation.form.email")}
+                    {t("reservation.form.email")} <span className="text-red-500">*</span>
                   </label>
                   <input
                     type="email"
+                    name="email"
+                    value={formData.email}
+                    onChange={handleInputChange}
                     placeholder={t("reservation.form.placeholder.email")}
                     className="w-full border border-gray-300 rounded-md px-3 md:px-4 py-2.5 md:py-3 focus:outline-none focus:ring-2 focus:ring-blue-500 text-sm md:text-base"
+                    required
                   />
                 </div>
 
@@ -241,9 +443,15 @@ export default function ReservationPage() {
                 <div className="grid md:grid-cols-12 gap-3 sm:gap-3.5 md:gap-4">
                   <div className="md:col-span-3">
                     <label className="block font-montserrat font-semibold mb-2">
-                      {t("reservation.form.code")}
+                      {t("reservation.form.code")} <span className="text-red-500">*</span>
                     </label>
-                    <select className="w-full border border-gray-300 rounded-md px-3 md:px-4 py-2.5 md:py-3 focus:outline-none focus:ring-2 focus:ring-blue-500 text-sm md:text-base">
+                    <select
+                      name="phoneCode"
+                      value={formData.phoneCode}
+                      onChange={handleInputChange}
+                      className="w-full border border-gray-300 rounded-md px-3 md:px-4 py-2.5 md:py-3 focus:outline-none focus:ring-2 focus:ring-blue-500 text-sm md:text-base"
+                      required
+                    >
                       <option value="+52">+52</option>
                       <option value="+1">+1</option>
                       <option value="+44">+44</option>
@@ -252,12 +460,16 @@ export default function ReservationPage() {
                   </div>
                   <div className="md:col-span-9">
                     <label className="block font-montserrat font-semibold mb-2">
-                      {t("reservation.form.phone")}
+                      {t("reservation.form.phone")} <span className="text-red-500">*</span>
                     </label>
                     <input
                       type="tel"
+                      name="phone"
+                      value={formData.phone}
+                      onChange={handleInputChange}
                       placeholder={t("reservation.form.placeholder.phone")}
                       className="w-full border border-gray-300 rounded-md px-3 md:px-4 py-2.5 md:py-3 focus:outline-none focus:ring-2 focus:ring-blue-500 text-sm md:text-base"
+                      required
                     />
                   </div>
                 </div>
@@ -265,12 +477,16 @@ export default function ReservationPage() {
                 {/* Arrival Details */}
                 <div>
                   <label className="block font-montserrat font-semibold mb-2">
-                    {t("caboReservation.form.hotelName")}
+                    {t("caboReservation.form.hotelName")} <span className="text-red-500">*</span>
                   </label>
                   <input
                     type="text"
+                    name="hotelName"
+                    value={formData.hotelName}
+                    onChange={handleInputChange}
                     placeholder={t("caboReservation.form.placeholder.enterHere")}
                     className="w-full border border-gray-300 rounded-md px-3 md:px-4 py-2.5 md:py-3 focus:outline-none focus:ring-2 focus:ring-blue-500 text-sm md:text-base"
+                    required
                   />
                 </div>
 
@@ -278,12 +494,16 @@ export default function ReservationPage() {
                   {/* Arrival Date */}
                   <div>
                     <label className="block font-montserrat font-semibold mb-2">
-                      {t("caboReservation.form.arrivalDate")}
+                      {t("caboReservation.form.arrivalDate")} <span className="text-red-500">*</span>
                     </label>
                     <div className="relative">
                       <input
                         type="date"
+                        name="arrivalDate"
+                        value={formData.arrivalDate}
+                        onChange={handleInputChange}
                         className="w-full border border-gray-300 rounded-md px-3 md:px-4 py-2.5 md:py-3 focus:outline-none focus:ring-2 focus:ring-blue-500 text-sm md:text-base"
+                        required
                       />
                     </div>
                   </div>
@@ -291,11 +511,15 @@ export default function ReservationPage() {
                   {/* Arrival Time */}
                   <div>
                     <label className="block font-montserrat font-semibold mb-2">
-                      {t("caboReservation.form.arrivalTime")}
+                      {t("caboReservation.form.arrivalTime")} <span className="text-red-500">*</span>
                     </label>
                     <input
                       type="time"
+                      name="arrivalTime"
+                      value={formData.arrivalTime}
+                      onChange={handleInputChange}
                       className="w-full border border-gray-300 rounded-md px-3 md:px-4 py-2.5 md:py-3 focus:outline-none focus:ring-2 focus:ring-blue-500 text-sm md:text-base"
+                      required
                     />
                   </div>
                 </div>
@@ -303,12 +527,16 @@ export default function ReservationPage() {
                 {/* Arrival Airline and Flight Number */}
                 <div>
                   <label className="block font-montserrat font-semibold mb-2">
-                    {t("caboReservation.form.arrivalAirline")}
+                    {t("caboReservation.form.arrivalAirline")} <span className="text-red-500">*</span>
                   </label>
                   <input
                     type="text"
+                    name="arrivalAirline"
+                    value={formData.arrivalAirline}
+                    onChange={handleInputChange}
                     placeholder={t("caboReservation.form.placeholder.enterHere")}
                     className="w-full border border-gray-300 rounded-md px-3 md:px-4 py-2.5 md:py-3 focus:outline-none focus:ring-2 focus:ring-blue-500 text-sm md:text-base"
+                    required
                   />
                 </div>
 
@@ -324,7 +552,7 @@ export default function ReservationPage() {
                     {/* Departure Hotel Name */}
                     <div>
                         <label className="block font-montserrat font-semibold mb-2">
-                        {t("caboReservation.form.hotelName")}
+                        {t("caboReservation.form.hotelName")} <span className="text-red-500">*</span>
                       </label>
                       <input
                         type="text"
@@ -336,12 +564,16 @@ export default function ReservationPage() {
                     {/* Departure Airline and Flight Number */}
                     <div>
                       <label className="block font-montserrat font-semibold mb-2">
-                        {t("caboReservation.form.departureAirline")}
+                        {t("caboReservation.form.departureAirline")} <span className="text-red-500">*</span>
                       </label>
                       <input
                         type="text"
+                        name="departureAirline"
+                        value={formData.departureAirline}
+                        onChange={handleInputChange}
                         placeholder={t("caboReservation.form.placeholder.enterHere")}
                         className="w-full border border-gray-300 rounded-md px-3 md:px-4 py-2.5 md:py-3 focus:outline-none focus:ring-2 focus:ring-blue-500 text-sm md:text-base"
+                        required
                       />
                     </div>
 
@@ -349,12 +581,16 @@ export default function ReservationPage() {
                       {/* Departure Date */}
                       <div>
                           <label className="block font-montserrat font-semibold mb-2">
-                          {t("caboReservation.form.departureDate")}
+                          {t("caboReservation.form.departureDate")} <span className="text-red-500">*</span>
                         </label>
                         <div className="relative">
                           <input
                             type="date"
+                            name="departureDate"
+                            value={formData.departureDate}
+                            onChange={handleInputChange}
                             className="w-full border border-gray-300 rounded-md px-3 md:px-4 py-2.5 md:py-3 focus:outline-none focus:ring-2 focus:ring-blue-500 text-sm md:text-base"
+                            required
                           />
                         </div>
                       </div>
@@ -362,11 +598,15 @@ export default function ReservationPage() {
                       {/* Departure Time */}
                       <div>
                         <label className="block font-montserrat font-semibold mb-2">
-                          {t("caboReservation.form.departureTime")}
+                          {t("caboReservation.form.departureTime")} <span className="text-red-500">*</span>
                         </label>
                         <input
                           type="time"
+                          name="departureTime"
+                          value={formData.departureTime}
+                          onChange={handleInputChange}
                           className="w-full border border-gray-300 rounded-md px-3 md:px-4 py-2.5 md:py-3 focus:outline-none focus:ring-2 focus:ring-blue-500 text-sm md:text-base"
+                          required
                         />
                       </div>
                     </div>
@@ -395,24 +635,32 @@ export default function ReservationPage() {
                     {/* Hotel Name */}
                     <div>
                       <label className="block font-montserrat font-semibold mb-2">
-                        {t("caboReservation.form.hotelName")}
+                        {t("caboReservation.form.hotelName")} <span className="text-red-500">*</span>
                       </label>
                       <input
                         type="text"
+                        name="hotelName"
+                        value={formData.hotelName}
+                        onChange={handleInputChange}
                         placeholder={t("caboReservation.form.placeholder.enterHere")}
                         className="w-full border border-gray-300 rounded-md px-3 md:px-4 py-2.5 md:py-3 focus:outline-none focus:ring-2 focus:ring-blue-500 text-sm md:text-base"
+                        required
                       />
                     </div>
 
                     {/* Departure Airline and Flight Number */}
                     <div>
                       <label className="block font-montserrat font-semibold mb-2">
-                        {t("caboReservation.form.departureAirline")}
+                        {t("caboReservation.form.departureAirline")} <span className="text-red-500">*</span>
                       </label>
                       <input
                         type="text"
+                        name="departureAirline"
+                        value={formData.departureAirline}
+                        onChange={handleInputChange}
                         placeholder={t("caboReservation.form.placeholder.enterHere")}
                         className="w-full border border-gray-300 rounded-md px-3 md:px-4 py-2.5 md:py-3 focus:outline-none focus:ring-2 focus:ring-blue-500 text-sm md:text-base"
+                        required
                       />
                     </div>
 
@@ -420,12 +668,16 @@ export default function ReservationPage() {
                       {/* Departure Date */}
                       <div>
                         <label className="block font-montserrat font-semibold mb-2">
-                          {t("caboReservation.form.departureDate")}
+                          {t("caboReservation.form.departureDate")} <span className="text-red-500">*</span>
                         </label>
                         <div className="relative">
                           <input
                             type="date"
+                            name="departureDate"
+                            value={formData.departureDate}
+                            onChange={handleInputChange}
                             className="w-full border border-gray-300 rounded-md px-3 md:px-4 py-2.5 md:py-3 focus:outline-none focus:ring-2 focus:ring-blue-500 text-sm md:text-base"
+                            required
                           />
                         </div>
                       </div>
@@ -433,11 +685,15 @@ export default function ReservationPage() {
                       {/* Departure Time */}
                       <div>
                         <label className="block font-montserrat font-semibold mb-2">
-                          {t("caboReservation.form.departureTime")}
+                          {t("caboReservation.form.departureTime")} <span className="text-red-500">*</span>
                         </label>
                         <input
                           type="time"
+                          name="departureTime"
+                          value={formData.departureTime}
+                          onChange={handleInputChange}
                           className="w-full border border-gray-300 rounded-md px-3 md:px-4 py-2.5 md:py-3 focus:outline-none focus:ring-2 focus:ring-blue-500 text-sm md:text-base"
+                          required
                         />
                       </div>
                     </div>
@@ -447,7 +703,12 @@ export default function ReservationPage() {
                       <label className="block font-montserrat font-semibold mb-2">
                         {t("caboReservation.form.groceryStop")}
                       </label>
-                      <select className="w-full border border-gray-300 rounded-md px-3 md:px-4 py-2.5 md:py-3 focus:outline-none focus:ring-2 focus:ring-blue-500 text-sm md:text-base">
+                      <select
+                        name="groceryStop"
+                        value={formData.groceryStop}
+                        onChange={handleInputChange}
+                        className="w-full border border-gray-300 rounded-md px-3 md:px-4 py-2.5 md:py-3 focus:outline-none focus:ring-2 focus:ring-blue-500 text-sm md:text-base"
+                      >
                         <option value="">{t("caboReservation.form.chooseOption")}</option>
                         <option value="yes">{t("caboReservation.form.yes")}</option>
                         <option value="no">{t("caboReservation.form.no")}</option>
@@ -459,9 +720,10 @@ export default function ReservationPage() {
                 <div className="pt-3 md:pt-4">
                   <button
                     type="submit"
-                    className="w-full bg-[#0446A1] hover:bg-[#033a8a] text-white font-semibold py-3 md:py-4 px-4 md:px-6 rounded-md transition duration-200 text-sm md:text-base lg:text-lg shadow-lg"
+                    disabled={isSubmitting}
+                    className="w-full bg-[#0446A1] hover:bg-[#033a8a] disabled:bg-gray-400 disabled:cursor-not-allowed text-white font-semibold py-3 md:py-4 px-4 md:px-6 rounded-md transition duration-200 text-sm md:text-base lg:text-lg shadow-lg"
                   >
-                    {t("reservation.form.submit")}
+                    {isSubmitting ? "Submitting..." : t("reservation.form.submit")}
                   </button>
                 </div>
               </form>

@@ -1,11 +1,109 @@
 "use client";
 
-import React from "react";
+import React, { useState } from "react";
 import Image from "next/image";
 import { useI18n } from "@/lib/i18n";
 
 export default function Contact() {
   const { t } = useI18n();
+  
+  // Form state
+  const [formData, setFormData] = useState({
+    fullName: "",
+    email: "",
+    phone: "",
+    message: "",
+  });
+  
+  const [isSubmitting, setIsSubmitting] = useState(false);
+  const [submitStatus, setSubmitStatus] = useState<{
+    type: "success" | "error" | null;
+    message: string;
+  }>({ type: null, message: "" });
+
+  const handleInputChange = (
+    e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>
+  ) => {
+    const { name, value } = e.target;
+    setFormData(prev => ({ ...prev, [name]: value }));
+  };
+
+  const validateForm = (): boolean => {
+    if (!formData.fullName.trim()) {
+      setSubmitStatus({ type: "error", message: "Full name is required" });
+      return false;
+    }
+    if (!formData.email.trim()) {
+      setSubmitStatus({ type: "error", message: "Email is required" });
+      return false;
+    }
+    if (!/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(formData.email)) {
+      setSubmitStatus({ type: "error", message: "Please enter a valid email address" });
+      return false;
+    }
+    if (!formData.phone.trim()) {
+      setSubmitStatus({ type: "error", message: "Phone number is required" });
+      return false;
+    }
+    if (!formData.message.trim()) {
+      setSubmitStatus({ type: "error", message: "Message is required" });
+      return false;
+    }
+    return true;
+  };
+
+  const handleSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
+    e.preventDefault();
+    setSubmitStatus({ type: null, message: "" });
+
+    if (!validateForm()) {
+      return;
+    }
+
+    setIsSubmitting(true);
+
+    try {
+      const response = await fetch("/api/send-email", {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+        },
+        body: JSON.stringify({
+          formType: "contact",
+          ...formData,
+        }),
+      });
+
+      const result = await response.json();
+
+      if (response.ok) {
+        setSubmitStatus({
+          type: "success",
+          message: result.message || "Message sent successfully! We will contact you soon.",
+        });
+        // Reset form
+        setFormData({
+          fullName: "",
+          email: "",
+          phone: "",
+          message: "",
+        });
+      } else {
+        setSubmitStatus({
+          type: "error",
+          message: result.error || "Failed to send message. Please try again.",
+        });
+      }
+    } catch (error) {
+      setSubmitStatus({
+        type: "error",
+        message: "An error occurred. Please try again later.",
+      });
+    } finally {
+      setIsSubmitting(false);
+    }
+  };
+
   return (
     <section id="get-in-touch" className="container mx-auto px-4 md:px-8">
       {/* Header Section */}
@@ -25,34 +123,65 @@ export default function Contact() {
             <h3 className="text-lg sm:text-xl md:text-2xl font-semibold mb-4 sm:mb-5 md:mb-6">
               {t("contact.form.sendMessageTitle")}
             </h3>
-            <form className="flex-1 flex flex-col">
+            
+            {/* Success/Error Messages */}
+            {submitStatus.type && (
+              <div
+                className={`mb-4 p-4 rounded-md ${
+                  submitStatus.type === "success"
+                    ? "bg-green-50 text-green-800 border border-green-200"
+                    : "bg-red-50 text-red-800 border border-red-200"
+                }`}
+              >
+                <p className="font-semibold text-sm">{submitStatus.message}</p>
+              </div>
+            )}
+            
+            <form onSubmit={handleSubmit} className="flex-1 flex flex-col">
               <div className="space-y-4">
                 <input
                   type="text"
+                  name="fullName"
+                  value={formData.fullName}
+                  onChange={handleInputChange}
                   placeholder={t("contact.form.fullNamePlaceholder")}
                   className="w-full border border-gray-300 rounded-full px-6 py-3 focus:outline-none focus:ring-2 focus:ring-blue-400 text-sm md:text-base"
+                  required
                 />
                 <input
                   type="email"
+                  name="email"
+                  value={formData.email}
+                  onChange={handleInputChange}
                   placeholder={t("contact.form.emailPlaceholder")}
                   className="w-full border border-gray-300 rounded-full px-6 py-3 focus:outline-none focus:ring-2 focus:ring-blue-400 text-sm md:text-base"
+                  required
                 />
                 <input
                   type="tel"
+                  name="phone"
+                  value={formData.phone}
+                  onChange={handleInputChange}
                   placeholder={t("contact.form.phonePlaceholder")}
                   className="w-full border border-gray-300 rounded-full px-6 py-3 focus:outline-none focus:ring-2 focus:ring-blue-400 text-sm md:text-base"
+                  required
                 />
                 <textarea
+                  name="message"
+                  value={formData.message}
+                  onChange={handleInputChange}
                   placeholder={t("contact.form.messagePlaceholder")}
                   rows={4}
                   className="w-full border border-gray-300 rounded-3xl px-6 py-3 focus:outline-none focus:ring-2 focus:ring-blue-400 text-sm md:text-base resize-none"
+                  required
                 />
               </div>
               <button 
-                type="button"
-                className="w-full bg-[#0446a1] hover:bg-[#033a8a] text-white px-8 py-3 rounded-full font-semibold transition text-sm md:text-base mt-auto"
+                type="submit"
+                disabled={isSubmitting}
+                className="w-full bg-[#0446a1] hover:bg-[#033a8a] disabled:bg-gray-400 disabled:cursor-not-allowed text-white px-8 py-3 rounded-full font-semibold transition text-sm md:text-base mt-auto"
               >
-                {t("contact.form.submitButton")}
+                {isSubmitting ? "Sending..." : t("contact.form.submitButton")}
               </button>
             </form>
           </div>

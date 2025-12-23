@@ -1,6 +1,6 @@
 'use client';
 
-import { useEffect } from "react";
+import { useEffect, useState } from "react";
 import Navigation from "@/components/homepage/Navigation";
 import Footer from "@/components/homepage/Footer";
 import Link from "next/link";
@@ -8,6 +8,27 @@ import { useI18n } from "@/lib/i18n";
 
 export default function ActivityReservationPage() {
   const { t } = useI18n();
+  
+  // Form state
+  const [formData, setFormData] = useState({
+    tour: "",
+    passengers: "",
+    firstName: "",
+    lastName: "",
+    email: "",
+    phoneCode: "+52",
+    phone: "",
+    hotelRoom: "",
+    activityDate: "",
+    message: "",
+  });
+  
+  const [isSubmitting, setIsSubmitting] = useState(false);
+  const [submitStatus, setSubmitStatus] = useState<{
+    type: "success" | "error" | null;
+    message: string;
+  }>({ type: null, message: "" });
+
   useEffect(() => {
     // Handle scroll to form section when page loads with hash
     if (window.location.hash === '#reservation-form') {
@@ -19,6 +40,107 @@ export default function ActivityReservationPage() {
       }, 100);
     }
   }, []);
+
+  const handleInputChange = (
+    e: React.ChangeEvent<HTMLInputElement | HTMLSelectElement | HTMLTextAreaElement>
+  ) => {
+    const { name, value } = e.target;
+    setFormData(prev => ({ ...prev, [name]: value }));
+  };
+
+  const validateForm = (): boolean => {
+    if (!formData.tour) {
+      setSubmitStatus({ type: "error", message: "Please select a tour" });
+      return false;
+    }
+    if (!formData.passengers) {
+      setSubmitStatus({ type: "error", message: "Please select number of passengers" });
+      return false;
+    }
+    if (!formData.firstName.trim()) {
+      setSubmitStatus({ type: "error", message: "First name is required" });
+      return false;
+    }
+    if (!formData.lastName.trim()) {
+      setSubmitStatus({ type: "error", message: "Last name is required" });
+      return false;
+    }
+    if (!formData.email.trim()) {
+      setSubmitStatus({ type: "error", message: "Email is required" });
+      return false;
+    }
+    if (!/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(formData.email)) {
+      setSubmitStatus({ type: "error", message: "Please enter a valid email address" });
+      return false;
+    }
+    if (!formData.phone.trim()) {
+      setSubmitStatus({ type: "error", message: "Phone number is required" });
+      return false;
+    }
+    if (!formData.activityDate) {
+      setSubmitStatus({ type: "error", message: "Activity date is required" });
+      return false;
+    }
+    return true;
+  };
+
+  const handleSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
+    e.preventDefault();
+    setSubmitStatus({ type: null, message: "" });
+
+    if (!validateForm()) {
+      return;
+    }
+
+    setIsSubmitting(true);
+
+    try {
+      const response = await fetch("/api/send-email", {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+        },
+        body: JSON.stringify({
+          formType: "activity-reservation",
+          ...formData,
+        }),
+      });
+
+      const result = await response.json();
+
+      if (response.ok) {
+        setSubmitStatus({
+          type: "success",
+          message: result.message || "Reservation request submitted successfully! We will contact you soon.",
+        });
+        // Reset form
+        setFormData({
+          tour: "",
+          passengers: "",
+          firstName: "",
+          lastName: "",
+          email: "",
+          phoneCode: "+52",
+          phone: "",
+          hotelRoom: "",
+          activityDate: "",
+          message: "",
+        });
+      } else {
+        setSubmitStatus({
+          type: "error",
+          message: result.error || "Failed to submit reservation. Please try again.",
+        });
+      }
+    } catch (error) {
+      setSubmitStatus({
+        type: "error",
+        message: "An error occurred. Please try again later.",
+      });
+    } finally {
+      setIsSubmitting(false);
+    }
+  };
 
   return (
     <div className="bg-white min-h-screen">
@@ -150,15 +272,34 @@ export default function ActivityReservationPage() {
 
             {/* Reservation Form */}
             <div className="bg-white rounded-lg shadow-xl p-6 md:p-8 lg:p-10">
-              <form className="space-y-4 md:space-y-5 lg:space-y-[30px]">
+              {/* Success/Error Messages */}
+              {submitStatus.type && (
+                <div
+                  className={`mb-4 md:mb-6 p-4 rounded-md ${
+                    submitStatus.type === "success"
+                      ? "bg-green-50 text-green-800 border border-green-200"
+                      : "bg-red-50 text-red-800 border border-red-200"
+                  }`}
+                >
+                  <p className="font-semibold">{submitStatus.message}</p>
+                </div>
+              )}
+              
+              <form onSubmit={handleSubmit} className="space-y-4 md:space-y-5 lg:space-y-[30px]">
                 {/* Tour and Passengers Row */}
                 <div className="grid md:grid-cols-2 gap-4 sm:gap-5 md:gap-6">
                   {/* Select Tour */}
                   <div>
                     <label className="block font-montserrat font-semibold mb-2">
-                      {t("reservation.form.selectTour")}
+                      {t("reservation.form.selectTour")} <span className="text-red-500">*</span>
                     </label>
-                    <select className="w-full border border-gray-300 rounded-md px-4 py-3 focus:outline-none focus:ring-2 focus:ring-blue-500 text-sm md:text-base">
+                    <select
+                      name="tour"
+                      value={formData.tour}
+                      onChange={handleInputChange}
+                      className="w-full border border-gray-300 rounded-md px-4 py-3 focus:outline-none focus:ring-2 focus:ring-blue-500 text-sm md:text-base"
+                      required
+                    >
                       <option value="">{t("reservation.form.chooseOption")}</option>
                       <option value="la-paz">{t("activity.data.laPaz.name")}</option>
                       <option value="atvs">{t("activity.data.atvs.name")}</option>
@@ -174,9 +315,15 @@ export default function ActivityReservationPage() {
                   {/* Passengers */}
                   <div>
                     <label className="block font-montserrat font-semibold mb-2">
-                      {t("reservation.form.passengers")}
+                      {t("reservation.form.passengers")} <span className="text-red-500">*</span>
                     </label>
-                    <select className="w-full border border-gray-300 rounded-md px-4 py-3 focus:outline-none focus:ring-2 focus:ring-blue-500 text-sm md:text-base">
+                    <select
+                      name="passengers"
+                      value={formData.passengers}
+                      onChange={handleInputChange}
+                      className="w-full border border-gray-300 rounded-md px-4 py-3 focus:outline-none focus:ring-2 focus:ring-blue-500 text-sm md:text-base"
+                      required
+                    >
                       <option value="">{t("reservation.form.selectPassengers")}</option>
                       <option value="1">1 {t("reservation.form.passengerCount")}</option>
                       <option value="2">2 {t("reservation.form.passengerCountPlural")}</option>
@@ -193,24 +340,32 @@ export default function ActivityReservationPage() {
                   {/* First Name */}
                   <div>
                     <label className="block font-montserrat font-semibold mb-2">
-                      {t("reservation.form.firstName")}
+                      {t("reservation.form.firstName")} <span className="text-red-500">*</span>
                     </label>
                     <input
                       type="text"
+                      name="firstName"
+                      value={formData.firstName}
+                      onChange={handleInputChange}
                       placeholder={t("reservation.form.placeholder.firstName")}
                       className="w-full border border-gray-300 rounded-md px-4 py-3 focus:outline-none focus:ring-2 focus:ring-blue-500 text-sm md:text-base"
+                      required
                     />
                   </div>
 
                   {/* Last Name */}
                   <div>
                     <label className="block font-montserrat font-semibold mb-2">
-                      {t("reservation.form.lastName")}
+                      {t("reservation.form.lastName")} <span className="text-red-500">*</span>
                     </label>
                     <input
                       type="text"
+                      name="lastName"
+                      value={formData.lastName}
+                      onChange={handleInputChange}
                       placeholder={t("reservation.form.placeholder.lastName")}
                       className="w-full border border-gray-300 rounded-md px-4 py-3 focus:outline-none focus:ring-2 focus:ring-blue-500 text-sm md:text-base"
+                      required
                     />
                   </div>
                 </div>
@@ -218,12 +373,16 @@ export default function ActivityReservationPage() {
                 {/* Email */}
                 <div>
                   <label className="block font-montserrat font-semibold mb-2">
-                    {t("reservation.form.email")}
+                    {t("reservation.form.email")} <span className="text-red-500">*</span>
                   </label>
                   <input
                     type="email"
+                    name="email"
+                    value={formData.email}
+                    onChange={handleInputChange}
                     placeholder={t("reservation.form.placeholder.email")}
                     className="w-full border border-gray-300 rounded-md px-4 py-3 focus:outline-none focus:ring-2 focus:ring-blue-500 text-sm md:text-base"
+                    required
                   />
                 </div>
 
@@ -231,9 +390,15 @@ export default function ActivityReservationPage() {
                 <div className="grid md:grid-cols-12 gap-3 sm:gap-3.5 md:gap-4">
                   <div className="md:col-span-3">
                     <label className="block font-montserrat font-semibold mb-2">
-                      {t("reservation.form.code")}
+                      {t("reservation.form.code")} <span className="text-red-500">*</span>
                     </label>
-                    <select className="w-full border border-gray-300 rounded-md px-4 py-3 focus:outline-none focus:ring-2 focus:ring-blue-500 text-sm md:text-base">
+                    <select
+                      name="phoneCode"
+                      value={formData.phoneCode}
+                      onChange={handleInputChange}
+                      className="w-full border border-gray-300 rounded-md px-4 py-3 focus:outline-none focus:ring-2 focus:ring-blue-500 text-sm md:text-base"
+                      required
+                    >
                       <option value="+52">+52</option>
                       <option value="+1">+1</option>
                       <option value="+44">+44</option>
@@ -242,12 +407,16 @@ export default function ActivityReservationPage() {
                   </div>
                   <div className="md:col-span-9">
                     <label className="block font-montserrat font-semibold mb-2">
-                      {t("reservation.form.phone")}
+                      {t("reservation.form.phone")} <span className="text-red-500">*</span>
                     </label>
                     <input
                       type="tel"
+                      name="phone"
+                      value={formData.phone}
+                      onChange={handleInputChange}
                       placeholder={t("reservation.form.placeholder.phone")}
                       className="w-full border border-gray-300 rounded-md px-4 py-3 focus:outline-none focus:ring-2 focus:ring-blue-500 text-sm md:text-base"
+                      required
                     />
                   </div>
                 </div>
@@ -259,6 +428,9 @@ export default function ActivityReservationPage() {
                   </label>
                   <input
                     type="text"
+                    name="hotelRoom"
+                    value={formData.hotelRoom}
+                    onChange={handleInputChange}
                     placeholder={t("reservation.form.placeholder.hotelRoom")}
                     className="w-full border border-gray-300 rounded-md px-4 py-3 focus:outline-none focus:ring-2 focus:ring-blue-500 text-sm md:text-base"
                   />
@@ -267,12 +439,16 @@ export default function ActivityReservationPage() {
                 {/* Activity Date */}
                 <div>
                   <label className="block font-montserrat font-semibold mb-2">
-                    {t("reservation.form.activityDate")}
+                    {t("reservation.form.activityDate")} <span className="text-red-500">*</span>
                   </label>
                   <div className="relative">
                     <input
                       type="date"
+                      name="activityDate"
+                      value={formData.activityDate}
+                      onChange={handleInputChange}
                       className="w-full border border-gray-300 rounded-md px-4 py-3 focus:outline-none focus:ring-2 focus:ring-blue-500 text-sm md:text-base"
+                      required
                     />
                   </div>
                 </div>
@@ -284,6 +460,9 @@ export default function ActivityReservationPage() {
                   </label>
                   <textarea
                     rows={4}
+                    name="message"
+                    value={formData.message}
+                    onChange={handleInputChange}
                     placeholder={t("reservation.form.placeholder.message")}
                     className="w-full border border-gray-300 rounded-md px-4 py-3 focus:outline-none focus:ring-2 focus:ring-blue-500 text-sm md:text-base resize-none"
                   />
@@ -293,9 +472,10 @@ export default function ActivityReservationPage() {
                 <div className="pt-4">
                   <button
                     type="submit"
-                    className="w-full bg-[#0446A1] hover:bg-[#033a8a] text-white font-semibold py-4 px-6 rounded-md transition duration-200 text-base md:text-lg shadow-lg"
+                    disabled={isSubmitting}
+                    className="w-full bg-[#0446A1] hover:bg-[#033a8a] disabled:bg-gray-400 disabled:cursor-not-allowed text-white font-semibold py-4 px-6 rounded-md transition duration-200 text-base md:text-lg shadow-lg"
                   >
-                    {t("reservation.form.submit")}
+                    {isSubmitting ? "Submitting..." : t("reservation.form.submit")}
                   </button>
                 </div>
               </form>
