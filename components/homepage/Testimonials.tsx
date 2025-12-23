@@ -17,40 +17,64 @@ export default function Testimonials() {
   // Original testimonials data
   const originalTestimonials = [
     {
-      name: "Ana L",
-      location: "Guadalajara",
+      name: "Laurie Mellace-Hengehold",
+      location: "Phoenix, Arizona",
       rating: 5,
-      text: "Excellent experience! Clean car, smooth ride, and very professional driver. Stress-free airport transfer. I'll definitely book again."
+      text: "THE BEST!! Thank you for getting us to the airport this morning and for the wonderful conversations. Until next time—take care!!"
     },
     {
-      name: "Luis García",
-      location: "San Diego",
+      name: "Ulises Fernando León",
+      location: "Los Angeles, California",
       rating: 5,
-      text: "Amazing private transfer! On-time, comfy, no extra stops. The best way to start a Cabo vacation. Highly recommend Cheap Transfers Cabo!"
+      text: "100% recomendado, saludos mi buen amigo Rodrigo Rodríguez Sauceda. Awesome service, friendly, clean van, and we loved the touch of having water and beer onboard."
     },
     {
-      name: "Sofia Ramírez",
-      location: "Mexico City",
+      name: "Yadira Diaz",
+      location: "South San Diego, California",
       rating: 5,
-      text: "Super smooth family transfer! Clean, cool SUV and friendly service. Perfect after a long flight. Great for groups—highly recommended!"
+      text: "I was just there and I highly recommend his service."
     },
     {
-      name: "Rodrigo Hernández",
-      location: "Los Angeles",
+      name: "Steve Johnson",
+      location: "Lynnwood, Washington",
       rating: 5,
-      text: "Best Cabo transfer yet! Professional, friendly drivers and a smooth, direct ride. Great value and comfort with Cheap Transfers Cabo."
+      text: "This man is the best—always a great time and a nice, clean van!"
     },
     {
-      name: "Daniela Torres",
-      location: "Phoenix",
+      name: "Charles Garfinkel",
+      location: "Seattle, Washington",
       rating: 5,
-      text: "Seamless service from booking to pickup! Clean, modern vehicle and fast, private ride to our hotel. Will book again for sure!"
+      text: "Definitely recommend. If you sit in the front seat and enjoy local insights—regional info, history, political climate, and recommendations—Rodrigo shares incredible knowledge."
     },
     {
-      name: "Carlos Martínez",
-      location: "Phoenix",
+      name: "George Gonzalez",
+      location: "Guadalajara, Mexico",
       rating: 5,
-      text: "Loved our ATV tour and airport transfer! On-time, comfy, and well organized. Safe, fun, and personal—great choice for transport  and  activities!"
+      text: "Simplemente el mejor. Bendiciones, carnal."
+    },
+    {
+      name: "Leslie DuBois",
+      location: "Portland, Oregon",
+      rating: 5,
+      text: "We did this last year and it was the highlight of our trip. Rodrigo is an absolutely amazing tour guide and an awesome friend."
+    },
+    {
+      name: "Jenny McEvoy Sterpin",
+      location: "Denver, Colorado",
+      rating: 5,
+      text: "Awesome service! This is our new go-to transportation. You will not be disappointed."
+    },
+    {
+      name: "Linda Green-Lunde",
+      location: "San Francisco, California",
+      rating: 5,
+      text: "If you need transportation or a tour, Rodrigo Rodríguez Sauceda is your guy! He is very knowledgeable, friendly, and affordable. 100% recommended."
+    },
+    {
+      name: "Diane Whited-Mihalyi",
+      location: "Washington",
+      rating: 5,
+      text: "Best ride we ever had.. we request Rodrigo every time!"
     }
   ];
 
