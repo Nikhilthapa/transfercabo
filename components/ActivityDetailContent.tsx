@@ -64,7 +64,7 @@ function getLocalizedActivityData(activityDataKey: string, t: (key: string) => s
       const dataKey = Object.keys(iconValue).find(k => k !== 'iconsPath' && k !== 'iconPath' && typeof iconValue[k] === 'object');
       const dataObject = dataKey ? iconValue[dataKey] : null;
       
-      if (dataObject) {
+      if (dataObject && dataKey) {
         const translatedDataObject: any = {};
         Object.entries(dataObject).forEach(([key, value]: [string, any]) => {
           const translatedValue = getTranslation(`${iconPrefix}.${key}`, value as string, t);
@@ -261,7 +261,7 @@ export default function ActivityDetailContent({
                 {t("activity.detail.common.whatToExpect")}
               </h2>
               <p className="text-center font-montserrat font-medium text-gray-600 mb-[70px] px-4 text-xs sm:text-sm md:text-base">
-                {t("activity.detail.common.whatToExpectDesc", { activity: slug })} <span className="font-montserrat font-bold text-[#0d0d0d]">Cheap Transfers Cabo</span>.
+                {t("activity.detail.common.whatToExpectDesc")} <span className="font-montserrat font-bold text-[#0d0d0d]">Cheap Transfers Cabo</span>.
               </p>
               
               <div className="grid md:grid-cols-2 gap-4 sm:gap-6 md:gap-8 lg:gap-12 items-center">
