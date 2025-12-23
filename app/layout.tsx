@@ -3,6 +3,7 @@ import { Montserrat } from "next/font/google";
 import "./globals.css";
 import { I18nProvider } from "@/lib/i18n";
 import StickyContactButtons from "@/components/StickyContactButtons";
+import I18nLoadingWrapper from "@/components/I18nLoadingWrapper";
 
 const montserrat = Montserrat({
   subsets: ["latin"],
@@ -34,7 +35,11 @@ export default function RootLayout({
   return (
     <html lang="en" className={montserrat.variable}>
       <body className="font-montserrat antialiased">
-        <I18nProvider>{children}</I18nProvider>
+        <I18nProvider>
+          <I18nLoadingWrapper>
+            {children}
+          </I18nLoadingWrapper>
+        </I18nProvider>
         <StickyContactButtons />
       </body>
     </html>
