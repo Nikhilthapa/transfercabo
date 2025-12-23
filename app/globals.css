@@ -60,10 +60,13 @@
     position: fixed !important;
     bottom: 24px !important;
     right: 24px !important;
-    z-index: 9998 !important;
+    z-index: 10000 !important;
     /* Ensure buttons stay fixed even with html transform */
     transform: none !important;
-    /* Account for desktop scale transform */
+    /* Escape any parent transform contexts */
+    will-change: transform;
+    /* Ensure buttons are always visible and positioned relative to viewport */
+    isolation: isolate;
   }
 
   /* On desktop, ensure buttons are positioned correctly relative to viewport */
@@ -73,6 +76,19 @@
       position: fixed !important;
       bottom: 24px !important;
       right: 24px !important;
+      transform: none !important;
+      /* Account for html scale transform by ensuring viewport-relative positioning */
+    }
+  }
+
+  /* On mobile, ensure buttons are properly positioned */
+  @media (max-width: 768px) {
+    .sticky-contact-buttons {
+      position: fixed !important;
+      bottom: 24px !important;
+      right: 24px !important;
+      z-index: 10000 !important;
+      transform: none !important;
     }
   }
 
