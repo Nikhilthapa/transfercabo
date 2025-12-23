@@ -1,6 +1,7 @@
 'use client';
 
 import { useState } from "react";
+import { useI18n } from "@/lib/i18n";
 
 export interface Testimonial {
   name: string;
@@ -12,15 +13,65 @@ export interface Testimonial {
 
 interface ActivityTestimonialsProps {
   testimonials: Testimonial[];
+  activitySlug?: string;
 }
 
-export default function ActivityTestimonials({ testimonials }: ActivityTestimonialsProps) {
+// Helper function to map activity slug to translation key
+function getActivityTestimonialKey(activitySlug: string): string {
+  const keyMap: { [key: string]: string } = {
+    "la-paz": "laPaz",
+    "todos-santos": "todosSantos",
+    "cerritos": "cerritos",
+    "los-cabos": "losCabos",
+    "art-walk": "artWalk",
+    "horseback-riding": "horsebackRiding",
+    "hidden-towns": "hiddenTowns",
+    "razors": "razors",
+    "atvs": "atvs",
+    "40-ft": "40ft",
+    "My-dream-33-footer": "myDream33Footer",
+  };
+  return keyMap[activitySlug] || activitySlug.toLowerCase().replace(/\s+/g, "");
+}
+
+// Helper function to safely get translation or fallback to original
+function getTranslation(key: string, fallback: string, t: (key: string) => string): string {
+  const translated = t(key);
+  // If translation returns the key itself, it means translation is missing
+  return translated !== key ? translated : fallback;
+}
+
+// Helper function to get localized testimonials
+function getLocalizedTestimonials(
+  testimonials: Testimonial[],
+  activitySlug: string | undefined,
+  t: (key: string) => string
+): Testimonial[] {
+  if (!activitySlug) {
+    // If no activity slug, return original testimonials
+    return testimonials;
+  }
+
+  const activityKey = getActivityTestimonialKey(activitySlug);
+  const prefix = `testimonials.activity.${activityKey}`;
+
+  return testimonials.map((testimonial, index) => ({
+    ...testimonial,
+    text: getTranslation(`${prefix}.items.${index}.text`, testimonial.text, t)
+  }));
+}
+
+export default function ActivityTestimonials({ testimonials, activitySlug }: ActivityTestimonialsProps) {
+  const { t } = useI18n();
   const [currentIndex, setCurrentIndex] = useState(0);
 
   // Don't render if no testimonials provided
   if (!testimonials || testimonials.length === 0) {
     return null;
   }
+
+  // Get localized testimonials
+  const localizedTestimonials = getLocalizedTestimonials(testimonials, activitySlug, t);
 
   const nextTestimonial = () => {
     setCurrentIndex((prevIndex) => 
@@ -38,14 +89,14 @@ export default function ActivityTestimonials({ testimonials }: ActivityTestimoni
     setCurrentIndex(index);
   };
 
-  const currentTestimonial = testimonials[currentIndex];
+  const currentTestimonial = localizedTestimonials[currentIndex];
 
   return (
     <section className="container mx-auto px-4 md:px-8">
       <div className="text-center mb-8 md:mb-12 lg:mb-16">
-        <h2 className="text-2xl md:text-3xl lg:text-4xl xl:text-5xl font-montserrat font-bold text-black px-2" style={{ marginBottom: '10px' }}>What Our Clients Say</h2>
+        <h2 className="text-2xl md:text-3xl lg:text-4xl xl:text-5xl font-montserrat font-bold text-black px-2" style={{ marginBottom: '10px' }}>{t("testimonials.section.title")}</h2>
         <p className="font-montserrat font-medium text-gray-700 text-sm md:text-base lg:text-lg px-4 max-w-3xl mx-auto" style={{ marginBottom: '10px' }}>
-          Genuine reviews from travelers who trusted us with their Cabo journey.
+          {t("testimonials.section.subtitle")}
         </p>
       </div>
 
@@ -102,7 +153,7 @@ export default function ActivityTestimonials({ testimonials }: ActivityTestimoni
 
         {/* Dots Navigation */}
         <div className="flex justify-center gap-1.5 sm:gap-2 mt-4 sm:mt-6 md:mt-8">
-          {testimonials.map((_, index) => (
+          {localizedTestimonials.map((_, index) => (
             <button
               key={index}
               onClick={() => goToTestimonial(index)}

@@ -1,17 +1,21 @@
+"use client";
+
 import CustomHero from "@/components/CustomHero";
 import AboutWelcome from "@/components/aboutpage/AboutWelcome";
 import AboutMeetRodrigo from "@/components/aboutpage/AboutMeetRodrigo";
 import AboutMissionVision from "@/components/aboutpage/AboutMissionVision";
 import AboutCallToAction from "@/components/aboutpage/AboutCallToAction";
 import Footer from "@/components/homepage/Footer";
+import { useI18n } from "@/lib/i18n";
 
 export default function AboutPage() {
+  const { t } = useI18n();
   return (
     <div className="bg-white min-h-screen">
       <CustomHero
         backgroundImagePath="/aboutus/page/aboutusbackground.jpg"
-        title="Experience Comfort And Care With Cheap Transfers Cabo"
-        subtitle="Trusted Private Transfers & Unforgettable Cabo Experiences."
+        title={t("about.hero.title")}
+        subtitle={t("about.hero.subtitle")}
         hideTopBar={true}
         titleColor="#fcfcfc"
         subtitleColor="#fafaf9"

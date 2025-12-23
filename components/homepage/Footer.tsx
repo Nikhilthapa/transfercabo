@@ -1,9 +1,14 @@
+"use client";
+
 import Link from "next/link";
 import Image from "next/image";
+import { useI18n } from "@/lib/i18n";
 
 export default function Footer() {
+  const { t } = useI18n();
+
   return (
-    <footer className="text-white pt-10 md:pt-16 pb-0" style={{ backgroundColor: '#0446A1' }}>
+    <footer className="text-white pt-10 md:pt-16 pb-0" style={{ backgroundColor: "#0446A1" }}>
       <div className="container mx-auto px-4 md:px-8">
         <div className="grid sm:grid-cols-2 lg:grid-cols-4 gap-8 md:gap-12 mb-8 md:mb-12">
           <div className="sm:col-span-2 lg:col-span-1">
@@ -11,7 +16,7 @@ export default function Footer() {
               <div className="relative w-10 h-10 md:w-12 md:h-12">
                 <Image
                   src="/logo.png"
-                  alt="Cheap Transfers Cabo Logo"
+                  alt={t("footer.logoAlt")}
                   fill
                   className="object-contain"
                   quality={90}
@@ -24,7 +29,7 @@ export default function Footer() {
               </div>
             </div>
             <p className="text-white/90 text-xs md:text-sm leading-relaxed mb-4 md:mb-6">
-              Cheap transfers cabo. – Reliable, Comfortable, and Private. Enjoy stress-free airport transfers, hotel rides, and custom tours throughout Los Cabos
+              {t("footer.description")}
             </p>
             <div className="flex gap-3 md:gap-4">
               <a href="https://google.com" target="_blank" rel="noopener noreferrer" className="w-8 h-8 md:w-10 md:h-10 bg-white/10 hover:bg-white/20 rounded flex items-center justify-center transition">
@@ -52,49 +57,97 @@ export default function Footer() {
               </a>
             </div>
             <p className="text-white text-xs mt-4 md:mt-5 whitespace-nowrap font-semibold">
-              Design and developed by :- {" "}
+              {t("footer.designedBy")}{" "}
               <a 
                 href="https://sparixglobal.com" 
                 target="_blank" 
                 rel="noopener noreferrer" 
                 className="text-white hover:text-white/80 transition"
               >
-                Sparix Global Pvt Ltd
+                {t("footer.designedByCompany")}
               </a>
             </p>
           </div>
 
           <div>
-            <h5 className="text-lg md:text-xl font-bold mb-4 md:mb-6">Company</h5>
+            <h5 className="text-lg md:text-xl font-bold mb-4 md:mb-6">
+              {t("footer.company.title")}
+            </h5>
             <ul className="space-y-2 md:space-y-3 text-white/90 text-xs md:text-sm">
-              <li><Link href="/" className="hover:text-white transition">Home</Link></li>
-              <li><Link href="/activity" className="hover:text-white transition">Explore Cabo</Link></li>
-              <li><Link href="/about" className="hover:text-white transition">About Us</Link></li>
-              <li><Link href="/contact#get-in-touch" className="hover:text-white transition">Contact Us</Link></li>
-              <li><Link href="/policy" className="hover:text-white transition">Privacy Policy</Link></li>
+              <li>
+                <Link href="/" className="hover:text-white transition">
+                  {t("footer.company.home")}
+                </Link>
+              </li>
+              <li>
+                <Link href="/activity" className="hover:text-white transition">
+                  {t("footer.company.exploreCabo")}
+                </Link>
+              </li>
+              <li>
+                <Link href="/about" className="hover:text-white transition">
+                  {t("footer.company.aboutUs")}
+                </Link>
+              </li>
+              <li>
+                <Link href="/contact#get-in-touch" className="hover:text-white transition">
+                  {t("footer.company.contactUs")}
+                </Link>
+              </li>
+              <li>
+                <Link href="/policy" className="hover:text-white transition">
+                  {t("footer.company.privacyPolicy")}
+                </Link>
+              </li>
             </ul>
           </div>
 
           <div>
-            <h5 className="text-lg md:text-xl font-bold mb-4 md:mb-6">Activity</h5>
+            <h5 className="text-lg md:text-xl font-bold mb-4 md:mb-6">
+              {t("footer.activity.title")}
+            </h5>
             <ul className="space-y-2 md:space-y-3 text-white/90 text-xs md:text-sm">
-              <li><Link href="/activity/la-paz" className="hover:text-white transition">La Paz</Link></li>
-              <li><Link href="/activity/todos-santos" className="hover:text-white transition">Todos Santos</Link></li>
-              <li><Link href="/activity/cerritos" className="hover:text-white transition">Cerritos Beach</Link></li>
-              <li><Link href="/activity/los-cabos" className="hover:text-white transition">Los Cabos</Link></li>
-              <li><Link href="/activity" className="hover:text-white transition">More</Link></li>
+              <li>
+                <Link href="/activity/la-paz" className="hover:text-white transition">
+                  {t("footer.activity.laPaz")}
+                </Link>
+              </li>
+              <li>
+                <Link href="/activity/todos-santos" className="hover:text-white transition">
+                  {t("footer.activity.todosSantos")}
+                </Link>
+              </li>
+              <li>
+                <Link href="/activity/cerritos" className="hover:text-white transition">
+                  {t("footer.activity.cerritos")}
+                </Link>
+              </li>
+              <li>
+                <Link href="/activity/los-cabos" className="hover:text-white transition">
+                  {t("footer.activity.losCabos")}
+                </Link>
+              </li>
+              <li>
+                <Link href="/activity" className="hover:text-white transition">
+                  {t("footer.activity.more")}
+                </Link>
+              </li>
             </ul>
           </div>
 
           <div className="sm:col-span-2 lg:col-span-1">
-            <h5 className="text-lg md:text-xl font-bold mb-4 md:mb-6">Contact</h5>
+            <h5 className="text-lg md:text-xl font-bold mb-4 md:mb-6">
+              {t("footer.contact.title")}
+            </h5>
             <div className="space-y-3 md:space-y-4 text-xs md:text-sm">
               <div className="flex items-start gap-2 md:gap-3">
                 <svg className="w-4 h-4 md:w-5 md:h-5 mt-0.5 flex-shrink-0" fill="currentColor" viewBox="0 0 20 20">
                   <path d="M2 3a1 1 0 011-1h2.153a1 1 0 01.986.836l.74 4.435a1 1 0 01-.54 1.06l-1.548.773a11.037 11.037 0 006.105 6.105l.774-1.548a1 1 0 011.059-.54l4.435.74a1 1 0 01.836.986V17a1 1 0 01-1 1h-2C7.82 18 2 12.18 2 5V3z"/>
                 </svg>
                 <div>
-                  <p className="font-bold text-white mb-1">Phone</p>
+                  <p className="font-bold text-white mb-1">
+                    {t("footer.contact.phone")}
+                  </p>
                   <p className="text-white/90">+52 ( 624 ) 182 0525</p>
                 </div>
               </div>
@@ -104,7 +157,9 @@ export default function Footer() {
                   <path d="M18 8.118l-8 4-8-4V14a2 2 0 002 2h12a2 2 0 002-2V8.118z"/>
                 </svg>
                 <div>
-                  <p className="font-bold text-white mb-1">Email</p>
+                  <p className="font-bold text-white mb-1">
+                    {t("footer.contact.email")}
+                  </p>
                   <p className="text-white/90 break-all">bookingcheaptransferscabo <br />@gmail.com</p>
                 </div>
               </div>
@@ -113,9 +168,11 @@ export default function Footer() {
                   <path fillRule="evenodd" d="M5.05 4.05a7 7 0 119.9 9.9L10 18.9l-4.95-4.95a7 7 0 010-9.9zM10 11a2 2 0 100-4 2 2 0 000 4z" clipRule="evenodd"/>
                 </svg>
                 <div>
-                  <p className="font-bold text-white mb-1">Location</p>
-                  <p className="text-white/90">Cabo San Lucas</p>
-                  <p className="text-white/90">Baja California Sur, Mexico</p>
+                  <p className="font-bold text-white mb-1">
+                    {t("footer.contact.location")}
+                  </p>
+                  <p className="text-white/90">{t("footer.contact.city")}</p>
+                  <p className="text-white/90">{t("footer.contact.region")}</p>
                 </div>
               </div>
             </div>
@@ -124,7 +181,7 @@ export default function Footer() {
 
         <div className="border-t border-white/20 flex items-center py-4 md:py-6">
           <p className="text-left text-gray-300 text-xs md:text-sm">
-            Copyright © cheaptransferscabo Solution All Rights Reserved
+            {t("footer.copyright")}
           </p>
         </div>
       </div>

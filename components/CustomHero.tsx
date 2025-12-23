@@ -1,9 +1,11 @@
-'use client';
+"use client";
 
 import Link from "next/link";
 import Image from "next/image";
 import { useState } from "react";
-import { activities } from "@/app/activity/page";
+import { activities } from "@/lib/activities";
+import LanguageSwitcher from "@/components/LanguageSwitcher";
+import { useI18n } from "@/lib/i18n";
 
 interface CustomHeroProps {
   backgroundImagePath: string;
@@ -26,9 +28,38 @@ export default function CustomHero({
   titleColor = '#ffffff',
   subtitleColor = '#ffffff',
 }: CustomHeroProps) {
+  const { t } = useI18n();
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
   const [activitiesDropdownOpen, setActivitiesDropdownOpen] = useState(false);
   const [mobileActivitiesOpen, setMobileActivitiesOpen] = useState(false);
+
+  // Helper function to get translation key from slug
+  const getActivityKey = (slug: string) => {
+    const slugMap: { [key: string]: string } = {
+      "la-paz": "laPaz",
+      "atvs": "atvs",
+      "art-walk": "artWalk",
+      "horseback-riding": "horsebackRiding",
+      "razors": "razors",
+      "todos-santos": "todosSantos",
+      "cerritos": "cerritos",
+      "los-cabos": "losCabos",
+      "hidden-towns": "hiddenTowns",
+      "40-ft": "40ft",
+      "My-dream-33-footer": "myDream33Footer",
+    };
+    return slugMap[slug] || slug;
+  };
+
+  // Get localized activities
+  const localizedActivities = activities.map((activity) => {
+    const key = getActivityKey(activity.slug);
+    return {
+      ...activity,
+      name: t(`activity.data.${key}.name`),
+    };
+  });
+
   return (
     <section className="relative h-[80vh] md:h-[100vh] overflow-visible border-0 border-none outline-none" style={{ borderBottom: 'none', border: 'none' }}>
       {/* Background Image Container - placed first so it shows through navigation */}
@@ -81,7 +112,7 @@ export default function CustomHero({
                 href="/" 
                 className="text-black font-semibold uppercase text-sm hover:text-[#0446A1] transition"
               >
-                HOME
+                {t("nav.home")}
               </Link>
               
               {/* Activities with Dropdown */}
@@ -95,7 +126,7 @@ export default function CustomHero({
                     href="/activity" 
                     className="text-black font-semibold uppercase text-sm hover:text-[#0446A1] transition"
                   >
-                    ACTIVITIES
+                    {t("nav.activities")}
                   </Link>
                   <svg className={`w-3.5 h-3.5 text-black transition hover:text-[#0446A1] ${activitiesDropdownOpen ? 'text-[#0446A1]' : 'group-hover:text-[#0446A1]'}`} fill="none" stroke="currentColor" viewBox="0 0 24 24">
                     <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2.5} d="M19 9l-7 7-7-7" />
@@ -107,7 +138,7 @@ export default function CustomHero({
                   <div className="pt-2 pb-2">
                     <div className="bg-white rounded-lg shadow-xl border border-gray-200">
                       <div className="py-2">
-                        {activities.map((activity) => (
+                        {localizedActivities.map((activity) => (
                           <Link
                             key={activity.slug}
                             href={`/activity/${activity.slug}`}
@@ -126,34 +157,18 @@ export default function CustomHero({
                 href="/contact#get-in-touch" 
                 className="text-black font-semibold uppercase text-sm hover:text-[#0446A1] transition"
               >
-                CONTACT
+                {t("nav.contact")}
               </Link>
               
               <Link 
                 href="/about" 
                 className="text-black font-semibold uppercase text-sm hover:text-[#0446A1] transition"
               >
-                ABOUT
+                {t("nav.about")}
               </Link>
               
               {/* Language Selector */}
-              <div className="flex items-center gap-2 cursor-pointer group">
-                <div className="w-6 h-6 rounded-full overflow-hidden flex-shrink-0">
-                  <Image
-                    src="/lan/eng.png"
-                    alt="English"
-                    width={24}
-                    height={24}
-                    className="object-cover w-full h-full"
-                    quality={85}
-                    sizes="24px"
-                  />
-                </div>
-                <span className="text-black text-sm font-semibold group-hover:text-[#0446A1] transition">English</span>
-                <svg className="w-3.5 h-3.5 text-black group-hover:text-[#0446A1] transition" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2.5} d="M19 9l-7 7-7-7" />
-                </svg>
-              </div>
+              <LanguageSwitcher />
             </div>
 
             {/* Mobile Menu Button */}
@@ -183,14 +198,14 @@ export default function CustomHero({
                   className="text-black font-semibold uppercase text-sm hover:text-[#0446A1] transition px-2 py-2"
                   onClick={() => setMobileMenuOpen(false)}
                 >
-                  HOME
+                  {t("nav.home")}
                 </Link>
                 <Link 
                   href="/about" 
                   className="text-black font-semibold uppercase text-sm hover:text-[#0446A1] transition px-2 py-2"
                   onClick={() => setMobileMenuOpen(false)}
                 >
-                  ABOUT
+                  {t("nav.about")}
                 </Link>
                 {/* Mobile Activities accordion */}
                 <button
@@ -199,7 +214,7 @@ export default function CustomHero({
                   aria-expanded={mobileActivitiesOpen}
                   aria-controls="mobile-activities-list"
                 >
-                  <span>ACTIVITIES</span>
+                  <span>{t("nav.activities")}</span>
                   <svg
                     className={`w-4 h-4 transition-transform ${mobileActivitiesOpen ? 'rotate-180 text-[#0446A1]' : ''}`}
                     fill="none"
@@ -211,7 +226,7 @@ export default function CustomHero({
                 </button>
                 {mobileActivitiesOpen && (
                   <div id="mobile-activities-list" className="ml-2 pl-2 border-l border-gray-200 space-y-1">
-                    {activities.map((activity) => (
+                    {localizedActivities.map((activity) => (
                       <Link
                         key={activity.slug}
                         href={`/activity/${activity.slug}`}
@@ -231,26 +246,11 @@ export default function CustomHero({
                   className="text-black font-semibold uppercase text-sm hover:text-[#0446A1] transition px-2 py-2"
                   onClick={() => setMobileMenuOpen(false)}
                 >
-                  CONTACT
+                  {t("nav.contact")}
                 </Link>
                 
                 {/* Mobile Language Selector */}
-                <div className="flex items-center gap-3 px-2 py-2 w-fit">
-                  <div className="relative w-10 h-6 flex-shrink-0">
-                    <Image
-                      src="/lan/eng.png"
-                      alt="English"
-                      fill
-                      className="object-contain rounded-sm"
-                      sizes="40px"
-                      quality={85}
-                    />
-                  </div>
-                  <span className="text-black text-sm font-semibold uppercase">English</span>
-                  <svg className="w-3.5 h-3.5 text-black flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2.5} d="M19 9l-7 7-7-7" />
-                  </svg>
-                </div>
+                <LanguageSwitcher />
               </div>
             </div>
           )}

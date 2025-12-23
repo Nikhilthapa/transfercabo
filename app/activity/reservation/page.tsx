@@ -4,8 +4,10 @@ import { useEffect } from "react";
 import Navigation from "@/components/homepage/Navigation";
 import Footer from "@/components/homepage/Footer";
 import Link from "next/link";
+import { useI18n } from "@/lib/i18n";
 
 export default function ActivityReservationPage() {
+  const { t } = useI18n();
   useEffect(() => {
     // Handle scroll to form section when page loads with hash
     if (window.location.hash === '#reservation-form') {
@@ -72,16 +74,16 @@ export default function ActivityReservationPage() {
         <div className="relative z-10 container mx-auto px-4 md:px-8 flex items-center h-[calc(80vh-80px)] md:h-[calc(100vh-100px)] min-h-[500px]">
           <div className="max-w-3xl">
             <h2 className="text-3xl md:text-5xl lg:text-6xl font-bold text-white mb-3 md:mb-4">
-              Make Your Reservation
+              {t("reservation.hero.title")}
             </h2>
             <p className="text-lg md:text-xl lg:text-2xl text-white mb-6 md:mb-10">
-            Complete your booking quickly and enjoy reliable, private, and comfortable service with Cheap Transfers Cabo.
+              {t("reservation.hero.description")}
             </p>
             <Link
               href="/activity/reservation"
               className="inline-block bg-[#0446A1] hover:bg-[#033a8a]  text-white px-8 md:px-10 py-3 md:py-4 rounded-md font-semibold text-base md:text-lg transition shadow-lg"
             >
-              Book Activities
+              {t("reservation.hero.button")}
             </Link>
           </div>
         </div>
@@ -116,10 +118,10 @@ export default function ActivityReservationPage() {
         <div className="container mx-auto px-4 md:px-8">
           <div className="max-w-4xl mx-auto text-center">
             <h2 className="text-2xl md:text-3xl lg:text-3xl font-Montserrat font-semibold text-black uppercase mb-[15px] sm:mb-[20px] md:mb-[25px]">
-              BOOK YOUR ACTIVITIES
+              {t("reservation.section.title")}
             </h2>
             <p className="text-base md:text-lg text-gray-700 leading-relaxed">
-              We offer a wide range of Tours and Activities to better assis our Dear Clients. Whether you are traveling for business or pleasure, we have the perfect solution for you. Our services include a very nice inventory, designed just for you. Contact us today to learn more so you can book your Activities.
+              {t("reservation.section.description")}
             </p>
           </div>
         </div>
@@ -132,14 +134,18 @@ export default function ActivityReservationPage() {
             {/* Header Notice */}
             <div className="text-center mb-[15px] sm:mb-[18px] md:mb-[20px]">
               <p className="text-sm md:text-base text-[#0446A1] font-semibold mb-2">
-                Temporary cash Only!! <br />
-                To be paid to the Driver upon arrival.
+                {t("reservation.form.notice").split('\n').map((line, i, arr) => (
+                  <span key={i}>
+                    {line}
+                    {i < arr.length - 1 && <br />}
+                  </span>
+                ))}
               </p>
             </div>
 
             {/* Main Title */}
             <h1 className="text-3xl md:text-4xl lg:text-5xl  font-Montserrat font-semibold text-black text-center mb-[35px] sm:mb-[45px] md:mb-[55px] lg:mb-[59px]">
-              RESERVATION REQUEST
+              {t("reservation.form.title")}
             </h1>
 
             {/* Reservation Form */}
@@ -150,34 +156,34 @@ export default function ActivityReservationPage() {
                   {/* Select Tour */}
                   <div>
                     <label className="block font-montserrat font-semibold mb-2">
-                      Select Tour
+                      {t("reservation.form.selectTour")}
                     </label>
                     <select className="w-full border border-gray-300 rounded-md px-4 py-3 focus:outline-none focus:ring-2 focus:ring-blue-500 text-sm md:text-base">
-                      <option value="">Choose An Option</option>
-                      <option value="la-paz">La Paz</option>
-                      <option value="atvs">ATV's</option>
-                      <option value="art-walk">Art Walk</option>
-                      <option value="horseback-riding">Horseback Riding</option>
-                      <option value="todos-santos">Todos Santos</option>
-                      <option value="cerritos">Cerritos Beach</option>
-                      <option value="los-cabos">Los Cabos</option>
-                      <option value="hidden-towns">Hidden Towns</option>
+                      <option value="">{t("reservation.form.chooseOption")}</option>
+                      <option value="la-paz">{t("activity.data.laPaz.name")}</option>
+                      <option value="atvs">{t("activity.data.atvs.name")}</option>
+                      <option value="art-walk">{t("activity.data.artWalk.name")}</option>
+                      <option value="horseback-riding">{t("activity.data.horsebackRiding.name")}</option>
+                      <option value="todos-santos">{t("activity.data.todosSantos.name")}</option>
+                      <option value="cerritos">{t("activity.data.cerritos.name")}</option>
+                      <option value="los-cabos">{t("activity.data.losCabos.name")}</option>
+                      <option value="hidden-towns">{t("activity.data.hiddenTowns.name")}</option>
                     </select>
                   </div>
 
                   {/* Passengers */}
                   <div>
                     <label className="block font-montserrat font-semibold mb-2">
-                      Passengers
+                      {t("reservation.form.passengers")}
                     </label>
                     <select className="w-full border border-gray-300 rounded-md px-4 py-3 focus:outline-none focus:ring-2 focus:ring-blue-500 text-sm md:text-base">
-                      <option value="">Select Passengers</option>
-                      <option value="1">1 Passenger</option>
-                      <option value="2">2 Passengers</option>
-                      <option value="3">3 Passengers</option>
-                      <option value="4">4 Passengers</option>
-                      <option value="5">5 Passengers</option>
-                      <option value="6">6+ Passengers</option>
+                      <option value="">{t("reservation.form.selectPassengers")}</option>
+                      <option value="1">1 {t("reservation.form.passengerCount")}</option>
+                      <option value="2">2 {t("reservation.form.passengerCountPlural")}</option>
+                      <option value="3">3 {t("reservation.form.passengerCountPlural")}</option>
+                      <option value="4">4 {t("reservation.form.passengerCountPlural")}</option>
+                      <option value="5">5 {t("reservation.form.passengerCountPlural")}</option>
+                      <option value="6">6+ {t("reservation.form.passengerCountPlural")}</option>
                     </select>
                   </div>
                 </div>
@@ -187,11 +193,11 @@ export default function ActivityReservationPage() {
                   {/* First Name */}
                   <div>
                     <label className="block font-montserrat font-semibold mb-2">
-                      First Name
+                      {t("reservation.form.firstName")}
                     </label>
                     <input
                       type="text"
-                      placeholder="Eg: Jos"
+                      placeholder={t("reservation.form.placeholder.firstName")}
                       className="w-full border border-gray-300 rounded-md px-4 py-3 focus:outline-none focus:ring-2 focus:ring-blue-500 text-sm md:text-base"
                     />
                   </div>
@@ -199,11 +205,11 @@ export default function ActivityReservationPage() {
                   {/* Last Name */}
                   <div>
                     <label className="block font-montserrat font-semibold mb-2">
-                      Last Name
+                      {t("reservation.form.lastName")}
                     </label>
                     <input
                       type="text"
-                      placeholder="Eg: Taloir"
+                      placeholder={t("reservation.form.placeholder.lastName")}
                       className="w-full border border-gray-300 rounded-md px-4 py-3 focus:outline-none focus:ring-2 focus:ring-blue-500 text-sm md:text-base"
                     />
                   </div>
@@ -212,11 +218,11 @@ export default function ActivityReservationPage() {
                 {/* Email */}
                 <div>
                   <label className="block font-montserrat font-semibold mb-2">
-                    Email
+                    {t("reservation.form.email")}
                   </label>
                   <input
                     type="email"
-                    placeholder="Eg: Name@Gmail.Com"
+                    placeholder={t("reservation.form.placeholder.email")}
                     className="w-full border border-gray-300 rounded-md px-4 py-3 focus:outline-none focus:ring-2 focus:ring-blue-500 text-sm md:text-base"
                   />
                 </div>
@@ -225,7 +231,7 @@ export default function ActivityReservationPage() {
                 <div className="grid md:grid-cols-12 gap-3 sm:gap-3.5 md:gap-4">
                   <div className="md:col-span-3">
                     <label className="block font-montserrat font-semibold mb-2">
-                      Code
+                      {t("reservation.form.code")}
                     </label>
                     <select className="w-full border border-gray-300 rounded-md px-4 py-3 focus:outline-none focus:ring-2 focus:ring-blue-500 text-sm md:text-base">
                       <option value="+52">+52</option>
@@ -236,11 +242,11 @@ export default function ActivityReservationPage() {
                   </div>
                   <div className="md:col-span-9">
                     <label className="block font-montserrat font-semibold mb-2">
-                      Phone
+                      {t("reservation.form.phone")}
                     </label>
                     <input
                       type="tel"
-                      placeholder="Eg: 9875125"
+                      placeholder={t("reservation.form.placeholder.phone")}
                       className="w-full border border-gray-300 rounded-md px-4 py-3 focus:outline-none focus:ring-2 focus:ring-blue-500 text-sm md:text-base"
                     />
                   </div>
@@ -249,11 +255,11 @@ export default function ActivityReservationPage() {
                 {/* Hotel & Room Number */}
                 <div>
                   <label className="block font-montserrat font-semibold mb-2">
-                    Hotel & Room Number
+                    {t("reservation.form.hotelRoom")}
                   </label>
                   <input
                     type="text"
-                    placeholder="Enter Your Hotel & Room Number"
+                    placeholder={t("reservation.form.placeholder.hotelRoom")}
                     className="w-full border border-gray-300 rounded-md px-4 py-3 focus:outline-none focus:ring-2 focus:ring-blue-500 text-sm md:text-base"
                   />
                 </div>
@@ -261,7 +267,7 @@ export default function ActivityReservationPage() {
                 {/* Activity Date */}
                 <div>
                   <label className="block font-montserrat font-semibold mb-2">
-                    Activity Date
+                    {t("reservation.form.activityDate")}
                   </label>
                   <div className="relative">
                     <input
@@ -274,11 +280,11 @@ export default function ActivityReservationPage() {
                 {/* Message */}
                 <div>
                   <label className="block font-montserrat font-semibold mb-2">
-                    Message
+                    {t("reservation.form.message")}
                   </label>
                   <textarea
                     rows={4}
-                    placeholder="Enter Your Message"
+                    placeholder={t("reservation.form.placeholder.message")}
                     className="w-full border border-gray-300 rounded-md px-4 py-3 focus:outline-none focus:ring-2 focus:ring-blue-500 text-sm md:text-base resize-none"
                   />
                 </div>
@@ -289,7 +295,7 @@ export default function ActivityReservationPage() {
                     type="submit"
                     className="w-full bg-[#0446A1] hover:bg-[#033a8a] text-white font-semibold py-4 px-6 rounded-md transition duration-200 text-base md:text-lg shadow-lg"
                   >
-                    Send Request
+                    {t("reservation.form.submit")}
                   </button>
                 </div>
               </form>

@@ -1,13 +1,18 @@
+"use client";
+
 import CustomHero from "@/components/CustomHero";
 import Footer from "@/components/homepage/Footer";
+import { useI18n } from "@/lib/i18n";
 
 export default function PolicyPage() {
+  const { t } = useI18n();
+
   return (
     <div className="bg-white min-h-screen">
       <CustomHero
         backgroundImagePath="/policy.png"
-        title="Our Privacy Commitment"
-        subtitle="Learn How Cheap Transfers Cabo Collects, Uses, And Safeguards Your Personal Information."
+        title={t("policy.hero.title")}
+        subtitle={t("policy.hero.subtitle")}
         hideTopBar={true}
         titleColor="#fcfcfc"
         subtitleColor="#fafaf9"
@@ -17,14 +22,14 @@ export default function PolicyPage() {
       <section className="container mx-auto px-4 md:px-8 py-12 md:py-20">
         <div className="max-w-4xl mx-auto">
           {/* Privacy Policy Title */}
-          <h2 className="font-montserrat font-bold text-3xl md:text-4xl lg:text-5xl font-bold text-black text-center mb-8 md:mb-12">
-            Privacy Policy
+          <h2 className="font-montserrat font-bold text-3xl md:text-4xl lg:text-5xl text-black text-center mb-8 md:mb-12">
+            {t("policy.title")}
           </h2>
           
           {/* Introductory Paragraph */}
           <div className="text-center mb-1 md:mb-2">
             <p className="font-montserrat font-medium text-base md:text-lg leading-relaxed max-w-3xl mx-auto text-left">
-              At Cheap Transfers Cabo, we understand the importance of protecting the privacy of our customers. This Privacy Policy outlines the types of information we collect, how it is collected, and how we use and share it.
+              {t("policy.intro")}
             </p>
           </div>
           
@@ -33,11 +38,11 @@ export default function PolicyPage() {
             {/* Section 1: What information do we collect? */}
             <div>
               <h3 className="font-montserrat font-medium text-base md:text-lg mb-1 text-center">
-                What information do we collect?
+                {t("policy.section1.title")}
               </h3>
               <div className="text-center">
-                <p className="font-montserrat font-medium  text-base md:text-lg leading-relaxed max-w-3xl mx-auto text-left">
-                  We may collect personal information such as your name, email address, phone number, and flight details. We may also collect non-personal information such as your IP address and browser type.
+                <p className="font-montserrat font-medium text-base md:text-lg leading-relaxed max-w-3xl mx-auto text-left">
+                  {t("policy.section1.text")}
                 </p>
               </div>
             </div>
@@ -45,23 +50,23 @@ export default function PolicyPage() {
             {/* Section 2: How do we collect information? */}
             <div>
               <h3 className="font-montserrat font-medium text-base md:text-lg mb-1 text-center">
-                How do we collect information?
+                {t("policy.section2.title")}
               </h3>
               <div className="text-center">
-                <p className="font-montserrat font-medium  text-base md:text-lg leading-relaxed max-w-3xl mx-auto text-left">
-                  We may collect information through our website, mobile app, phone calls, or emails.
+                <p className="font-montserrat font-medium text-base md:text-lg leading-relaxed max-w-3xl mx-auto text-left">
+                  {t("policy.section2.text")}
                 </p>
               </div>
             </div>
             
             {/* Section 3: Why do we collect this information? */}
             <div>
-              <h3 className=" font-montserrat font-medium text-base md:text-lg mb-1 text-center">
-                Why do we collect this information?
+              <h3 className="font-montserrat font-medium text-base md:text-lg mb-1 text-center">
+                {t("policy.section3.title")}
               </h3>
               <div className="text-center">
-                <p className=" font-montserrat font-medium  text-base md:text-lg leading-relaxed max-w-3xl mx-auto text-left">
-                  We collect this information to provide you with the best possible airport transfer experience, including arranging your transportation or activities and communicating with you in relation of your reservation or activities.
+                <p className="font-montserrat font-medium text-base md:text-lg leading-relaxed max-w-3xl mx-auto text-left">
+                  {t("policy.section3.text")}
                 </p>
               </div>
             </div>

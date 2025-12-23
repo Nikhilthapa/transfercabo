@@ -1,111 +1,45 @@
+"use client";
+
 import Image from "next/image";
 import Link from "next/link";
 import Navigation from "@/components/homepage/Navigation";
 import Footer from "@/components/homepage/Footer";
-
-export const activities = [
-  {
-    slug: "la-paz",
-    name: "La Paz",
-    description: "Visit the beautiful capital city of Baja California Sur./ Explore the malecón, local markets, and pristine beaches. Experience authentic Mexican culture and cuisine.",
-    price: "$125.00 USD",
-    duration: "10 Hours",
-    minPeople: "Minimum 4 People",
-    image: "/thingstodoincabo/carts/laPaz.png"
-  },
-  {
-    slug: "atvs",
-    name: "ATV's",
-    description: "Tackle on Trails of Migriño´s Desert, Feel the Rush,/ Witness the Baja´s Nature (Cactus and Wildlife), and the Most Beautiful Views of the Pacific Ocean.",
-    price: "$130.00 USD",
-    duration: "2 Hours",
-    minPeople: "Minimum 1 People",
-    image: "/thingstodoincabo/carts/Atv.png"
-  },
-  {
-    slug: "art-walk",
-    name: "Art Walk",
-    description: "Walk around the historic district of San Jose del cabo while enjoying a wonderful atmosphere, full of art main garden and outstanding Art Walk.",
-    price: "$85.00 USD",
-    duration: "10 Hours",
-    minPeople: "Minimum 4 People",
-    image: "/thingstodoincabo/carts/artwork.jpg"
-  },
-  {
-    slug: "horseback-riding",
-    name: "Horse Back Riding",
-    description: "Enjoy a very relaxing Tour on a beach, Guided, Gentle Horses. Also We offer a 2 Hour Mexican Outback Horseback Riding Vacations; This is a complete adventure.",
-    price: "$95.00 USD",
-    duration: "2 Hours",
-    minPeople: "Minimum 1 People",
-    image: "/thingstodoincabo/carts/horse-riding.jpg"
-  },
-  {
-    slug: "razors",
-    name: "Razors",
-    description: "Tackle on Trails of Migriño's Desert, Feel the Rush, Witness the Baja's Nature and the Most Beautiful Views (Cactus and Wildlife), and the Pacific Ocean.",
-    price: "$295.00 USD",
-    duration: "2 Hours",
-    minPeople: "Minimum 1 People",
-    image: "/thingstodoincabo/carts/razor.jpg"
-  },
-  {
-    slug: "todos-santos",
-    name: "Todos Santos",
-    description: "Todos Santos, a charming Magical Town in Baja California Sur, blends artistic culture with natural beauty and rich history along the Pacific Coast.",
-    price: "$125.00 USD",
-    duration: "7 Hours",
-    minPeople: "Minimum 4 People",
-    image: "/thingstodoincabo/carts/todosSantos.png"
-  },
-  {
-    slug: "cerritos",
-    name: "Cerritos",
-    description: "Cerritos Beach, a world-class surf spot, is known for its consistent waves and laid-back atmosphere, perfect for all skill levels along the stunning coastline.",
-    price: "$125.00 USD",
-    duration: "7 Hours",
-    minPeople: "Minimum 4 People",
-    image: "/thingstodoincabo/carts/cerritos.png"
-  },
-  {
-    slug: "los-cabos",
-    name: "Los Cabos",
-    description: "Discover Vibrant Culture And Charming Los Cabos at the Famous San Jose del Cabo, This wonderful tour will provide the opportunity to explore Cabo San Lucas.",
-    price: "$85.00 USD",
-    duration: "10 Hours",
-    minPeople: "Minimum 4 People",
-    image: "/thingstodoincabo/carts/loscabo.jpg"
-  },
-  {
-    slug: "hidden-towns",
-    name: "Hidden Towns",
-    description: "This tour is a complete adventure, offering history, culture, ecology, charm, mountain, and many answer, it's one the best ways to spend a day in Cabo.",
-    price: "$95.00 USD",
-    duration: "7 Hours",
-    minPeople: "Minimum 4 People",
-    image: "/thingstodoincabo/carts/hiddentown.jpg"
-  },
-  {
-    slug: "40-ft",
-    name: "40 ft sport fishing boat",
-    description: "This tour is a complete adventure, offering history, culture, ecology, charm, mountain, and many answer, it's one the best ways to spend a day in Cabo.",
-    price: "$95.00 USD",
-    duration: "7 Hours",
-    minPeople: "Minimum 4 People",
-    image: "/thingstodoincabo/carts/40ft.png"
-  },
-  {
-    slug: "My-dream-33-footer",
-    name: "My dream 33 footer boat",
-    description: "This tour is a complete adventure, offering history, culture, ecology, charm, mountain, and many answer, it's one the best ways to spend a day in Cabo.",
-    price: "$95.00 USD",
-    duration: "7 Hours",
-    minPeople: "Minimum 4 People",
-    image: "/thingstodoincabo/carts/33 footer.png"
-  }
-];
+import { useI18n } from "@/lib/i18n";
+import { activities } from "@/lib/activities";
 
 export default function ActivityPage() {
+  const { t } = useI18n();
+
+  // Helper function to get translation key from slug
+  const getActivityKey = (slug: string) => {
+    const slugMap: { [key: string]: string } = {
+      "la-paz": "laPaz",
+      "atvs": "atvs",
+      "art-walk": "artWalk",
+      "horseback-riding": "horsebackRiding",
+      "razors": "razors",
+      "todos-santos": "todosSantos",
+      "cerritos": "cerritos",
+      "los-cabos": "losCabos",
+      "hidden-towns": "hiddenTowns",
+      "40-ft": "40ft",
+      "My-dream-33-footer": "myDream33Footer",
+    };
+    return slugMap[slug] || slug;
+  };
+
+  // Get localized activities
+  const localizedActivities = activities.map((activity) => {
+    const key = getActivityKey(activity.slug);
+    return {
+      ...activity,
+      name: t(`activity.data.${key}.name`),
+      description: t(`activity.data.${key}.description`),
+      duration: t(`activity.data.${key}.duration`),
+      minPeople: t(`activity.data.${key}.minPeople`),
+    };
+  });
+
   return (
     <div className="min-h-screen" style={{ backgroundColor: '#ffffff' }}>
       <Navigation />
@@ -117,12 +51,12 @@ export default function ActivityPage() {
             {/* Left Content */}
             <div className="space-y-4 md:space-y-6">
               <h1 className="text-2xl md:text-4xl lg:text-5xl font-bold leading-tight">
-                <span style={{ color: '#0446a1' }}>Cabo's Best</span>
+                <span style={{ color: '#0446a1' }}>{t("activity.list.hero.line1")}</span>
                 <br />
-                <span className="text-gray-900">Adventure Activities</span>
+                <span className="text-gray-900">{t("activity.list.hero.line2")}</span>
               </h1>
               <p className="text-base md:text-xl text-gray-700">
-                Thrilling ATV Rides, Razor Adventures, Horseback Tours, And Scenic Experiences Crafted For Every Traveler.
+                {t("activity.list.hero.text")}
               </p>
               <Link 
                 href="#activities"
@@ -133,7 +67,7 @@ export default function ActivityPage() {
                   borderRadius: '10px'
                 }}
               >
-                Explore All Activities <span className="ml-1">↓</span>
+                {t("activity.list.hero.cta")} <span className="ml-1">↓</span>
               </Link>
             </div>
 
@@ -219,10 +153,10 @@ export default function ActivityPage() {
       <section className="mb-[50px] sm:mb-[60px] md:mb-[80px] lg:mb-[100px]" style={{ backgroundColor: '#ffffff' }}>
         <div className="container mx-auto px-4 md:px-8 max-w-6xl text-center">
           <h2 className="text-2xl md:text-3xl lg:text-4xl font-montserrat font-semibold text-gray-900 mb-[15px]">
-            YOUR ADVENTURE IN CABO STARTS HERE
+            {t("activity.list.about.title")}
           </h2>
           <p className="text-base md:text-lg font-montserrat font-mixed text-gray-700 max-w-5xl mx-auto leading-relaxed">
-            Discover the most unforgettable adventures of Los Cabos with <span className="font-montserrat font-semibold">Cheap Transfers Cabo</span>, where every activity is crafted to help you explore Baja's breathtaking landscapes—desert dunes, crystal-blue beaches, dramatic cliffs, and vibrant local culture. From thrilling ATV and Razor rides to peaceful horseback journeys and scenic day tours, we bring you closer to the heart of Cabo with comfort, safety, and a touch of authentic local hospitality.
+            {t("activity.list.about.text")}
           </p>
         </div>
       </section>
@@ -231,15 +165,15 @@ export default function ActivityPage() {
       <section id="activities" style={{ backgroundColor: '#ffffff' }}>
         <div className="container mx-auto px-4 md:px-8 max-w-7xl">
           <h2 className="text-2xl md:text-3xl lg:text-4xl font-montserrat font-bold text-center text-gray-900 mb-[10px]">
-            Explore Our Cabo Adventures
+            {t("activity.list.grid.title")}
           </h2>
           <p className="text-center font-montserrat font-medium text-gray-600 mb-[70px] text-sm md:text-base">
-            Exciting tours designed to make your Cabo trip unforgettable.
+            {t("activity.list.grid.subtitle")}
           </p>
 
           {/* Activity Cards Grid */}
           <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-6 md:gap-8">
-            {activities.map((activity) => (
+            {localizedActivities.map((activity) => (
               <div 
                 key={activity.slug} 
                 className="bg-white rounded-2xl shadow-lg overflow-hidden hover:shadow-xl transition-shadow duration-300 flex flex-col h-full"
@@ -297,14 +231,14 @@ export default function ActivityPage() {
                       href={`/activity/${activity.slug}`}
                       className="flex-1 text-center border-2 border-blue-600 text-blue-600 px-3 md:px-4 py-2 md:py-2.5 rounded-full hover:bg-blue-600 hover:text-white transition font-medium text-xs md:text-sm flex items-center justify-center"
                     >
-                      Info
+                      {t("activity.list.card.info")}
                     </Link>
                     <Link 
                       href="/activity/reservation#reservation-form"
                       className="flex-1 text-center text-white px-3 md:px-4 py-2 md:py-2.5 rounded-full transition font-medium hover:opacity-90 text-xs md:text-sm flex items-center justify-center"
                       style={{ backgroundColor: '#0446A1' }}
                     >
-                      Book Activities
+                      {t("activity.list.card.book")}
                     </Link>
                   </div>
                   </div>

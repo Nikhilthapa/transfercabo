@@ -1,13 +1,17 @@
+"use client";
+
 import Image from "next/image";
+import { useI18n } from "@/lib/i18n";
 
 export default function WhyTrustUs() {
+  const { t } = useI18n();
   return (
     <section className="bg-stone-50" style={{ paddingTop: '70px', paddingBottom: '70px' }}>
       <div className="container mx-auto px-4 md:px-8">
         <div className="text-center mb-8 md:mb-12 lg:mb-16">
-          <h2 className="text-2xl md:text-3xl lg:text-4xl xl:text-5xl font-montserrat font-bold text-black px-4" style={{ marginBottom: '10px' }}>Why Travelers Trust Cheap Transfers Cabo</h2>
+          <h2 className="text-2xl md:text-3xl lg:text-4xl xl:text-5xl font-montserrat font-bold text-black px-4" style={{ marginBottom: '10px' }}>{t("whyTrustUs.title")}</h2>
           <p className="text-gray-700 font-montserrat font-medium text-sm md:text-base lg:text-lg px-3 max-w-3xl mx-auto" style={{ marginBottom: '50px' }}>
-            Experience safe, private, and reliable travel backed by licensed drivers and premium comfort.
+            {t("whyTrustUs.subtitle")}
           </p>
         </div>
 
@@ -17,7 +21,7 @@ export default function WhyTrustUs() {
               <div className="relative w-8 h-8 md:w-10 md:h-10">
                 <Image
                   src="/home/icons/private.png"
-                  alt="Private Transportation"
+                  alt={t("whyTrustUs.feature1.alt")}
                   fill
                   className="object-contain"
                   quality={85}
@@ -25,9 +29,9 @@ export default function WhyTrustUs() {
                 />
               </div>
             </div>
-            <h3 className="text-base md:text-lg lg:text-xl font-montserrat font-semibold mb-2 md:mb-3" style={{ marginBottom: '10px' }}>Private Transportation Only</h3>
+            <h3 className="text-base md:text-lg lg:text-xl font-montserrat font-semibold mb-2 md:mb-3" style={{ marginBottom: '10px' }}>{t("whyTrustUs.feature1.title")}</h3>
             <p className="font-montserrat font-medium text-gray-700 text-xs md:text-sm lg:text-base leading-relaxed">
-              We never offer shared or group transfers. Your ride is 100% private, direct, and tailored to your needs.
+              {t("whyTrustUs.feature1.description")}
             </p>
           </div>
 
@@ -36,7 +40,7 @@ export default function WhyTrustUs() {
               <div className="relative w-8 h-8 md:w-10 md:h-10">
                 <Image
                   src="/home/icons/professional.png"
-                  alt="Professional Certified Drivers"
+                  alt={t("whyTrustUs.feature2.alt")}
                   fill
                   className="object-contain"
                   quality={85}
@@ -44,9 +48,9 @@ export default function WhyTrustUs() {
                 />
               </div>
             </div>
-            <h3 className="text-base md:text-lg lg:text-xl font-montserrat font-semibold mb-2 md:mb-3" style={{ marginBottom: '10px' }}>Professional Certified Drivers</h3>
+            <h3 className="text-base md:text-lg lg:text-xl font-montserrat font-semibold mb-2 md:mb-3" style={{ marginBottom: '10px' }}>{t("whyTrustUs.feature2.title")}</h3>
             <p className="font-montserrat font-medium text-gray-700 text-xs md:text-sm lg:text-base leading-relaxed">
-              Our drivers hold Federal Licenses and are certified by the Mexican Secretary of Tourism (NOM-08).
+              {t("whyTrustUs.feature2.description")}
             </p>
           </div>
 
@@ -55,7 +59,7 @@ export default function WhyTrustUs() {
               <div className="relative w-8 h-8 md:w-10 md:h-10">
                 <Image
                   src="/home/icons/vehicle.png"
-                  alt="Well-Maintained Vehicles"
+                  alt={t("whyTrustUs.feature3.alt")}
                   fill
                   className="object-contain"
                   quality={85}
@@ -63,9 +67,9 @@ export default function WhyTrustUs() {
                 />
               </div>
             </div>
-            <h3 className="text-base md:text-lg lg:text-xl font-montserrat font-semibold mb-2 md:mb-3" style={{ marginBottom: '10px' }}>Well-Maintained Vehicles</h3>
+            <h3 className="text-base md:text-lg lg:text-xl font-montserrat font-semibold mb-2 md:mb-3" style={{ marginBottom: '10px' }}>{t("whyTrustUs.feature3.title")}</h3>
             <p className="font-montserrat font-medium text-gray-700 text-xs md:text-sm lg:text-base leading-relaxed">
-              Travel comfortably in clean, modern, air-conditioned vehicles that are regularly inspected for safety and performance.
+              {t("whyTrustUs.feature3.description")}
             </p>
           </div>
 
@@ -74,7 +78,7 @@ export default function WhyTrustUs() {
               <div className="relative w-8 h-8 md:w-10 md:h-10">
                 <Image
                   src="/home/icons/familyowned.png"
-                  alt="Family-Owned & Trusted"
+                  alt={t("whyTrustUs.feature4.alt")}
                   fill
                   className="object-contain"
                   quality={85}
@@ -82,9 +86,9 @@ export default function WhyTrustUs() {
                 />
               </div>
             </div>
-            <h3 className="text-base md:text-lg lg:text-xl font-montserrat font-semibold mb-2 md:mb-3" style={{ marginBottom: '10px' }}>Family-Owned & Trusted Since 2019</h3>
+            <h3 className="text-base md:text-lg lg:text-xl font-montserrat font-semibold mb-2 md:mb-3" style={{ marginBottom: '10px' }}>{t("whyTrustUs.feature4.title")}</h3>
             <p className="font-montserrat font-medium text-gray-700 text-xs md:text-sm lg:text-base leading-relaxed">
-              As a local family business, we treat every guest like part of our own family. Expect warm hospitality and exceptional service from start to finish.
+              {t("whyTrustUs.feature4.description")}
             </p>
           </div>
         </div>

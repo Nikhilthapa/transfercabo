@@ -1,14 +1,20 @@
+"use client";
+
 import React from "react";
 import Image from "next/image";
+import { useI18n } from "@/lib/i18n";
 
 export default function Contact() {
+  const { t } = useI18n();
   return (
     <section id="get-in-touch" className="container mx-auto px-4 md:px-8">
       {/* Header Section */}
       <div className="text-center">
-        <h2 className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-Montserrat font-bold text-black mb-2 sm:mb-3">Get In Touch</h2>
+        <h2 className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-Montserrat font-bold text-black mb-2 sm:mb-3">
+          {t("contact.form.title")}
+        </h2>
         <p className="font-Montserrat font-medium text-[#6f6f6f] text-xs sm:text-sm md:text-base px-4 mb-6 sm:mb-8">
-          Contact us anytime for bookings, questions, or custom travel plans across Los Cabos.
+          {t("contact.form.subtitle")}
         </p>
       </div>
 
@@ -16,26 +22,28 @@ export default function Contact() {
       <div className="grid md:grid-cols-3 md:items-stretch gap-4 sm:gap-6 md:gap-10">
           {/* Left Column - Send Message Form */}
           <div className="bg-white rounded-xl shadow-[0_10px_15px_rgba(0,0,0,0.1),0_4px_6px_rgba(0,0,0,0.1)] p-4 sm:p-6 md:p-8 flex flex-col md:col-span-2 md:h-full">
-            <h3 className="text-lg sm:text-xl md:text-2xl font-semibold mb-4 sm:mb-5 md:mb-6">Send Us a Message</h3>
+            <h3 className="text-lg sm:text-xl md:text-2xl font-semibold mb-4 sm:mb-5 md:mb-6">
+              {t("contact.form.sendMessageTitle")}
+            </h3>
             <form className="flex-1 flex flex-col">
               <div className="space-y-4">
                 <input
                   type="text"
-                  placeholder="Full Name"
+                  placeholder={t("contact.form.fullNamePlaceholder")}
                   className="w-full border border-gray-300 rounded-full px-6 py-3 focus:outline-none focus:ring-2 focus:ring-blue-400 text-sm md:text-base"
                 />
                 <input
                   type="email"
-                  placeholder="Email"
+                  placeholder={t("contact.form.emailPlaceholder")}
                   className="w-full border border-gray-300 rounded-full px-6 py-3 focus:outline-none focus:ring-2 focus:ring-blue-400 text-sm md:text-base"
                 />
                 <input
                   type="tel"
-                  placeholder="Contact Number"
+                  placeholder={t("contact.form.phonePlaceholder")}
                   className="w-full border border-gray-300 rounded-full px-6 py-3 focus:outline-none focus:ring-2 focus:ring-blue-400 text-sm md:text-base"
                 />
                 <textarea
-                  placeholder="Tell us about your trip..."
+                  placeholder={t("contact.form.messagePlaceholder")}
                   rows={4}
                   className="w-full border border-gray-300 rounded-3xl px-6 py-3 focus:outline-none focus:ring-2 focus:ring-blue-400 text-sm md:text-base resize-none"
                 />
@@ -44,7 +52,7 @@ export default function Contact() {
                 type="button"
                 className="w-full bg-[#0446a1] hover:bg-[#033a8a] text-white px-8 py-3 rounded-full font-semibold transition text-sm md:text-base mt-auto"
               >
-                Send Message
+                {t("contact.form.submitButton")}
               </button>
             </form>
           </div>
@@ -53,7 +61,9 @@ export default function Contact() {
           <div className="flex flex-col md:h-full gap-4 sm:gap-5 md:gap-6">
             {/* Contact Information */}
             <div className="bg-white rounded-xl shadow-[0_10px_15px_rgba(0,0,0,0.1),0_4px_6px_rgba(0,0,0,0.1)] p-4 sm:p-6 md:p-8">
-              <h3 className="text-lg sm:text-xl md:text-2xl font-semibold mb-4 sm:mb-5 md:mb-6">Contact Information</h3>
+              <h3 className="text-lg sm:text-xl md:text-2xl font-semibold mb-4 sm:mb-5 md:mb-6">
+                {t("contact.sidebar.title")}
+              </h3>
               <div className="space-y-3 sm:space-y-4 md:space-y-5">
                 {/* Phone */}
                 <div className="flex items-start gap-2 sm:gap-3">
@@ -70,7 +80,9 @@ export default function Contact() {
                     </div>
                   </div>
                   <div className="flex-1 min-w-0">
-                    <p className="font-semibold text-black mb-1 text-xs sm:text-sm md:text-base">Phone</p>
+                    <p className="font-semibold text-black mb-1 text-xs sm:text-sm md:text-base">
+                      {t("contact.sidebar.phone")}
+                    </p>
                     <p className="text-gray-700 text-xs sm:text-sm break-words">+52 (624) 182 0525</p>
                   </div>
                 </div>
@@ -90,7 +102,9 @@ export default function Contact() {
                     </div>
                   </div>
                   <div className="flex-1 min-w-0">
-                    <p className="font-semibold text-black mb-1 text-xs sm:text-sm md:text-base">Email</p>
+                    <p className="font-semibold text-black mb-1 text-xs sm:text-sm md:text-base">
+                      {t("contact.sidebar.email")}
+                    </p>
                     <p className="text-gray-700 text-xs sm:text-sm break-words break-all">bookingcheaptransferscabo <br />@gmail.com</p>
                   </div>
                 </div>
@@ -110,9 +124,15 @@ export default function Contact() {
                     </div>
                   </div>
                   <div className="flex-1 min-w-0">
-                    <p className="font-semibold text-black mb-1 text-xs sm:text-sm md:text-base">Location</p>
-                    <p className="text-gray-700 text-xs sm:text-sm">Cabo San Lucas</p>
-                    <p className="text-gray-700 text-xs sm:text-sm">Baja California Sur, Mexico</p>
+                    <p className="font-semibold text-black mb-1 text-xs sm:text-sm md:text-base">
+                      {t("contact.sidebar.location")}
+                    </p>
+                    <p className="text-gray-700 text-xs sm:text-sm">
+                      {t("contact.sidebar.city")}
+                    </p>
+                    <p className="text-gray-700 text-xs sm:text-sm">
+                      {t("contact.sidebar.region")}
+                    </p>
                   </div>
                 </div>
 
@@ -131,8 +151,12 @@ export default function Contact() {
                     </div>
                   </div>
                   <div className="flex-1 min-w-0">
-                    <p className="font-semibold text-black mb-1 text-xs sm:text-sm md:text-base">Hours</p>
-                    <p className="text-gray-700 text-xs sm:text-sm">24/7 Service Available</p>
+                    <p className="font-semibold text-black mb-1 text-xs sm:text-sm md:text-base">
+                      {t("contact.sidebar.hours")}
+                    </p>
+                    <p className="text-gray-700 text-xs sm:text-sm">
+                      {t("contact.sidebar.hoursValue")}
+                    </p>
                   </div>
                 </div>
               </div>
