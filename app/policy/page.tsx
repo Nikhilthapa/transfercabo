@@ -10,7 +10,7 @@ export default function PolicyPage() {
   return (
     <div className="bg-white min-h-screen">
       <CustomHero
-        backgroundImagePath="/policy.png"
+        backgroundImagePath="/privacy-policy.jpg"
         title={t("policy.hero.title")}
         subtitle={t("policy.hero.subtitle")}
         hideTopBar={true}
