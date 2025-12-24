@@ -72,9 +72,9 @@ export default function Activities() {
                       sizes="(max-width: 640px) 90vw, (max-width: 1024px) 45vw, 30vw"
                     />
                   </div>
-                  <div className="p-4 md:p-6 flex-1 flex flex-col">
+                  <div className="p-4 md:p-6 flex-1 flex flex-col min-h-0">
                     <h3 className="text-xl md:text-2xl font-montserrat font-semibold text-black" style={{ marginBottom: '10px' }}>{activity.name}</h3>
-                    <p className="font-montserrat font-medium text-gray-600 text-xs md:text-sm mb-3 md:mb-4">
+                    <p className="font-montserrat font-medium text-gray-600 text-xs md:text-sm mb-3 md:mb-4 line-clamp-3 overflow-hidden">
                       {activity.description.split('/').map((part, index, array) => (
                         <span key={index}>
                           {part.trim()}
@@ -83,36 +83,36 @@ export default function Activities() {
                       ))}
                     </p>
                     <div className="mt-auto flex flex-col">
-                      <div className="flex items-center gap-3 text-xs md:text-sm text-gray-600 mb-4 md:mb-6 flex-wrap md:flex-nowrap">
-                        <span className="font-montserrat font-semibold whitespace-nowrap">{activity.price}</span>
-                        <span className="text-gray-300">•</span>
-                        <span className="flex items-center gap-1 whitespace-nowrap font-montserrat font-semibold">
-                          <svg className="w-3 h-3 md:w-4 md:h-4" fill="currentColor" viewBox="0 0 20 20">
+                      <div className="flex items-center gap-1 md:gap-1.5 text-xs md:text-sm text-gray-600 mb-4 md:mb-6 min-w-0">
+                        <span className="font-montserrat font-semibold whitespace-nowrap flex-shrink-0">{activity.price}</span>
+                        <span className="text-gray-300 flex-shrink-0">•</span>
+                        <span className="flex items-center gap-0.5 font-montserrat font-semibold flex-shrink-0">
+                          <svg className="w-3 h-3 md:w-4 md:h-4 flex-shrink-0" fill="currentColor" viewBox="0 0 20 20">
                             <path fillRule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm1-12a1 1 0 10-2 0v4a1 1 0 00.293.707l2.828 2.829a1 1 0 101.415-1.415L11 9.586V6z" clipRule="evenodd" />
                           </svg>
-                          {activity.duration}
+                          <span className="whitespace-nowrap">{activity.duration}</span>
                         </span>
-                        <span className="text-gray-300">•</span>
-                        <span className="flex items-center gap-1 whitespace-nowrap font-montserrat font-semibold">
-                          <svg className="w-3 h-3 md:w-4 md:h-4" fill="currentColor" viewBox="0 0 20 20">
+                        <span className="text-gray-300 flex-shrink-0">•</span>
+                        <span className="flex items-center gap-0.5 font-montserrat font-semibold min-w-0">
+                          <svg className="w-3 h-3 md:w-4 md:h-4 flex-shrink-0" fill="currentColor" viewBox="0 0 20 20">
                             <path d="M9 6a3 3 0 11-6 0 3 3 0 016 0zM17 6a3 3 0 11-6 0 3 3 0 016 0zM12.93 17c.046-.327.07-.66.07-1a6.97 6.97 0 00-1.5-4.33A5 5 0 0119 16v1h-6.07zM6 11a5 5 0 015 5v1H1v-1a5 5 0 015-5z" />
                           </svg>
-                          {activity.minPeople}
+                          <span className="whitespace-nowrap">{activity.minPeople}</span>
                         </span>
                       </div>
                       <div className="flex gap-2 md:gap-3">
                       <Link 
                         href={`/activity/${activity.slug}`}
-                        className="border-2 border-blue-600 text-blue-600 px-4 md:px-6 py-2 md:py-2.5 rounded-full flex-1 hover:bg-blue-600 hover:text-white transition font-medium text-center text-xs md:text-sm flex items-center justify-center"
+                        className="border-2 border-blue-600 text-blue-600 px-3 md:px-4 py-2 md:py-2.5 rounded-full flex-1 hover:bg-blue-600 hover:text-white transition font-medium text-center text-[10px] md:text-xs flex items-center justify-center min-w-0"
                       >
-                        {t("activity.list.card.info")}
+                        <span className="truncate">{t("activity.list.card.info")}</span>
                       </Link>
                       <Link 
                         href="/activity/reservation#reservation-form"
-                        className="text-white px-4 md:px-6 py-2 md:py-2.5 rounded-full flex-1 transition font-medium hover:opacity-90 text-center text-xs md:text-sm flex items-center justify-center border-2 border-transparent"
+                        className="text-white px-3 md:px-4 py-2 md:py-2.5 rounded-full flex-1 transition font-medium hover:opacity-90 text-center text-[10px] md:text-xs flex items-center justify-center border-2 border-transparent min-w-0"
                         style={{ backgroundColor: '#0446A1' }}
                       >
-                        {t("activity.list.card.book")}
+                        <span className="truncate">{t("activity.list.card.book")}</span>
                       </Link>
                       </div>
                     </div>
@@ -134,9 +134,9 @@ export default function Activities() {
                       sizes="(max-width: 640px) 90vw, (max-width: 1024px) 45vw, 30vw"
                     />
                   </div>
-                  <div className="p-4 md:p-6 flex-1 flex flex-col">
+                  <div className="p-4 md:p-6 flex-1 flex flex-col min-h-0">
                     <h3 className="text-xl md:text-2xl font-montserrat font-semibold mb-2 md:mb-3 text-black">{activity.name}</h3>
-                    <p className="text-gray-600 text-xs md:text-sm mb-3 md:mb-4">
+                    <p className="text-gray-600 text-xs md:text-sm mb-3 md:mb-4 line-clamp-3 overflow-hidden">
                       {activity.description.split('/').map((part, index, array) => (
                         <span key={index}>
                           {part.trim()}
@@ -145,36 +145,36 @@ export default function Activities() {
                       ))}
                     </p>
                     <div className="mt-auto flex flex-col">
-                      <div className="flex items-center gap-3 text-xs md:text-sm text-gray-600 mb-4 md:mb-6 flex-wrap md:flex-nowrap">
-                        <span className="font-montserrat font-semibold whitespace-nowrap">{activity.price}</span>
-                        <span className="text-gray-300">•</span>
-                        <span className="flex items-center gap-1 whitespace-nowrap font-montserrat font-semibold">
-                          <svg className="w-3 h-3 md:w-4 md:h-4" fill="currentColor" viewBox="0 0 20 20">
+                      <div className="flex items-center gap-1 md:gap-1.5 text-xs md:text-sm text-gray-600 mb-4 md:mb-6 min-w-0">
+                        <span className="font-montserrat font-semibold whitespace-nowrap flex-shrink-0">{activity.price}</span>
+                        <span className="text-gray-300 flex-shrink-0">•</span>
+                        <span className="flex items-center gap-0.5 font-montserrat font-semibold flex-shrink-0">
+                          <svg className="w-3 h-3 md:w-4 md:h-4 flex-shrink-0" fill="currentColor" viewBox="0 0 20 20">
                             <path fillRule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm1-12a1 1 0 10-2 0v4a1 1 0 00.293.707l2.828 2.829a1 1 0 101.415-1.415L11 9.586V6z" clipRule="evenodd" />
                           </svg>
-                          {activity.duration}
+                          <span className="whitespace-nowrap">{activity.duration}</span>
                         </span>
-                        <span className="text-gray-300">•</span>
-                        <span className="flex items-center gap-1 whitespace-nowrap font-montserrat font-semibold">
-                          <svg className="w-3 h-3 md:w-4 md:h-4" fill="currentColor" viewBox="0 0 20 20">
+                        <span className="text-gray-300 flex-shrink-0">•</span>
+                        <span className="flex items-center gap-0.5 font-montserrat font-semibold min-w-0">
+                          <svg className="w-3 h-3 md:w-4 md:h-4 flex-shrink-0" fill="currentColor" viewBox="0 0 20 20">
                             <path d="M9 6a3 3 0 11-6 0 3 3 0 016 0zM17 6a3 3 0 11-6 0 3 3 0 016 0zM12.93 17c.046-.327.07-.66.07-1a6.97 6.97 0 00-1.5-4.33A5 5 0 0119 16v1h-6.07zM6 11a5 5 0 015 5v1H1v-1a5 5 0 015-5z" />
                           </svg>
-                          {activity.minPeople}
+                          <span className="whitespace-nowrap">{activity.minPeople}</span>
                         </span>
                       </div>
                       <div className="flex gap-2 md:gap-3">
                       <Link 
                         href={`/activity/${activity.slug}`}
-                        className="border-2 border-blue-600 text-blue-600 px-4 md:px-6 py-2 md:py-2.5 rounded-full flex-1 hover:bg-blue-600 hover:text-white transition font-medium text-center text-xs md:text-sm flex items-center justify-center"
+                        className="border-2 border-blue-600 text-blue-600 px-3 md:px-4 py-2 md:py-2.5 rounded-full flex-1 hover:bg-blue-600 hover:text-white transition font-medium text-center text-[10px] md:text-xs flex items-center justify-center min-w-0"
                       >
-                        {t("activity.list.card.info")}
+                        <span className="truncate">{t("activity.list.card.info")}</span>
                       </Link>
                       <Link 
                         href="/activity/reservation#reservation-form"
-                        className="text-white px-4 md:px-6 py-2 md:py-2.5 rounded-full flex-1 transition font-medium hover:opacity-90 text-center text-xs md:text-sm flex items-center justify-center border-2 border-transparent"
+                        className="text-white px-3 md:px-4 py-2 md:py-2.5 rounded-full flex-1 transition font-medium hover:opacity-90 text-center text-[10px] md:text-xs flex items-center justify-center border-2 border-transparent min-w-0"
                         style={{ backgroundColor: '#0446A1' }}
                       >
-                        {t("activity.list.card.book")}
+                        <span className="truncate">{t("activity.list.card.book")}</span>
                       </Link>
                       </div>
                     </div>

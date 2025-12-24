@@ -191,11 +191,11 @@ export default function ActivityPage() {
                 </div>
 
                 {/* Activity Content */}
-                <div className="p-4 md:p-6 flex-1 flex flex-col">
+                <div className="p-4 md:p-6 flex-1 flex flex-col min-h-0">
                   <h3 className="text-xl md:text-2xl font-montserrat font-semibold text-gray-900 mb-2 md:mb-3">
                     {activity.name}
                   </h3>
-                  <p className="text-gray-600 font-montserrat font-medium text-xs md:text-sm mb-3 md:mb-4">
+                  <p className="text-gray-600 font-montserrat font-medium text-xs md:text-sm mb-3 md:mb-4 line-clamp-3 overflow-hidden">
                     {activity.description.split('/').map((part, index, array) => (
                       <span key={index}>
                         {part.trim()}
@@ -207,21 +207,21 @@ export default function ActivityPage() {
                   {/* Details and Buttons Container */}
                   <div className="mt-auto flex flex-col">
                     {/* Activity Details */}
-                    <div className="flex items-center gap-2.5 text-[11px] md:text-sm text-gray-700 mb-4 md:mb-6 flex-wrap md:flex-nowrap">
-                      <span className="font-montserrat font-semibold whitespace-nowrap">{activity.price}</span>
-                      {/* <span className="text-gray-300">•</span> */}
-                      <div className="flex items-center gap-1.5 whitespace-nowrap">
-                        <svg className="w-3 h-3 md:w-4 md:h-4 shrink-0" fill="currentColor" viewBox="0 0 20 20" aria-hidden="true">
+                    <div className="flex items-center gap-1 md:gap-1.5 text-xs md:text-sm text-gray-600 mb-4 md:mb-6 min-w-0">
+                      <span className="font-montserrat font-semibold whitespace-nowrap flex-shrink-0">{activity.price}</span>
+                      <span className="text-gray-300 flex-shrink-0">•</span>
+                      <div className="flex items-center gap-0.5 font-montserrat font-semibold flex-shrink-0">
+                        <svg className="w-3 h-3 md:w-4 md:h-4 flex-shrink-0" fill="currentColor" viewBox="0 0 20 20" aria-hidden="true">
                           <path fillRule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm1-12a1 1 0 10-2 0v4a1 1 0 00.293.707l2.828 2.829a1 1 0 101.415-1.415L11 9.586V6z" clipRule="evenodd" />
                         </svg>
-                        <span className="font-montserrat font-semibold">{activity.duration}</span>
+                        <span className="whitespace-nowrap">{activity.duration}</span>
                       </div>
-                      {/* <span className="text-gray-300">•</span> */}
-                      <div className="flex items-center gap-1.5 whitespace-nowrap">
-                        <svg className="w-3 h-3 md:w-4 md:h-4 shrink-0" fill="currentColor" viewBox="0 0 20 20" aria-hidden="true">
+                      <span className="text-gray-300 flex-shrink-0">•</span>
+                      <div className="flex items-center gap-0.5 font-montserrat font-semibold min-w-0">
+                        <svg className="w-3 h-3 md:w-4 md:h-4 flex-shrink-0" fill="currentColor" viewBox="0 0 20 20" aria-hidden="true">
                           <path d="M9 6a3 3 0 11-6 0 3 3 0 016 0zM17 6a3 3 0 11-6 0 3 3 0 016 0zM12.93 17c.046-.327.07-.66.07-1a6.97 6.97 0 00-1.5-4.33A5 5 0 0119 16v1h-6.07zM6 11a5 5 0 015 5v1H1v-1a5 5 0 015-5z" />
                         </svg>
-                        <span className="font-montserrat font-semibold">{activity.minPeople}</span>
+                        <span className="whitespace-nowrap">{activity.minPeople}</span>
                       </div>
                     </div>
 
@@ -229,16 +229,16 @@ export default function ActivityPage() {
                     <div className="flex gap-2 md:gap-3">
                     <Link 
                       href={`/activity/${activity.slug}`}
-                      className="flex-1 text-center border-2 border-blue-600 text-blue-600 px-3 md:px-4 py-2 md:py-2.5 rounded-full hover:bg-blue-600 hover:text-white transition font-medium text-xs md:text-sm flex items-center justify-center"
+                      className="border-2 border-blue-600 text-blue-600 px-3 md:px-4 py-2 md:py-2.5 rounded-full flex-1 hover:bg-blue-600 hover:text-white transition font-medium text-center text-[10px] md:text-xs flex items-center justify-center min-w-0"
                     >
-                      {t("activity.list.card.info")}
+                      <span className="truncate">{t("activity.list.card.info")}</span>
                     </Link>
                     <Link 
                       href="/activity/reservation#reservation-form"
-                      className="flex-1 text-center text-white px-3 md:px-4 py-2 md:py-2.5 rounded-full transition font-medium hover:opacity-90 text-xs md:text-sm flex items-center justify-center"
+                      className="text-white px-3 md:px-4 py-2 md:py-2.5 rounded-full flex-1 transition font-medium hover:opacity-90 text-center text-[10px] md:text-xs flex items-center justify-center border-2 border-transparent min-w-0"
                       style={{ backgroundColor: '#0446A1' }}
                     >
-                      {t("activity.list.card.book")}
+                      <span className="truncate">{t("activity.list.card.book")}</span>
                     </Link>
                   </div>
                   </div>

@@ -16,8 +16,8 @@ export default function WhyTrustUs() {
         </div>
 
         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-8 md:gap-10 lg:gap-12">
-          <div className="text-center px-2">
-            <div className="w-16 h-16 md:w-20 md:h-20 rounded-full mx-auto flex items-center justify-center" style={{ backgroundColor: '#b0c4df', marginBottom: '25px' }}>
+          <div className="text-center px-2 flex flex-col">
+            <div className="w-16 h-16 md:w-20 md:h-20 rounded-full mx-auto flex items-center justify-center flex-shrink-0" style={{ backgroundColor: '#b0c4df', marginBottom: '25px' }}>
               <div className="relative w-8 h-8 md:w-10 md:h-10">
                 <Image
                   src="/home/icons/private.png"
@@ -29,14 +29,14 @@ export default function WhyTrustUs() {
                 />
               </div>
             </div>
-            <h3 className="text-base md:text-lg lg:text-xl font-montserrat font-semibold mb-2 md:mb-3" style={{ marginBottom: '10px' }}>{t("whyTrustUs.feature1.title")}</h3>
-            <p className="font-montserrat font-medium text-gray-700 text-xs md:text-sm lg:text-base leading-relaxed">
+            <h3 className="text-base md:text-lg lg:text-xl font-montserrat font-semibold mb-2 md:mb-3 min-h-0" style={{ marginBottom: '10px' }}>{t("whyTrustUs.feature1.title")}</h3>
+            <p className="font-montserrat font-medium text-gray-700 text-xs md:text-sm lg:text-base leading-relaxed line-clamp-4 overflow-hidden">
               {t("whyTrustUs.feature1.description")}
             </p>
           </div>
 
-          <div className="text-center px-2">
-            <div className="w-16 h-16 md:w-20 md:h-20 rounded-full mx-auto flex items-center justify-center" style={{ backgroundColor: '#b0c4df', marginBottom: '25px' }}>
+          <div className="text-center px-2 flex flex-col">
+            <div className="w-16 h-16 md:w-20 md:h-20 rounded-full mx-auto flex items-center justify-center flex-shrink-0" style={{ backgroundColor: '#b0c4df', marginBottom: '25px' }}>
               <div className="relative w-8 h-8 md:w-10 md:h-10">
                 <Image
                   src="/home/icons/professional.png"
@@ -48,14 +48,14 @@ export default function WhyTrustUs() {
                 />
               </div>
             </div>
-            <h3 className="text-base md:text-lg lg:text-xl font-montserrat font-semibold mb-2 md:mb-3" style={{ marginBottom: '10px' }}>{t("whyTrustUs.feature2.title")}</h3>
-            <p className="font-montserrat font-medium text-gray-700 text-xs md:text-sm lg:text-base leading-relaxed">
+            <h3 className="text-base md:text-lg lg:text-xl font-montserrat font-semibold mb-2 md:mb-3 min-h-0" style={{ marginBottom: '10px' }}>{t("whyTrustUs.feature2.title")}</h3>
+            <p className="font-montserrat font-medium text-gray-700 text-xs md:text-sm lg:text-base leading-relaxed line-clamp-4 overflow-hidden">
               {t("whyTrustUs.feature2.description")}
             </p>
           </div>
 
-          <div className="text-center px-2">
-            <div className="w-16 h-16 md:w-20 md:h-20 rounded-full mx-auto flex items-center justify-center" style={{ backgroundColor: '#b0c4df', marginBottom: '25px' }}>
+          <div className="text-center px-2 flex flex-col">
+            <div className="w-16 h-16 md:w-20 md:h-20 rounded-full mx-auto flex items-center justify-center flex-shrink-0" style={{ backgroundColor: '#b0c4df', marginBottom: '25px' }}>
               <div className="relative w-8 h-8 md:w-10 md:h-10">
                 <Image
                   src="/home/icons/vehicle.png"
@@ -67,14 +67,14 @@ export default function WhyTrustUs() {
                 />
               </div>
             </div>
-            <h3 className="text-base md:text-lg lg:text-xl font-montserrat font-semibold mb-2 md:mb-3" style={{ marginBottom: '10px' }}>{t("whyTrustUs.feature3.title")}</h3>
-            <p className="font-montserrat font-medium text-gray-700 text-xs md:text-sm lg:text-base leading-relaxed">
+            <h3 className="text-base md:text-lg lg:text-xl font-montserrat font-semibold mb-2 md:mb-3 min-h-0" style={{ marginBottom: '10px' }}>{t("whyTrustUs.feature3.title")}</h3>
+            <p className="font-montserrat font-medium text-gray-700 text-xs md:text-sm lg:text-base leading-relaxed line-clamp-4 overflow-hidden">
               {t("whyTrustUs.feature3.description")}
             </p>
           </div>
 
-          <div className="text-center px-2">
-            <div className="w-16 h-16 md:w-20 md:h-20 rounded-full mx-auto flex items-center justify-center" style={{ backgroundColor: '#b0c4df', marginBottom: '25px' }}>
+          <div className="text-center px-2 flex flex-col">
+            <div className="w-16 h-16 md:w-20 md:h-20 rounded-full mx-auto flex items-center justify-center flex-shrink-0" style={{ backgroundColor: '#b0c4df', marginBottom: '25px' }}>
               <div className="relative w-8 h-8 md:w-10 md:h-10">
                 <Image
                   src="/home/icons/familyowned.png"
@@ -86,8 +86,8 @@ export default function WhyTrustUs() {
                 />
               </div>
             </div>
-            <h3 className="text-base md:text-lg lg:text-xl font-montserrat font-semibold mb-2 md:mb-3" style={{ marginBottom: '10px' }}>{t("whyTrustUs.feature4.title")}</h3>
-            <p className="font-montserrat font-medium text-gray-700 text-xs md:text-sm lg:text-base leading-relaxed">
+            <h3 className="text-base md:text-lg lg:text-xl font-montserrat font-semibold mb-2 md:mb-3 min-h-0" style={{ marginBottom: '10px' }}>{t("whyTrustUs.feature4.title")}</h3>
+            <p className="font-montserrat font-medium text-gray-700 text-xs md:text-sm lg:text-base leading-relaxed line-clamp-4 overflow-hidden">
               {t("whyTrustUs.feature4.description")}
             </p>
           </div>

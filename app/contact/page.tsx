@@ -39,7 +39,7 @@ export default function ContactPage() {
           <h2 className="text-2xl md:text-3xl lg:text-3xl font-Montserrat font-semibold text-black px-4 mb-[12px] sm:mb-[15px]">
             {t("contact.welcome.title")}
           </h2>
-          <p className="font-Montserrat font-medium text-[#6f6f6f] text-base md:text-lg max-w-3xl mx-auto px-4 mb-[40px] sm:mb-[50px] md:mb-[60px] lg:mb-[70px]">
+          <p className="font-Montserrat font-medium text-[#6f6f6f] text-base md:text-lg max-w-4xl mx-auto px-4 mb-[40px] sm:mb-[50px] md:mb-[60px] lg:mb-[70px]">
             {t("contact.welcome.text")}
           </p>
         </div>
