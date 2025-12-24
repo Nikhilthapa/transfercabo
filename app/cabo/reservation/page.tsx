@@ -49,7 +49,13 @@ export default function ReservationPage() {
     e: React.ChangeEvent<HTMLInputElement | HTMLSelectElement | HTMLTextAreaElement>
   ) => {
     const { name, value } = e.target;
-    setFormData(prev => ({ ...prev, [name]: value }));
+    // For phone field, only allow numbers
+    if (name === "phone") {
+      const numericValue = value.replace(/[^0-9]/g, "");
+      setFormData(prev => ({ ...prev, [name]: numericValue }));
+    } else {
+      setFormData(prev => ({ ...prev, [name]: value }));
+    }
   };
 
   const validateForm = (): boolean => {
@@ -79,6 +85,10 @@ export default function ReservationPage() {
     }
     if (!formData.phone.trim()) {
       setSubmitStatus({ type: "error", message: "Phone number is required" });
+      return false;
+    }
+    if (!/^\d+$/.test(formData.phone)) {
+      setSubmitStatus({ type: "error", message: "Phone number must contain only numbers" });
       return false;
     }
     if (!formData.hotelName.trim()) {
@@ -259,7 +269,7 @@ export default function ReservationPage() {
               {t("caboReservation.hero.description")}
             </p>
             <Link
-              href="/cabo/reservation"
+              href="/cabo/reservation#reservation-form"
               className="inline-block bg-[#0446A1] hover:bg-[#033a8a]  text-white px-6 md:px-8 lg:px-10 py-2.5 md:py-3 lg:py-4 rounded-md font-semibold text-sm md:text-base lg:text-lg transition shadow-lg"
             >
               {t("caboReservation.hero.button")}
@@ -469,6 +479,8 @@ export default function ReservationPage() {
                       onChange={handleInputChange}
                       placeholder={t("reservation.form.placeholder.phone")}
                       className="w-full border border-gray-300 rounded-md px-3 md:px-4 py-2.5 md:py-3 focus:outline-none focus:ring-2 focus:ring-blue-500 text-sm md:text-base"
+                      pattern="[0-9]*"
+                      inputMode="numeric"
                       required
                     />
                   </div>

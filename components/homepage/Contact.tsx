@@ -26,7 +26,13 @@ export default function Contact() {
     e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>
   ) => {
     const { name, value } = e.target;
-    setFormData(prev => ({ ...prev, [name]: value }));
+    // For phone field, only allow numbers
+    if (name === "phone") {
+      const numericValue = value.replace(/[^0-9]/g, "");
+      setFormData(prev => ({ ...prev, [name]: numericValue }));
+    } else {
+      setFormData(prev => ({ ...prev, [name]: value }));
+    }
   };
 
   const validateForm = (): boolean => {
@@ -44,6 +50,10 @@ export default function Contact() {
     }
     if (!formData.phone.trim()) {
       setSubmitStatus({ type: "error", message: "Phone number is required" });
+      return false;
+    }
+    if (!/^\d+$/.test(formData.phone)) {
+      setSubmitStatus({ type: "error", message: "Phone number must contain only numbers" });
       return false;
     }
     if (!formData.message.trim()) {
@@ -165,6 +175,8 @@ export default function Contact() {
                   onChange={handleInputChange}
                   placeholder={t("contact.form.phonePlaceholder")}
                   className="w-full border border-gray-300 rounded-full px-6 py-3 focus:outline-none focus:ring-2 focus:ring-blue-400 text-sm md:text-base"
+                  pattern="[0-9]*"
+                  inputMode="numeric"
                   required
                 />
                 <textarea

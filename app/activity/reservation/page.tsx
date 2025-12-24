@@ -45,7 +45,13 @@ export default function ActivityReservationPage() {
     e: React.ChangeEvent<HTMLInputElement | HTMLSelectElement | HTMLTextAreaElement>
   ) => {
     const { name, value } = e.target;
-    setFormData(prev => ({ ...prev, [name]: value }));
+    // For phone field, only allow numbers
+    if (name === "phone") {
+      const numericValue = value.replace(/[^0-9]/g, "");
+      setFormData(prev => ({ ...prev, [name]: numericValue }));
+    } else {
+      setFormData(prev => ({ ...prev, [name]: value }));
+    }
   };
 
   const validateForm = (): boolean => {
@@ -75,6 +81,10 @@ export default function ActivityReservationPage() {
     }
     if (!formData.phone.trim()) {
       setSubmitStatus({ type: "error", message: "Phone number is required" });
+      return false;
+    }
+    if (!/^\d+$/.test(formData.phone)) {
+      setSubmitStatus({ type: "error", message: "Phone number must contain only numbers" });
       return false;
     }
     if (!formData.activityDate) {
@@ -202,7 +212,7 @@ export default function ActivityReservationPage() {
               {t("reservation.hero.description")}
             </p>
             <Link
-              href="/activity/reservation"
+              href="/activity/reservation#reservation-form"
               className="inline-block bg-[#0446A1] hover:bg-[#033a8a]  text-white px-8 md:px-10 py-3 md:py-4 rounded-md font-semibold text-base md:text-lg transition shadow-lg"
             >
               {t("reservation.hero.button")}
@@ -416,6 +426,8 @@ export default function ActivityReservationPage() {
                       onChange={handleInputChange}
                       placeholder={t("reservation.form.placeholder.phone")}
                       className="w-full border border-gray-300 rounded-md px-4 py-3 focus:outline-none focus:ring-2 focus:ring-blue-500 text-sm md:text-base"
+                      pattern="[0-9]*"
+                      inputMode="numeric"
                       required
                     />
                   </div>
