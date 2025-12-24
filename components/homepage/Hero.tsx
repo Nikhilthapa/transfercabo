@@ -3,9 +3,29 @@
 import Navigation from "./Navigation";
 import Link from "next/link";
 import { useI18n } from "@/lib/i18n";
+import { useEffect, useRef, useState } from "react";
 
 export default function Hero() {
   const { t } = useI18n();
+  const firstButtonRef = useRef<HTMLAnchorElement>(null);
+  const secondButtonRef = useRef<HTMLAnchorElement>(null);
+  const [buttonWidth, setButtonWidth] = useState<string>("max-content");
+
+  useEffect(() => {
+    const updateButtonWidth = () => {
+      if (firstButtonRef.current) {
+        const width = firstButtonRef.current.offsetWidth;
+        setButtonWidth(`${width}px`);
+      }
+    };
+
+    updateButtonWidth();
+    window.addEventListener('resize', updateButtonWidth);
+    
+    return () => {
+      window.removeEventListener('resize', updateButtonWidth);
+    };
+  }, [t]);
   return (
     <section className="relative h-[80vh] md:h-[100vh] overflow-visible">
       {/* Video Background */}
@@ -71,11 +91,11 @@ export default function Hero() {
           <p className="text-sm sm:text-base md:text-lg lg:text-xl text-white mb-4 md:mb-6 lg:mb-10">
             {t("hero.description")}
           </p>
-          <div className="flex flex-col sm:flex-row gap-3 md:gap-4 lg:gap-6 items-center sm:items-start">
-            <Link href="/cabo/reservation#reservation-form" className="bg-[#0446a1] hover:bg-[#033a8a] text-white px-6 md:px-8 lg:px-10 py-2.5 md:py-3 lg:py-4 rounded-md font-semibold text-sm md:text-base lg:text-lg transition shadow-lg text-center flex items-center justify-center border-2 border-transparent">
+          <div className="flex flex-col sm:flex-row gap-3 md:gap-4 lg:gap-6 items-start">
+            <Link ref={firstButtonRef} href="/cabo/reservation#reservation-form" className="w-max bg-[#0446a1] hover:bg-[#033a8a] text-white px-6 md:px-8 lg:px-10 py-2.5 md:py-3 lg:py-4 rounded-md font-semibold text-sm md:text-base lg:text-lg transition shadow-lg text-center flex items-center justify-center border-2 border-transparent">
               {t("hero.button.bookRide")}
             </Link>
-            <Link href="/activity" className="border-2 border-white text-white px-6 md:px-8 lg:px-10 py-2.5 md:py-3 lg:py-4 rounded-md font-semibold text-sm md:text-base lg:text-lg hover:bg-white/10 transition text-center flex items-center justify-center">
+            <Link ref={secondButtonRef} href="/activity" className="border-2 border-white text-white px-6 md:px-8 lg:px-10 py-2.5 md:py-3 lg:py-4 rounded-md font-semibold text-sm md:text-base lg:text-lg hover:bg-white/10 transition text-center flex items-center justify-center" style={{ width: buttonWidth }}>
               {t("hero.button.exploreActivities")}
             </Link>
           </div>
